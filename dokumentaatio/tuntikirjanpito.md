@@ -1,4 +1,4 @@
-﻿### Tuntikirjanpito
+###Tuntikirjanpito
 
 Päivä | Tunnit | Kuvaus
 --------------- | ----- | ------
