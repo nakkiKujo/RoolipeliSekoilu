@@ -18,7 +18,7 @@ public class Hahmonluoja {
         String nimi = hahmonNimenValinta();
         Hahmo uusiHahmo = hahmonAmmatinValinta(nimi);
 
-        return null;
+        return uusiHahmo;
     }
 
     private String hahmonNimenValinta() {
