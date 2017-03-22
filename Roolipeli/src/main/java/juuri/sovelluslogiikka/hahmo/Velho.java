@@ -1,14 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package juuri.sovelluslogiikka.hahmo;
 
-/**
- *
- * @author PenaJones
- */
-public class Velho {
+public class Velho extends Hahmo {
+    
+    
+    public Velho(String nimi) {
+        super(nimi);
+    }
+
+    @Override
+    public void setAmmatti(String am) {
+        this.ammatti = am;
+    }
+
+    @Override
+    public String getAmmatti() {
+        return this.ammatti;
+    }
     
 }
