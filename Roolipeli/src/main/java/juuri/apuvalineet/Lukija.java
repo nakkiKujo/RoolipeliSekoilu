@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juuri.sovelluslogiikka.hahmo;
+package juuri.apuvalineet;
 
 /**
  *
  * @author PenaJones
  */
-public class Hahmonluoja {
+public class Lukija {
     
 }
