@@ -5,11 +5,11 @@ public class Soturi extends Hahmo {
     
     public Soturi(String nimi) {
         super(nimi);
-    }
-
-    @Override
-    public void setAmmatti(String am) {
-        this.ammatti = am;
+        this.ammatti = "soturi";
+        this.voima = 6;
+        this.taikaVoima = 0;
+        this.elamaPisteet = 6;
+        this.ketteryys = 2;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package juuri.sovelluslogiikka.peli;
 
+import juuri.apuvalineet.Keskustelija;
 import juuri.apuvalineet.Lukija;
 import juuri.sovelluslogiikka.hahmo.Druidi;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
@@ -9,16 +10,18 @@ import juuri.sovelluslogiikka.hahmo.Velho;
 public class Hahmonluoja {
 
     private Lukija lukija;
+    private Keskustelija keskustelija;
 
-    public Hahmonluoja(Lukija ll) {
+    public Hahmonluoja(Lukija ll, Keskustelija kk) {
         this.lukija = ll;
+        this.keskustelija = kk;
     }
 
     public Hahmo luoHahmo() {
         String nimi = hahmonNimenValinta();
-        Hahmo uusiHahmo = hahmonAmmatinValinta(nimi);
-
-        return uusiHahmo;
+        String hahmonAmmatti = hahmonAmmatinValinta();
+        
+        return luodaanHahmoAmmatinMukaan(hahmonAmmatti, nimi);
     }
 
     private String hahmonNimenValinta() {
@@ -30,46 +33,21 @@ public class Hahmonluoja {
         return nimi;
     }
 
-    private Hahmo hahmonAmmatinValinta(String hahmonNimi) {
+    private String hahmonAmmatinValinta() {
         
         //tämä täytyy muokata niin, että pystytään laajentamaan helpommin
-        
-        System.out.println("~~~~~~~~~~~~~~");
-        System.out.println("Seuraavaksi sinun tulee valita hahmosi ammatti. Voit valita seuraavista:");
-        System.out.println("- Soturi");
-        System.out.println("- Velho");
-        System.out.println("- Druidi");
-        System.out.println("Jos haluat tietää ammatista enemmän, voit kirjoittaa ''info *ammatti*'' \n"
-                + "esim ''info velho''");
-        System.out.println("Kun olet tehnyt valintasi, kirjoita ''ammatti'' , esim. ''soturi''");
-
+        System.out.println(keskustelija.ammatinValintaEsittely());
         String teksti = lukija.lueString();
         teksti.toLowerCase();
-
-        String valittuAmmatti = kasitteleTeksti(teksti);
         
-        Hahmo uusiHahmo = null;
-        if (teksti.equals("soturi")) {
-            uusiHahmo = new Soturi(hahmonNimi);
-            uusiHahmo.setAmmatti("soturi");
-        } else if (teksti.equals("velho")) {
-            uusiHahmo = new Velho(hahmonNimi);
-            uusiHahmo.setAmmatti("velho");
-        } else {
-            uusiHahmo = new Druidi(hahmonNimi);
-            uusiHahmo.setAmmatti("druidi");
-        }
-        
-        System.out.println("Onneksi olkoon, olet luonut " + uusiHahmo.getAmmatti() + "n, jonka nimi on " + hahmonNimi + 
-                ".");
-        
-        return uusiHahmo;
+        // palautetaan ammatti stringinä
+        return kasitteleAmmatinValintaTeksti(teksti);
     }
 
-    private String kasitteleTeksti(String teksti) {
+    private String kasitteleAmmatinValintaTeksti(String teksti) {
         while (!(teksti.equals("soturi")) && !(teksti.equals("velho")) && !(teksti.equals("druidi"))) {
             if ( (teksti.equals("info velho")) || teksti.equals("info soturi") || teksti.equals("info druidi")) {
-                ammattiInfo(teksti);
+                keskustelija.ammattiInfo(teksti);
                 System.out.println("Anna uusi komento: ");
             } else {
                 System.out.print("Hups, annoit väärän komennon! Kokeile uudestaan: ");
@@ -82,14 +60,14 @@ public class Hahmonluoja {
         return teksti;
     }
     
-    private void ammattiInfo(String teksti) {
-        if(teksti.equals("info velho")) {
-            System.out.println("Velhot ovat kivoja.");
-        }else if(teksti.equals("info soturi")) {
-            System.out.println("Soturit ovat hurjia.");
-        }else if(teksti.equals("info druidi")) {
-            System.out.println("Druidit pitävät kukista.");
-        }
+    private Hahmo luodaanHahmoAmmatinMukaan(String ammatti, String hahmonNimi) {
+        
+        
+        
+        
+        
+        //oikaistaan hieman ja luodaan suoraan vain soturi
+        return new Soturi(hahmonNimi);
     }
 
 }

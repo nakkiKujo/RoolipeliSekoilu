@@ -1,5 +1,6 @@
 package juuri.sovelluslogiikka.peli;
 
+import juuri.apuvalineet.Keskustelija;
 import juuri.apuvalineet.Lukija;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.maailma.Luolasto;
@@ -7,13 +8,15 @@ import juuri.sovelluslogiikka.maailma.Luolasto;
 public class Peli {
 
     private Lukija lukija;
+    private Keskustelija keskustelija;
     private Hahmonluoja luoja;
     private Hahmo pelaajanHahmo;
-    private Luolasto luola;
+    private Luolasto luolasto;
 
     public Peli() {
         this.lukija = new Lukija();
-        this.luoja = new Hahmonluoja(lukija);
+        this.keskustelija = new Keskustelija();
+        this.luoja = new Hahmonluoja(lukija, keskustelija);
     }
 
     public void aloitaPeli() {
@@ -23,7 +26,7 @@ public class Peli {
     }
 
     private void alkuTervehdys() {
-        System.out.println("Tervetuloa pelaamaan roolipeliä. Tänään seikkailu \ntapahtuu luolassa!");
+        keskustelija.alkuTervehdys();
     }
 
     private void hahmonLuonti() {
@@ -31,6 +34,6 @@ public class Peli {
     }
 
     private void luolastonLuonti() {
-        
+        this.luolasto = new Luolasto();
     }
 }
