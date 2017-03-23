@@ -11,4 +11,10 @@ public class Soturi extends Hahmo {
         this.elamaPisteet = 6;
         this.ketteryys = 2;
     }
+
+    @Override
+    public String ammatinKuvaus() {
+        return "Soturit ovat todellisia arjen sankareita. Suurilla lihaksilla avautuu kaikkien"
+                + "säilykepurkkien kannet, ja valtaisalla miekalla pilkkoo polttopuut nopeasti.";
+    }
 }

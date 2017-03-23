@@ -1,6 +1,10 @@
 
 package juuri.apuvalineet;
 
+import juuri.sovelluslogiikka.hahmo.Druidi;
+import juuri.sovelluslogiikka.hahmo.Soturi;
+import juuri.sovelluslogiikka.hahmo.Velho;
+
 public class Keskustelija {
     
     public Keskustelija() {
@@ -23,11 +27,14 @@ public class Keskustelija {
     
     public String ammattiInfo(String teksti) {
         if(teksti.equals("info velho")) {
-            return "Velhot ovat kivoja.";
+            Velho velho = new Velho("sepi");
+            return velho.ammatinKuvaus();
         }else if(teksti.equals("info soturi")) {
-            return "Soturit ovat hurjia.";
+            Soturi soturi = new Soturi("sepi");
+            return soturi.ammatinKuvaus();
         }else if(teksti.equals("info druidi")) {
-            return "Druidit pitävät kukista.";
+            Druidi druidi = new Druidi("sepi");
+            return druidi.ammatinKuvaus();
         }
         
         return null;

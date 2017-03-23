@@ -9,28 +9,26 @@ public class Peli {
 
     private Lukija lukija;
     private Keskustelija keskustelija;
-    private Hahmonluoja luoja;
     private Hahmo pelaajanHahmo;
     private Luolasto luolasto;
 
     public Peli() {
         this.lukija = new Lukija();
         this.keskustelija = new Keskustelija();
-        this.luoja = new Hahmonluoja(lukija, keskustelija);
     }
 
     public void aloitaPeli() {
-        Peli peli = new Peli(lukija, keskustelija);
-        alkuTervehdys();
-        hahmonLuonti();
-        luolastonLuonti();
-    }
-
-    private void alkuTervehdys() {
         keskustelija.alkuTervehdys();
+        
+        Hahmonluoja luoja = new Hahmonluoja(lukija, keskustelija);
+        pelaajanHahmo = luoja.luoHahmo();
+        
+        this.luolasto = new Luolasto(10, 10);
+        pelaaPeli();
     }
 
-    private void luolastonLuonti() {
-        this.luolasto = new Luolasto(10, 10);
+    private void pelaaPeli() {
+        
     }
+    
 }

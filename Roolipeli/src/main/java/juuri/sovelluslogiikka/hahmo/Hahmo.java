@@ -18,9 +18,16 @@ public abstract class Hahmo {
         sijainti.setSijainti(1, 1);
     }
     
+    public String getNimi() {
+        return this.nimi;
+    }
+    
     public String getAmmatti() {
         return this.ammatti;
     }
+    
+    public abstract String ammatinKuvaus();
+    //antaa kuvauksen ammatista, käytössä ammattiInfossa ammattia luodessa
     
     public Sijainti getSijainti() {
         return this.sijainti;
