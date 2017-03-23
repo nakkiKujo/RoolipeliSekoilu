@@ -1,4 +1,5 @@
-### Aihe Roolipeli, jossa käyttäjä pääsee seikkailemaan luolassa kohdaten hirviöitä ja aarteita. Tavoitteena on tehdä melko kattava peli, jonka parissa pelaaja voi hyvinkin käyttää jonkin aikaa.
+### Aihe
+Roolipeli, jossa käyttäjä pääsee seikkailemaan luolassa kohdaten hirviöitä ja aarteita. Tavoitteena on tehdä melko kattava peli, jonka parissa pelaaja voi hyvinkin käyttää jonkin aikaa.
 
 Pelin on tarkoitus toimia vanhojen tekstipohjaisten roolipelien tapaan, tosin grafiikkaa tietenkin käytetään hyväksi esimerkiksi hahmon
 tavaratilanteen ja muistiinpanojen kuvaamiseen. Myös luolaston kartta voidaan toteuttaa yksinkertaisella grafiikalla. Peliä voidaan mahdollisesti laajentaa esimerkiksi antamalla mahdollisuus omien maailmojen luontiin
