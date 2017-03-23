@@ -1,6 +1,7 @@
 
 package juuri.sovelluslogiikka.peli;
 
+import juuri.apuvalineet.Keskustelija;
 import juuri.apuvalineet.Lukija;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -18,7 +19,8 @@ public class HahmonluojaTest {
     @Before
     public void setUp() {
         Lukija ll = new Lukija();
-        luoja = new Hahmonluoja(ll);
+        Keskustelija kk = new Keskustelija();
+        luoja = new Hahmonluoja(ll, kk);
     }
     
     

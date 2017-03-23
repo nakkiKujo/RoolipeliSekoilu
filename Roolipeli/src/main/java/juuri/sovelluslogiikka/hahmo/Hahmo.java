@@ -15,7 +15,7 @@ public abstract class Hahmo {
     public Hahmo(String nimi) {
         this.nimi = nimi;
         this.sijainti = new Sijainti();
-        sijainti
+        sijainti.setSijainti(1, 1);
     }
     
     public String getAmmatti() {

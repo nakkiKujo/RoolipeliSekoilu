@@ -20,6 +20,7 @@ public class Peli {
     }
 
     public void aloitaPeli() {
+        Peli peli = new Peli(lukija, keskustelija);
         alkuTervehdys();
         hahmonLuonti();
         luolastonLuonti();
@@ -29,11 +30,7 @@ public class Peli {
         keskustelija.alkuTervehdys();
     }
 
-    private void hahmonLuonti() {
-        this.pelaajanHahmo = luoja.luoHahmo();
-    }
-
     private void luolastonLuonti() {
-        this.luolasto = new Luolasto();
+        this.luolasto = new Luolasto(10, 10);
     }
 }

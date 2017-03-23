@@ -9,4 +9,18 @@ public abstract class Kohde {
     
     public Kohde() {
     }
+    
+    public int getKoodi() {
+        return koodi;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        Kohde toinen = (Kohde) o;
+        if(this.koodi == toinen.getKoodi()) {
+            return true;
+        }
+        
+        return false;
+    }
 }
