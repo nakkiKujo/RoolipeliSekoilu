@@ -13,4 +13,4 @@ Maailma-luokalla, joka sisältää esimerkiksi:
 - majataloja
 Nämä *Maailmaan* kuuluvat asiat pystytään luomaan olioilla.
 
-![luokkakaavio](/Github/RoolipeliSekoilu/dokumentaatio/luokkakaavioRooliPeli.png)
+![luokkakaavioRooliPeli](/dokumentaatio/luokkakaavioRooliPeli.png)
