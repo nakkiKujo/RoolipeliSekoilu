@@ -11,9 +11,4 @@ public class Soturi extends Hahmo {
         this.elamaPisteet = 6;
         this.ketteryys = 2;
     }
-
-    @Override
-    public String getAmmatti() {
-        return this.ammatti;
-    }
 }

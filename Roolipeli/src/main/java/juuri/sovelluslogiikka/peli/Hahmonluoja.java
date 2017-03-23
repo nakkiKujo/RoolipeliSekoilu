@@ -47,7 +47,7 @@ public class Hahmonluoja {
     private String kasitteleAmmatinValintaTeksti(String teksti) {
         while (!(teksti.equals("soturi")) && !(teksti.equals("velho")) && !(teksti.equals("druidi"))) {
             if ( (teksti.equals("info velho")) || teksti.equals("info soturi") || teksti.equals("info druidi")) {
-                keskustelija.ammattiInfo(teksti);
+                System.out.println(keskustelija.ammattiInfo(teksti));
                 System.out.println("Anna uusi komento: ");
             } else {
                 System.out.print("Hups, annoit väärän komennon! Kokeile uudestaan: ");

@@ -11,12 +11,4 @@ public class Druidi extends Hahmo {
         this.ketteryys = 5;
         this.taikaVoima = 3;
     }
-
-    @Override
-    public String getAmmatti() {
-         return this.ammatti;
-    }
-
-    
-    
 }

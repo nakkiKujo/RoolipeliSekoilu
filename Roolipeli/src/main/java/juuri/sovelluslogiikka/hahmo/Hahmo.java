@@ -15,10 +15,12 @@ public abstract class Hahmo {
     public Hahmo(String nimi) {
         this.nimi = nimi;
         this.sijainti = new Sijainti();
+        sijainti
     }
     
-    public abstract String getAmmatti();
-    //hakee hahmon ammatin muodossa "ammatti", esim velho tai soturi
+    public String getAmmatti() {
+        return this.ammatti;
+    }
     
     public Sijainti getSijainti() {
         return this.sijainti;
