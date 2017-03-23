@@ -1,10 +1,10 @@
-﻿**Aihe:** Roolipeli, jossa käyttäjä pääsee seikkailemaan luolassa kohdaten hirviöitä ja aarteita. Tavoitteena on tehdä melko kattava peli, jonka parissa pelaaja voi hyvinkin käyttää jonkin aikaa.
+### Aihe Roolipeli, jossa käyttäjä pääsee seikkailemaan luolassa kohdaten hirviöitä ja aarteita. Tavoitteena on tehdä melko kattava peli, jonka parissa pelaaja voi hyvinkin käyttää jonkin aikaa.
 
 Pelin on tarkoitus toimia vanhojen tekstipohjaisten roolipelien tapaan, tosin grafiikkaa tietenkin käytetään hyväksi esimerkiksi hahmon
 tavaratilanteen ja muistiinpanojen kuvaamiseen. Myös luolaston kartta voidaan toteuttaa yksinkertaisella grafiikalla. Peliä voidaan mahdollisesti laajentaa esimerkiksi antamalla mahdollisuus omien maailmojen luontiin
 (tosin tämä ominaisuus saattaa olla liian laaja toteuttaa).
 
-**Rakenne:**
+### Rakenne
 Ydinluokkana toimii *Peli*-luokka. Täällä tapahtuu itse pelin toiminnot, hahmon liikuttelu yms. Jos luokka kasvaa liian suureksi, voidaan hahmon liikuttelu asettaa jonkin toisen luokan tehtäväksi. Myös hahmon luominen tapahtuu tässä luokassa käyttäen luokkaa *Hahmonluoja*.
 
 Itse pelaajan luomaa hahmoa kuvastaa abstrakti luokka *Hahmo*. Tämän luokan tehtävänä on pitää yllä tietoa hahmon ominaisuuksista ja päivittää niitä tarpeen mukaan. Tämä luokka pitää yllä myös tietoa hahmon sijainnista luokan *Sijainti* avulla. Tämä luokka jakaantuu aliluokkiin, jotka kuvastavat hahmon ammattia (jokaisella ammatilla omat erikoisuutensa)
