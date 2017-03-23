@@ -1,4 +1,4 @@
-**Aihe:** Roolipeli, jossa käyttäjä pääsee seikkailemaan eri paikoissa kohdaten erilaisia otuksia ja hirviöitä. Itse seikkailun aihe on
+﻿**Aihe:** Roolipeli, jossa käyttäjä pääsee seikkailemaan eri paikoissa kohdaten erilaisia otuksia ja hirviöitä. Itse seikkailun aihe on
 vielä avoin. Tavoitteena on kuitenkin tehdä melko kattava peli, jonka parissa pelaaja voi hyvinkin käyttää jonkin aikaa.
 
 Pelin on tarkoitus toimia vanhojen tekstipohjaisten roolipelien tapaan, tosin grafiikkaa tietenkin käytetään hyväksi esimerkiksi hahmon
@@ -13,3 +13,4 @@ Maailma-luokalla, joka sisältää esimerkiksi:
 - majataloja
 Nämä *Maailmaan* kuuluvat asiat pystytään luomaan olioilla.
 
+![luokkakaavio](/Github/RoolipeliSekoilu/dokumentaatio/luokkakaavioRooliPeli.png)
