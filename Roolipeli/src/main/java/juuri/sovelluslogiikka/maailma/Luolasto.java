@@ -50,21 +50,36 @@ public class Luolasto {
         return true;
     }
     
-    public boolean asetaOvi(int x, int y) {
+    public boolean asetaLukittuOvi(int x, int y) {
         if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        koordinaatisto[x][y] = new Ovi();
+        koordinaatisto[x][y] = new Ovi(true);
+        return true;
+    }
+    
+    public boolean asetaAvoinOvi(int x, int y) {
+        if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
+            return false;
+        }
+        koordinaatisto[x][y] = new Ovi(false);
         return true;
     }
     
     public Kohde haeKoordinaateista(int x, int y) {
+        if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
+            return null;
+        }
         return koordinaatisto[x][y];
     }
     
     public Kohde haeSijainnista(Sijainti ss) {
         int x = ss.getX();
         int y = ss.getY();
+        
+        if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
+            return null;
+        }
         
         return koordinaatisto[x][y];
     }

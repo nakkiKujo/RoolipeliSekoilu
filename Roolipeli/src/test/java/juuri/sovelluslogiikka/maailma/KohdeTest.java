@@ -11,13 +11,15 @@ import static org.junit.Assert.*;
 public class KohdeTest {
     private Seina seina;
     private Kaytava kaytava;
-    private Ovi ovi;
+    private Ovi avoinOvi;
+    private Ovi lukittuOvi;
     
     @Before
     public void setUp() {
         this.seina = new Seina();
         this.kaytava = new Kaytava();
-        this.ovi = new Ovi();
+        this.avoinOvi = new Ovi(false);
+        this.lukittuOvi = new Ovi(true);
     }
     
     

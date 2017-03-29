@@ -23,11 +23,15 @@ public class Peli {
     public void aloitaPeli() {
         keskustelija.alkuTervehdys();
         
+        //ensin luodaan pelaajan hahmo, tästä huolehtii hahmonluoja
         Hahmonluoja luoja = new Hahmonluoja(lukija, keskustelija);
         pelaajanHahmo = luoja.luoHahmo();
         
+        //sitten luodaan luolasto seikkailua varten
         this.luolasto = new Luolasto(4, 4);
         luolasto.luoTaso1();
+        
+        //nyt olemme valmiit pelaamaan peliä
         pelaaPeli();
     }
 
@@ -35,6 +39,8 @@ public class Peli {
         System.out.println("Luolasto on luotu, peli alkaa!\n\n~~~~~~~~~~~~~~~~\n");
         String komento = "";
         
+        
+        //looppi jatkuu, kunnes hahmo kuolee
         while(!komento.equals("kuolema")) {
             System.out.println(keskustelija.kysySuuntaa());
             komento = lukija.lueString();
@@ -42,10 +48,9 @@ public class Peli {
             Kohde minneHahmoLiikkui = liikuttaja.liikutaHahmoa(komento, luolasto, pelaajanHahmo);
             if(minneHahmoLiikkui == null) {
                 System.out.println(keskustelija.vaaraKomento());
-            }
-            
-            System.out.println(minneHahmoLiikkui.toString());
-                    
+            } else {
+                System.out.println(minneHahmoLiikkui.toString());
+            }    
         }
     }
     

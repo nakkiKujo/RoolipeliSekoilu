@@ -69,6 +69,21 @@ public class SijaintiTest {
     }
     
     @Test
+    public void sijainninLiikutusNegatiivisillaArvoilla() {
+        yksi.liikuAlas(-1);
+        assertEquals(-1, yksi.getY());
+        
+        kaksi.liikuYlos(-1);
+        assertEquals(1, kaksi.getY());
+        
+        yksi.liikuOikealle(-3);
+        assertEquals(-3, yksi.getX());
+        
+        kaksi.liikuVasemmalle(-4);
+        assertEquals(4, kaksi.getX());
+    }
+    
+    @Test
     public void yleinenSijainninLiikutusToimii() {
         yksi.liikuAlas(3);
         yksi.liikuYlos(5);
