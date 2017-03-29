@@ -6,6 +6,7 @@ import juuri.apuvalineet.Sijainti;
 public abstract class Kohde {
     protected Sijainti sijainti;
     protected int koodi;
+    protected String nimi;
     
     public Kohde() {
     }
@@ -22,5 +23,10 @@ public abstract class Kohde {
         }
         
         return false;
+    }
+    
+    @Override
+    public String toString() {
+        return "Olet kohteessa: " + this.nimi;
     }
 }

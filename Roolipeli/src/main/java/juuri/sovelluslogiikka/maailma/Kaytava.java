@@ -5,5 +5,6 @@ public class Kaytava extends Kohde {
     
     public Kaytava() {
         this.koodi = 2;
+        this.nimi = "käytävä";
     }
 }

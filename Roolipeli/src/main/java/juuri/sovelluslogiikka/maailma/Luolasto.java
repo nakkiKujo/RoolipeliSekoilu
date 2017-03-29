@@ -1,6 +1,8 @@
 
 package juuri.sovelluslogiikka.maailma;
 
+import juuri.apuvalineet.Sijainti;
+
 public class Luolasto {
     private Kohde[][] koordinaatisto;
     private int leveys;
@@ -10,56 +12,61 @@ public class Luolasto {
         this.koordinaatisto = new Kohde[leveys][korkeus];
         this.leveys = leveys;
         this.korkeus = korkeus;
-        asetaAlkuperainenLuolasto();
     }
     
-    private void asetaAlkuperainenLuolasto() {
+    public void luoTaso1() {
         
         //luolaston ulkoreuna on seinää
         for (int i = 0; i < leveys; i++) {
             koordinaatisto[i][0] = new Seina();
             koordinaatisto[i][korkeus - 1] = new Seina();
         }
-        
-        for (int i = 0; i < korkeus; i++) {
+        for (int i = 1; i < korkeus - 1; i++) {
             koordinaatisto[0][i] = new Seina();
             koordinaatisto[leveys - 1][i] = new Seina();
         }
         
-        //laitetaan aluksi kaksi ovea, nyt olettaen että luolasto on 10x10
-        koordinaatisto[5][1] = new Ovi();
-        koordinaatisto[5][8] = new Ovi();
-        
-        //loput luolaston seinät
-        for (int i = 2; i < 6; i++) {
-            koordinaatisto[i][2] = new Seina();
-        }
-        koordinaatisto[2][3] = new Seina();
-        koordinaatisto[3][3] = new Seina();
-        
-        for (int i = 5; i < 9; i++) {
-            koordinaatisto[i][3] = new Seina();
-        }
-        for (int i = 4; i < 8; i++) {
-            koordinaatisto[5][i] = new Seina();
-        }
-        koordinaatisto[2][5] = new Seina();
-        koordinaatisto[3][5] = new Seina();
-        koordinaatisto[2][6] = new Seina();
-        koordinaatisto[2][7] = new Seina();
-        koordinaatisto[3][7] = new Seina();
-        koordinaatisto[4][7] = new Seina();
-        
-        //sitten käytävät
-        
-        for (int i = 0; i < leveys; i++) {
-            for (int j = 0; j < korkeus; j++) {
-                if(koordinaatisto[i][j] == null) {
-                    koordinaatisto[i][j] = new Kaytava();
-                }
+        //sisusta on käytävää
+        for (int i = 1; i < leveys - 1; i++) {
+            for (int j = 1; j < korkeus - 1; j++) {
+                koordinaatisto[i][j] = new Kaytava();
             }
         }
     }
     
+    public boolean asetaSeina(int x, int y) {
+        if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
+            return false;
+        }
+        koordinaatisto[x][y] = new Seina();
+        return true;
+    }
+    
+    public boolean asetaKaytava(int x, int y) {
+        if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
+            return false;
+        }
+        koordinaatisto[x][y] = new Kaytava();
+        return true;
+    }
+    
+    public boolean asetaOvi(int x, int y) {
+        if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
+            return false;
+        }
+        koordinaatisto[x][y] = new Ovi();
+        return true;
+    }
+    
+    public Kohde haeKoordinaateista(int x, int y) {
+        return koordinaatisto[x][y];
+    }
+    
+    public Kohde haeSijainnista(Sijainti ss) {
+        int x = ss.getX();
+        int y = ss.getY();
+        
+        return koordinaatisto[x][y];
+    }
     
 }

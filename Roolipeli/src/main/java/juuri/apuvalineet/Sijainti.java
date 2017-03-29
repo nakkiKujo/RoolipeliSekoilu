@@ -32,19 +32,19 @@ public class Sijainti {
     }
     
     public void liikuOikealle(int maara) {
-        this.x += maara;
+        this.x = x + maara;
     }
     
     public void liikuVasemmalle(int maara) {
-        this.x =- maara;
+        this.x = x - maara;
     }
     
     public void liikuYlos(int maara) {
-        this.y =+ maara;
+        this.y = y - maara;
     }
     
     public void liikuAlas(int maara) {
-        this.y =- maara;
+        this.y = y + maara;
     }
     
     @Override

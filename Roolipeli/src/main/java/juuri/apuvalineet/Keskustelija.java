@@ -39,4 +39,13 @@ public class Keskustelija {
         
         return null;
     }
+    
+    public String kysySuuntaa() {
+        return "Minne haluaisit mennä? Voit mennä vasemmalle, oikealle, alas tai ylös."
+                    + " Anna komento muodossa'liiku alas'";
+    }
+    
+    public String vaaraKomento() {
+        return "Hups, annoit väärän komennon! Kokeile uudestaan.";
+    }
 }
