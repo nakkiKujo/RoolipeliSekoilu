@@ -16,10 +16,6 @@ public class KohdeTest {
     
     @Before
     public void setUp() {
-        this.seina = new Seina();
-        this.kaytava = new Kaytava();
-        this.avoinOvi = new Ovi(false);
-        this.lukittuOvi = new Ovi(true);
     }
     
     

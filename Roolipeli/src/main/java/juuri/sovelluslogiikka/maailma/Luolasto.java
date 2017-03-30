@@ -2,6 +2,16 @@
 package juuri.sovelluslogiikka.maailma;
 
 import juuri.apuvalineet.Sijainti;
+import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
+
+//Luolaston rakennetta ylläpidetään taulukossa "koordinaatisto",
+//joka sisältää Kohteita. Jokaisella Kohteella on oma koodi, jolla
+//ne voidaan tunnistaa:
+
+//seina = 1,
+//käytävä = 2,
+//ovi = 3
+
 
 public class Luolasto {
     private Kohde[][] koordinaatisto;
@@ -18,18 +28,18 @@ public class Luolasto {
         
         //luolaston ulkoreuna on seinää
         for (int i = 0; i < leveys; i++) {
-            koordinaatisto[i][0] = new Seina();
-            koordinaatisto[i][korkeus - 1] = new Seina();
+            koordinaatisto[i][0] = new Seina(null);
+            koordinaatisto[i][korkeus - 1] = new Seina(null);
         }
         for (int i = 1; i < korkeus - 1; i++) {
-            koordinaatisto[0][i] = new Seina();
-            koordinaatisto[leveys - 1][i] = new Seina();
+            koordinaatisto[0][i] = new Seina(null);
+            koordinaatisto[leveys - 1][i] = new Seina(null);
         }
         
         //sisusta on käytävää
         for (int i = 1; i < leveys - 1; i++) {
             for (int j = 1; j < korkeus - 1; j++) {
-                koordinaatisto[i][j] = new Kaytava();
+                koordinaatisto[i][j] = new Kaytava(null);
             }
         }
     }
@@ -38,7 +48,7 @@ public class Luolasto {
         if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        koordinaatisto[x][y] = new Seina();
+        koordinaatisto[x][y] = new Seina(null);
         return true;
     }
     
@@ -46,7 +56,7 @@ public class Luolasto {
         if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        koordinaatisto[x][y] = new Kaytava();
+        koordinaatisto[x][y] = new Kaytava(null);
         return true;
     }
     
@@ -54,7 +64,12 @@ public class Luolasto {
         if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        koordinaatisto[x][y] = new Ovi(true);
+        
+        Ovi ovi = new Ovi(true, null);
+        OvenAvaus ovenAvaus = new OvenAvaus(ovi);
+        ovi.setTapahtuma(ovenAvaus);
+        koordinaatisto[x][y] = ovi;
+        
         return true;
     }
     
@@ -62,7 +77,12 @@ public class Luolasto {
         if(x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        koordinaatisto[x][y] = new Ovi(false);
+        
+        Ovi ovi = new Ovi(false, null);
+        OvenAvaus ovenAvaus = new OvenAvaus(ovi);
+        ovi.setTapahtuma(ovenAvaus);
+        koordinaatisto[x][y] = ovi;
+        
         return true;
     }
     

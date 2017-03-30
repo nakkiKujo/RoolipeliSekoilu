@@ -5,7 +5,10 @@ import juuri.apuvalineet.Lukija;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.maailma.Kohde;
 import juuri.sovelluslogiikka.maailma.Luolasto;
+import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
+//Tämä luokka toimii eräänlaisena runkona koko ohjelman toiminnalle. Oleellisin metodi on
+//pelaaPeli, joka pyörittää looppia, jonka aikana peli pelataan. Kun looppi loppuu, peli päättyy.
 public class Peli {
 
     private Lukija lukija;
@@ -13,7 +16,7 @@ public class Peli {
     private Hahmo pelaajanHahmo;
     private Luolasto luolasto;
     private Hahmonliikuttaja liikuttaja;
-
+    
     public Peli() {
         this.lukija = new Lukija();
         this.keskustelija = new Keskustelija();
@@ -35,7 +38,7 @@ public class Peli {
         pelaaPeli();
     }
 
-    private void pelaaPeli() {
+    public void pelaaPeli() {
         System.out.println("Luolasto on luotu, peli alkaa!\n\n~~~~~~~~~~~~~~~~\n");
         String komento = "";
         
@@ -48,9 +51,10 @@ public class Peli {
             Kohde minneHahmoLiikkui = liikuttaja.liikutaHahmoa(komento, luolasto, pelaajanHahmo);
             if(minneHahmoLiikkui == null) {
                 System.out.println(keskustelija.vaaraKomento());
-            } else {
-                System.out.println(minneHahmoLiikkui.toString());
-            }    
+                continue;
+            }
+            
+            Tapahtuma tapahtuma = minneHahmoLiikkui.getTapahtuma();
         }
     }
     

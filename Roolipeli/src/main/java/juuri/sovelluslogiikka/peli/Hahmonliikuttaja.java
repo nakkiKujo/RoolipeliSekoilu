@@ -9,10 +9,14 @@ public class Hahmonliikuttaja {
 
     public Hahmonliikuttaja() {
     }
-
+    
+    //Metodi palauttaa Kohteen, johon hahmon liikkuessaan päätyy.
+    //Jos hahmo yrittää liikkua luolastosta ulos TAI komento on vääränlainen,
+    //palautetaan null.
     public Kohde liikutaHahmoa(String komento, Luolasto luola, Hahmo hahmo) {
         Sijainti hahmonSijainti = hahmo.getSijainti();
-
+        
+        //ensin käsitellään komento, joka kertoo, mihin suuntaan liikutaan
         if (komento.equals("liiku alas")) {
             hahmonSijainti.liikuAlas(1);
         } else if (komento.equals("liiku ylös")) {
@@ -31,8 +35,8 @@ public class Hahmonliikuttaja {
             return null;
         }
 
-        //hahmo yritti kulkea seinän sisään, joten täytyy peruuttaa takaisin
-        if (loydetty.getKoodi() == 1) {
+        //Hahmo yritti kulkea kohteeseen, jonne ei voinut mennä. Täytyy peruuttaa takaisin.
+        if (!loydetty.getVoikoKulkea()) {
             if (komento.equals("liiku alas")) {
                 hahmonSijainti.liikuAlas(-1);
             } else if (komento.equals("liiku ylös")) {
