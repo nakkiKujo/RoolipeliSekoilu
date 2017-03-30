@@ -24,24 +24,36 @@ public class Luolasto {
         this.korkeus = korkeus;
     }
     
+    //Luolasto koostuu useammasta eri kerroksesta. 
     public void luoTaso1() {
         
         //luolaston ulkoreuna on seinää
         for (int i = 0; i < leveys; i++) {
-            koordinaatisto[i][0] = new Seina(null);
-            koordinaatisto[i][korkeus - 1] = new Seina(null);
+            asetaSeina(i, 0);
+            asetaSeina(i, korkeus - 1);
         }
         for (int i = 1; i < korkeus - 1; i++) {
-            koordinaatisto[0][i] = new Seina(null);
-            koordinaatisto[leveys - 1][i] = new Seina(null);
+            asetaSeina(0, i);
+            asetaSeina(leveys - 1, i);
         }
         
         //sisusta on käytävää
         for (int i = 1; i < leveys - 1; i++) {
             for (int j = 1; j < korkeus - 1; j++) {
-                koordinaatisto[i][j] = new Kaytava(null);
+                asetaKaytava(i, j);
             }
         }
+        
+        //asetetaan lukittu ovi kohtaan 2,1
+        asetaLukittuOvi(2, 1);
+    }
+    
+    public void luoTaso2() {
+        
+    }
+    
+    public void luoTaso3() {
+        
     }
     
     public boolean asetaSeina(int x, int y) {

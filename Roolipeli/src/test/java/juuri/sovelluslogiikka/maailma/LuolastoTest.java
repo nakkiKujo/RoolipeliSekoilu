@@ -40,8 +40,11 @@ public class LuolastoTest {
     public void oviAsetusToimiiOikein() {
         luola.asetaLukittuOvi(5, 7);
         assertEquals(3, luola.haeKoordinaateista(5, 7).getKoodi());
+        assertFalse(luola.haeKoordinaateista(5, 7).getVoikoKulkea());
+        
         luola.asetaAvoinOvi(3, 1);
         assertEquals(3, luola.haeKoordinaateista(3, 1).getKoodi());
+        assertTrue(luola.haeKoordinaateista(3, 1).getVoikoKulkea());
     }
     
     @Test

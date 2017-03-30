@@ -1,6 +1,7 @@
 
 package juuri.sovelluslogiikka.tapahtumat;
 
+import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.maailma.Ovi;
 
 public class OvenAvaus implements Tapahtuma {
@@ -11,13 +12,12 @@ public class OvenAvaus implements Tapahtuma {
         this.ovi = ovi;
     }
     
-    public void aloitaTapahtuma() {
+    @Override
+    public void aloitaTapahtuma(Hahmo pelaajanHahmo) {
         boolean onkoOviLukossa = ovi.onkoLukittu();
         
         if(onkoOviLukossa) {
-            System.out.println("ovi on kiinni");
-        } else {
-            System.out.println("ovi on auki");
+            System.out.println("Ovi on lukossa, onko sinulla avainta? Ei ole BYYEEEE");
         }
     }
 }

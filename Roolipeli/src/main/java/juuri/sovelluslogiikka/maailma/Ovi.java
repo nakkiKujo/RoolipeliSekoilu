@@ -12,7 +12,11 @@ public class Ovi extends Kohde {
         this.lukittu = lukitus;
         
         //Ovien läpi kulkeminen riippuu sen lukituksesta.
-        this.voikoKulkea = lukitus;
+        if(lukitus) {
+            this.voikoKulkea = false;
+        } else {
+            this.voikoKulkea = true;
+        }
         this.tapahtuma = tapahtuma;
     }
     

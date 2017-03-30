@@ -31,11 +31,8 @@ public class Peli {
         pelaajanHahmo = luoja.luoHahmo();
         
         //sitten luodaan luolasto seikkailua varten
-        this.luolasto = new Luolasto(4, 4);
+        this.luolasto = new Luolasto(9, 9);
         luolasto.luoTaso1();
-        
-        //nyt olemme valmiit pelaamaan peliä
-        pelaaPeli();
     }
 
     public void pelaaPeli() {
@@ -55,6 +52,7 @@ public class Peli {
             }
             
             Tapahtuma tapahtuma = minneHahmoLiikkui.getTapahtuma();
+            tapahtuma.aloitaTapahtuma(pelaajanHahmo);
         }
     }
     
