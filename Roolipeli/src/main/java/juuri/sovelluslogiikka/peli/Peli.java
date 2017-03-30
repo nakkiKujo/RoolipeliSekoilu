@@ -52,6 +52,9 @@ public class Peli {
             }
             
             Tapahtuma tapahtuma = minneHahmoLiikkui.getTapahtuma();
+            if(tapahtuma == null) {
+                continue;
+            }
             tapahtuma.aloitaTapahtuma(pelaajanHahmo);
         }
     }

@@ -86,5 +86,15 @@ public class LuolastoTest {
         assertEquals(null, luola.haeKoordinaateista(6, -1));
     }
     
+    @Test
+    public void luoTaso1EiJataTyhjaa() {
+        luola.luoTaso1();
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                assertFalse(luola.haeKoordinaateista(i, j) == null);
+            }
+        }
+    }
+    
     
 }
