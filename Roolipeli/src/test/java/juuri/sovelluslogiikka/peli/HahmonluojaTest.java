@@ -1,7 +1,7 @@
 
 package juuri.sovelluslogiikka.peli;
 
-import juuri.apuvalineet.Keskustelija;
+import juuri.ui.Keskustelija;
 import juuri.apuvalineet.Lukija;
 import org.junit.After;
 import org.junit.AfterClass;

@@ -1,5 +1,5 @@
 
-package juuri.apuvalineet;
+package juuri.ui;
 
 import juuri.sovelluslogiikka.hahmo.Druidi;
 import juuri.sovelluslogiikka.hahmo.Soturi;

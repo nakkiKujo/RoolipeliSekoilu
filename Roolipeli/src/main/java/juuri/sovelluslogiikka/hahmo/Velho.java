@@ -1,9 +1,7 @@
-
 package juuri.sovelluslogiikka.hahmo;
 
 public class Velho extends Hahmo {
-    
-    
+
     public Velho(String nimi) {
         super(nimi);
         this.ammatti = "velho";
@@ -15,6 +13,6 @@ public class Velho extends Hahmo {
 
     @Override
     public String ammatinKuvaus() {
-            return "Velhot ovat ovelia, nokkelia taikuria. SIMSALA BIM!!";
+        return "Velhot ovat ovelia, nokkelia taikuria. SIMSALA BIM!!";
     }
 }
