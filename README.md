@@ -9,3 +9,7 @@ Ohjelma koostuu ydiluokasta *Peli*, jossa aluksi luodaan luolasto ja pelaajan ha
 [Aihekuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
 
 [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+
+[Pit-raportti](https://htmlpreview.github.io/?https://github.com/nakkiKujo/RoolipeliSekoilu/blob/master/dokumentaatio/pit/201703302053/index.html)
+
+[Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/nakkiKujo/RoolipeliSekoilu/blob/master/dokumentaatio/checkstyle/checkstyle.html)
