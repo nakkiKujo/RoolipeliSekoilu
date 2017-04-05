@@ -14,9 +14,6 @@ public class HahmonluojaTest {
     private Hahmonluoja luoja;
     @Before
     public void setUp() {
-        Lukija ll = new Lukija();
-        Keskustelija kk = new Keskustelija();
-        luoja = new Hahmonluoja(ll, kk);
     }
     
     

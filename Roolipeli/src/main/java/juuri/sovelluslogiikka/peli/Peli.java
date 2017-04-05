@@ -7,8 +7,8 @@ import juuri.sovelluslogiikka.maailma.Kohde;
 import juuri.sovelluslogiikka.maailma.Luolasto;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
-//Tämä luokka toimii eräänlaisena runkona koko ohjelman toiminnalle. Oleellisin metodi on
-//pelaaPeli, joka pyörittää looppia, jonka aikana peli pelataan. Kun looppi loppuu, peli päättyy.
+//Tämä luokka toimii eräänlaisena runkona koko ohjelman toiminnalle. Se liimaa yhteen käyttöliittymän
+//sekä sovelluslogiikan.
 public class Peli {
 
     private Lukija lukija;
@@ -16,23 +16,33 @@ public class Peli {
     private Hahmo pelaajanHahmo;
     private Luolasto luolasto;
     private Hahmonliikuttaja liikuttaja;
+    private Hahmonluoja luoja;
 
     public Peli() {
         this.lukija = new Lukija();
         this.keskustelija = new Keskustelija();
         this.liikuttaja = new Hahmonliikuttaja();
+        this.luoja = new Hahmonluoja();
     }
 
-    public void aloitaPeli() {
-        keskustelija.alkuTervehdys();
-
-        //ensin luodaan pelaajan hahmo, tästä huolehtii hahmonluoja
-        Hahmonluoja luoja = new Hahmonluoja(lukija, keskustelija);
-        pelaajanHahmo = luoja.luoHahmo();
+    public void aloitaPeli(String hahmonNimi) {
+        pelaajanHahmo = luoja.luoHahmo(hahmonNimi);
 
         //sitten luodaan luolasto seikkailua varten
         this.luolasto = new Luolasto(9, 9);
         luolasto.luoTaso1();
+    }
+    
+    public Hahmo getPelaajanHahmo() {
+        return pelaajanHahmo;
+    }
+    
+    public Luolasto getLuolato() {
+        return luolasto;
+    }
+    
+    public Hahmonliikuttaja getLiikuttaja() {
+        return liikuttaja;
     }
 
     public void pelaaPeli() {
