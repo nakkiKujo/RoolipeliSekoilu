@@ -215,6 +215,11 @@ public class Kayttoliittyma extends JFrame {
         HahmoLiikkuuYlosButton.setMaximumSize(new java.awt.Dimension(87, 23));
         HahmoLiikkuuYlosButton.setMinimumSize(new java.awt.Dimension(87, 23));
         HahmoLiikkuuYlosButton.setPreferredSize(new java.awt.Dimension(87, 23));
+        HahmoLiikkuuYlosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HahmoLiikkuuYlosButtonActionPerformed(evt);
+            }
+        });
 
         HahmoLiikkuuAlasButton.setText("Alas");
         HahmoLiikkuuAlasButton.setMaximumSize(new java.awt.Dimension(87, 23));
@@ -338,8 +343,12 @@ public class Kayttoliittyma extends JFrame {
     }//GEN-LAST:event_HahmonluontiButtonActionPerformed
 
     private void HahmoLiikkuuOikealleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuOikealleButtonActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_HahmoLiikkuuOikealleButtonActionPerformed
+
+    private void HahmoLiikkuuYlosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuYlosButtonActionPerformed
+        
+    }//GEN-LAST:event_HahmoLiikkuuYlosButtonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
