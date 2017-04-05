@@ -3,14 +3,14 @@ package juuri.sovelluslogiikka.maailma;
 
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
-public class Seina extends Kohde {
+public class Hirvio extends Kohde {
     
-    public Seina(Tapahtuma tapahtuma) {
-        this.koodi = Kohde.SEINA;
-        this.nimi = "seinä";
+    public Hirvio(Tapahtuma tt, String nimi) {
+        this.koodi = Kohde.HIRVIO;
+        this.nimi = nimi;
         this.tapahtuma = tapahtuma;
         
-        //Seinään ei voi kulkea.
+        //hirviön läpi ei voi kulkea
         this.voikoKulkea = false;
     }
 }

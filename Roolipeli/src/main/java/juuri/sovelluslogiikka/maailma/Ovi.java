@@ -7,7 +7,7 @@ public class Ovi extends Kohde {
     private boolean lukittu;
 
     public Ovi(boolean lukitus, Tapahtuma tapahtuma) {
-        this.koodi = 3;
+        this.koodi = Kohde.OVI;
         this.nimi = "ovi";
         this.lukittu = lukitus;
 

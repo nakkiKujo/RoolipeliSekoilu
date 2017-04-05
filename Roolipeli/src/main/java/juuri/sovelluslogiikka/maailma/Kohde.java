@@ -4,11 +4,13 @@ import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 public abstract class Kohde {
-
+    
     //Erilaisten Kohteiden koodit:
-//    seinä = 1,
-//    käytävä = 2,
-//    ovi = 3
+    public static final int SEINA = 1;
+    public static final int KAYTAVA = 2;
+    public static final int OVI = 3;
+    public static final int HIRVIO = 4;
+    
     protected int koodi;
     protected String nimi;
     protected boolean voikoKulkea;
