@@ -14,4 +14,5 @@ Päivä | Tunnit | Kuvaus
 4.4.2017 | 2h | Käyttöliittymän opettelua
 5.4.2017 | 3h | Käyttöliittymän luomista
 6.4.2017 | 2,5h | Käyttöliittymän luomista
+6.4.2017 | 1,5h | JavaDoc aloitus sekä viikon raporttien päivitys
 
