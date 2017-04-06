@@ -1,5 +1,6 @@
 package juuri.sovelluslogiikka.peli;
 
+import java.awt.Graphics;
 import juuri.ui.Keskustelija;
 import juuri.apuvalineet.Lukija;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
@@ -25,22 +26,14 @@ public class Peli {
         this.luoja = new Hahmonluoja();
     }
 
-    public void aloitaPeli(String hahmonNimi) {
-        pelaajanHahmo = luoja.luoHahmo(hahmonNimi);
-
-        //sitten luodaan luolasto seikkailua varten
-        this.luolasto = new Luolasto(9, 9);
-        luolasto.luoTaso1();
-    }
-    
     public Hahmo getPelaajanHahmo() {
         return pelaajanHahmo;
     }
-    
+
     public Luolasto getLuolato() {
         return luolasto;
     }
-    
+
     public Hahmonliikuttaja getLiikuttaja() {
         return liikuttaja;
     }
@@ -67,6 +60,29 @@ public class Peli {
 //            tapahtuma.aloitaTapahtuma(pelaajanHahmo);
 //        }
 //    }
-    
+    public void piirra(Graphics g) {
+        pelaajanHahmo.piirra(g);
+        luolasto.piirra(g);
+    }
+    public void aloitaPeli(String hahmonNimi) {
+        pelaajanHahmo = luoja.luoHahmo(hahmonNimi);
 
+        //sitten luodaan luolasto seikkailua varten
+        this.luolasto = new Luolasto(9, 9);
+        luolasto.luoTaso1();
+    }
+    
+    public Tapahtuma liikutaanJaEtsitaanTapahtumaa(String suunta) {
+        //katsotaan, minkä kohteen hahmo kohtaa liikkuessaan
+        Kohde minneHahmoLiikkui = liikuttaja.liikutaHahmoa(suunta, luolasto, pelaajanHahmo);
+        
+        //Tapahtuma, joka alkaa hahmon kohdatessa kohteen. Jos tapahtuma on null, ei
+        //mitään tapahdu.
+        Tapahtuma tt = minneHahmoLiikkui.getTapahtuma();
+        if(tt == null) {
+            return null;
+        }
+        
+        return tt;
+    }
 }

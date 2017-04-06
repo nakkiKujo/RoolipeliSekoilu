@@ -1,6 +1,7 @@
 
 package juuri.sovelluslogiikka.hahmo;
 
+import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 
 public abstract class Hahmo {
@@ -31,5 +32,9 @@ public abstract class Hahmo {
     
     public Sijainti getSijainti() {
         return this.sijainti;
+    }
+    
+    public void piirra(Graphics g) {
+        
     }
 }

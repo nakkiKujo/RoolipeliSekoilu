@@ -2,6 +2,7 @@ package juuri.ui;
 
 import juuri.sovelluslogiikka.peli.Peli;
 import javax.swing.*;
+import juuri.sovelluslogiikka.maailma.Kohde;
 
 public class Kayttoliittyma extends JFrame {
 
@@ -48,9 +49,7 @@ public class Kayttoliittyma extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PelinAloitus");
         setLocationByPlatform(true);
-        setMaximumSize(new java.awt.Dimension(661, 500));
         setMinimumSize(new java.awt.Dimension(661, 500));
-        setPreferredSize(new java.awt.Dimension(661, 500));
         setResizable(false);
 
         KoillinenPaneeli.setBackground(new java.awt.Color(255, 51, 51));
@@ -225,6 +224,11 @@ public class Kayttoliittyma extends JFrame {
         HahmoLiikkuuAlasButton.setMaximumSize(new java.awt.Dimension(87, 23));
         HahmoLiikkuuAlasButton.setMinimumSize(new java.awt.Dimension(87, 23));
         HahmoLiikkuuAlasButton.setPreferredSize(new java.awt.Dimension(87, 23));
+        HahmoLiikkuuAlasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HahmoLiikkuuAlasButtonActionPerformed(evt);
+            }
+        });
 
         HahmoLiikkuuOikealleButton.setText("Oikealle");
         HahmoLiikkuuOikealleButton.setMaximumSize(new java.awt.Dimension(87, 23));
@@ -237,6 +241,11 @@ public class Kayttoliittyma extends JFrame {
         });
 
         HahmoLiikkuuVasemmalleButton.setText("Vasemmalle");
+        HahmoLiikkuuVasemmalleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HahmoLiikkuuVasemmalleButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ToimintaPaneeliLayout = new javax.swing.GroupLayout(ToimintaPaneeli);
         ToimintaPaneeli.setLayout(ToimintaPaneeliLayout);
@@ -324,6 +333,8 @@ public class Kayttoliittyma extends JFrame {
 
     private void HahmonluontiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmonluontiButtonActionPerformed
         String hahmonNimi = HahmonNimiTextField.getText();
+        
+        //luodaan hahmo ja luolasto
         peli.aloitaPeli(hahmonNimi);
         
         LounasPaneeli.removeAll();
@@ -343,12 +354,28 @@ public class Kayttoliittyma extends JFrame {
     }//GEN-LAST:event_HahmonluontiButtonActionPerformed
 
     private void HahmoLiikkuuOikealleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuOikealleButtonActionPerformed
-
+        Kohde minneHahmoLiikkui = 
+                peli.getLiikuttaja().liikutaHahmoa("oikea", peli.getLuolato(), peli.getPelaajanHahmo());
+        //tähän tulee component.repaint piirtoalustalle
     }//GEN-LAST:event_HahmoLiikkuuOikealleButtonActionPerformed
 
     private void HahmoLiikkuuYlosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuYlosButtonActionPerformed
-        
+        Kohde minneHahmoLiikkui = 
+                peli.getLiikuttaja().liikutaHahmoa("ylös", peli.getLuolato(), peli.getPelaajanHahmo());
+        //tähän tulee component.repaint piirtoalustalle
     }//GEN-LAST:event_HahmoLiikkuuYlosButtonActionPerformed
+
+    private void HahmoLiikkuuAlasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuAlasButtonActionPerformed
+        Kohde minneHahmoLiikkui = 
+                peli.getLiikuttaja().liikutaHahmoa("alas", peli.getLuolato(), peli.getPelaajanHahmo());
+        //tähän tulee component.repaint piirtoalustalle
+    }//GEN-LAST:event_HahmoLiikkuuAlasButtonActionPerformed
+
+    private void HahmoLiikkuuVasemmalleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuVasemmalleButtonActionPerformed
+        Kohde minneHahmoLiikkui = 
+                peli.getLiikuttaja().liikutaHahmoa("vasen", peli.getLuolato(), peli.getPelaajanHahmo());
+        //tähän tulee component.repaint piirtoalustalle
+    }//GEN-LAST:event_HahmoLiikkuuVasemmalleButtonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -1,5 +1,6 @@
 package juuri.sovelluslogiikka.maailma;
 
+import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
 
@@ -112,5 +113,8 @@ public class Luolasto {
 
         return koordinaatisto[x][y];
     }
-
+    
+    public void piirra(Graphics g) {
+        
+    }
 }

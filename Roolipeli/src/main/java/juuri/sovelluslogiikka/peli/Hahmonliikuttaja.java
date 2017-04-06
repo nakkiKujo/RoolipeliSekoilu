@@ -17,16 +17,14 @@ public class Hahmonliikuttaja {
         Sijainti hahmonSijainti = hahmo.getSijainti();
         
         //ensin käsitellään komento, joka kertoo, mihin suuntaan liikutaan
-        if (komento.equals("liiku alas")) {
+        if (komento.equals("alas")) {
             hahmonSijainti.liikuAlas(1);
-        } else if (komento.equals("liiku ylös")) {
+        } else if (komento.equals("ylös")) {
             hahmonSijainti.liikuYlos(1);
-        } else if (komento.equals("liiku oikealle")) {
+        } else if (komento.equals("oikea")) {
             hahmonSijainti.liikuOikealle(1);
-        } else if (komento.equals("liiku vasemmalle")) {
+        } else if (komento.equals("vasen")) {
             hahmonSijainti.liikuVasemmalle(1);
-        } else {
-            return null;
         }
 
         Kohde loydetty = luola.haeSijainnista(hahmonSijainti);
@@ -37,13 +35,13 @@ public class Hahmonliikuttaja {
 
         //Hahmo yritti kulkea kohteeseen, jonne ei voinut mennä. Täytyy peruuttaa takaisin.
         if (!loydetty.getVoikoKulkea()) {
-            if (komento.equals("liiku alas")) {
+            if (komento.equals("alas")) {
                 hahmonSijainti.liikuAlas(-1);
-            } else if (komento.equals("liiku ylös")) {
+            } else if (komento.equals("ylös")) {
                 hahmonSijainti.liikuYlos(-1);
-            } else if (komento.equals("liiku oikealle")) {
+            } else if (komento.equals("oikea")) {
                 hahmonSijainti.liikuOikealle(-1);
-            } else if (komento.equals("liiku vasemmalle")) {
+            } else if (komento.equals("vasen")) {
                 hahmonSijainti.liikuVasemmalle(-1);
             }
         }
