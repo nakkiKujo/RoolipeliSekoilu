@@ -10,7 +10,7 @@ public class Piirtoalusta extends JPanel {
     private Peli peli;
 
     public Piirtoalusta(Peli epeli) {
-        super.setBackground(Color.darkGray);
+        super.setBackground(Color.BLACK);
         this.peli = epeli;
     }
 

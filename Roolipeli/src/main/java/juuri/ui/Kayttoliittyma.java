@@ -2,7 +2,7 @@ package juuri.ui;
 
 import juuri.sovelluslogiikka.peli.Peli;
 import javax.swing.*;
-import juuri.sovelluslogiikka.maailma.Kohde;
+import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 public class Kayttoliittyma extends JFrame {
 
@@ -23,6 +23,7 @@ public class Kayttoliittyma extends JFrame {
 
         AmmatinValintaGroup = new javax.swing.ButtonGroup();
         KoillinenPaneeli = new javax.swing.JPanel();
+        KoillinenAlkuPaneeli = new javax.swing.JPanel();
         KarttaPaneeli = new javax.swing.JPanel();
         LuodePaneeli = new javax.swing.JPanel();
         HahmonluontiInfo = new javax.swing.JPanel();
@@ -58,7 +59,26 @@ public class Kayttoliittyma extends JFrame {
         KoillinenPaneeli.setPreferredSize(new java.awt.Dimension(298, 215));
         KoillinenPaneeli.setLayout(new java.awt.CardLayout());
 
-        KarttaPaneeli.setBackground(new java.awt.Color(255, 255, 153));
+        KoillinenAlkuPaneeli.setMaximumSize(new java.awt.Dimension(298, 215));
+        KoillinenAlkuPaneeli.setMinimumSize(new java.awt.Dimension(298, 215));
+
+        javax.swing.GroupLayout KoillinenAlkuPaneeliLayout = new javax.swing.GroupLayout(KoillinenAlkuPaneeli);
+        KoillinenAlkuPaneeli.setLayout(KoillinenAlkuPaneeliLayout);
+        KoillinenAlkuPaneeliLayout.setHorizontalGroup(
+            KoillinenAlkuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 298, Short.MAX_VALUE)
+        );
+        KoillinenAlkuPaneeliLayout.setVerticalGroup(
+            KoillinenAlkuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 215, Short.MAX_VALUE)
+        );
+
+        KoillinenPaneeli.add(KoillinenAlkuPaneeli, "card2");
+
+        KarttaPaneeli.setBackground(new java.awt.Color(0, 0, 0));
+        KarttaPaneeli.setForeground(new java.awt.Color(255, 255, 255));
+        KarttaPaneeli.setMaximumSize(new java.awt.Dimension(298, 215));
+        KarttaPaneeli.setMinimumSize(new java.awt.Dimension(298, 215));
 
         javax.swing.GroupLayout KarttaPaneeliLayout = new javax.swing.GroupLayout(KarttaPaneeli);
         KarttaPaneeli.setLayout(KarttaPaneeliLayout);
@@ -71,7 +91,7 @@ public class Kayttoliittyma extends JFrame {
             .addGap(0, 215, Short.MAX_VALUE)
         );
 
-        KoillinenPaneeli.add(KarttaPaneeli, "card2");
+        KoillinenPaneeli.add(KarttaPaneeli, "card3");
 
         LuodePaneeli.setBackground(new java.awt.Color(255, 255, 51));
         LuodePaneeli.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -351,30 +371,44 @@ public class Kayttoliittyma extends JFrame {
         LuodePaneeli.repaint();
         LuodePaneeli.revalidate();
         
+        KoillinenPaneeli.removeAll();
+        KoillinenPaneeli.repaint();
+        KoillinenPaneeli.revalidate();
+        KoillinenPaneeli.add(KarttaPaneeli);
+        KoillinenPaneeli.repaint();
+        KoillinenPaneeli.revalidate();
     }//GEN-LAST:event_HahmonluontiButtonActionPerformed
 
     private void HahmoLiikkuuOikealleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuOikealleButtonActionPerformed
-        Kohde minneHahmoLiikkui = 
-                peli.getLiikuttaja().liikutaHahmoa("oikea", peli.getLuolato(), peli.getPelaajanHahmo());
+        Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("oikea");
+        System.out.println("aih");
         //tähän tulee component.repaint piirtoalustalle
+        
+        //TODO: tapahtuman käsittely
     }//GEN-LAST:event_HahmoLiikkuuOikealleButtonActionPerformed
 
     private void HahmoLiikkuuYlosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuYlosButtonActionPerformed
-        Kohde minneHahmoLiikkui = 
-                peli.getLiikuttaja().liikutaHahmoa("ylös", peli.getLuolato(), peli.getPelaajanHahmo());
+        Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("ylös");
+        System.out.println("aih");
         //tähän tulee component.repaint piirtoalustalle
+        
+        //TODO: tapahtuman käsittely
     }//GEN-LAST:event_HahmoLiikkuuYlosButtonActionPerformed
 
     private void HahmoLiikkuuAlasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuAlasButtonActionPerformed
-        Kohde minneHahmoLiikkui = 
-                peli.getLiikuttaja().liikutaHahmoa("alas", peli.getLuolato(), peli.getPelaajanHahmo());
+        Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("alas");
+        System.out.println("aih");
         //tähän tulee component.repaint piirtoalustalle
+        
+        //TODO: tapahtuman käsittely
     }//GEN-LAST:event_HahmoLiikkuuAlasButtonActionPerformed
 
     private void HahmoLiikkuuVasemmalleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuVasemmalleButtonActionPerformed
-        Kohde minneHahmoLiikkui = 
-                peli.getLiikuttaja().liikutaHahmoa("vasen", peli.getLuolato(), peli.getPelaajanHahmo());
+        Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("vasen");
+        System.out.println("aih");
         //tähän tulee component.repaint piirtoalustalle
+        
+        //TODO: tapahtuman käsittely
     }//GEN-LAST:event_HahmoLiikkuuVasemmalleButtonActionPerformed
 
     public static void main(String args[]) {
@@ -424,6 +458,7 @@ public class Kayttoliittyma extends JFrame {
     private javax.swing.JPanel InfoPaneeli;
     private javax.swing.JPanel KaakkoPaneeli;
     private javax.swing.JPanel KarttaPaneeli;
+    private javax.swing.JPanel KoillinenAlkuPaneeli;
     private javax.swing.JPanel KoillinenPaneeli;
     private javax.swing.JPanel LounasPaneeli;
     private javax.swing.JPanel LuodePaneeli;

@@ -1,6 +1,7 @@
 
 package juuri.sovelluslogiikka.hahmo;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 
@@ -27,14 +28,16 @@ public abstract class Hahmo {
         return this.ammatti;
     }
     
-    public abstract String ammatinKuvaus();
-    //antaa kuvauksen ammatista, käytössä ammattiInfossa ammattia luodessa
-    
     public Sijainti getSijainti() {
         return this.sijainti;
     }
     
-    public void piirra(Graphics g) {
+    public void piirra(Graphics g, int mittaKaava) {
+        int x = this.sijainti.getX() * mittaKaava;
+        int y = this.sijainti.getY() * mittaKaava;
         
+        g.setColor(Color.red);
+        
+        g.fillOval(x, y, mittaKaava, mittaKaava);
     }
 }

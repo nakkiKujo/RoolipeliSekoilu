@@ -11,4 +11,7 @@ Päivä | Tunnit | Kuvaus
 29.3.2017 | 3h | Luotiin hahmonliikuttaja ja paljon testejä
 30.3.2017 | 2h | Koodattiin tapahtumia ja luotiin testejä
 30.3.2017 | 1,5h | Konfiguroitiin pit ja checkstyle, päivitettiin luokkakaavio
+4.4.2017 | 2h | Käyttöliittymän opettelua
+5.4.2017 | 3h | Käyttöliittymän luomista
+6.4.2017 | 2,5h | Käyttöliittymän luomista
 

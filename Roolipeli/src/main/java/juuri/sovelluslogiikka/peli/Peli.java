@@ -37,33 +37,14 @@ public class Peli {
     public Hahmonliikuttaja getLiikuttaja() {
         return liikuttaja;
     }
-
-//    public void pelaaPeli() {
-//        System.out.println("Luolasto on luotu, peli alkaa!\n\n~~~~~~~~~~~~~~~~\n");
-//        String komento = "";
-//
-//        //looppi jatkuu, kunnes hahmo kuolee
-//        while (!komento.equals("kuolema")) {
-//            System.out.println(keskustelija.kysySuuntaa());
-//            komento = lukija.lueString();
-//
-//            Kohde minneHahmoLiikkui = liikuttaja.liikutaHahmoa(komento, luolasto, pelaajanHahmo);
-//            if (minneHahmoLiikkui == null) {
-//                System.out.println(keskustelija.vaaraKomento());
-//                continue;
-//            }
-//
-//            Tapahtuma tapahtuma = minneHahmoLiikkui.getTapahtuma();
-//            if (tapahtuma == null) {
-//                continue;
-//            }
-//            tapahtuma.aloitaTapahtuma(pelaajanHahmo);
-//        }
-//    }
+    
     public void piirra(Graphics g) {
-        pelaajanHahmo.piirra(g);
-        luolasto.piirra(g);
+        //TODO: laskea mittaKaava jokaisessa erillisessä tapauksessa
+        int mittaKaava = 23;
+        luolasto.piirra(g, mittaKaava);
+        pelaajanHahmo.piirra(g, mittaKaava);
     }
+    
     public void aloitaPeli(String hahmonNimi) {
         pelaajanHahmo = luoja.luoHahmo(hahmonNimi);
 

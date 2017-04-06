@@ -1,5 +1,6 @@
 package juuri.sovelluslogiikka.maailma;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
@@ -114,7 +115,25 @@ public class Luolasto {
         return koordinaatisto[x][y];
     }
     
-    public void piirra(Graphics g) {
-        
+    public void piirra(Graphics g, int mittaKaava) {
+        for (int i = 0; i < leveys; i++) {
+            for (int j = 0; j < korkeus; j++) {
+                Kohde piirrettava = koordinaatisto[i][j];
+                int x = i * mittaKaava;
+                int y = j * mittaKaava;
+                
+                //Asetetaan käytettävä väri kohteen mukaan.
+                if(piirrettava.getKoodi() == Kohde.KAYTAVA) {
+                    g.setColor(Color.LIGHT_GRAY);
+                }else if(piirrettava.getKoodi() == Kohde.OVI) {
+                    g.setColor(Color.BLUE);
+                }else if(piirrettava.getKoodi() == Kohde.SEINA) {
+                    g.setColor(Color.BLACK);
+                }
+                
+                g.fillRect(x, y, mittaKaava, mittaKaava);
+                
+            }
+        }
     }
 }

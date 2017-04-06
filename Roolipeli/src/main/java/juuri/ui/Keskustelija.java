@@ -25,21 +25,6 @@ public class Keskustelija {
         return teksti;
     }
     
-    public String ammattiInfo(String teksti) {
-        if(teksti.equals("info velho")) {
-            Velho velho = new Velho("sepi");
-            return velho.ammatinKuvaus();
-        }else if(teksti.equals("info soturi")) {
-            Soturi soturi = new Soturi("sepi");
-            return soturi.ammatinKuvaus();
-        }else if(teksti.equals("info druidi")) {
-            Druidi druidi = new Druidi("sepi");
-            return druidi.ammatinKuvaus();
-        }
-        
-        return null;
-    }
-    
     public String kysySuuntaa() {
         return "Minne haluaisit mennä? Voit mennä vasemmalle, oikealle, alas tai ylös."
                     + " Anna komento muodossa'liiku alas'";

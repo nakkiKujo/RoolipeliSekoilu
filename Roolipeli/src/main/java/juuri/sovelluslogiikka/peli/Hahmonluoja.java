@@ -13,47 +13,8 @@ public class Hahmonluoja {
     }
 
     public Hahmo luoHahmo(String hahmonNimi) {
-//        String nimi = hahmonNimenValinta();
-//        String hahmonAmmatti = hahmonAmmatinValinta();
-
         return luodaanHahmoAmmatinMukaan(null, hahmonNimi);
     }
-
-//    private String hahmonNimenValinta() {
-//        System.out.println("~~~~~~~~~~~~~~");
-//        System.out.print("Anna ensin hahmollesi nimi: ");
-//        String nimi = lukija.lueString();
-//        nimi.trim();
-//        System.out.println("Ah, " + nimi + ", siinäpä oikein osuva nimi urhealle pelurille!");
-//        return nimi;
-//    }
-
-//    private String hahmonAmmatinValinta() {
-//
-//        //tämä täytyy muokata niin, että pystytään laajentamaan helpommin
-//        System.out.println(keskustelija.ammatinValintaEsittely());
-//        String teksti = lukija.lueString();
-//        teksti.toLowerCase();
-//
-//        // palautetaan ammatti stringinä
-//        return kasitteleAmmatinValintaTeksti(teksti);
-//    }
-
-//    private String kasitteleAmmatinValintaTeksti(String teksti) {
-//        while (!(teksti.equals("soturi")) && !(teksti.equals("velho")) && !(teksti.equals("druidi"))) {
-//            if ((teksti.equals("info velho")) || teksti.equals("info soturi") || teksti.equals("info druidi")) {
-//                System.out.println(keskustelija.ammattiInfo(teksti));
-//                System.out.println("Anna uusi komento: ");
-//            } else {
-//                System.out.print("Hups, annoit väärän komennon! Kokeile uudestaan: ");
-//            }
-//
-//            teksti = lukija.lueString();
-//            teksti.toLowerCase();
-//        }
-//
-//        return teksti;
-//    }
 
     private Hahmo luodaanHahmoAmmatinMukaan(String ammatti, String hahmonNimi) {
 

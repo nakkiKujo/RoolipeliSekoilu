@@ -10,9 +10,4 @@ public class Velho extends Hahmo {
         this.elamaPisteet = 5;
         this.ketteryys = 2;
     }
-
-    @Override
-    public String ammatinKuvaus() {
-        return "Velhot ovat ovelia, nokkelia taikuria. SIMSALA BIM!!";
-    }
 }
