@@ -1,5 +1,8 @@
 package juuri.apuvalineet;
 
+/**
+ * Luokka ylläpitää pelaajan hahmon sijaintia luolastossa.
+ */
 public class Sijainti {
 
     private int x;
@@ -31,18 +34,42 @@ public class Sijainti {
         return this.y;
     }
 
+    /**
+     * Metodi muuttaa sijaintia oikealle annetun parametrin verran. Tämä siis
+     * muuttaa sijainnin x-koordinaattia.
+     *
+     * @param maara Tämän verran muutetaan.
+     */
     public void liikuOikealle(int maara) {
         this.x = x + maara;
     }
 
+    /**
+     * Metodi muuttaa sijaintia vasemmalle annetun parametrin verran. Tämä siis
+     * muuttaa sijainnin x-koordinaattia.
+     *
+     * @param maara Tämän verran muutetaan.
+     */
     public void liikuVasemmalle(int maara) {
         this.x = x - maara;
     }
 
+    /**
+     * Metodi muuttaa sijaintia ylös annetun parametrin verran. Tämä siis
+     * muuttaa sijainnin y-koordinaattia.
+     *
+     * @param maara Tämän verran muutetaan.
+     */
     public void liikuYlos(int maara) {
         this.y = y - maara;
     }
 
+    /**
+     * Metodi muuttaa sijaintia alas annetun parametrin verran. Tämä siis
+     * muuttaa sijainnin y-koordinaattia.
+     *
+     * @param maara Tämän verran muutetaan.
+     */
     public void liikuAlas(int maara) {
         this.y = y + maara;
     }

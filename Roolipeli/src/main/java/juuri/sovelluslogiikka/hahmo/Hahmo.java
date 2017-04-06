@@ -1,11 +1,17 @@
-
 package juuri.sovelluslogiikka.hahmo;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 
+/**
+ * Tämä abstrakti luokka kuvastaa pelaajan pelissä seikkailevaa hahmoa. Luokalla
+ * on aliluokkina ammatit, jotka määräävät, millainen hahmo on. Esimerkiksi
+ * soturi on hahmona erilainen verrattuna velhoon. TODO: Ammattien käsittely,
+ * level-up.
+ */
 public abstract class Hahmo {
+
     protected String nimi;
     protected String ammatti;
     protected Sijainti sijainti;
@@ -13,31 +19,43 @@ public abstract class Hahmo {
     protected int taikaVoima;
     protected int elamaPisteet;
     protected int ketteryys;
-    
+
+    /**
+     * Hahmon sijainti on pelin alussa aina (1,1). Hahmo luodaan pelaajan
+     * syöttämän nimen mukaisesti.
+     *
+     * @param nimi Käyttäjän antama nimi hahmolle
+     */
     public Hahmo(String nimi) {
         this.nimi = nimi;
         this.sijainti = new Sijainti();
         sijainti.setSijainti(1, 1);
     }
-    
+
     public String getNimi() {
         return this.nimi;
     }
-    
+
     public String getAmmatti() {
         return this.ammatti;
     }
-    
+
     public Sijainti getSijainti() {
         return this.sijainti;
     }
-    
+
+    /**
+     * Piirtää hahmon käyttöliittymän piirtoalustalle.
+     *
+     * @param g Piirtoalustaan liittyvä grafiikka.
+     * @param mittaKaava Määrää, minkä kokoisena hahmo piirretään.
+     */
     public void piirra(Graphics g, int mittaKaava) {
         int x = this.sijainti.getX() * mittaKaava;
         int y = this.sijainti.getY() * mittaKaava;
-        
+
         g.setColor(Color.red);
-        
+
         g.fillOval(x, y, mittaKaava, mittaKaava);
     }
 }

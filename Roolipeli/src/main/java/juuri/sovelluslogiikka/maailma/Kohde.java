@@ -1,22 +1,27 @@
 package juuri.sovelluslogiikka.maailma;
 
-import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
+/**
+ * Tämä abstrakti luokka kuvastaa Luolastossa esiintyviä erilaisia asioita, eli
+ * kohteita. Jokaisella kohteella voi olla yksi Tapahtuma. Pelaajan liikkuessa
+ * kohteeseen aktivoituu tapahtuma, eli jotain siis tapahtuu. Jos kohteen
+ * tapahtuma on null, mitään ei tapahdu.
+ */
 public abstract class Kohde {
-    
-    //Erilaisten Kohteiden koodit:
+
+    /**
+     * Jokaisella kohteella on oma koodinsa, jolla se voidaan tunnistaa.
+     */
     public static final int SEINA = 1;
     public static final int KAYTAVA = 2;
     public static final int OVI = 3;
     public static final int HIRVIO = 4;
-    
+
     protected int koodi;
     protected String nimi;
     protected boolean voikoKulkea;
 
-    //Jokaisella Kohteella voi olla yksi Tapahtuma, jolloin pelaajan siis liikkuessa Kohteeseen
-    //tapahtuu jotain. Jos Kohteen Tapahtuma on null, mitään ei tapahdu.
     protected Tapahtuma tapahtuma;
 
     public Kohde() {
@@ -26,6 +31,11 @@ public abstract class Kohde {
         return koodi;
     }
 
+    /**
+     * Metodi kertoo, voiko pelaajan hahmo kulkea kohteen päälle.
+     *
+     * @return tieto kulkemiskelpoisuudesta
+     */
     public boolean getVoikoKulkea() {
         return voikoKulkea;
     }

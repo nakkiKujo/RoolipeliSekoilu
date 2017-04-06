@@ -5,17 +5,31 @@ import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.maailma.Kohde;
 import juuri.sovelluslogiikka.maailma.Luolasto;
 
+/**
+ * Tämän luokan vastuulla on liikuttaa pelaajan hahmoa.
+ */
 public class Hahmonliikuttaja {
 
     public Hahmonliikuttaja() {
     }
-    
-    //Metodi palauttaa Kohteen, johon hahmon liikkuessaan päätyy.
-    //Jos hahmo yrittää liikkua luolastosta ulos TAI komento on vääränlainen,
-    //palautetaan null.
+
+    /**
+     * Metodi palauttaa kohteen, johon hahmo liikkuessaan päätyy. Liikkuminen
+     * tapahtuu annetun komennon mukaisesti. Jos hahmo yrittää liikkua
+     * luolastosta ulos, palauttaa metodi arvon null.
+     *
+     * Jos hahmo yrittää liikkua kohteeseen, johon se ei voi mennä, kumotaan
+     * kyseinen toiminta. Metodi kuitenkin palauttaa kohteen, johon hahmo yritti
+     * kulkea.
+     *
+     * @param komento minne suuntaan hahmoa liikutetaan
+     * @param luola hahmo liikkuu luolastossa
+     * @param hahmo liikkuva hahmo
+     * @return kohde, johon hahmo liikkui
+     */
     public Kohde liikutaHahmoa(String komento, Luolasto luola, Hahmo hahmo) {
         Sijainti hahmonSijainti = hahmo.getSijainti();
-        
+
         //ensin käsitellään komento, joka kertoo, mihin suuntaan liikutaan
         if (komento.equals("alas")) {
             hahmonSijainti.liikuAlas(1);
@@ -25,15 +39,16 @@ public class Hahmonliikuttaja {
             hahmonSijainti.liikuOikealle(1);
         } else if (komento.equals("vasen")) {
             hahmonSijainti.liikuVasemmalle(1);
+        } else {
+            return null;
         }
-
+        
         Kohde loydetty = luola.haeSijainnista(hahmonSijainti);
 
         if (loydetty == null) {
             return null;
         }
 
-        //Hahmo yritti kulkea kohteeseen, jonne ei voinut mennä. Täytyy peruuttaa takaisin.
         if (!loydetty.getVoikoKulkea()) {
             if (komento.equals("alas")) {
                 hahmonSijainti.liikuAlas(-1);

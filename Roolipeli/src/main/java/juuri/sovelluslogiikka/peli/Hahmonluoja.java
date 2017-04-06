@@ -1,14 +1,16 @@
 package juuri.sovelluslogiikka.peli;
 
 import juuri.ui.Keskustelija;
-import juuri.apuvalineet.Lukija;
 import juuri.sovelluslogiikka.hahmo.Druidi;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.hahmo.Soturi;
 import juuri.sovelluslogiikka.hahmo.Velho;
 
+/**
+ * Tämän luokan vastuulla on pelaajan hahmon luominen.
+ */
 public class Hahmonluoja {
-    
+
     public Hahmonluoja() {
     }
 

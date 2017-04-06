@@ -5,25 +5,35 @@ import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
 
-//Luolaston rakennetta ylläpidetään taulukossa "koordinaatisto",
-//joka sisältää Kohteita. Jokaisella Kohteella on oma koodi, jolla
-//ne voidaan tunnistaa:
-//seina = 1,
-//käytävä = 2,
-//ovi = 3
+/**
+ * Tämä luokka kuvastaa pelin maailmaa, jossa pelaajan hahmo seikkailee.
+ * Luolaston rakennetta ylläpidetään taulukossa, joka sisältää erilaisia
+ * kohteita.
+ */
 public class Luolasto {
 
     private Kohde[][] koordinaatisto;
     private int leveys;
     private int korkeus;
 
+    /**
+     * Luodaan luolasto ja sen koordinaatisto. Koordinaatiston koko määräytyy
+     * annettujen parametrien mukaisesti.
+     *
+     * @param leveys Määrää koordinaatiston leveyden.
+     * @param korkeus Määrää koordinaatiston korkeuden.
+     */
     public Luolasto(int leveys, int korkeus) {
         this.koordinaatisto = new Kohde[leveys][korkeus];
         this.leveys = leveys;
         this.korkeus = korkeus;
     }
 
-    //Luolasto koostuu useammasta eri kerroksesta. 
+    /**
+     * Luo luolaston ensimmäisen tason, joka on samalla tasoista helpoin.
+     * Luolasto koostuu useammasta eri kerroksesta, joista aina syvemmälle
+     * mentäessä peli vaikeutuu.
+     */
     public void luoTaso1() {
 
         //luolaston ulkoreuna on seinää
@@ -114,25 +124,25 @@ public class Luolasto {
 
         return koordinaatisto[x][y];
     }
-    
+
     public void piirra(Graphics g, int mittaKaava) {
         for (int i = 0; i < leveys; i++) {
             for (int j = 0; j < korkeus; j++) {
                 Kohde piirrettava = koordinaatisto[i][j];
                 int x = i * mittaKaava;
                 int y = j * mittaKaava;
-                
+
                 //Asetetaan käytettävä väri kohteen mukaan.
-                if(piirrettava.getKoodi() == Kohde.KAYTAVA) {
+                if (piirrettava.getKoodi() == Kohde.KAYTAVA) {
                     g.setColor(Color.LIGHT_GRAY);
-                }else if(piirrettava.getKoodi() == Kohde.OVI) {
+                } else if (piirrettava.getKoodi() == Kohde.OVI) {
                     g.setColor(Color.BLUE);
-                }else if(piirrettava.getKoodi() == Kohde.SEINA) {
+                } else if (piirrettava.getKoodi() == Kohde.SEINA) {
                     g.setColor(Color.BLACK);
                 }
-                
+
                 g.fillRect(x, y, mittaKaava, mittaKaava);
-                
+
             }
         }
     }

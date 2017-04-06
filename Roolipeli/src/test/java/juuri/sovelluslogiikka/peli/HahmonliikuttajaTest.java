@@ -34,7 +34,7 @@ public class HahmonliikuttajaTest {
 
     @Test
     public void hahmonLiikuttaminenVaarallaKomennollaOnNull() {
-        String komento = "liiku vasenmalle";
+        String komento = "vase";
         Kohde kk = liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         boolean onkoTosi = true;
         if (!(kk == null)) {
@@ -46,7 +46,7 @@ public class HahmonliikuttajaTest {
 
     @Test
     public void hahmonLiikuttaminenAlas() {
-        String komento = "liiku alas";
+        String komento = "alas";
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         assertEquals(2, loydettyKohde.getKoodi());
 
@@ -56,7 +56,7 @@ public class HahmonliikuttajaTest {
 
     @Test
     public void hahmonLiikuttaminenOikealle() {
-        String komento = "liiku oikealle";
+        String komento = "oikea";
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         assertEquals(3, loydettyKohde.getKoodi());
 
@@ -66,24 +66,24 @@ public class HahmonliikuttajaTest {
 
     @Test
     public void hahmonLiikuttaminenYlos() {
-        String komento = "liiku ylös";
+        String komento = "ylös";
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         assertEquals(1, loydettyKohde.getKoodi());
     }
 
     @Test
     public void hahmonLiikuttaminenVasemmalle() {
-        String komento = "liiku vasemmalle";
+        String komento = "vasen";
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         assertEquals(1, loydettyKohde.getKoodi());
     }
 
     @Test
     public void hahmonLiikuttaminenMoneenSuuntaan() {
-        String komento = "liiku alas";
-        String komento2 = "liiku ylös";
-        String komento3 = "liiku oikealle";
-        String komento4 = "liiku vasemmalle";
+        String komento = "alas";
+        String komento2 = "ylös";
+        String komento3 = "oikea";
+        String komento4 = "vasen";
 
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komento3, luola, hahmo);
         assertEquals(3, loydettyKohde.getKoodi());
@@ -103,48 +103,48 @@ public class HahmonliikuttajaTest {
 
     @Test
     public void hahmonLiikuttaminenHuonoonPaikkaanEiLiikuta() {
-        String komento = "liiku ylös";
+        String komento = "ylös";
         liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         Sijainti ss = new Sijainti();
         ss.setSijainti(1, 1);
         assertEquals(ss, hahmo.getSijainti());
 
-        komento = "liiku oikealle";
+        komento = "oikea";
         liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         ss.setSijainti(2, 1);
         assertEquals(ss, hahmo.getSijainti());
 
-        komento = "liiku alas";
+        komento = "alas";
         liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         ss.setSijainti(2, 2);
         assertEquals(ss, hahmo.getSijainti());
 
-        komento = "liiku vasemmalle";
+        komento = "vasen";
         liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         ss.setSijainti(1, 2);
         assertEquals(ss, hahmo.getSijainti());
 
-        liikuttaja.liikutaHahmoa("liiku alas", luola, hahmo);
+        liikuttaja.liikutaHahmoa("alas", luola, hahmo);
         assertEquals(ss, hahmo.getSijainti());
     }
 
     @Test
     public void hahmonLiikuttaminenHuonoonPaikkaanEiLiikuta2() {
         luoLuolaLukitullaOvella();
-        liikuttaja.liikutaHahmoa("liiku ylös", luola, hahmo);
+        liikuttaja.liikutaHahmoa("ylös", luola, hahmo);
         Sijainti ss = new Sijainti();
         ss.setSijainti(1, 1);
         assertEquals(ss, hahmo.getSijainti());
         
-        liikuttaja.liikutaHahmoa("liiku oikealle", luola, hahmo);
+        liikuttaja.liikutaHahmoa("oikea", luola, hahmo);
         assertEquals(ss, hahmo.getSijainti());
         
-        liikuttaja.liikutaHahmoa("liiku alas", luola, hahmo);
-        liikuttaja.liikutaHahmoa("liiku oikealle", luola, hahmo);
-        liikuttaja.liikutaHahmoa("liiku ylös", luola, hahmo);
+        liikuttaja.liikutaHahmoa("alas", luola, hahmo);
+        liikuttaja.liikutaHahmoa("oikea", luola, hahmo);
+        liikuttaja.liikutaHahmoa("ylös", luola, hahmo);
         ss.setSijainti(2, 2);
         assertEquals(ss, hahmo.getSijainti());
     }

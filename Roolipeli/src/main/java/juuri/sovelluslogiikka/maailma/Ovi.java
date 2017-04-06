@@ -2,6 +2,11 @@ package juuri.sovelluslogiikka.maailma;
 
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
+/**
+ * Ovi on Kohteen aliluokka. Ovi voi olla avoin, jolloin pelaaja voi normaalisti
+ * kulkea sen läpi. Ovi voi myös olla lukossa, jolloin sen läpi ei voi kulkea
+ * ilman esimerkiksi avainta.
+ */
 public class Ovi extends Kohde {
 
     private boolean lukittu;
