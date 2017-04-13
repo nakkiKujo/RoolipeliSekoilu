@@ -1,5 +1,7 @@
 package juuri.sovelluslogiikka.maailma;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
@@ -27,6 +29,12 @@ public class Ovi extends Kohde {
 
     public boolean onkoLukittu() {
         return lukittu;
+    }
+
+    @Override
+    public void piirra(Graphics g, int mittakaava, int x, int y) {
+        g.setColor(Color.BLUE);
+        g.fillRect(x, y, mittakaava, mittakaava);
     }
 
 }

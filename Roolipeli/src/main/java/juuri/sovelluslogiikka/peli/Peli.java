@@ -45,7 +45,7 @@ public class Peli {
      */
     public void piirra(Graphics g) {
         //TODO: laskea mittaKaava jokaisessa erillisessä tapauksessa
-        int mittaKaava = 23;
+        int mittaKaava = 18;
         luolasto.piirra(g, mittaKaava);
         pelaajanHahmo.piirra(g, mittaKaava);
     }
@@ -59,7 +59,7 @@ public class Peli {
     public void aloitaPeli(String hahmonNimi) {
         pelaajanHahmo = luoja.luoHahmo(hahmonNimi);
 
-        this.luolasto = new Luolasto(9, 9);
+        this.luolasto = new Luolasto();
         luolasto.luoTaso1();
     }
 

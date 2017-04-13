@@ -1,5 +1,7 @@
 package juuri.sovelluslogiikka.maailma;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
@@ -14,5 +16,11 @@ public class Seina extends Kohde {
 
         //Seinään ei voi kulkea.
         this.voikoKulkea = false;
+    }
+
+    @Override
+    public void piirra(Graphics g, int mittakaava, int x, int y) {
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, mittakaava, mittakaava);
     }
 }

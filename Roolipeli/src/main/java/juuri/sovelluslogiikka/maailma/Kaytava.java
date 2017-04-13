@@ -1,5 +1,7 @@
 package juuri.sovelluslogiikka.maailma;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
@@ -17,5 +19,11 @@ public class Kaytava extends Kohde {
 
         //Käytävillä voi kulkea.
         this.voikoKulkea = true;
+    }
+
+    @Override
+    public void piirra(Graphics g, int mittakaava, int x, int y) {
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillRect(x, y, mittakaava, mittakaava);
     }
 }

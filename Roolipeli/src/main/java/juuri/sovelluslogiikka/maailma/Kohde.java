@@ -1,5 +1,6 @@
 package juuri.sovelluslogiikka.maailma;
 
+import java.awt.Graphics;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
@@ -17,6 +18,9 @@ public abstract class Kohde {
     public static final int KAYTAVA = 2;
     public static final int OVI = 3;
     public static final int HIRVIO = 4;
+    public static final int AARRE = 5;
+    public static final int PORTAAT = 6;
+    public static final int ANSA = 7;
 
     protected int koodi;
     protected String nimi;
@@ -47,6 +51,8 @@ public abstract class Kohde {
     public Tapahtuma getTapahtuma() {
         return tapahtuma;
     }
+    
+    public abstract void piirra(Graphics g, int mittakaava, int x, int y);
 
     @Override
     public boolean equals(Object o) {

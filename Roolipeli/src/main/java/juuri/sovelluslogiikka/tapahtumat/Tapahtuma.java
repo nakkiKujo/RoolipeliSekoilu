@@ -7,6 +7,9 @@ import juuri.sovelluslogiikka.hahmo.Hahmo;
  * interaktioihin.
  */
 public interface Tapahtuma {
-
+    
+    public static final int TAISTELU = 1;
+    public static final int OVENAVAUS = 2;
+    
     public void aloitaTapahtuma(Hahmo hahmo);
 }
