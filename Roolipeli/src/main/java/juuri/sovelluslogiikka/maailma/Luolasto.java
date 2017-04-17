@@ -3,6 +3,8 @@ package juuri.sovelluslogiikka.maailma;
 import java.awt.Color;
 import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
+import juuri.sovelluslogiikka.esineet.Esine;
+import juuri.sovelluslogiikka.esineet.YleisEsine;
 import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
 import juuri.sovelluslogiikka.tapahtumat.Taistelu;
 
@@ -126,8 +128,8 @@ public class Luolasto {
         asetaPortaat(10, 9);
         
         //ovet
-        asetaLukittuOvi(10, 2);
-        asetaLukittuOvi(3, 4);
+        asetaLukittuOvi(10, 2, "pronssiavain");
+        asetaLukittuOvi(3, 4, "hopea-avain");
         asetaAvoinOvi(5, 4);
         asetaAvoinOvi(5, 6);
     }
@@ -196,25 +198,26 @@ public class Luolasto {
         return true;
     }
 
-    public boolean asetaLukittuOvi(int x, int y) {
+    public boolean asetaLukittuOvi(int x, int y, String avaajanNimi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-
-        Ovi ovi = new Ovi(true, null);
+        YleisEsine avain = new YleisEsine(avaajanNimi, Esine.AVAIN);
+        
+        Ovi ovi = new Ovi(true, null, avain);
         OvenAvaus ovenAvaus = new OvenAvaus(ovi);
         ovi.setTapahtuma(ovenAvaus);
         koordinaatisto[x][y] = ovi;
 
         return true;
     }
-
+    
     public boolean asetaAvoinOvi(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
 
-        Ovi ovi = new Ovi(false, null);
+        Ovi ovi = new Ovi(false, null, null);
         OvenAvaus ovenAvaus = new OvenAvaus(ovi);
         ovi.setTapahtuma(ovenAvaus);
         koordinaatisto[x][y] = ovi;

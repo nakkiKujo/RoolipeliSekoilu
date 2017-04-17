@@ -14,7 +14,7 @@ public class Taistelu implements Tapahtuma {
     }
 
     @Override
-    public void aloitaTapahtuma(Hahmo hahmo) {
+    public void valmisteleTapahtuma(Hahmo hahmo) {
 
     }
 

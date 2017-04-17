@@ -34,6 +34,10 @@ public abstract class Kohde {
     public int getKoodi() {
         return koodi;
     }
+    
+    public String getNimi() {
+        return nimi;
+    }
 
     /**
      * Metodi kertoo, voiko pelaajan hahmo kulkea kohteen päälle.
@@ -62,10 +66,5 @@ public abstract class Kohde {
         }
 
         return false;
-    }
-
-    @Override
-    public String toString() {
-        return "Olet kohteessa: " + this.nimi;
     }
 }

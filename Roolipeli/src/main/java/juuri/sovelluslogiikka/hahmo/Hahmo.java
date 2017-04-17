@@ -15,6 +15,7 @@ public abstract class Hahmo {
     protected String nimi;
     protected String ammatti;
     protected Sijainti sijainti;
+    protected Reppu reppu;
     protected int voima;
     protected int taikaVoima;
     protected int elamaPisteet;
@@ -30,6 +31,7 @@ public abstract class Hahmo {
         this.nimi = nimi;
         this.sijainti = new Sijainti();
         sijainti.setSijainti(1, 1);
+        this.reppu = new Reppu();
     }
 
     public String getNimi() {
@@ -42,6 +44,10 @@ public abstract class Hahmo {
 
     public Sijainti getSijainti() {
         return this.sijainti;
+    }
+    
+    public Reppu getReppu() {
+        return this.reppu;
     }
 
     /**

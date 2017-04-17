@@ -39,13 +39,16 @@ public class Kayttoliittyma extends JFrame {
         AmmatinValintaSoturiButton = new javax.swing.JRadioButton();
         AmmatinValintaVelhoButton = new javax.swing.JRadioButton();
         AmmatinValintaDruidiButton = new javax.swing.JRadioButton();
-        ToimintaPaneeli = new javax.swing.JPanel();
+        LiikkkumisPaneeli = new javax.swing.JPanel();
         HahmoLiikkuuYlosButton = new javax.swing.JButton();
         HahmoLiikkuuAlasButton = new javax.swing.JButton();
         HahmoLiikkuuOikealleButton = new javax.swing.JButton();
         HahmoLiikkuuVasemmalleButton = new javax.swing.JButton();
         KaakkoPaneeli = new javax.swing.JPanel();
         InfoPaneeli = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TapahtumaText = new javax.swing.JTextArea();
+        TyhjaPaneeliPaalla = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PelinAloitus");
@@ -225,10 +228,10 @@ public class Kayttoliittyma extends JFrame {
 
         LounasPaneeli.add(HahmonluontiSyote, "card2");
 
-        ToimintaPaneeli.setBackground(new java.awt.Color(0, 51, 204));
-        ToimintaPaneeli.setMaximumSize(new java.awt.Dimension(363, 255));
-        ToimintaPaneeli.setMinimumSize(new java.awt.Dimension(363, 255));
-        ToimintaPaneeli.setPreferredSize(new java.awt.Dimension(363, 255));
+        LiikkkumisPaneeli.setBackground(new java.awt.Color(0, 51, 204));
+        LiikkkumisPaneeli.setMaximumSize(new java.awt.Dimension(363, 255));
+        LiikkkumisPaneeli.setMinimumSize(new java.awt.Dimension(363, 255));
+        LiikkkumisPaneeli.setPreferredSize(new java.awt.Dimension(363, 255));
 
         HahmoLiikkuuYlosButton.setText("Ylös");
         HahmoLiikkuuYlosButton.setMaximumSize(new java.awt.Dimension(87, 23));
@@ -267,30 +270,30 @@ public class Kayttoliittyma extends JFrame {
             }
         });
 
-        javax.swing.GroupLayout ToimintaPaneeliLayout = new javax.swing.GroupLayout(ToimintaPaneeli);
-        ToimintaPaneeli.setLayout(ToimintaPaneeliLayout);
-        ToimintaPaneeliLayout.setHorizontalGroup(
-            ToimintaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ToimintaPaneeliLayout.createSequentialGroup()
+        javax.swing.GroupLayout LiikkkumisPaneeliLayout = new javax.swing.GroupLayout(LiikkkumisPaneeli);
+        LiikkkumisPaneeli.setLayout(LiikkkumisPaneeliLayout);
+        LiikkkumisPaneeliLayout.setHorizontalGroup(
+            LiikkkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LiikkkumisPaneeliLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(HahmoLiikkuuVasemmalleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(HahmoLiikkuuOikealleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
-            .addGroup(ToimintaPaneeliLayout.createSequentialGroup()
+            .addGroup(LiikkkumisPaneeliLayout.createSequentialGroup()
                 .addGap(136, 136, 136)
-                .addGroup(ToimintaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(LiikkkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(HahmoLiikkuuAlasButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HahmoLiikkuuYlosButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        ToimintaPaneeliLayout.setVerticalGroup(
-            ToimintaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ToimintaPaneeliLayout.createSequentialGroup()
+        LiikkkumisPaneeliLayout.setVerticalGroup(
+            LiikkkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LiikkkumisPaneeliLayout.createSequentialGroup()
                 .addContainerGap(65, Short.MAX_VALUE)
                 .addComponent(HahmoLiikkuuYlosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ToimintaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LiikkkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(HahmoLiikkuuVasemmalleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HahmoLiikkuuOikealleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -298,7 +301,7 @@ public class Kayttoliittyma extends JFrame {
                 .addGap(59, 59, 59))
         );
 
-        LounasPaneeli.add(ToimintaPaneeli, "card3");
+        LounasPaneeli.add(LiikkkumisPaneeli, "card3");
 
         KaakkoPaneeli.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         KaakkoPaneeli.setMaximumSize(new java.awt.Dimension(298, 255));
@@ -310,18 +313,41 @@ public class Kayttoliittyma extends JFrame {
         InfoPaneeli.setMinimumSize(new java.awt.Dimension(298, 255));
         InfoPaneeli.setPreferredSize(new java.awt.Dimension(298, 255));
 
+        TapahtumaText.setColumns(20);
+        TapahtumaText.setRows(5);
+        jScrollPane1.setViewportView(TapahtumaText);
+
         javax.swing.GroupLayout InfoPaneeliLayout = new javax.swing.GroupLayout(InfoPaneeli);
         InfoPaneeli.setLayout(InfoPaneeliLayout);
         InfoPaneeliLayout.setHorizontalGroup(
             InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGroup(InfoPaneeliLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         InfoPaneeliLayout.setVerticalGroup(
             InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 255, Short.MAX_VALUE)
+            .addGroup(InfoPaneeliLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         KaakkoPaneeli.add(InfoPaneeli, "card2");
+
+        javax.swing.GroupLayout TyhjaPaneeliPaallaLayout = new javax.swing.GroupLayout(TyhjaPaneeliPaalla);
+        TyhjaPaneeliPaalla.setLayout(TyhjaPaneeliPaallaLayout);
+        TyhjaPaneeliPaallaLayout.setHorizontalGroup(
+            TyhjaPaneeliPaallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 296, Short.MAX_VALUE)
+        );
+        TyhjaPaneeliPaallaLayout.setVerticalGroup(
+            TyhjaPaneeliPaallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        KaakkoPaneeli.add(TyhjaPaneeliPaalla, "card3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -360,7 +386,7 @@ public class Kayttoliittyma extends JFrame {
         LounasPaneeli.removeAll();
         LounasPaneeli.repaint();
         LounasPaneeli.revalidate();
-        LounasPaneeli.add(ToimintaPaneeli);
+        LounasPaneeli.add(LiikkkumisPaneeli);
         LounasPaneeli.repaint();
         LounasPaneeli.revalidate();
         
@@ -460,13 +486,16 @@ public class Kayttoliittyma extends JFrame {
     private javax.swing.JPanel KarttaPaneeli;
     private javax.swing.JPanel KoillinenAlkuPaneeli;
     private javax.swing.JPanel KoillinenPaneeli;
+    private javax.swing.JPanel LiikkkumisPaneeli;
     private javax.swing.JPanel LounasPaneeli;
     private javax.swing.JPanel LuodePaneeli;
     private javax.swing.JPanel ReppuPaneeli;
-    private javax.swing.JPanel ToimintaPaneeli;
+    private javax.swing.JTextArea TapahtumaText;
+    private javax.swing.JPanel TyhjaPaneeliPaalla;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

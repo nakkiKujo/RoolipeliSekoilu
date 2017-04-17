@@ -2,6 +2,7 @@ package juuri.sovelluslogiikka.maailma;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import juuri.sovelluslogiikka.esineet.YleisEsine;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
@@ -12,8 +13,9 @@ import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 public class Ovi extends Kohde {
 
     private boolean lukittu;
+    private YleisEsine avaaja;
 
-    public Ovi(boolean lukitus, Tapahtuma tapahtuma) {
+    public Ovi(boolean lukitus, Tapahtuma tapahtuma, YleisEsine avaaja) {
         this.koodi = Kohde.OVI;
         this.nimi = "ovi";
         this.lukittu = lukitus;
@@ -25,12 +27,17 @@ public class Ovi extends Kohde {
             this.voikoKulkea = true;
         }
         this.tapahtuma = tapahtuma;
+        this.avaaja = avaaja;
     }
 
     public boolean onkoLukittu() {
         return lukittu;
     }
-
+    
+    public YleisEsine getAvaaja() {
+        return this.avaaja;
+    }
+    
     @Override
     public void piirra(Graphics g, int mittakaava, int x, int y) {
         g.setColor(Color.BLUE);
