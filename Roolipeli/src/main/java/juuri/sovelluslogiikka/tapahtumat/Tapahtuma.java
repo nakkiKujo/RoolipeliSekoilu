@@ -31,6 +31,10 @@ public abstract class Tapahtuma {
         return vaihtoehtoKaksi;
     }
     
+    public int getKoodi() {
+        return koodi;
+    }
+    
     /**
      *
      * @param hahmo

@@ -513,26 +513,35 @@ public class Kayttoliittyma extends JFrame {
 
     private void tapahtumaVaihtoehtoYksiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tapahtumaVaihtoehtoYksiButtonActionPerformed
         Tapahtuma tt = peli.getNykyinenTapahtuma();
-        tt.toteutaVaihtoehtoYksi(peli.getPelaajanHahmo(), peli.getLuolasto());
+        if (tt.getKoodi() == Tapahtuma.TAISTELU) {
 
-        KaakkoPaneeli.removeAll();
-        KaakkoPaneeli.repaint();
-        KaakkoPaneeli.revalidate();
-        KaakkoPaneeli.add(TyhjaPaneeliPaalla);
-        KaakkoPaneeli.repaint();
-        KaakkoPaneeli.revalidate();
+        } else {
+            tt.toteutaVaihtoehtoYksi(peli.getPelaajanHahmo(), peli.getLuolasto());
+
+            KaakkoPaneeli.removeAll();
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+        }
     }//GEN-LAST:event_tapahtumaVaihtoehtoYksiButtonActionPerformed
 
     private void tapahtumaVaihtoehtoKaksiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tapahtumaVaihtoehtoKaksiButtonActionPerformed
         Tapahtuma tt = peli.getNykyinenTapahtuma();
-        tt.toteutaVaihtoehtoKaksi(peli.getPelaajanHahmo(), peli.getLuolasto());
+        if (tt.getKoodi() == Tapahtuma.TAISTELU) {
+            
+        } else {
+            tt.toteutaVaihtoehtoKaksi(peli.getPelaajanHahmo(), peli.getLuolasto());
 
-        KaakkoPaneeli.removeAll();
-        KaakkoPaneeli.repaint();
-        KaakkoPaneeli.revalidate();
-        KaakkoPaneeli.add(TyhjaPaneeliPaalla);
-        KaakkoPaneeli.repaint();
-        KaakkoPaneeli.revalidate();
+            KaakkoPaneeli.removeAll();
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+        }
+
     }//GEN-LAST:event_tapahtumaVaihtoehtoKaksiButtonActionPerformed
 
     public static void main(String args[]) {

@@ -2,7 +2,9 @@
 package juuri.sovelluslogiikka.esineet;
 
 /**
- *
+ * Esineet ovat tavaroita, joita pelaaja löytää luolassa seikkaillessaan.
+ * Esineitä voi löytyä hirviöiltä tai aarteista. Ne säilötään pelaajan
+ * reppuun.
  * @author PenaJones
  */
 public abstract class Esine {

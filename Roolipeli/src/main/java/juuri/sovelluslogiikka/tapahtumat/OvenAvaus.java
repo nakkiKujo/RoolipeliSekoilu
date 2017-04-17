@@ -5,6 +5,12 @@ import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.maailma.Luolasto;
 import juuri.sovelluslogiikka.maailma.Ovi;
 
+/**
+ * OvenAvaus on tapahtuma, joka liittyy pelaajan hahmon ja luolaston oven kohtaamiseen.
+ * Jos ovi on lukossa, pelaaja usein tarvitsee avaimen sen avatakseen. Pelaaja 
+ * voi myös päättää olla avaamatta ovea.
+ * @author PenaJones
+ */
 public class OvenAvaus extends Tapahtuma {
 
     //Jokainen OvenAvaus-tapahtuma tietää, mihin oveen se on kytkettynä.

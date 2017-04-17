@@ -6,7 +6,9 @@
 package juuri.sovelluslogiikka.esineet;
 
 /**
- *
+ * Yleisesineet ovat esineitä, joita pelaajan hahmo ei voi kantaa yllään.
+ * Yleiesineitä ovat esimerkiksi avamet ja erilaiset juomat tai parantavat
+ * voiteet.
  * @author PenaJones
  */
 public class YleisEsine extends Esine {

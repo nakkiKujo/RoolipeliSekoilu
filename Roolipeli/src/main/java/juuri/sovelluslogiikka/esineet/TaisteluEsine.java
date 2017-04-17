@@ -6,7 +6,8 @@
 package juuri.sovelluslogiikka.esineet;
 
 /**
- *
+ * Taisteluesineet ovat esineitä, joita pelaajan hahmo voi kantaa yllään. Ne
+ * parantavat hahmon taistelukykyjä.
  * @author PenaJones
  */
 public class TaisteluEsine extends Esine {

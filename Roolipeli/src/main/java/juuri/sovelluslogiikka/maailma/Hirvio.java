@@ -2,6 +2,8 @@ package juuri.sovelluslogiikka.maailma;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
+import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
@@ -9,11 +11,14 @@ import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
  * taistelemaan.
  */
 public class Hirvio extends Kohde {
-
+    
+    private ArrayList<Esine> hirvionEsineet;
+    
     public Hirvio(Tapahtuma tt, String nimi) {
         this.koodi = Kohde.HIRVIO;
         this.nimi = nimi;
         this.tapahtuma = tt;
+        this.hirvionEsineet = new ArrayList<>();
 
         //hirviön läpi ei voi kulkea
         this.voikoKulkea = false;

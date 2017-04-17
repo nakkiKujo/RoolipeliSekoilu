@@ -9,7 +9,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- *
+ * Portaat ovat luolaston kohde, jonka kautta pelaaja voi edetä syvemmälle 
+ * luolaan. Edetessään portaissa ei pelaaja voi enää palata takaisin ylemmälle
+ * luolaston tasolle.
  * @author PenaJones
  */
 public class Portaat extends Kohde {
