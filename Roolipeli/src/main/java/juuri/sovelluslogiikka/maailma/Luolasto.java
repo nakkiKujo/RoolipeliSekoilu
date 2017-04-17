@@ -110,28 +110,30 @@ public class Luolasto {
         asetaKaytava(10, 6);
         asetaKaytava(10, 7);
         asetaKaytava(10, 8);
-        
+
         //asetetaan hirviöt
         asetaHirvio(3, 5);
         asetaHirvio(4, 9);
         asetaHirvio(10, 5);
-        
+
         //asetetaan aarteet
-        asetaAarre(3, 3);
-        asetaAarre(8, 5);
-        asetaAarre(6, 9);
-        
+        asetaAarre(3, 3, "epäilyttävä aarre");
+        asetaAarre(8, 5, "huikea aarre");
+        asetaAarre(6, 9, "huikea aarre");
+
         //asetetaan ansa
         asetaAnsa(6, 5);
-        
+
         //portaat
         asetaPortaat(10, 9);
-        
+
         //ovet
         asetaLukittuOvi(10, 2, "pronssiavain");
         asetaLukittuOvi(3, 4, "hopea-avain");
         asetaAvoinOvi(5, 4);
         asetaAvoinOvi(5, 6);
+        asetaLukittuOvi(2, 1, "pronssiavain");
+        asetaAvoinOvi(3, 1);
     }
 
     public void luoTaso2() {
@@ -141,52 +143,59 @@ public class Luolasto {
     public void luoTaso3() {
 
     }
-    
+
     public boolean asetaHirvio(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        
+
         Hirvio hh = new Hirvio(null, "Noita");
+        hh.setSijainti(x, y);
         Taistelu tt = new Taistelu(hh);
         hh.setTapahtuma(tt);
         koordinaatisto[x][y] = hh;
-        
+
         return true;
     }
-    
+
     public boolean asetaAnsa(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        
-        koordinaatisto[x][y] = new Ansa();
+        Ansa aa = new Ansa();
+        aa.setSijainti(x, y);
+        koordinaatisto[x][y] = aa;
         return true;
     }
-    
+
     public boolean asetaPortaat(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        
-        koordinaatisto[x][y] = new Portaat();
+        Portaat pp = new Portaat();
+        pp.setSijainti(x, y);
+        koordinaatisto[x][y] = pp;
         return true;
     }
-    
-    public boolean asetaAarre(int x, int y) {
+
+    public boolean asetaAarre(int x, int y, String aarteenNimi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        
-        koordinaatisto[x][y] = new Aarre();
+
+        Aarre aa = new Aarre(aarteenNimi);
+        aa.setSijainti(x, y);
+        koordinaatisto[x][y] = aa;
         return true;
     }
-    
+
     public boolean asetaSeina(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        koordinaatisto[x][y] = new Seina(null);
+        Seina ss = new Seina(null);
+        ss.setSijainti(x, y);
+        koordinaatisto[x][y] = ss;
         return true;
     }
 
@@ -194,7 +203,10 @@ public class Luolasto {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        koordinaatisto[x][y] = new Kaytava(null);
+
+        Kaytava kk = new Kaytava(null);
+        kk.setSijainti(x, y);
+        koordinaatisto[x][y] = kk;
         return true;
     }
 
@@ -203,15 +215,16 @@ public class Luolasto {
             return false;
         }
         YleisEsine avain = new YleisEsine(avaajanNimi, Esine.AVAIN);
-        
+
         Ovi ovi = new Ovi(true, null, avain);
         OvenAvaus ovenAvaus = new OvenAvaus(ovi);
         ovi.setTapahtuma(ovenAvaus);
+        ovi.setSijainti(x, y);
         koordinaatisto[x][y] = ovi;
 
         return true;
     }
-    
+
     public boolean asetaAvoinOvi(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
@@ -220,6 +233,7 @@ public class Luolasto {
         Ovi ovi = new Ovi(false, null, null);
         OvenAvaus ovenAvaus = new OvenAvaus(ovi);
         ovi.setTapahtuma(ovenAvaus);
+        ovi.setSijainti(x, y);
         koordinaatisto[x][y] = ovi;
 
         return true;
@@ -241,6 +255,14 @@ public class Luolasto {
         }
 
         return koordinaatisto[x][y];
+    }
+
+    public boolean poistaKohde(Kohde kk) {
+        int x = kk.getSijainti().getX();
+        int y = kk.getSijainti().getY();
+
+        asetaKaytava(x, y);
+        return true;
     }
 
     public void piirra(Graphics g, int mittaKaava) {

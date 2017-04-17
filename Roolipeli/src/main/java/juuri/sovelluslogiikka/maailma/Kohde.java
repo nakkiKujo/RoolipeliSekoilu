@@ -1,6 +1,7 @@
 package juuri.sovelluslogiikka.maailma;
 
 import java.awt.Graphics;
+import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
@@ -25,6 +26,7 @@ public abstract class Kohde {
     protected int koodi;
     protected String nimi;
     protected boolean voikoKulkea;
+    protected Sijainti sijainti;
 
     protected Tapahtuma tapahtuma;
 
@@ -37,6 +39,17 @@ public abstract class Kohde {
     
     public String getNimi() {
         return nimi;
+    }
+    
+    public Sijainti getSijainti() {
+        return this.sijainti;
+    }
+    
+    public void setSijainti(int x, int y) {
+        if(this.sijainti == null) {
+            sijainti = new Sijainti();
+        }
+        sijainti.setSijainti(x, y);
     }
 
     /**

@@ -45,10 +45,12 @@ public class Kayttoliittyma extends JFrame {
         HahmoLiikkuuOikealleButton = new javax.swing.JButton();
         HahmoLiikkuuVasemmalleButton = new javax.swing.JButton();
         KaakkoPaneeli = new javax.swing.JPanel();
+        TyhjaPaneeliPaalla = new javax.swing.JPanel();
         InfoPaneeli = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TapahtumaText = new javax.swing.JTextArea();
-        TyhjaPaneeliPaalla = new javax.swing.JPanel();
+        tapahtumaVaihtoehtoYksiButton = new javax.swing.JButton();
+        tapahtumaVaihtoehtoKaksiButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PelinAloitus");
@@ -309,33 +311,6 @@ public class Kayttoliittyma extends JFrame {
         KaakkoPaneeli.setPreferredSize(new java.awt.Dimension(298, 255));
         KaakkoPaneeli.setLayout(new java.awt.CardLayout());
 
-        InfoPaneeli.setMaximumSize(new java.awt.Dimension(298, 255));
-        InfoPaneeli.setMinimumSize(new java.awt.Dimension(298, 255));
-        InfoPaneeli.setPreferredSize(new java.awt.Dimension(298, 255));
-
-        TapahtumaText.setColumns(20);
-        TapahtumaText.setRows(5);
-        jScrollPane1.setViewportView(TapahtumaText);
-
-        javax.swing.GroupLayout InfoPaneeliLayout = new javax.swing.GroupLayout(InfoPaneeli);
-        InfoPaneeli.setLayout(InfoPaneeliLayout);
-        InfoPaneeliLayout.setHorizontalGroup(
-            InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InfoPaneeliLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        InfoPaneeliLayout.setVerticalGroup(
-            InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InfoPaneeliLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
-
-        KaakkoPaneeli.add(InfoPaneeli, "card2");
-
         javax.swing.GroupLayout TyhjaPaneeliPaallaLayout = new javax.swing.GroupLayout(TyhjaPaneeliPaalla);
         TyhjaPaneeliPaalla.setLayout(TyhjaPaneeliPaallaLayout);
         TyhjaPaneeliPaallaLayout.setHorizontalGroup(
@@ -347,7 +322,57 @@ public class Kayttoliittyma extends JFrame {
             .addGap(0, 253, Short.MAX_VALUE)
         );
 
-        KaakkoPaneeli.add(TyhjaPaneeliPaalla, "card3");
+        KaakkoPaneeli.add(TyhjaPaneeliPaalla, "card1");
+
+        InfoPaneeli.setMaximumSize(new java.awt.Dimension(298, 255));
+        InfoPaneeli.setMinimumSize(new java.awt.Dimension(298, 255));
+        InfoPaneeli.setPreferredSize(new java.awt.Dimension(298, 255));
+
+        TapahtumaText.setColumns(20);
+        TapahtumaText.setRows(5);
+        jScrollPane1.setViewportView(TapahtumaText);
+
+        tapahtumaVaihtoehtoYksiButton.setText("Vaihtoeht1");
+        tapahtumaVaihtoehtoYksiButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tapahtumaVaihtoehtoYksiButtonActionPerformed(evt);
+            }
+        });
+
+        tapahtumaVaihtoehtoKaksiButton.setText("Vaihtoeht2");
+        tapahtumaVaihtoehtoKaksiButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tapahtumaVaihtoehtoKaksiButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout InfoPaneeliLayout = new javax.swing.GroupLayout(InfoPaneeli);
+        InfoPaneeli.setLayout(InfoPaneeliLayout);
+        InfoPaneeliLayout.setHorizontalGroup(
+            InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InfoPaneeliLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(InfoPaneeliLayout.createSequentialGroup()
+                        .addComponent(tapahtumaVaihtoehtoYksiButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tapahtumaVaihtoehtoKaksiButton))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+        InfoPaneeliLayout.setVerticalGroup(
+            InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InfoPaneeliLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tapahtumaVaihtoehtoYksiButton)
+                    .addComponent(tapahtumaVaihtoehtoKaksiButton))
+                .addContainerGap(95, Short.MAX_VALUE))
+        );
+
+        KaakkoPaneeli.add(InfoPaneeli, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -379,24 +404,24 @@ public class Kayttoliittyma extends JFrame {
 
     private void HahmonluontiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmonluontiButtonActionPerformed
         String hahmonNimi = HahmonNimiTextField.getText();
-        
+
         //luodaan hahmo ja luolasto
         peli.aloitaPeli(hahmonNimi);
-        
+
         LounasPaneeli.removeAll();
         LounasPaneeli.repaint();
         LounasPaneeli.revalidate();
         LounasPaneeli.add(LiikkkumisPaneeli);
         LounasPaneeli.repaint();
         LounasPaneeli.revalidate();
-        
+
         LuodePaneeli.removeAll();
         LuodePaneeli.repaint();
         LuodePaneeli.revalidate();
         LuodePaneeli.add(ReppuPaneeli);
         LuodePaneeli.repaint();
         LuodePaneeli.revalidate();
-        
+
         KoillinenPaneeli.removeAll();
         KoillinenPaneeli.repaint();
         KoillinenPaneeli.revalidate();
@@ -407,35 +432,108 @@ public class Kayttoliittyma extends JFrame {
 
     private void HahmoLiikkuuOikealleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuOikealleButtonActionPerformed
         Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("oikea");
-        System.out.println("aih");
+        if (!(liikkumisestaAiheutunutTapahtuma == null)) {
+            liikkumisestaAiheutunutTapahtuma.valmisteleTapahtuma(peli.getPelaajanHahmo());
+
+            tapahtumaVaihtoehtoYksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoYksi());
+            tapahtumaVaihtoehtoKaksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoKaksi());
+            TapahtumaText.setText(liikkumisestaAiheutunutTapahtuma.getTapahtumateksti());
+
+            KaakkoPaneeli.removeAll();
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            KaakkoPaneeli.add(InfoPaneeli);
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+        }
+
         //tähän tulee component.repaint piirtoalustalle
-        
-        //TODO: tapahtuman käsittely
+
     }//GEN-LAST:event_HahmoLiikkuuOikealleButtonActionPerformed
 
     private void HahmoLiikkuuYlosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuYlosButtonActionPerformed
         Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("ylös");
-        System.out.println("aih");
+        if (!(liikkumisestaAiheutunutTapahtuma == null)) {
+            liikkumisestaAiheutunutTapahtuma.valmisteleTapahtuma(peli.getPelaajanHahmo());
+
+            tapahtumaVaihtoehtoYksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoYksi());
+            tapahtumaVaihtoehtoKaksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoKaksi());
+            TapahtumaText.setText(liikkumisestaAiheutunutTapahtuma.getTapahtumateksti());
+
+            KaakkoPaneeli.removeAll();
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            KaakkoPaneeli.add(InfoPaneeli);
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+        }
         //tähän tulee component.repaint piirtoalustalle
-        
-        //TODO: tapahtuman käsittely
+
     }//GEN-LAST:event_HahmoLiikkuuYlosButtonActionPerformed
 
     private void HahmoLiikkuuAlasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuAlasButtonActionPerformed
         Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("alas");
-        System.out.println("aih");
+        if (!(liikkumisestaAiheutunutTapahtuma == null)) {
+            liikkumisestaAiheutunutTapahtuma.valmisteleTapahtuma(peli.getPelaajanHahmo());
+
+            tapahtumaVaihtoehtoYksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoYksi());
+            tapahtumaVaihtoehtoKaksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoKaksi());
+            TapahtumaText.setText(liikkumisestaAiheutunutTapahtuma.getTapahtumateksti());
+
+            KaakkoPaneeli.removeAll();
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            KaakkoPaneeli.add(InfoPaneeli);
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+        }
         //tähän tulee component.repaint piirtoalustalle
-        
-        //TODO: tapahtuman käsittely
+
     }//GEN-LAST:event_HahmoLiikkuuAlasButtonActionPerformed
 
     private void HahmoLiikkuuVasemmalleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuVasemmalleButtonActionPerformed
         Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("vasen");
-        System.out.println("aih");
+        if (!(liikkumisestaAiheutunutTapahtuma == null)) {
+            liikkumisestaAiheutunutTapahtuma.valmisteleTapahtuma(peli.getPelaajanHahmo());
+
+            tapahtumaVaihtoehtoYksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoYksi());
+            tapahtumaVaihtoehtoKaksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoKaksi());
+            TapahtumaText.setText(liikkumisestaAiheutunutTapahtuma.getTapahtumateksti());
+
+            KaakkoPaneeli.removeAll();
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            KaakkoPaneeli.add(InfoPaneeli);
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+        }
         //tähän tulee component.repaint piirtoalustalle
-        
-        //TODO: tapahtuman käsittely
+
     }//GEN-LAST:event_HahmoLiikkuuVasemmalleButtonActionPerformed
+
+    private void tapahtumaVaihtoehtoYksiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tapahtumaVaihtoehtoYksiButtonActionPerformed
+        Tapahtuma tt = peli.getNykyinenTapahtuma();
+        tt.toteutaVaihtoehtoYksi(peli.getPelaajanHahmo(), peli.getLuolasto());
+
+        KaakkoPaneeli.removeAll();
+        KaakkoPaneeli.repaint();
+        KaakkoPaneeli.revalidate();
+        KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+        KaakkoPaneeli.repaint();
+        KaakkoPaneeli.revalidate();
+    }//GEN-LAST:event_tapahtumaVaihtoehtoYksiButtonActionPerformed
+
+    private void tapahtumaVaihtoehtoKaksiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tapahtumaVaihtoehtoKaksiButtonActionPerformed
+        Tapahtuma tt = peli.getNykyinenTapahtuma();
+        tt.toteutaVaihtoehtoKaksi(peli.getPelaajanHahmo(), peli.getLuolasto());
+
+        KaakkoPaneeli.removeAll();
+        KaakkoPaneeli.repaint();
+        KaakkoPaneeli.revalidate();
+        KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+        KaakkoPaneeli.repaint();
+        KaakkoPaneeli.revalidate();
+    }//GEN-LAST:event_tapahtumaVaihtoehtoKaksiButtonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -497,5 +595,7 @@ public class Kayttoliittyma extends JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton tapahtumaVaihtoehtoKaksiButton;
+    private javax.swing.JButton tapahtumaVaihtoehtoYksiButton;
     // End of variables declaration//GEN-END:variables
 }

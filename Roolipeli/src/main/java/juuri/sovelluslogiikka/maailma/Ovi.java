@@ -2,6 +2,7 @@ package juuri.sovelluslogiikka.maailma;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.esineet.YleisEsine;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 

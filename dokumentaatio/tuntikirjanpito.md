@@ -15,4 +15,5 @@ Päivä | Tunnit | Kuvaus
 5.4.2017 | 3h | Käyttöliittymän luomista
 6.4.2017 | 2,5h | Käyttöliittymän luomista
 6.4.2017 | 1,5h | JavaDoc aloitus sekä viikon raporttien päivitys
-
+14.4.2017 | 2h | Käyttöliittymän päivitystä, tapahtumien luomista
+17.4.2017 | 2h | Luotiin lisää kohteita ja tapahtumia

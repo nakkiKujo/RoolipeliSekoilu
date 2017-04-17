@@ -19,6 +19,7 @@ public class Peli {
     private Luolasto luolasto;
     private Hahmonliikuttaja liikuttaja;
     private Hahmonluoja luoja;
+    private Tapahtuma nykyinenTapahtuma;
 
     public Peli() {
         this.liikuttaja = new Hahmonliikuttaja();
@@ -29,12 +30,16 @@ public class Peli {
         return pelaajanHahmo;
     }
 
-    public Luolasto getLuolato() {
+    public Luolasto getLuolasto() {
         return luolasto;
     }
 
     public Hahmonliikuttaja getLiikuttaja() {
         return liikuttaja;
+    }
+    
+    public Tapahtuma getNykyinenTapahtuma() {
+        return nykyinenTapahtuma;
     }
 
     /**
@@ -69,11 +74,11 @@ public class Peli {
 
         //Tapahtuma, joka alkaa hahmon kohdatessa kohteen. Jos tapahtuma on null, ei
         //mitään tapahdu.
-        Tapahtuma tt = minneHahmoLiikkui.getTapahtuma();
-        if (tt == null) {
+        nykyinenTapahtuma = minneHahmoLiikkui.getTapahtuma();
+        if (nykyinenTapahtuma == null) {
             return null;
         }
 
-        return tt;
+        return nykyinenTapahtuma;
     }
 }

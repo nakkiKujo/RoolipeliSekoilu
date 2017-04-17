@@ -2,21 +2,19 @@ package juuri.sovelluslogiikka.tapahtumat;
 
 import juuri.sovelluslogiikka.esineet.YleisEsine;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
+import juuri.sovelluslogiikka.maailma.Luolasto;
 import juuri.sovelluslogiikka.maailma.Ovi;
 
-public class OvenAvaus implements Tapahtuma {
+public class OvenAvaus extends Tapahtuma {
 
     //Jokainen OvenAvaus-tapahtuma tietää, mihin oveen se on kytkettynä.
     private Ovi ovi;
-    private int koodi;
-    private String teksti;
-    public String vaihtoEhtoYksi;
-    public String vaihtoEhtoKaksi;
+    public boolean lukittuOvi;
+    public boolean avainLoytyy;
 
     public OvenAvaus(Ovi ovi) {
         this.koodi = Tapahtuma.OVENAVAUS;
         this.ovi = ovi;
-        this.teksti = teksti;
     }
 
     @Override
@@ -24,22 +22,47 @@ public class OvenAvaus implements Tapahtuma {
         boolean onkoOviLukossa = ovi.onkoLukittu();
 
         if (onkoOviLukossa) {
-            teksti = "Edessäsi on " + ovi.getNimi() + ". "
+            lukittuOvi = true;
+            this.tapahtumaTeksti = "Edessäsi on " + ovi.getNimi() + ". "
                     + "Sen avaamiseen tarvitset esineen: " + ovi.getAvaaja().getNimi();
 
             YleisEsine ovenAvaaja = ovi.getAvaaja();
 
             if (!pelaajanHahmo.getReppu().onkoRepussa(ovenAvaaja)) {
-                teksti = teksti + " \nSinulla ei ole kyseistä avainta.";
+                avainLoytyy = false;
+                this.tapahtumaTeksti = tapahtumaTeksti + " \nSinulla ei ole kyseistä avainta.";
             } else {
-                teksti = teksti + "\nSinulta löytyy kyseinen avain.";
+                avainLoytyy = true;
+                this.tapahtumaTeksti = this.tapahtumaTeksti + "\nSinulta löytyy kyseinen avain.";
             }
 
         } else {
-            teksti = "Edessäsi on " + ovi.getNimi() + ". Ovi ei ole lukossa.";
+            lukittuOvi = false;
+            this.tapahtumaTeksti = "Edessäsi on " + ovi.getNimi() + ". Ovi ei ole lukossa.";
         }
-
+        
+        vaihtoehtoYksi = "Avaa ovi.";
+        vaihtoehtoKaksi = "Älä avaa ovea.";
     }
+
+    @Override
+    public void toteutaVaihtoehtoYksi(Hahmo hahmo, Luolasto luola) {
+        if(lukittuOvi) {
+            if(avainLoytyy) {
+                hahmo.getReppu().poistaRepusta(ovi.getAvaaja());
+                luola.poistaKohde(ovi);
+            }
+        } else {
+            luola.poistaKohde(ovi);
+        }
+    }
+
+    @Override
+    public void toteutaVaihtoehtoKaksi(Hahmo hahmo, Luolasto luola) {
+        //mitään ei tehdä, koska ovea ei avata
+    }
+    
+    
     
     
 }
