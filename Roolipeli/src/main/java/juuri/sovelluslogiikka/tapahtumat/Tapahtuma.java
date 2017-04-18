@@ -6,6 +6,8 @@ import juuri.sovelluslogiikka.maailma.Luolasto;
 /**
  * Tapahtumat liittyvä pelaajan hahmon ja luolaston kohteiden välisiin
  * interaktioihin.
+ * Tapahtuma ensin valmistellaan. Tämän jälkeen on kaksi vaihtoehtoa, miten 
+ * tapahtuma voi edetä.
  */
 public abstract class Tapahtuma {
     

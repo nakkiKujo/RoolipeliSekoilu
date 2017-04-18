@@ -18,6 +18,7 @@ public class Portaat extends Kohde {
     
     public Portaat() {
         this.koodi = Kohde.PORTAAT;
+        this.nimi = "portaat";
         this.voikoKulkea = true;
     }
 

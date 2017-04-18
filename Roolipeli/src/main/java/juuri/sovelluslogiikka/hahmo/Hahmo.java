@@ -2,12 +2,14 @@ package juuri.sovelluslogiikka.hahmo;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import juuri.apuvalineet.Profiili;
 import juuri.apuvalineet.Sijainti;
 
 /**
  * Tämä abstrakti luokka kuvastaa pelaajan pelissä seikkailevaa hahmoa. Luokalla
  * on aliluokkina ammatit, jotka määräävät, millainen hahmo on. Esimerkiksi
- * soturi on hahmona erilainen verrattuna velhoon. TODO: Ammattien käsittely,
+ * soturi on hahmona erilainen verrattuna velhoon, ja tämä ero näkyy hahmon 
+ * profiilissa. TODO: Ammattien käsittely,
  * level-up.
  */
 public abstract class Hahmo {
@@ -16,10 +18,7 @@ public abstract class Hahmo {
     protected String ammatti;
     protected Sijainti sijainti;
     protected Reppu reppu;
-    protected int voima;
-    protected int taikaVoima;
-    protected int elamaPisteet;
-    protected int ketteryys;
+    protected Profiili hahmonProfiili;
 
     /**
      * Hahmon sijainti on pelin alussa aina (1,1). Hahmo luodaan pelaajan
@@ -32,6 +31,7 @@ public abstract class Hahmo {
         this.sijainti = new Sijainti();
         sijainti.setSijainti(1, 1);
         this.reppu = new Reppu();
+        this.hahmonProfiili = new Profiili();
     }
 
     public String getNimi() {
@@ -48,6 +48,10 @@ public abstract class Hahmo {
     
     public Reppu getReppu() {
         return this.reppu;
+    }
+    
+    public Profiili getProfiili() {
+        return this.hahmonProfiili;
     }
 
     /**

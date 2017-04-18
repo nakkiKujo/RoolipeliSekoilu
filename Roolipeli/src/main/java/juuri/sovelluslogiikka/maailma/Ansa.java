@@ -8,6 +8,7 @@ public class Ansa extends Kohde {
     
     public Ansa() {
         this.koodi = Kohde.ANSA;
+        this.nimi = "ansa";
         this.voikoKulkea = true;
     }
 
