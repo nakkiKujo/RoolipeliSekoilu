@@ -1,7 +1,8 @@
 package juuri.apuvalineet;
 
 /**
- * Luokka ylläpitää pelaajan hahmon sijaintia luolastossa.
+ * Luokka ylläpitää sijaintia luolastossa. Pelaajan hahmolla ja luolaston
+ * kohteilla on sijainti.
  */
 public class Sijainti {
 

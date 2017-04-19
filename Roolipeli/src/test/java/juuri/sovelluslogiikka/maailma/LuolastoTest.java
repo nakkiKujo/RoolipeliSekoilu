@@ -26,6 +26,7 @@ public class LuolastoTest {
 
         assertEquals("Noita", hh.getNimi());
         assertEquals(Kohde.HIRVIO, hh.getKoodi());
+        assertEquals(Tapahtuma.TAISTELU, hh.getTapahtuma().getKoodi());
     }
 
     @Test
@@ -119,7 +120,7 @@ public class LuolastoTest {
 
         luola.asetaLukittuOvi(5, 7, "avain");
         Kohde haettuKohde = luola.haeKoordinaateista(5, 7);
-        assertEquals(Kohde.OVI, haettuKohde);
+        assertEquals(Kohde.OVI, haettuKohde.getKoodi());
 
         Ovi haettuOvi = (Ovi) haettuKohde;
         assertEquals("avain", haettuOvi.getAvaaja().getNimi());
@@ -218,9 +219,10 @@ public class LuolastoTest {
         luola.luoTaso1();
         
         luola.asetaLukittuOvi(4, 5, "kiva avain");
+        assertEquals(Kohde.OVI, luola.haeKoordinaateista(4, 5).getKoodi());
         luola.poistaKohde(luola.haeKoordinaateista(4, 5));
         
-        assertEquals(Kohde.KAYTAVA, luola.haeKoordinaateista(4, 5));
+        assertEquals(Kohde.KAYTAVA, luola.haeKoordinaateista(4, 5).getKoodi());
     }
     
     @Test

@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import juuri.sovelluslogiikka.esineet.Esine;
+import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
  * Aarteet ovat luolaston kohteita, joista pelaaja voi saada lisää esineitä.
@@ -14,11 +15,12 @@ public class Aarre extends Kohde {
     
     private ArrayList<Esine> aarteet;
     
-    public Aarre(String nimi) {
+    public Aarre(Tapahtuma aarteenLoytaminen, String nimi) {
         this.nimi = nimi;
         this.koodi = Kohde.AARRE;
         this.voikoKulkea = false;
         this.aarteet = new ArrayList<>();
+        this.tapahtuma = aarteenLoytaminen;
     }
     
     /**
@@ -35,7 +37,12 @@ public class Aarre extends Kohde {
      * @return lista esineistä
      */
     public ArrayList<Esine> keraaAarteet() {
-        ArrayList<Esine> apu = aarteet;
+        ArrayList<Esine> apu = new ArrayList<>();
+        
+        for (Esine aarteenEsine : aarteet) {
+            apu.add(aarteenEsine);
+        }
+        
         aarteet.clear();
         return apu;
     }

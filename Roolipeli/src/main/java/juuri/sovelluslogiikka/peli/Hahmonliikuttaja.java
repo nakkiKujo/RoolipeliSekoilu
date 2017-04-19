@@ -18,9 +18,8 @@ public class Hahmonliikuttaja {
      * tapahtuu annetun komennon mukaisesti. Jos hahmo yrittää liikkua
      * luolastosta ulos, palauttaa metodi arvon null.
      *
-     * Jos hahmo yrittää liikkua kohteeseen, johon se ei voi mennä, kumotaan
-     * kyseinen toiminta. Metodi kuitenkin palauttaa kohteen, johon hahmo yritti
-     * kulkea.
+     * Jos hahmo yrittää liikkua kohteeseen, johon se ei voi mennä, estetään kyseinen liike. 
+     * Metodi kuitenkin palauttaa kohteen, johon hahmo yritti kulkea.
      *
      * @param komento minne suuntaan hahmoa liikutetaan
      * @param luola hahmo liikkuu luolastossa

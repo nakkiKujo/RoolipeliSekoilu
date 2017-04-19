@@ -16,13 +16,13 @@ public class Ovi extends Kohde {
     private boolean lukittu;
     private YleisEsine avaaja;
 
-    public Ovi(boolean lukitus, Tapahtuma tapahtuma, YleisEsine avaaja) {
+    public Ovi(boolean onkoLukittu, Tapahtuma tapahtuma, YleisEsine avaaja) {
         this.koodi = Kohde.OVI;
         this.nimi = "ovi";
-        this.lukittu = lukitus;
+        this.lukittu = onkoLukittu;
 
         //Ovien läpi kulkeminen riippuu sen lukituksesta.
-        if (lukitus) {
+        if (onkoLukittu) {
             this.voikoKulkea = false;
         } else {
             this.voikoKulkea = true;

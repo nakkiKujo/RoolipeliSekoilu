@@ -7,7 +7,8 @@ import juuri.sovelluslogiikka.hahmo.Soturi;
 import juuri.sovelluslogiikka.hahmo.Velho;
 
 /**
- * Tämän luokan vastuulla on pelaajan hahmon luominen.
+ * Tämän luokan vastuulla on pelaajan hahmon luominen. Luokka on vielä
+ * keskeneräinen. Se täydentyy, kun itse hahmojen ammatit luodaan täydemmin.
  */
 public class Hahmonluoja {
 

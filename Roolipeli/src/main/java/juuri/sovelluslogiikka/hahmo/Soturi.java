@@ -9,6 +9,6 @@ public class Soturi extends Hahmo {
 
     public Soturi(String nimi) {
         super(nimi);
-        this.ammatti = "soturi";
+        this.ammatti = Hahmo.SOTURI;
     }
 }

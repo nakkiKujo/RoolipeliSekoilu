@@ -37,7 +37,7 @@ public class Peli {
     public Hahmonliikuttaja getLiikuttaja() {
         return liikuttaja;
     }
-    
+
     public Tapahtuma getNykyinenTapahtuma() {
         return nykyinenTapahtuma;
     }
@@ -68,12 +68,26 @@ public class Peli {
         luolasto.luoTaso1();
     }
 
+    /**
+     * Metodin avulla liikutetaan pelaajan hahmoa. Metodi kutsuu
+     * hahmonliikuttajaa, jolle annetaan parametrina saatu suunta.
+     * Saatu suunta on muotoa "alas", "ylös", "vasen" tai "oikea".
+     *
+     * Liikkuessaan hahmo löytää jonkin Kohteen, johon saattaa liittyä
+     * tapahtuma. Jos tapahtumaa ei ole, palautetaan null. Jos tapahtuma löytyy,
+     * palautetaan se. Metodissa myös asetetaan muistiin, mikä tapahtuma on
+     * kyseessä.
+     *
+     * @param suunta saatu suunta, johon hahmoa halutaan liikuttaa
+     * @return tapahtuma, joka kohteesta löytyi
+     */
     public Tapahtuma liikutaanJaEtsitaanTapahtumaa(String suunta) {
-        //katsotaan, minkä kohteen hahmo kohtaa liikkuessaan
         Kohde minneHahmoLiikkui = liikuttaja.liikutaHahmoa(suunta, luolasto, pelaajanHahmo);
-
-        //Tapahtuma, joka alkaa hahmon kohdatessa kohteen. Jos tapahtuma on null, ei
-        //mitään tapahdu.
+        
+        if(minneHahmoLiikkui == null) {
+            return null;
+        }
+        
         nykyinenTapahtuma = minneHahmoLiikkui.getTapahtuma();
         if (nykyinenTapahtuma == null) {
             return null;

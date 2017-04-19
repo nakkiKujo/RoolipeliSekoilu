@@ -24,7 +24,7 @@ public class HahmoTest {
         Sijainti ss = new Sijainti();
         ss.setSijainti(1, 1);
         assertEquals(ss, hahmo.getSijainti());
-        assertEquals("druidi", hahmo.getAmmatti());
+        assertEquals(Hahmo.DRUIDI, hahmo.getAmmatti());
     }
     
     @Test
@@ -35,7 +35,7 @@ public class HahmoTest {
         Sijainti ss = new Sijainti();
         ss.setSijainti(1, 1);
         assertEquals(ss, hahmo.getSijainti());
-        assertEquals("velho", hahmo.getAmmatti());
+        assertEquals(Hahmo.VELHO, hahmo.getAmmatti());
     }
     
     @Test
@@ -46,7 +46,7 @@ public class HahmoTest {
         Sijainti ss = new Sijainti();
         ss.setSijainti(1, 1);
         assertEquals(ss, hahmo.getSijainti());
-        assertEquals("soturi", hahmo.getAmmatti());
+        assertEquals(Hahmo.SOTURI, hahmo.getAmmatti());
     }
     
     

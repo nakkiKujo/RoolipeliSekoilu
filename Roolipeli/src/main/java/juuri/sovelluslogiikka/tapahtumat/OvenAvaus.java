@@ -6,17 +6,21 @@ import juuri.sovelluslogiikka.maailma.Luolasto;
 import juuri.sovelluslogiikka.maailma.Ovi;
 
 /**
- * OvenAvaus on tapahtuma, joka liittyy pelaajan hahmon ja luolaston oven kohtaamiseen.
- * Jos ovi on lukossa, pelaaja usein tarvitsee avaimen sen avatakseen. Pelaaja 
- * voi myös päättää olla avaamatta ovea.
+ * OvenAvaus on tapahtuma, joka liittyy pelaajan hahmon ja luolaston oven
+ * kohtaamiseen. Jos ovi on lukossa, pelaaja usein tarvitsee avaimen sen
+ * avatakseen. Pelaaja voi myös päättää olla avaamatta ovea.
+ *
+ * OvenAvaus tietää aina, mihin oveen se liittyy.
+ * 
+ * Jos pelaaja onnistuneesti avaa oven, poistuu ovi luolasta.
+ *
  * @author PenaJones
  */
 public class OvenAvaus extends Tapahtuma {
 
-    //Jokainen OvenAvaus-tapahtuma tietää, mihin oveen se on kytkettynä.
     private Ovi ovi;
-    public boolean lukittuOvi;
-    public boolean avainLoytyy;
+    private boolean lukittuOvi;
+    private boolean avainLoytyy;
 
     public OvenAvaus(Ovi ovi) {
         this.koodi = Tapahtuma.OVENAVAUS;
@@ -36,7 +40,7 @@ public class OvenAvaus extends Tapahtuma {
 
             if (!pelaajanHahmo.getReppu().onkoRepussa(ovenAvaaja)) {
                 avainLoytyy = false;
-                this.tapahtumaTeksti = tapahtumaTeksti + " \nSinulla ei ole kyseistä avainta.";
+                this.tapahtumaTeksti = tapahtumaTeksti + "\nSinulla ei ole kyseistä avainta.";
             } else {
                 avainLoytyy = true;
                 this.tapahtumaTeksti = this.tapahtumaTeksti + "\nSinulta löytyy kyseinen avain.";
@@ -46,15 +50,15 @@ public class OvenAvaus extends Tapahtuma {
             lukittuOvi = false;
             this.tapahtumaTeksti = "Edessäsi on " + ovi.getNimi() + ". Ovi ei ole lukossa.";
         }
-        
+
         vaihtoehtoYksi = "Avaa ovi.";
         vaihtoehtoKaksi = "Älä avaa ovea.";
     }
 
     @Override
     public void toteutaVaihtoehtoYksi(Hahmo hahmo, Luolasto luola) {
-        if(lukittuOvi) {
-            if(avainLoytyy) {
+        if (lukittuOvi) {
+            if (avainLoytyy) {
                 hahmo.getReppu().poistaRepusta(ovi.getAvaaja());
                 luola.poistaKohde(ovi);
             }
@@ -67,8 +71,5 @@ public class OvenAvaus extends Tapahtuma {
     public void toteutaVaihtoehtoKaksi(Hahmo hahmo, Luolasto luola) {
         //mitään ei tehdä, koska ovea ei avata
     }
-    
-    
-    
-    
+
 }

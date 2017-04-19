@@ -9,13 +9,16 @@ import juuri.apuvalineet.Sijainti;
  * Tämä abstrakti luokka kuvastaa pelaajan pelissä seikkailevaa hahmoa. Luokalla
  * on aliluokkina ammatit, jotka määräävät, millainen hahmo on. Esimerkiksi
  * soturi on hahmona erilainen verrattuna velhoon, ja tämä ero näkyy hahmon 
- * profiilissa. TODO: Ammattien käsittely,
- * level-up.
+ * profiilissa.
  */
 public abstract class Hahmo {
-
+    
+    public static final int SOTURI = 1;
+    public static final int VELHO = 2;
+    public static final int DRUIDI = 3;
+    
     protected String nimi;
-    protected String ammatti;
+    protected int ammatti;
     protected Sijainti sijainti;
     protected Reppu reppu;
     protected Profiili hahmonProfiili;
@@ -38,7 +41,7 @@ public abstract class Hahmo {
         return this.nimi;
     }
 
-    public String getAmmatti() {
+    public int getAmmatti() {
         return this.ammatti;
     }
 

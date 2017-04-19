@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.esineet.YleisEsine;
+import juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminen;
 import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
 import juuri.sovelluslogiikka.tapahtumat.Taistelu;
 
@@ -150,9 +151,9 @@ public class Luolasto {
         }
 
         Hirvio hh = new Hirvio(null, "Noita");
-        hh.setSijainti(x, y);
         Taistelu tt = new Taistelu(hh);
         hh.setTapahtuma(tt);
+        hh.setSijainti(x, y);
         koordinaatisto[x][y] = hh;
 
         return true;
@@ -183,8 +184,10 @@ public class Luolasto {
             return false;
         }
 
-        Aarre aa = new Aarre(aarteenNimi);
+        Aarre aa = new Aarre(null, aarteenNimi);
+        AarteenLoytaminen loyto = new AarteenLoytaminen(aa);
         aa.setSijainti(x, y);
+        aa.setTapahtuma(loyto);
         koordinaatisto[x][y] = aa;
         return true;
     }

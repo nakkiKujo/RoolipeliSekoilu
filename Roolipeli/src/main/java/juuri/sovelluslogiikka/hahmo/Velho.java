@@ -8,6 +8,6 @@ public class Velho extends Hahmo {
 
     public Velho(String nimi) {
         super(nimi);
-        this.ammatti = "velho";
+        this.ammatti = Hahmo.VELHO;
     }
 }

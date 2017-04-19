@@ -5,45 +5,70 @@ import juuri.sovelluslogiikka.maailma.Luolasto;
 
 /**
  * Tapahtumat liittyvä pelaajan hahmon ja luolaston kohteiden välisiin
- * interaktioihin.
- * Tapahtuma ensin valmistellaan. Tämän jälkeen on kaksi vaihtoehtoa, miten 
- * tapahtuma voi edetä.
+ * interaktioihin. Tapahtuma ensin valmistellaan. Tämän jälkeen on kaksi
+ * vaihtoehtoa, miten tapahtuma voi edetä.
  */
 public abstract class Tapahtuma {
-    
+
     public static final int TAISTELU = 1;
     public static final int OVENAVAUS = 2;
     public static final int PORTAISSAKULEMINEN = 3;
     public static final int AARTEENLOYTAMINEN = 4;
-    
+
     protected int koodi;
     protected String tapahtumaTeksti;
     protected String vaihtoehtoYksi;
     protected String vaihtoehtoKaksi;
-    
+
+    /**
+     * Metodi palauttaa tekstin, joka tapahtumalle asetetaan sitä
+     * valmistellessa. Tämä teksti näytetään pelaajalle käyttöliittymän
+     * välityksellä.
+     *
+     * @return tapahtumaan liittyvä teksti
+     */
     public String getTapahtumateksti() {
         return tapahtumaTeksti;
     }
-    
+
+    /**
+     * Metodi palauttaa tekstin, joka liittyy tapahtuman ensimmäiseen tapaan
+     * ratketa. Tämä teksti näytetään pelaajalle käyttöliittymän
+     * välityksellä.
+     *
+     * @return vaihtoehtoon liittyvä teksti
+     */
     public String getVaihtoehtoYksi() {
         return vaihtoehtoYksi;
     }
-    
+
+    /**
+     * Metodi palauttaa tekstin, joka liittyy tapahtuman toiseen tapaan
+     * ratketa. Tämä teksti näytetään pelaajalle käyttöliittymän
+     * välityksellä.
+     *
+     * @return vaihtoehtoon liittyvä teksti
+     */
     public String getVaihtoehtoKaksi() {
         return vaihtoehtoKaksi;
     }
     
+    /**
+     * Metodi palauttaa tapahtumalle ominaisen koodin. Erilaisilla tapahtumilla
+     * on erilaiset koodit.
+     * @return tapahtuman koodi
+     */
     public int getKoodi() {
         return koodi;
     }
-    
+
     /**
      *
      * @param hahmo
      */
     public abstract void valmisteleTapahtuma(Hahmo hahmo);
-    
+
     public abstract void toteutaVaihtoehtoYksi(Hahmo hahmo, Luolasto luola);
-    
+
     public abstract void toteutaVaihtoehtoKaksi(Hahmo hahmo, Luolasto luola);
 }

@@ -18,7 +18,7 @@ public class AarreTest {
     
     @Before
     public void setUp() {
-        this.aarre = new Aarre("suuri aarre");
+        this.aarre = new Aarre(null, "suuri aarre");
     }
     
     @Test
@@ -27,7 +27,8 @@ public class AarreTest {
         aarre.lisaaAarre(lisattavaEsine);
         
         ArrayList<Esine> esineLista = aarre.keraaAarteet();
-        assertTrue(esineLista.contains(lisattavaEsine));
+        boolean arvo = esineLista.contains(lisattavaEsine);
+        assertTrue(arvo);
     }
     
     @Test

@@ -8,6 +8,6 @@ public class Druidi extends Hahmo {
 
     public Druidi(String nimi) {
         super(nimi);
-        this.ammatti = "druidi";
+        this.ammatti = Hahmo.DRUIDI;
     }
 }

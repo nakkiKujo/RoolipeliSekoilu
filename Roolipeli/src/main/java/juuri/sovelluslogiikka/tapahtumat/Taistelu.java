@@ -11,7 +11,6 @@ import juuri.sovelluslogiikka.maailma.Luolasto;
  */
 public class Taistelu extends Tapahtuma {
     
-    private int koodi;
     private Kohde hirvio;
 
     public Taistelu(Kohde hirvio) {
@@ -52,6 +51,10 @@ public class Taistelu extends Tapahtuma {
      */
     @Override
     public void toteutaVaihtoehtoKaksi(Hahmo hahmo, Luolasto luola) {
+        
+    }
+    
+    public void pelaajaLyo() {
         
     }
 

@@ -17,3 +17,5 @@ Päivä | Tunnit | Kuvaus
 6.4.2017 | 1,5h | JavaDoc aloitus sekä viikon raporttien päivitys
 14.4.2017 | 2h | Käyttöliittymän päivitystä, tapahtumien luomista
 17.4.2017 | 2h | Luotiin lisää kohteita ja tapahtumia
+18.4.2017 | 2h | Testien päivittämistä, profiili-luokan luonti
+19.4.2017 | 2,5h | Testien päivitystä, JavaDoc kirjoittamista
