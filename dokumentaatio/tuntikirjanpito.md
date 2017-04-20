@@ -19,3 +19,6 @@ Päivä | Tunnit | Kuvaus
 17.4.2017 | 2h | Luotiin lisää kohteita ja tapahtumia
 18.4.2017 | 2h | Testien päivittämistä, profiili-luokan luonti
 19.4.2017 | 2,5h | Testien päivitystä, JavaDoc kirjoittamista
+20.4.2017 | 1h | Kirjoitettiin puuttuvat JavaDocit, päivitettiin aihekuvaus
+20.4.2017 | 20min | Päivitettiin luokkakaavio
+20.4.2017 | 1h | Luotiin kaksi sekvenssikaaviota
