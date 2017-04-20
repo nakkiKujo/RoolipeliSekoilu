@@ -1,6 +1,5 @@
 package juuri.sovelluslogiikka.maailma;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.esineet.Esine;
@@ -12,7 +11,10 @@ import juuri.sovelluslogiikka.tapahtumat.Taistelu;
 /**
  * Tämä luokka kuvastaa pelin maailmaa, jossa pelaajan hahmo seikkailee.
  * Luolaston rakennetta ylläpidetään taulukossa, joka sisältää erilaisia
- * kohteita.
+ * kohteita. Luokalla on metodit kohteiden lisäämistä ja poistamista varten.
+ *
+ * Luolasto koostuu useammasta eri kerroksesta, joissa aina syvemmälle mentäessä
+ * peli vaikeutuu.
  */
 public class Luolasto {
 
@@ -29,8 +31,6 @@ public class Luolasto {
 
     /**
      * Luo luolaston ensimmäisen tason, joka on samalla tasoista helpoin.
-     * Luolasto koostuu useammasta eri kerroksesta, joista aina syvemmälle
-     * mentäessä peli vaikeutuu.
      */
     public void luoTaso1() {
         this.leveys = 13;
@@ -145,6 +145,16 @@ public class Luolasto {
 
     }
 
+    /**
+     * Asettaa luolastoon annettujen koodinaattien kohdalle hirviön. Samalla
+     * luodaan myös taitelu-tapahtuma, joka liitetään hirviöön.
+     *
+     * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
+     *
+     * @param x annettu x-koordinaatti
+     * @param y annettu y-koordinaatti
+     * @return onnistuiko hirviön asetus
+     */
     public boolean asetaHirvio(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
@@ -159,6 +169,15 @@ public class Luolasto {
         return true;
     }
 
+    /**
+     * Asettaa luolastoon annettujen koodinaattien kohdalle ansan.
+     *
+     * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
+     *
+     * @param x annettu x-koordinaatti
+     * @param y annettu y-koordinaatti
+     * @return onnistuiko ansan asetus
+     */
     public boolean asetaAnsa(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
@@ -169,6 +188,15 @@ public class Luolasto {
         return true;
     }
 
+    /**
+     * Asettaa luolastoon annettujen koodinaattien kohdalle portaat.
+     *
+     * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
+     *
+     * @param x annettu x-koordinaatti
+     * @param y annettu y-koordinaatti
+     * @return onnistuiko portaiden asetus
+     */
     public boolean asetaPortaat(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
@@ -179,6 +207,18 @@ public class Luolasto {
         return true;
     }
 
+    /**
+     * Asettaa luolastoon annettujen koodinaattien kohdalle aarteen. Metodissa
+     * annetaan myös parametrina nimi luotavalle aarteelle. Samalla luodaan
+     * aarteenlöytäminen-tapahtuma, joka liitetään aarteeseen.
+     *
+     * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
+     *
+     * @param x annettu x-koordinaatti
+     * @param y annettu y-koordinaatti
+     * @param aarteenNimi luolastoon asetettavan aarteen nimi
+     * @return onnistuiko aarteen asetus
+     */
     public boolean asetaAarre(int x, int y, String aarteenNimi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
@@ -192,6 +232,15 @@ public class Luolasto {
         return true;
     }
 
+    /**
+     * Asettaa luolastoon annettujen koodinaattien kohdalle seinän.
+     *
+     * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
+     *
+     * @param x annettu x-koordinaatti
+     * @param y annettu y-koordinaatti
+     * @return onnistuiko seinän asetus
+     */
     public boolean asetaSeina(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
@@ -202,6 +251,15 @@ public class Luolasto {
         return true;
     }
 
+    /**
+     * Asettaa luolastoon annettujen koodinaattien kohdalle käytävän.
+     *
+     * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
+     *
+     * @param x annettu x-koordinaatti
+     * @param y annettu y-koordinaatti
+     * @return onnistuiko käytävän asetus
+     */
     public boolean asetaKaytava(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
@@ -213,6 +271,21 @@ public class Luolasto {
         return true;
     }
 
+    /**
+     * Asettaa luolaston koordinaateihin (x, y) lukitun oven. Oven pystyy
+     * avaamaan avaimella, jonka nimi annetaan metodille parametrina.
+     *
+     * Metodi luo samalla ovenAvaus tapahtuman sekä liittää sen ja oven
+     * toisiinsa.
+     *
+     * Jos oven luominen ja asettaminen ei onnistu, palauttaa metodi false.
+     * Muuten palautetaan true.
+     *
+     * @param x annettu x-koordinaatti
+     * @param y annettu y-koordinaatti
+     * @param avaajanNimi lukitun oven avaajan nimi
+     * @return onnistuiko oven asetus
+     */
     public boolean asetaLukittuOvi(int x, int y, String avaajanNimi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
@@ -228,6 +301,17 @@ public class Luolasto {
         return true;
     }
 
+    /**
+     * Asettaa luolaston koordinaatteihin (x, y) avoimen oven.
+     *
+     * Metodi luo samalla ovenAvaus tapahtuman ja liittää sen ja oven toisiinsa.
+     *
+     * Jos ovea ei pystytä luomaan, palautetaan false. Muuten palautetaan true.
+     *
+     * @param x annettu x-koordinaatti
+     * @param y annettu y-koordinaatti
+     * @return onnistuiko oven asetus
+     */
     public boolean asetaAvoinOvi(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
@@ -242,6 +326,13 @@ public class Luolasto {
         return true;
     }
 
+    /**
+     * Hakee luolastosta kohteen parametrein annettujen koodinaattien kohdalta.
+     *
+     * @param x annettu x-koordinaatti
+     * @param y annettu y-koordinaatti
+     * @return löydetty kohde
+     */
     public Kohde haeKoordinaateista(int x, int y) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return null;
@@ -249,6 +340,13 @@ public class Luolasto {
         return koordinaatisto[x][y];
     }
 
+    /**
+     * Metodi hakee luolastosta kohteen sille parametrina annetun sijainnin
+     * osoittamasata kohdasta.
+     *
+     * @param ss sijainti, jonka kohdalla oleva kohde halutaan löytää
+     * @return löydetty kohde
+     */
     public Kohde haeSijainnista(Sijainti ss) {
         int x = ss.getX();
         int y = ss.getY();
@@ -260,14 +358,26 @@ public class Luolasto {
         return koordinaatisto[x][y];
     }
 
-    public boolean poistaKohde(Kohde kk) {
+    /**
+     * Poistaa parametrina annetun kohteen luolastosta. Tilalle laitetaan
+     * käytävä, jossa ei ole tapahtumaa.
+     *
+     * @param kk poistettava kohde
+     */
+    public void poistaKohde(Kohde kk) {
         int x = kk.getSijainti().getX();
         int y = kk.getSijainti().getY();
 
         asetaKaytava(x, y);
-        return true;
     }
 
+    /**
+     * Piirtää luolaston käyttöliittymän piirtotaululle. Metodi kutsuu
+     * luolatossa olevien kohteiden piirtometodeja.
+     *
+     * @param g käyttöliittyymän grafiikkaolio
+     * @param mittaKaava mittakaava, jossa piirretään
+     */
     public void piirra(Graphics g, int mittaKaava) {
         for (int i = 0; i < leveys; i++) {
             for (int j = 0; j < korkeus; j++) {

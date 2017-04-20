@@ -13,8 +13,6 @@ import juuri.sovelluslogiikka.maailma.Ovi;
  * OvenAvaus tietää aina, mihin oveen se liittyy.
  * 
  * Jos pelaaja onnistuneesti avaa oven, poistuu ovi luolasta.
- *
- * @author PenaJones
  */
 public class OvenAvaus extends Tapahtuma {
 

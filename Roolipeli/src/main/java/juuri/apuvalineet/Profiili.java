@@ -18,6 +18,9 @@ public class Profiili {
     private int elamaPisteet;
     private int taikaPuolustus;
 
+    /**
+     * 
+     */
     public Profiili() {
         this.voima = 0;
         this.taikaVoima = 0;
@@ -25,7 +28,11 @@ public class Profiili {
         this.elamaPisteet = 0;
         this.taikaPuolustus = 0;
     }
-
+    
+    /**
+     * 
+     * @param v 
+     */
     public void lisaaVoima(int v) {
         this.voima += v;
     }

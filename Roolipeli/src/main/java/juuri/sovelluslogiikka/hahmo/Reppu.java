@@ -39,7 +39,7 @@ public class Reppu {
      * palauttaa true. Jos ei ole, palauttaa false.
      *
      * @param ee Tarkastettava esine.
-     * @return
+     * @return onko esine repussa vai ei
      */
     public boolean onkoRepussa(Esine ee) {
         int esineenKoodi = ee.getKoodi();

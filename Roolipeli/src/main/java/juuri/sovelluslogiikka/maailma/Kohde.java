@@ -36,17 +36,17 @@ public abstract class Kohde {
     public int getKoodi() {
         return koodi;
     }
-    
+
     public String getNimi() {
         return nimi;
     }
-    
+
     public Sijainti getSijainti() {
         return this.sijainti;
     }
-    
+
     public void setSijainti(int x, int y) {
-        if(this.sijainti == null) {
+        if (this.sijainti == null) {
             sijainti = new Sijainti();
         }
         sijainti.setSijainti(x, y);
@@ -68,7 +68,16 @@ public abstract class Kohde {
     public Tapahtuma getTapahtuma() {
         return tapahtuma;
     }
-    
+
+    /**
+     * Metodi piirtää kohteen käyttöliittymän piirtotaululle. Jokaisella
+     * kohteella on oma piirra-metodinsa, koska ne piitryvät eri tavoin.
+     *
+     * @param g piirtotaulun grafiikka-olio
+     * @param mittakaava mittakaava, jossa piirretään
+     * @param x kohteen x-koordinaatti
+     * @param y kohteen y-koordinaatti
+     */
     public abstract void piirra(Graphics g, int mittakaava, int x, int y);
 
     @Override

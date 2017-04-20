@@ -9,7 +9,6 @@ import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
  * Aarteet ovat luolaston kohteita, joista pelaaja voi saada lisää esineitä.
- * @author PenaJones
  */
 public class Aarre extends Kohde {
     
@@ -34,7 +33,7 @@ public class Aarre extends Kohde {
     /**
      * Metodi palauttaa aarteessa olevat esineet ja samalla poistaa 
      * esineet aarteesta.
-     * @return lista esineistä
+     * @return lista aarteen esineistä
      */
     public ArrayList<Esine> keraaAarteet() {
         ArrayList<Esine> apu = new ArrayList<>();

@@ -6,7 +6,7 @@ import juuri.sovelluslogiikka.maailma.Kohde;
 import juuri.sovelluslogiikka.maailma.Luolasto;
 
 /**
- * Tämän luokan vastuulla on liikuttaa pelaajan hahmoa.
+ * Tämän luokan vastuulla on liikuttaa pelaajan hahmoa luolastossa.
  */
 public class Hahmonliikuttaja {
 

@@ -8,7 +8,7 @@ import juuri.sovelluslogiikka.maailma.Luolasto;
 
 /**
  * Tämä luokka käsittelee tapahtuman, jossa pelaaja löytää aarteen. Pelaaja voi
- * ottaa tai jättää aarteen ottamatta.
+ * ottaa aarteen tai jättää sen ottamatta.
  *
  * Jos pelaaja ottaa aarteen, siirtyvät aarteeseen kuuluuneet esineet pelaajan
  * reppuun. Lisäksi aarre poistuu luolasta.

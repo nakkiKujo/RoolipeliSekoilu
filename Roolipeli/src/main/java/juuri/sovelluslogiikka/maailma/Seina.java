@@ -6,6 +6,7 @@ import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
  * Seinä on Kohteen aliluokka. Seinä rajaa luolastoa ja antaa sille rakenteen.
+ * Pelaaja ei normaalisti voi kulkea seinän sisälle.
  */
 public class Seina extends Kohde {
 
@@ -13,8 +14,7 @@ public class Seina extends Kohde {
         this.koodi = Kohde.SEINA;
         this.nimi = "seinä";
         this.tapahtuma = tapahtuma;
-
-        //Seinään ei voi kulkea.
+        
         this.voikoKulkea = false;
     }
 

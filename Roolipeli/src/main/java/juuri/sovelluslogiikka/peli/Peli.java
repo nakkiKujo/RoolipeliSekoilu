@@ -10,8 +10,10 @@ import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 /**
  * Tämä luokka toimii välikätenä käyttöliittymän ja sovelluslogiikan välillä.
  * Tästä luokasta lähetetään käskyjä muun muassa luolaston ja hahmon luomiseen
- * sekä hahmon liikuttamiseen. Se toimii eräänlaisena runkona koko ohjelman
- * toiminnalle.
+ * sekä hahmon liikuttamiseen.
+ *
+ * Luokka myös ylläpitää tietoa pelin tällä hetkellä käynnissä olevasta
+ * tapahtumasta.
  */
 public class Peli {
 
@@ -70,8 +72,8 @@ public class Peli {
 
     /**
      * Metodin avulla liikutetaan pelaajan hahmoa. Metodi kutsuu
-     * hahmonliikuttajaa, jolle annetaan parametrina saatu suunta.
-     * Saatu suunta on muotoa "alas", "ylös", "vasen" tai "oikea".
+     * hahmonliikuttajaa, jolle annetaan parametrina saatu suunta. Saatu suunta
+     * on muotoa "alas", "ylös", "vasen" tai "oikea".
      *
      * Liikkuessaan hahmo löytää jonkin Kohteen, johon saattaa liittyä
      * tapahtuma. Jos tapahtumaa ei ole, palautetaan null. Jos tapahtuma löytyy,
@@ -83,11 +85,11 @@ public class Peli {
      */
     public Tapahtuma liikutaanJaEtsitaanTapahtumaa(String suunta) {
         Kohde minneHahmoLiikkui = liikuttaja.liikutaHahmoa(suunta, luolasto, pelaajanHahmo);
-        
-        if(minneHahmoLiikkui == null) {
+
+        if (minneHahmoLiikkui == null) {
             return null;
         }
-        
+
         nykyinenTapahtuma = minneHahmoLiikkui.getTapahtuma();
         if (nykyinenTapahtuma == null) {
             return null;

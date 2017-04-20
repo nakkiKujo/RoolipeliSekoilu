@@ -33,8 +33,7 @@ public abstract class Tapahtuma {
 
     /**
      * Metodi palauttaa tekstin, joka liittyy tapahtuman ensimmäiseen tapaan
-     * ratketa. Tämä teksti näytetään pelaajalle käyttöliittymän
-     * välityksellä.
+     * ratketa. Tämä teksti näytetään pelaajalle käyttöliittymän välityksellä.
      *
      * @return vaihtoehtoon liittyvä teksti
      */
@@ -43,19 +42,19 @@ public abstract class Tapahtuma {
     }
 
     /**
-     * Metodi palauttaa tekstin, joka liittyy tapahtuman toiseen tapaan
-     * ratketa. Tämä teksti näytetään pelaajalle käyttöliittymän
-     * välityksellä.
+     * Metodi palauttaa tekstin, joka liittyy tapahtuman toiseen tapaan ratketa.
+     * Tämä teksti näytetään pelaajalle käyttöliittymän välityksellä.
      *
      * @return vaihtoehtoon liittyvä teksti
      */
     public String getVaihtoehtoKaksi() {
         return vaihtoehtoKaksi;
     }
-    
+
     /**
      * Metodi palauttaa tapahtumalle ominaisen koodin. Erilaisilla tapahtumilla
      * on erilaiset koodit.
+     *
      * @return tapahtuman koodi
      */
     public int getKoodi() {
@@ -63,12 +62,30 @@ public abstract class Tapahtuma {
     }
 
     /**
+     * Metodi suoritetaan hahmon kohdatessa tapahtumaan liittyvän kohteen. Se
+     * valmistelee kaiken valmiiksi tapahtumaa varten, ja muun muassa muokkaa
+     * tapahtumaan liittyvät tekstit hahmon ja kohteen mukaisiksi.
      *
-     * @param hahmo
+     * @param hahmo pelaajan hahmo
      */
     public abstract void valmisteleTapahtuma(Hahmo hahmo);
 
+    /**
+     * Metodi suoritetaan, kun tapahtuma tavalla tai toisella päätyy tapahtumaan
+     * tavalla yksi.
+     *
+     * @param hahmo pelaajan hahmo
+     * @param luola luolasto, jossa pelaajan hahmo ja tapahtuman kohde ovat
+     */
     public abstract void toteutaVaihtoehtoYksi(Hahmo hahmo, Luolasto luola);
 
+    /**
+     * Metodi suoritetaan, kun tapahtuma päätyy tapahtumaan tavalla numero
+     * kaksi.
+     *
+     * @param hahmo pelaajan hahmo
+     * @param luola luolasto, jossa pelaajan hahmo ja tapahtumaan liittyvä kohde
+     * ovat
+     */
     public abstract void toteutaVaihtoehtoKaksi(Hahmo hahmo, Luolasto luola);
 }
