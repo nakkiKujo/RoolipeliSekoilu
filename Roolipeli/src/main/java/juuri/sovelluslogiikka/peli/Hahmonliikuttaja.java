@@ -28,8 +28,7 @@ public class Hahmonliikuttaja {
      */
     public Kohde liikutaHahmoa(String komento, Luolasto luola, Hahmo hahmo) {
         Sijainti hahmonSijainti = hahmo.getSijainti();
-
-        //ensin käsitellään komento, joka kertoo, mihin suuntaan liikutaan
+        
         if (komento.equals("alas")) {
             hahmonSijainti.liikuAlas(1);
         } else if (komento.equals("ylös")) {
