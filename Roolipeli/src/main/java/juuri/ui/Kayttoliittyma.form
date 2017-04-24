@@ -252,6 +252,88 @@
             </DimensionLayout>
           </Layout>
         </Container>
+        <Container class="javax.swing.JPanel" name="TaisteluPaneeliLuode">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card4"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="PelaajaNimiKenttaTaistelu" max="32767" attributes="0"/>
+                          <Component id="PelaajaEPKenttaTaistelu" pref="75" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="PelaajaEPMaaraTaistelu" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace pref="65" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="HirvioEPKenttaTaistelu" pref="75" max="32767" attributes="0"/>
+                          <Component id="HirvioNimiKenttaTaistelu" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="HirvioEPMaaraTaistelu" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="PelaajaNimiKenttaTaistelu" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HirvioNimiKenttaTaistelu" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="PelaajaEPKenttaTaistelu" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HirvioEPKenttaTaistelu" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PelaajaEPMaaraTaistelu" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HirvioEPMaaraTaistelu" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="151" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JTextField" name="PelaajaNimiKenttaTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Pelaaja"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="HirvioNimiKenttaTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hirvi&#xf6;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="PelaajaEPKenttaTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="El&#xe4;m&#xe4;pisteet"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="HirvioEPKenttaTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="El&#xe4;m&#xe4;pisteet"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="PelaajaEPMaaraTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="HirvioEPMaaraTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="LounasPaneeli">
@@ -396,7 +478,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="LiikkkumisPaneeli">
+        <Container class="javax.swing.JPanel" name="LiikkumisPaneeli">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="33" red="0" type="rgb"/>
@@ -428,10 +510,12 @@
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="HahmoLiikkuuAlasButton" min="-2" max="-2" attributes="0"/>
-                          <Component id="HahmoLiikkuuYlosButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                              <Component id="HahmoLiikkuuAlasButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="HahmoLiikkuuYlosButton" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -515,6 +599,109 @@
               </Events>
             </Component>
           </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="TaisteluPaneeliLounas">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card4"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="SuperlyontiNappiTaistelu" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="TaikaiskuNappiTaistelu" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="PeraannyNappiTaistelu" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="VaistoNappiTaistelu" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="LyoNappiTaistelu" min="-2" pref="223" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="73" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Component id="LyoNappiTaistelu" min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="VaistoNappiTaistelu" min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="SuperlyontiNappiTaistelu" min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="TaikaiskuNappiTaistelu" min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="PeraannyNappiTaistelu" min="-2" pref="46" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="LyoNappiTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ly&#xf6;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LyoNappiTaisteluActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="VaistoNappiTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Valmistaudu v&#xe4;ist&#xf6;&#xf6;n"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VaistoNappiTaisteluActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="PeraannyNappiTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Yrit&#xe4; per&#xe4;&#xe4;nty&#xe4;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PeraannyNappiTaisteluActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="SuperlyontiNappiTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Valmistaudu hy&#xf6;kk&#xe4;&#xe4;m&#xe4;&#xe4;n"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SuperlyontiNappiTaisteluActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="TaikaiskuNappiTaistelu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="K&#xe4;yt&#xe4; taikaisku"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TaikaiskuNappiTaisteluActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="TyhjaPaneeliLounas">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card5"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="361" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="253" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
         </Container>
       </SubComponents>
     </Container>
@@ -641,6 +828,26 @@
               </Events>
             </Component>
           </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="TaisteluPaneeliKaakko">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card4"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="296" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="253" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
         </Container>
       </SubComponents>
     </Container>

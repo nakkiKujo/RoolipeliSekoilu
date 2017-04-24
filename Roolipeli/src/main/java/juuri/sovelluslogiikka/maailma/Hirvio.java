@@ -25,7 +25,19 @@ public class Hirvio extends Kohde {
         //hirviön läpi ei voi kulkea
         this.voikoKulkea = false;
     }
-
+    
+    public Profiili getProfiili() {
+        return hirvioProfiili;
+    }
+    
+    public ArrayList<Esine> getEsineet() {
+        return hirvionEsineet;
+    }
+    
+    public void lisaaEsine(Esine ee) {
+        hirvionEsineet.add(ee);
+    }
+    
     @Override
     public void piirra(Graphics g, int mittakaava, int x, int y) {
         g.setColor(Color.PINK);

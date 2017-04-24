@@ -445,9 +445,6 @@ public class KayttoliittymaXX extends JFrame {
         }
         
         KarttaPaneeli.repaint();
-
-        //tähän tulee component.repaint piirtoalustalle
-
     }                                                          
 
     private void HahmoLiikkuuYlosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                       
@@ -468,8 +465,6 @@ public class KayttoliittymaXX extends JFrame {
         }
         
         KarttaPaneeli.repaint();
-        //tähän tulee component.repaint piirtoalustalle
-
     }                                                      
 
     private void HahmoLiikkuuAlasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                       
@@ -490,8 +485,6 @@ public class KayttoliittymaXX extends JFrame {
         }
         
         KarttaPaneeli.repaint();
-        //tähän tulee component.repaint piirtoalustalle
-
     }                                                      
 
     private void HahmoLiikkuuVasemmalleButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                             
@@ -512,8 +505,6 @@ public class KayttoliittymaXX extends JFrame {
         }
         
         KarttaPaneeli.repaint();
-        //tähän tulee component.repaint piirtoalustalle
-
     }                                                            
 
     private void tapahtumaVaihtoehtoYksiButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                              

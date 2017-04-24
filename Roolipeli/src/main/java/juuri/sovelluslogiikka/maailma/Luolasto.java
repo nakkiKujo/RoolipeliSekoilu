@@ -133,8 +133,6 @@ public class Luolasto {
         asetaLukittuOvi(3, 4, "hopea-avain");
         asetaAvoinOvi(5, 4);
         asetaAvoinOvi(5, 6);
-        asetaLukittuOvi(2, 1, "pronssiavain");
-        asetaAvoinOvi(3, 1);
     }
 
     public void luoTaso2() {
