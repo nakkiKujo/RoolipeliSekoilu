@@ -3,17 +3,26 @@ package juuri.sovelluslogiikka.maailma;
 import java.awt.Color;
 import java.awt.Graphics;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
+import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
  * Ansat ovat luolaston kohteita, joihin pelaaja voi tahtomattaan joutua. Ne
  * yleensä aiheuttavat pelaajan hahmolle jonkinlaista vahinkoa.
  */
 public class Ansa extends Kohde {
-
-    public Ansa() {
+    
+    private int vahinko;
+    
+    public Ansa(String ansanNimi, Tapahtuma tapahtuma, int ansanTekemaVahinko) {
         this.koodi = Kohde.ANSA;
-        this.nimi = "ansa";
+        this.nimi = ansanNimi;
+        this.tapahtuma = tapahtuma;
         this.voikoKulkea = true;
+        this.vahinko = ansanTekemaVahinko;
+    }
+    
+    public int getAnsanTekemaVahinko() {
+        return this.vahinko;
     }
 
     @Override

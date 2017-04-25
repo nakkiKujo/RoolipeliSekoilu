@@ -18,6 +18,7 @@ import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
 public class Luolasto {
 
     private Kohde[][] koordinaatisto;
+    private int nykyinenTaso;
     private int leveys;
     private int korkeus;
 
@@ -29,9 +30,22 @@ public class Luolasto {
     }
 
     /**
+     * Metodi tarkastaa, missä tasossa luolasto on nyt ja luo sitä seuraavan
+     * tason.
+     */
+    public void luoSeuraavaTaso() {
+        if (nykyinenTaso == 1) {
+            luoTaso2();
+        } else if (nykyinenTaso == 2) {
+            luoTaso3();
+        }
+    }
+
+    /**
      * Luo luolaston ensimmäisen tason, joka on samalla tasoista helpoin.
      */
     public void luoTaso1() {
+        nykyinenTaso = 1;
         this.leveys = 13;
         this.korkeus = 11;
 
@@ -123,7 +137,7 @@ public class Luolasto {
         asetaAarre(8, 5, KohteidenLuoja.AARRE2VOIDETTA);
 
         //asetetaan ansa
-        asetaAnsa(6, 5);
+        asetaAnsa(6, 5, KohteidenLuoja.ANSANUOLI);
 
         //portaat
         asetaPortaat(10, 9);
@@ -136,11 +150,11 @@ public class Luolasto {
     }
 
     public void luoTaso2() {
-
+        nykyinenTaso = 2;
     }
 
     public void luoTaso3() {
-
+        nykyinenTaso = 3;
     }
 
     /**
@@ -169,19 +183,22 @@ public class Luolasto {
     }
 
     /**
-     * Asettaa luolastoon annettujen koodinaattien kohdalle ansan.
+     * Asettaa luolastoon annettujen koodinaattien kohdalle ansan. Parametrina
+     * annettu luontikoodi annetaan KohteidenLuojalle, jolta saadaan koodin
+     * mukainen ansa.
      *
      * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
      *
      * @param x annettu x-koordinaatti
      * @param y annettu y-koordinaatti
+     * @param kohteenLuontiKoodi luotavan ansan luontikoodi
      * @return onnistuiko ansan asetus
      */
-    public boolean asetaAnsa(int x, int y) {
+    public boolean asetaAnsa(int x, int y, int kohteenLuontiKoodi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        Ansa aa = new Ansa();
+        Ansa aa = (Ansa) KohteidenLuoja.luoKohde(kohteenLuontiKoodi);
         aa.setSijainti(x, y);
         koordinaatisto[x][y] = aa;
         return true;
@@ -233,7 +250,7 @@ public class Luolasto {
     /**
      * Asettaa luolastoon annettujen koodinaattien kohdalle seinän. Parametrina
      * annettaa koodi, jonka avulla seinä luodaan Kohteidenluojassa.
-     * 
+     *
      * Koodi on oleellinen, jos halutaan esimerkiksi luoda erilaisia seiniä.
      *
      * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.

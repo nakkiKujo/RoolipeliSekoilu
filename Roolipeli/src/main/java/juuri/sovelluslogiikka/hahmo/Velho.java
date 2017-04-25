@@ -2,7 +2,6 @@ package juuri.sovelluslogiikka.hahmo;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import juuri.sovelluslogiikka.esineet.Esine;
 
 /**
  * Tämä luokka on yksi Hahmon perivistä aliluokista. TODO: Eroavaisuus muista

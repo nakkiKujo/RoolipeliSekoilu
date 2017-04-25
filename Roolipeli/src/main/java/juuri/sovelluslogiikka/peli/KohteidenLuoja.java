@@ -5,10 +5,12 @@ import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.esineet.TaisteluEsine;
 import juuri.sovelluslogiikka.esineet.YleisEsine;
 import juuri.sovelluslogiikka.maailma.Aarre;
+import juuri.sovelluslogiikka.maailma.Ansa;
 import juuri.sovelluslogiikka.maailma.Kohde;
 import juuri.sovelluslogiikka.maailma.Ovi;
 import juuri.sovelluslogiikka.maailma.Seina;
 import juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminen;
+import juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminen;
 import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
 
 /**
@@ -28,6 +30,9 @@ public class KohteidenLuoja {
     public static final int AARREJOSSAMIEKKA1 = 21;
     public static final int AARREJOSSARIIMUJATAIKASAUVA = 22;
     public static final int AARRE2VOIDETTA = 23;
+    
+    public static final int ANSAPIIKKI = 30;
+    public static final int ANSANUOLI = 31;
 
     /**
      * Metodi kutsuu parametrina annetun koodin määrittämää metodia ja luo
@@ -86,6 +91,14 @@ public class KohteidenLuoja {
             return luoAarre(lista, "luiden ympäröimä säkki");
         }
         
+        //ansat
+        if(koodi == KohteidenLuoja.ANSANUOLI) {
+            return luoAnsa("nuoliansa", 4);
+        }
+        if(koodi == KohteidenLuoja.ANSAPIIKKI) {
+            return luoAnsa("piikkiansa", 6);
+        }
+        
         return null;
     }
 
@@ -108,7 +121,11 @@ public class KohteidenLuoja {
         ovi.setTapahtuma(ovenAvaus);
         return ovi;
     }
-
+    
+    /**
+     * Metodi luo ja palauttaa seinän. Seinään ei liity tapahtumia.
+     * @return luotu seinä
+     */
     private static Kohde luoSeina() {
         Seina ss = new Seina(null);
         return ss;
@@ -137,5 +154,21 @@ public class KohteidenLuoja {
         return aa;
     }
     
+    /**
+     * Metodi luo uuden ansan ja liittää sen uuteen ansaanastumis-tapahtumaan.
+     * 
+     * Parametrina annetaan ansan nimi ja sen tekemä vahinko.
+     * 
+     * Metodi palauttaa luodun ansan.
+     * @param ansanNimi ansalle annettav nimi
+     * @param ansanTekemaVahinko ansan tekemä vahinko
+     * @return palautetaan luotu ansa
+     */
+    private static Kohde luoAnsa(String ansanNimi, int ansanTekemaVahinko) {
+        Ansa ansa = new Ansa(ansanNimi, null, ansanTekemaVahinko);
+        AnsaanAstuminen aa = new AnsaanAstuminen(ansa);
+        ansa.setTapahtuma(aa);
+        return ansa;
+    }
     
 }

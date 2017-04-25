@@ -15,7 +15,7 @@ public class Portaat extends Kohde {
     public Portaat() {
         this.koodi = Kohde.PORTAAT;
         this.nimi = "portaat";
-        this.voikoKulkea = true;
+        this.voikoKulkea = false;
     }
 
     @Override

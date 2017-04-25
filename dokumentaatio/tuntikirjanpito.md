@@ -23,3 +23,4 @@ Päivä | Tunnit | Kuvaus
 20.4.2017 | 20min | Päivitettiin luokkakaavio
 20.4.2017 | 1h | Luotiin kaksi sekvenssikaaviota
 24.4.2017 | 4h | Taistelujen koodaamista
+25.4.2017 | 6h | Taistelut valmiiksi. Tehtiin ansa ja porras tapahtumat

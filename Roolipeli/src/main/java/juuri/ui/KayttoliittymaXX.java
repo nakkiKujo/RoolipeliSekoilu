@@ -690,8 +690,10 @@ public class KayttoliittymaXX extends JFrame {
             hahmonAmmatti = Hahmo.SOTURI;
         } else if (AmmatinValintaVelhoButton.isSelected()) {
             hahmonAmmatti = Hahmo.VELHO;
-        } else {
+        } else if(AmmatinValintaDruidiButton.isSelected()) {
             hahmonAmmatti = Hahmo.DRUIDI;
+        } else {
+            return;
         }
         //luodaan hahmo ja luolasto
         peli.aloitaPeli(hahmonNimi, hahmonAmmatti);
@@ -870,22 +872,49 @@ public class KayttoliittymaXX extends JFrame {
         } else {
             tt.toteutaVaihtoehtoYksi(peli.getPelaajanHahmo(), peli.getLuolasto());
 
-            LounasPaneeli.removeAll();
-            LounasPaneeli.repaint();
-            LounasPaneeli.revalidate();
-            LounasPaneeli.add(LiikkumisPaneeli);
-            LounasPaneeli.repaint();
-            LounasPaneeli.revalidate();
+            if (peli.getPelaajanHahmo().getProfiili().onkoKuollut()) {
+                KoillinenPaneeli.removeAll();
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KoillinenPaneeli.add(KoillinenKuolemaPaneeli);
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(KaakkoKuolemaPaneeli);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LounasKuolemaPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LuodePaneeli.removeAll();
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+                LuodePaneeli.add(LuodeKuolemaPaneeli);
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+            } else {
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LiikkumisPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
 
-            KaakkoPaneeli.removeAll();
-            KaakkoPaneeli.repaint();
-            KaakkoPaneeli.revalidate();
-            KaakkoPaneeli.add(TyhjaPaneeliPaalla);
-            KaakkoPaneeli.repaint();
-            KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
 
-            KoillinenPaneeli.repaint();
-            KoillinenPaneeli.revalidate();
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+            }
         }
     }
 
@@ -951,19 +980,49 @@ public class KayttoliittymaXX extends JFrame {
         } else {
             tt.toteutaVaihtoehtoKaksi(peli.getPelaajanHahmo(), peli.getLuolasto());
 
-            LounasPaneeli.removeAll();
-            LounasPaneeli.repaint();
-            LounasPaneeli.revalidate();
-            LounasPaneeli.add(LiikkumisPaneeli);
-            LounasPaneeli.repaint();
-            LounasPaneeli.revalidate();
+            if (peli.getPelaajanHahmo().getProfiili().onkoKuollut()) {
+                KoillinenPaneeli.removeAll();
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KoillinenPaneeli.add(KoillinenKuolemaPaneeli);
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(KaakkoKuolemaPaneeli);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LounasKuolemaPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LuodePaneeli.removeAll();
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+                LuodePaneeli.add(LuodeKuolemaPaneeli);
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+            } else {
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LiikkumisPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
 
-            KaakkoPaneeli.removeAll();
-            KaakkoPaneeli.repaint();
-            KaakkoPaneeli.revalidate();
-            KaakkoPaneeli.add(TyhjaPaneeliPaalla);
-            KaakkoPaneeli.repaint();
-            KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+            }
         }
     }
 
