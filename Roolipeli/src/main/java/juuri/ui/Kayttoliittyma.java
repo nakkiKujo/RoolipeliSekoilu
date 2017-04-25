@@ -688,9 +688,9 @@ public class Kayttoliittyma extends JFrame {
     private void HahmonluontiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmonluontiButtonActionPerformed
         String hahmonNimi = HahmonNimiTextField.getText();
         int hahmonAmmatti;
-        if(AmmatinValintaSoturiButton.isSelected()) {
+        if (AmmatinValintaSoturiButton.isSelected()) {
             hahmonAmmatti = Hahmo.SOTURI;
-        } else if(AmmatinValintaVelhoButton.isSelected()) {
+        } else if (AmmatinValintaVelhoButton.isSelected()) {
             hahmonAmmatti = Hahmo.VELHO;
         } else {
             hahmonAmmatti = Hahmo.DRUIDI;
@@ -842,6 +842,8 @@ public class Kayttoliittyma extends JFrame {
             } else {
                 TaikaiskuNappiTaistelu.setEnabled(true);
             }
+            SuperlyontiNappiTaistelu.setEnabled(true);
+            
 
             KaakkoPaneeli.removeAll();
             KaakkoPaneeli.repaint();
@@ -880,7 +882,7 @@ public class Kayttoliittyma extends JFrame {
             KaakkoPaneeli.add(TyhjaPaneeliPaalla);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
-            
+
             KoillinenPaneeli.repaint();
             KoillinenPaneeli.revalidate();
         }
@@ -888,7 +890,62 @@ public class Kayttoliittyma extends JFrame {
 
     private void tapahtumaVaihtoehtoKaksiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tapahtumaVaihtoehtoKaksiButtonActionPerformed
         Tapahtuma tt = peli.getNykyinenTapahtuma();
+
         if (tt.getKoodi() == Tapahtuma.TAISTELU) {
+            Taistelu ttt = (Taistelu) tt;
+            boolean valtytaankoTaistelulta = ttt.toteutaVaihtoehtoKaksiTaistelu(peli.getPelaajanHahmo());
+
+            if (valtytaankoTaistelulta) {
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LiikkumisPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+            } else {
+                ttt.toteutaVaihtoehtoYksi(peli.getPelaajanHahmo(), null);
+
+                PelaajaNimiKenttaTaistelu.setText(peli.getPelaajanHahmo().getNimi());
+                HirvioNimiKenttaTaistelu.setText(ttt.getHirvio().getNimi());
+                PelaajaEPMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+                HirvioEPMaaraTaistelu.setText("" + ttt.getHirvio().getProfiili().getNykyinenElamaPisteet());
+                ValmiusMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getPuolustusValmius());
+
+                if (!peli.getPelaajanHahmo().getReppu().onkoRepussa(Esine.RIIMU)) {
+                    TaikaiskuNappiTaistelu.setEnabled(false);
+                } else {
+                    TaikaiskuNappiTaistelu.setEnabled(true);
+                }
+                SuperlyontiNappiTaistelu.setEnabled(true);
+
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(TaisteluPaneeliKaakko);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(TaisteluPaneeliLounas);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+
+                LuodePaneeli.removeAll();
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+                LuodePaneeli.add(TaisteluPaneeliLuode);
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+            }
 
         } else {
             tt.toteutaVaihtoehtoKaksi(peli.getPelaajanHahmo(), peli.getLuolasto());

@@ -60,7 +60,6 @@ public class HirvionLuoja {
         
         noita.lisaaEsine(Esine.RIIMU);
         noita.lisaaEsine(Esine.PARANTAVAVOIDE);
-        noita.lisaaEsine(Esine.HOPEAAVAIN);
         
         return noita;
     }

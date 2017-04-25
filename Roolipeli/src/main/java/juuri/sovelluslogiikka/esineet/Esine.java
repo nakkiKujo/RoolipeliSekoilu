@@ -12,10 +12,14 @@ public abstract class Esine {
     public static final int AVAIN = 1;
     public static final int MIEKKA = 2;
     public static final int KYPARA = 3;
+    public static final int TAIKASAUVA = 4;
+    
     public static final YleisEsine RIIMU = new YleisEsine("Riimu", 4);
     public static final YleisEsine PARANTAVAVOIDE = new YleisEsine("Parantava voide", 5);
+    
     public static final YleisEsine PRONSSIAVAIN = new YleisEsine("Pronssiavain", Esine.AVAIN);
     public static final YleisEsine HOPEAAVAIN = new YleisEsine("Hopea-avain", Esine.AVAIN);
+    public static final YleisEsine KULTAAVAIN = new YleisEsine("Kulta-avain", Esine.AVAIN);
 
     public Esine(String nimi, int koodi) {
         this.nimi = nimi;

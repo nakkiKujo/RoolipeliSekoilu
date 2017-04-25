@@ -17,9 +17,9 @@ public class Ovi extends Kohde {
     private boolean lukittu;
     private YleisEsine avaaja;
 
-    public Ovi(boolean onkoLukittu, Tapahtuma tapahtuma, YleisEsine avaaja) {
+    public Ovi(boolean onkoLukittu, Tapahtuma tapahtuma, YleisEsine avaaja, String ovenNimi) {
         this.koodi = Kohde.OVI;
-        this.nimi = "ovi";
+        this.nimi = ovenNimi;
         this.lukittu = onkoLukittu;
 
         //Ovien läpi ei voi kulkea

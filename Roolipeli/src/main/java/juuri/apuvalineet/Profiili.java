@@ -1,6 +1,8 @@
 package juuri.apuvalineet;
 
+import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.esineet.TaisteluEsine;
+import juuri.sovelluslogiikka.esineet.YleisEsine;
 
 /**
  * Profiili kuvastaa hahmon, hirviÃ¶n tai esineen ominaisuuksia. Profiiliin
@@ -95,7 +97,7 @@ public class Profiili {
         this.taikaVoima = 1;
         this.taikaPuolustus = 1;
         this.ketteryys = 2;
-        this.elamaPisteet = 6;
+        this.elamaPisteet = 8;
         this.nykyinenElamaPisteet = 8;
     }
 
@@ -104,7 +106,7 @@ public class Profiili {
         this.taikaVoima = 3;
         this.taikaPuolustus = 2;
         this.ketteryys = 2;
-        this.elamaPisteet = 5;
+        this.elamaPisteet = 7;
         this.nykyinenElamaPisteet = 7;
     }
 
@@ -113,7 +115,7 @@ public class Profiili {
         this.taikaVoima = 1;
         this.taikaPuolustus = 1;
         this.ketteryys = 3;
-        this.elamaPisteet = 7;
+        this.elamaPisteet = 9;
         this.nykyinenElamaPisteet = 9;
     }
 
@@ -174,6 +176,19 @@ public class Profiili {
         lisaaKetteryys(esineenProfiili.getKetteryys() * (-1));
         lisaaElamaPisteet(esineenProfiili.getElamaPisteet() * (-1));
         lisaaTaikaPuolustus(esineenProfiili.getTaikaPuolustus() * (-1));
+    }
+
+    /**
+     * Metodi käyttää parantavan esineen, jolloin profiilin nykyiset
+     * elämäpisteet parantuvat.
+     *
+     * @param esine käytettävä esine
+     */
+    public void kaytaParantavaEsine(YleisEsine esine) {
+        if (esine.equals(Esine.PARANTAVAVOIDE)) {
+            this.lisaaNykyinenElamaPisteet(3);
+        }
+
     }
 
 }

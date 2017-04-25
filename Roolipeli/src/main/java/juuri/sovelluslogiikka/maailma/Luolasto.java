@@ -2,11 +2,9 @@ package juuri.sovelluslogiikka.maailma;
 
 import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
-import juuri.sovelluslogiikka.esineet.Esine;
-import juuri.sovelluslogiikka.esineet.YleisEsine;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.peli.HirvionLuoja;
-import juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminen;
+import juuri.sovelluslogiikka.peli.KohteidenLuoja;
 import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
 
 /**
@@ -41,50 +39,50 @@ public class Luolasto {
 
         //luolaston ulkoreuna on seinää
         for (int i = 0; i < leveys; i++) {
-            asetaSeina(i, 0);
-            asetaSeina(i, korkeus - 1);
+            asetaSeina(i, 0, KohteidenLuoja.SEINA);
+            asetaSeina(i, korkeus - 1, KohteidenLuoja.SEINA);
         }
         for (int i = 1; i < korkeus - 1; i++) {
-            asetaSeina(0, i);
-            asetaSeina(leveys - 1, i);
+            asetaSeina(0, i, KohteidenLuoja.SEINA);
+            asetaSeina(leveys - 1, i, KohteidenLuoja.SEINA);
         }
 
         //asetetaan seinät luolan sisälle
-        asetaSeina(2, 2);
-        asetaSeina(2, 3);
-        asetaSeina(2, 4);
-        asetaSeina(2, 6);
-        asetaSeina(2, 7);
-        asetaSeina(2, 8);
-        asetaSeina(3, 2);
-        asetaSeina(3, 6);
-        asetaSeina(3, 8);
-        asetaSeina(4, 2);
-        asetaSeina(4, 3);
-        asetaSeina(4, 4);
-        asetaSeina(4, 6);
-        asetaSeina(4, 8);
-        asetaSeina(5, 2);
-        asetaSeina(5, 8);
-        asetaSeina(6, 2);
-        asetaSeina(6, 4);
-        asetaSeina(6, 6);
-        asetaSeina(6, 8);
-        asetaSeina(7, 2);
-        asetaSeina(7, 4);
-        asetaSeina(7, 6);
-        asetaSeina(7, 8);
-        asetaSeina(7, 9);
-        asetaSeina(8, 2);
-        asetaSeina(8, 4);
-        asetaSeina(8, 6);
-        asetaSeina(8, 8);
-        asetaSeina(8, 9);
+        asetaSeina(2, 2, KohteidenLuoja.SEINA);
+        asetaSeina(2, 3, KohteidenLuoja.SEINA);
+        asetaSeina(2, 4, KohteidenLuoja.SEINA);
+        asetaSeina(2, 6, KohteidenLuoja.SEINA);
+        asetaSeina(2, 7, KohteidenLuoja.SEINA);
+        asetaSeina(2, 8, KohteidenLuoja.SEINA);
+        asetaSeina(3, 2, KohteidenLuoja.SEINA);
+        asetaSeina(3, 6, KohteidenLuoja.SEINA);
+        asetaSeina(3, 8, KohteidenLuoja.SEINA);
+        asetaSeina(4, 2, KohteidenLuoja.SEINA);
+        asetaSeina(4, 3, KohteidenLuoja.SEINA);
+        asetaSeina(4, 4, KohteidenLuoja.SEINA);
+        asetaSeina(4, 6, KohteidenLuoja.SEINA);
+        asetaSeina(4, 8, KohteidenLuoja.SEINA);
+        asetaSeina(5, 2, KohteidenLuoja.SEINA);
+        asetaSeina(5, 8, KohteidenLuoja.SEINA);
+        asetaSeina(6, 2, KohteidenLuoja.SEINA);
+        asetaSeina(6, 4, KohteidenLuoja.SEINA);
+        asetaSeina(6, 6, KohteidenLuoja.SEINA);
+        asetaSeina(6, 8, KohteidenLuoja.SEINA);
+        asetaSeina(7, 2, KohteidenLuoja.SEINA);
+        asetaSeina(7, 4, KohteidenLuoja.SEINA);
+        asetaSeina(7, 6, KohteidenLuoja.SEINA);
+        asetaSeina(7, 8, KohteidenLuoja.SEINA);
+        asetaSeina(7, 9, KohteidenLuoja.SEINA);
+        asetaSeina(8, 2, KohteidenLuoja.SEINA);
+        asetaSeina(8, 4, KohteidenLuoja.SEINA);
+        asetaSeina(8, 6, KohteidenLuoja.SEINA);
+        asetaSeina(8, 8, KohteidenLuoja.SEINA);
+        asetaSeina(8, 9, KohteidenLuoja.SEINA);
         for (int i = 2; i < 10; i++) {
-            asetaSeina(9, i);
+            asetaSeina(9, i, KohteidenLuoja.SEINA);
         }
         for (int i = 1; i < 10; i++) {
-            asetaSeina(11, i);
+            asetaSeina(11, i, KohteidenLuoja.SEINA);
         }
 
         //asetetaan käytävät
@@ -119,9 +117,10 @@ public class Luolasto {
         asetaHirvio(10, 5, HirvionLuoja.NOKKELANOITA);
 
         //asetetaan aarteet
-        asetaAarre(3, 3, "epäilyttävä aarre");
-        asetaAarre(8, 5, "huikea aarre");
-        asetaAarre(6, 9, "huikea aarre");
+        asetaAarre(3, 3, KohteidenLuoja.AARREJOSSAMIEKKA1);
+        asetaAarre(8, 7, KohteidenLuoja.AARREJOSSARIIMUJATAIKASAUVA);
+        asetaAarre(6, 9, KohteidenLuoja.AARREJOSSAHOPEAAVAIN);
+        asetaAarre(8, 5, KohteidenLuoja.AARRE2VOIDETTA);
 
         //asetetaan ansa
         asetaAnsa(6, 5);
@@ -130,8 +129,8 @@ public class Luolasto {
         asetaPortaat(10, 9);
 
         //ovet
-        asetaLukittuOvi(10, 2, Esine.HOPEAAVAIN);
-        asetaLukittuOvi(3, 4, Esine.PRONSSIAVAIN);
+        asetaLukittuOvi(10, 2, KohteidenLuoja.OVIHOPEAAVAAJA);
+        asetaLukittuOvi(3, 4, KohteidenLuoja.OVIPRONSSIAVAAJA);
         asetaAvoinOvi(5, 4);
         asetaAvoinOvi(5, 6);
     }
@@ -145,8 +144,7 @@ public class Luolasto {
     }
 
     /**
-     * Asettaa luolastoon annettujen koodinaattien kohdalle hirviön. Samalla
-     * luodaan myös taistelu-tapahtuma, joka liitetään hirviöön.
+     * Asettaa luolastoon annettujen koodinaattien kohdalle hirviön.
      *
      * Hirviö luodaan HirvionLuoja-luokkaa käyttäen metodille parametrina
      * annetun koodin avulla.
@@ -210,43 +208,46 @@ public class Luolasto {
 
     /**
      * Asettaa luolastoon annettujen koodinaattien kohdalle aarteen. Metodissa
-     * annetaan myös parametrina nimi luotavalle aarteelle. Samalla luodaan
-     * aarteenlöytäminen-tapahtuma, joka liitetään aarteeseen.
+     * annetaan parametrina koodi, joka välitetään KohteidenLuojalle. Näin
+     * saadaan luotua haluttu aarre.
      *
      * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
      *
      * @param x annettu x-koordinaatti
      * @param y annettu y-koordinaatti
-     * @param aarteenNimi luolastoon asetettavan aarteen nimi
+     * @param kohteenLuontiKoodi luotavaa aarretta vastaava koodi, staattinen
+     * muuttuja luokassa KohteidenLuoja
      * @return onnistuiko aarteen asetus
      */
-    public boolean asetaAarre(int x, int y, String aarteenNimi) {
+    public boolean asetaAarre(int x, int y, int kohteenLuontiKoodi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
 
-        Aarre aa = new Aarre(null, aarteenNimi);
-        AarteenLoytaminen loyto = new AarteenLoytaminen(aa);
+        Aarre aa = (Aarre) KohteidenLuoja.luoKohde(kohteenLuontiKoodi);
         aa.setSijainti(x, y);
-        aa.setTapahtuma(loyto);
         koordinaatisto[x][y] = aa;
         return true;
     }
 
     /**
-     * Asettaa luolastoon annettujen koodinaattien kohdalle seinän.
+     * Asettaa luolastoon annettujen koodinaattien kohdalle seinän. Parametrina
+     * annettaa koodi, jonka avulla seinä luodaan Kohteidenluojassa.
+     * 
+     * Koodi on oleellinen, jos halutaan esimerkiksi luoda erilaisia seiniä.
      *
      * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
      *
      * @param x annettu x-koordinaatti
      * @param y annettu y-koordinaatti
+     * @param kohteenLuontiKoodi koodi, jonka avulla seinä luodaan
      * @return onnistuiko seinän asetus
      */
-    public boolean asetaSeina(int x, int y) {
+    public boolean asetaSeina(int x, int y, int kohteenLuontiKoodi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        Seina ss = new Seina(null);
+        Seina ss = (Seina) KohteidenLuoja.luoKohde(kohteenLuontiKoodi);
         ss.setSijainti(x, y);
         koordinaatisto[x][y] = ss;
         return true;
@@ -273,28 +274,24 @@ public class Luolasto {
     }
 
     /**
-     * Asettaa luolaston koordinaateihin (x, y) lukitun oven. Oven pystyy
-     * avaamaan avaimella, joka annetaan metodille parametrina.
-     *
-     * Metodi luo samalla ovenAvaus tapahtuman sekä liittää sen ja oven
-     * toisiinsa.
+     * Asettaa luolaston koordinaateihin (x, y) lukitun oven. Metodille annetaan
+     * parametrina koodi, joka välitetään KohteidenLuojalle. Sieltä saadaan
+     * koodia vastaava kohde takaisin.
      *
      * Jos oven luominen ja asettaminen ei onnistu, palauttaa metodi false.
      * Muuten palautetaan true.
      *
      * @param x annettu x-koordinaatti
      * @param y annettu y-koordinaatti
-     * @param avaaja esine, jolla oven voi avata
+     * @param kohteenLuontiKoodi luotavaa ovea vastaava KohteidenLuoja-koodi
      * @return onnistuiko oven asetus
      */
-    public boolean asetaLukittuOvi(int x, int y, YleisEsine avaaja) {
+    public boolean asetaLukittuOvi(int x, int y, int kohteenLuontiKoodi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
 
-        Ovi ovi = new Ovi(true, null, avaaja);
-        OvenAvaus ovenAvaus = new OvenAvaus(ovi);
-        ovi.setTapahtuma(ovenAvaus);
+        Ovi ovi = (Ovi) KohteidenLuoja.luoKohde(kohteenLuontiKoodi);
         ovi.setSijainti(x, y);
         koordinaatisto[x][y] = ovi;
 
@@ -303,8 +300,6 @@ public class Luolasto {
 
     /**
      * Asettaa luolaston koordinaatteihin (x, y) avoimen oven.
-     *
-     * Metodi luo samalla ovenAvaus tapahtuman ja liittää sen ja oven toisiinsa.
      *
      * Jos ovea ei pystytä luomaan, palautetaan false. Muuten palautetaan true.
      *
@@ -317,9 +312,7 @@ public class Luolasto {
             return false;
         }
 
-        Ovi ovi = new Ovi(false, null, null);
-        OvenAvaus ovenAvaus = new OvenAvaus(ovi);
-        ovi.setTapahtuma(ovenAvaus);
+        Ovi ovi = (Ovi) KohteidenLuoja.luoKohde(KohteidenLuoja.OVIAVOIN);
         ovi.setSijainti(x, y);
         koordinaatisto[x][y] = ovi;
 

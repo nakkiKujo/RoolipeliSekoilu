@@ -82,15 +82,33 @@ public class Taistelu extends Tapahtuma {
     }
 
     /**
-     * Metodi tapahtuu, kun hahmo yrittää välttyä taistelulta.
+     * Metodia ei käytetä.
      *
-     * @param hahmo pelaajan hahmo
-     * @param luola luolasto, jossa seikkaillaan
+     * @param hahmo ---
+     * @param luola ---
      */
     @Override
     public void toteutaVaihtoehtoKaksi(Hahmo hahmo, Luolasto luola) {
-        this.pelaajanHahmo = hahmo;
+    }
 
+    /**
+     * Tämä metodi vastaa taisteluiden vaihtoehtokaksi-metodia. Metodissa
+     * kokeillaan, pystyykö pelaajan välttymään taistelulta ennen sen alkamista.
+     *
+     * Palauttaa true, jos pako onnistuu. Palauttaa false, jos ei pelaaja ei
+     * pääse pakenemaan.
+     *
+     * @param hahmo pelaajan hahmo
+     * @return onnistuuko pakeneminen vai ei
+     */
+    public boolean toteutaVaihtoehtoKaksiTaistelu(Hahmo hahmo) {
+        boolean onnistuukoPako = laskin.peraantyminen(hahmo.getProfiili(), hirvio.getProfiili());
+
+        if (onnistuukoPako) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -115,7 +133,7 @@ public class Taistelu extends Tapahtuma {
             for (Esine hirviollaOllutEsine : hirvio.getEsineet()) {
                 pelaajanHahmo.getReppu().asetaEsineReppuun(hirviollaOllutEsine);
             }
-            
+
             laskin.taistelunPaatos(pelaajanHahmo.getProfiili(), hirvio.getProfiili());
             return false;
         }
@@ -145,12 +163,12 @@ public class Taistelu extends Tapahtuma {
      * Metodi suorittaa pelaajan loitsun loihtimisen. Loitsun kohteena on
      * hirviö. Metodi laskee taistelulaskimen avulla, paljonko vahinkoa loitsu
      * aiheuttaa.
-     * 
+     *
      * Loitsun loihtiminen poistaa pelaajan repusta yhden riimu-esineen.
-     * 
-     * Jos hirviö kuolee, taistelu päättyy ja palautetaan false.
-     * Jos hirviö ei kuole, hirviö saa toimia.
-     * 
+     *
+     * Jos hirviö kuolee, taistelu päättyy ja palautetaan false. Jos hirviö ei
+     * kuole, hirviö saa toimia.
+     *
      * Palautetaan true, jos taistelu jatkuu, false, jos taistelu päättyy.
      *
      * @return jatkuuko taistelu
@@ -164,7 +182,7 @@ public class Taistelu extends Tapahtuma {
             for (Esine hirviollaOllutEsine : hirvio.getEsineet()) {
                 pelaajanHahmo.getReppu().asetaEsineReppuun(hirviollaOllutEsine);
             }
-            
+
             laskin.taistelunPaatos(pelaajanHahmo.getProfiili(), hirvio.getProfiili());
             return false;
         }
