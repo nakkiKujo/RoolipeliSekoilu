@@ -2,6 +2,7 @@ package juuri.sovelluslogiikka.maailma;
 
 import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
+import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
@@ -77,8 +78,9 @@ public abstract class Kohde {
      * @param mittakaava mittakaava, jossa piirretään
      * @param x kohteen x-koordinaatti
      * @param y kohteen y-koordinaatti
+     * @param pelaajanHahmo
      */
-    public abstract void piirra(Graphics g, int mittakaava, int x, int y);
+    public abstract void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo);
 
     @Override
     public boolean equals(Object o) {

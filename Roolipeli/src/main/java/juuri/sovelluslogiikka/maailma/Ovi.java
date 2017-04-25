@@ -4,11 +4,12 @@ import java.awt.Color;
 import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.esineet.YleisEsine;
+import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
  * Ovi on Kohteen aliluokka. Ovi voi olla avoin, jolloin pelaaja voi normaalisti
- * kulkea sen läpi. Ovi voi myös olla lukossa, jolloin sen läpi ei voi kulkea
+ * kulkea sen läpi oven avattua. Ovi voi myös olla lukossa, jolloin sen läpi ei voi kulkea
  * ilman esimerkiksi avainta.
  */
 public class Ovi extends Kohde {
@@ -21,12 +22,9 @@ public class Ovi extends Kohde {
         this.nimi = "ovi";
         this.lukittu = onkoLukittu;
 
-        //Ovien läpi kulkeminen riippuu sen lukituksesta.
-        if (onkoLukittu) {
-            this.voikoKulkea = false;
-        } else {
-            this.voikoKulkea = true;
-        }
+        //Ovien läpi ei voi kulkea
+        this.voikoKulkea = false;
+
         this.tapahtuma = tapahtuma;
         this.avaaja = avaaja;
     }
@@ -34,14 +32,22 @@ public class Ovi extends Kohde {
     public boolean onkoLukittu() {
         return lukittu;
     }
-    
+
     public YleisEsine getAvaaja() {
         return this.avaaja;
     }
-    
+
     @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y) {
-        g.setColor(Color.BLUE);
+    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
+        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
+        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
+
+        if (etaisyysHahmoonX > 1 || etaisyysHahmoonY > 1) {
+            g.setColor(Color.BLACK);
+        } else {
+            g.setColor(new Color(51, 51, 0));
+        }
+
         g.fillRect(x, y, mittakaava, mittakaava);
     }
 

@@ -63,12 +63,5 @@ public abstract class Hahmo {
      * @param g Piirtoalustaan liittyvä grafiikka.
      * @param mittaKaava Määrää, minkä kokoisena hahmo piirretään.
      */
-    public void piirra(Graphics g, int mittaKaava) {
-        int x = this.sijainti.getX() * mittaKaava;
-        int y = this.sijainti.getY() * mittaKaava;
-
-        g.setColor(Color.red);
-
-        g.fillOval(x, y, mittaKaava, mittaKaava);
-    }
+    public abstract void piirra(Graphics g, int mittaKaava);
 }

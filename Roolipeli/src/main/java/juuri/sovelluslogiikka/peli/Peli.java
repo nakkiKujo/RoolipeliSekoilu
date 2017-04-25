@@ -48,12 +48,16 @@ public class Peli {
      * Metodi piirtää pelin käyttöliittymän piirtoalustalle. Se lähettää kutsun
      * luolaston piirtometodille sekä pelaajan hahmon piirtometodille.
      *
+     * Luolaston piirtometodille annetaan parametrina pelaajan hahmo, jotta
+     * tiedetään, mitkä luolaston kohteet tulee piirtää näkyviin. Liian kaukana
+     * hahmosta olvat kohteet jäävät piirtämättä.
+     *
      * @param g käyttöliittymän piirtoalustan grafiikka
      */
     public void piirra(Graphics g) {
         //TODO: laskea mittaKaava jokaisessa erillisessä tapauksessa
         int mittaKaava = 18;
-        luolasto.piirra(g, mittaKaava);
+        luolasto.piirra(g, mittaKaava, pelaajanHahmo);
         pelaajanHahmo.piirra(g, mittaKaava);
     }
 
@@ -63,8 +67,8 @@ public class Peli {
      *
      * @param hahmonNimi käyttäjän antama nimi hahmolle
      */
-    public void aloitaPeli(String hahmonNimi) {
-        pelaajanHahmo = luoja.luoHahmo(hahmonNimi);
+    public void aloitaPeli(String hahmonNimi, int hahmonAmmatti) {
+        this.pelaajanHahmo = luoja.luoHahmo(hahmonNimi, hahmonAmmatti);
 
         this.luolasto = new Luolasto();
         luolasto.luoTaso1();

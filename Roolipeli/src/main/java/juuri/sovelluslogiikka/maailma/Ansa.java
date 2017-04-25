@@ -2,6 +2,7 @@ package juuri.sovelluslogiikka.maailma;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import juuri.sovelluslogiikka.hahmo.Hahmo;
 
 /**
  * Ansat ovat luolaston kohteita, joihin pelaaja voi tahtomattaan joutua. Ne
@@ -16,8 +17,16 @@ public class Ansa extends Kohde {
     }
 
     @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y) {
-        g.setColor(Color.GREEN);
+    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
+        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
+        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
+        
+        if(etaisyysHahmoonX > 1 || etaisyysHahmoonY > 1) {
+            g.setColor(Color.BLACK);
+        } else {
+            g.setColor(Color.GREEN);
+        }
+        
         g.fillRect(x, y, mittakaava, mittakaava);
     }
 }

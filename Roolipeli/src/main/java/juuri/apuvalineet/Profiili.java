@@ -10,7 +10,7 @@ import juuri.sovelluslogiikka.esineet.TaisteluEsine;
  * Puolustusvalmius liittyy taisteluihin: pelaaja voi hyökkäämisen sijaan
  * valmistella hahmoa vastaan tulevaan hyökkäykseen. Tämä parantaa pelaajan
  * mahdollisuutta torjua puolustus. Samoin toimii hyökkäysvalmius.
- * 
+ *
  * Pelaajan ja hirviÃ¶n profiili muuttuu sen mukaan, mitÃ¤ esineitÃ¤ hahmo tai
  * hirviÃ¶ kÃ¤yttÃ¤Ã¤.
  */
@@ -32,6 +32,7 @@ public class Profiili {
         this.taikaVoima = 0;
         this.ketteryys = 0;
         this.elamaPisteet = 0;
+        this.nykyinenElamaPisteet = 0;
         this.taikaPuolustus = 0;
         this.puolustusValmius = 0;
         this.hyokkaysValmius = 0;
@@ -95,6 +96,7 @@ public class Profiili {
         this.taikaPuolustus = 1;
         this.ketteryys = 2;
         this.elamaPisteet = 6;
+        this.nykyinenElamaPisteet = 8;
     }
 
     public void setVelhoAlkuProfiili() {
@@ -103,6 +105,7 @@ public class Profiili {
         this.taikaPuolustus = 2;
         this.ketteryys = 2;
         this.elamaPisteet = 5;
+        this.nykyinenElamaPisteet = 7;
     }
 
     public void setDruidiAlkuProfiili() {
@@ -111,6 +114,7 @@ public class Profiili {
         this.taikaPuolustus = 1;
         this.ketteryys = 3;
         this.elamaPisteet = 7;
+        this.nykyinenElamaPisteet = 9;
     }
 
     public void asetaPuolustusValmius(int x) {
@@ -127,6 +131,16 @@ public class Profiili {
 
     public int getHyokkaysValmius() {
         return this.hyokkaysValmius;
+    }
+
+    /**
+     * Metodi tarkastaa, onko hahmo tai hirviö kuollut. Hahmo tai hirviö kuolee,
+     * jos sen elämäpisteet laskevat nollaan.
+     *
+     * @return onko kuollut
+     */
+    public boolean onkoKuollut() {
+        return this.nykyinenElamaPisteet <= 0;
     }
 
     /**

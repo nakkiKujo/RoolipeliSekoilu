@@ -8,6 +8,7 @@ import java.util.Random;
  * pakenemiseen liittyvät lasktoimitukset.
  *
  * Laskin käyttää Random-oliota luomaan satunnaisuutta laskuihin.
+ *
  * @author PenaJones
  */
 public class TaisteluLaskin {
@@ -82,7 +83,7 @@ public class TaisteluLaskin {
             return 0;
         }
 
-        int lyotavaVahinko = arpoja.nextInt(lyojanTaikaVoima + 1);
+        int lyotavaVahinko = arpoja.nextInt(lyojanTaikaVoima + 1) + 2;
         return lyotavaVahinko;
     }
 
@@ -109,5 +110,23 @@ public class TaisteluLaskin {
         }
 
         return true;
+    }
+
+    /**
+     * Taistelun päätteeksi asetetaan valmiudet nollaan. Jos hirviö on jäänyt
+     * henkiin, sen elämäpisteet palautetaan normaaliin arvoon.
+     *
+     * @param pelaaja pelaajan profiili
+     * @param hirvio hirviön profiili
+     */
+    public void taistelunPaatos(Profiili pelaaja, Profiili hirvio) {
+        pelaaja.asetaHyokkaysValmius(0);
+        pelaaja.asetaPuolustusValmius(0);
+
+        if (!hirvio.onkoKuollut()) {
+            hirvio.lisaaNykyinenElamaPisteet(10000);
+            hirvio.asetaHyokkaysValmius(0);
+            hirvio.asetaPuolustusValmius(0);
+        }
     }
 }

@@ -1,5 +1,6 @@
 package juuri.sovelluslogiikka.peli;
 
+import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.ui.Keskustelija;
 import juuri.sovelluslogiikka.hahmo.Druidi;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
@@ -15,14 +16,33 @@ public class Hahmonluoja {
     public Hahmonluoja() {
     }
 
-    public Hahmo luoHahmo(String hahmonNimi) {
-        return luodaanHahmoAmmatinMukaan(null, hahmonNimi);
-    }
+    public Hahmo luoHahmo(String hahmonNimi, int hahmonAmmatti) {
+        if (hahmonAmmatti == Hahmo.SOTURI) {
+            Soturi soturi = new Soturi(hahmonNimi);
+            soturi.getProfiili().setSoturiAlkuProfiili();
+            soturi.getReppu().asetaEsineReppuun(Esine.PARANTAVAVOIDE);
+            soturi.getReppu().asetaEsineReppuun(Esine.PARANTAVAVOIDE);
+            return soturi;
 
-    private Hahmo luodaanHahmoAmmatinMukaan(String ammatti, String hahmonNimi) {
+        } else if (hahmonAmmatti == Hahmo.VELHO) {
+            Velho velho = new Velho(hahmonNimi);
+            velho.getProfiili().setVelhoAlkuProfiili();
 
-        //oikaistaan hieman ja luodaan suoraan vain soturi
-        return new Soturi(hahmonNimi);
+            for (int i = 0; i < 3; i++) {
+                velho.getReppu().asetaEsineReppuun(Esine.RIIMU);
+            }
+            return velho;
+
+        } else if (hahmonAmmatti == Hahmo.DRUIDI) {
+            Druidi dd = new Druidi(hahmonNimi);
+            dd.getProfiili().setDruidiAlkuProfiili();
+            dd.getReppu().asetaEsineReppuun(Esine.RIIMU);
+            dd.getReppu().asetaEsineReppuun(Esine.PARANTAVAVOIDE);
+            return dd;
+            
+        } else {
+            return null;
+        }
     }
 
 }

@@ -2,6 +2,8 @@ package juuri.ui;
 
 import juuri.sovelluslogiikka.peli.Peli;
 import javax.swing.*;
+import juuri.sovelluslogiikka.esineet.Esine;
+import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.tapahtumat.Taistelu;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
@@ -26,18 +28,23 @@ public class Kayttoliittyma extends JFrame {
         KoillinenPaneeli = new javax.swing.JPanel();
         KoillinenAlkuPaneeli = new javax.swing.JPanel();
         KarttaPaneeli = new javax.swing.JPanel();
+        KoillinenKuolemaPaneeli = new javax.swing.JPanel();
         LuodePaneeli = new javax.swing.JPanel();
         HahmonluontiInfo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ReppuPaneeli = new javax.swing.JPanel();
         TaisteluPaneeliLuode = new javax.swing.JPanel();
-        PelaajaNimiKenttaTaistelu = new javax.swing.JTextField();
-        HirvioNimiKenttaTaistelu = new javax.swing.JTextField();
-        PelaajaEPKenttaTaistelu = new javax.swing.JTextField();
-        HirvioEPKenttaTaistelu = new javax.swing.JTextField();
-        PelaajaEPMaaraTaistelu = new javax.swing.JTextField();
-        HirvioEPMaaraTaistelu = new javax.swing.JTextField();
+        PelaajaNimiKenttaTaistelu = new javax.swing.JLabel();
+        HirvioNimiKenttaTaistelu = new javax.swing.JLabel();
+        PelaajaEPKenttaTaistelu = new javax.swing.JLabel();
+        HirvioEPKenttaTaistelu = new javax.swing.JLabel();
+        ValmiusKenttaTaistelu = new javax.swing.JLabel();
+        PelaajaEPMaaraTaistelu = new javax.swing.JLabel();
+        HirvioEPMaaraTaistelu = new javax.swing.JLabel();
+        ValmiusMaaraTaistelu = new javax.swing.JLabel();
+        LuodeKuolemaPaneeli = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
         LounasPaneeli = new javax.swing.JPanel();
         HahmonluontiSyote = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -59,6 +66,7 @@ public class Kayttoliittyma extends JFrame {
         SuperlyontiNappiTaistelu = new javax.swing.JButton();
         TaikaiskuNappiTaistelu = new javax.swing.JButton();
         TyhjaPaneeliLounas = new javax.swing.JPanel();
+        LounasKuolemaPaneeli = new javax.swing.JPanel();
         KaakkoPaneeli = new javax.swing.JPanel();
         TyhjaPaneeliPaalla = new javax.swing.JPanel();
         InfoPaneeli = new javax.swing.JPanel();
@@ -67,6 +75,8 @@ public class Kayttoliittyma extends JFrame {
         tapahtumaVaihtoehtoYksiButton = new javax.swing.JButton();
         tapahtumaVaihtoehtoKaksiButton = new javax.swing.JButton();
         TaisteluPaneeliKaakko = new javax.swing.JPanel();
+        KaakkoKuolemaPaneeli = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PelinAloitus");
@@ -80,6 +90,7 @@ public class Kayttoliittyma extends JFrame {
         KoillinenPaneeli.setPreferredSize(new java.awt.Dimension(298, 215));
         KoillinenPaneeli.setLayout(new java.awt.CardLayout());
 
+        KoillinenAlkuPaneeli.setBackground(new java.awt.Color(153, 153, 255));
         KoillinenAlkuPaneeli.setMaximumSize(new java.awt.Dimension(298, 215));
         KoillinenAlkuPaneeli.setMinimumSize(new java.awt.Dimension(298, 215));
 
@@ -114,6 +125,21 @@ public class Kayttoliittyma extends JFrame {
 
         KoillinenPaneeli.add(KarttaPaneeli, "card3");
 
+        KoillinenKuolemaPaneeli.setBackground(new java.awt.Color(153, 0, 0));
+
+        javax.swing.GroupLayout KoillinenKuolemaPaneeliLayout = new javax.swing.GroupLayout(KoillinenKuolemaPaneeli);
+        KoillinenKuolemaPaneeli.setLayout(KoillinenKuolemaPaneeliLayout);
+        KoillinenKuolemaPaneeliLayout.setHorizontalGroup(
+            KoillinenKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 298, Short.MAX_VALUE)
+        );
+        KoillinenKuolemaPaneeliLayout.setVerticalGroup(
+            KoillinenKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 215, Short.MAX_VALUE)
+        );
+
+        KoillinenPaneeli.add(KoillinenKuolemaPaneeli, "card4");
+
         LuodePaneeli.setBackground(new java.awt.Color(255, 255, 51));
         LuodePaneeli.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         LuodePaneeli.setMaximumSize(new java.awt.Dimension(363, 215));
@@ -121,6 +147,7 @@ public class Kayttoliittyma extends JFrame {
         LuodePaneeli.setPreferredSize(new java.awt.Dimension(363, 215));
         LuodePaneeli.setLayout(new java.awt.CardLayout());
 
+        HahmonluontiInfo.setBackground(new java.awt.Color(153, 153, 255));
         HahmonluontiInfo.setMaximumSize(new java.awt.Dimension(361, 215));
         HahmonluontiInfo.setMinimumSize(new java.awt.Dimension(361, 215));
         HahmonluontiInfo.setPreferredSize(new java.awt.Dimension(361, 215));
@@ -153,7 +180,7 @@ public class Kayttoliittyma extends JFrame {
 
         LuodePaneeli.add(HahmonluontiInfo, "card2");
 
-        ReppuPaneeli.setBackground(new java.awt.Color(0, 0, 153));
+        ReppuPaneeli.setBackground(new java.awt.Color(153, 153, 255));
 
         javax.swing.GroupLayout ReppuPaneeliLayout = new javax.swing.GroupLayout(ReppuPaneeli);
         ReppuPaneeli.setLayout(ReppuPaneeliLayout);
@@ -168,17 +195,32 @@ public class Kayttoliittyma extends JFrame {
 
         LuodePaneeli.add(ReppuPaneeli, "card3");
 
+        PelaajaNimiKenttaTaistelu.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         PelaajaNimiKenttaTaistelu.setText("Pelaaja");
+        PelaajaNimiKenttaTaistelu.setMaximumSize(new java.awt.Dimension(155, 19));
+        PelaajaNimiKenttaTaistelu.setMinimumSize(new java.awt.Dimension(155, 19));
+        PelaajaNimiKenttaTaistelu.setPreferredSize(new java.awt.Dimension(155, 19));
 
+        HirvioNimiKenttaTaistelu.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         HirvioNimiKenttaTaistelu.setText("Hirviö");
+        HirvioNimiKenttaTaistelu.setMaximumSize(new java.awt.Dimension(132, 19));
+        HirvioNimiKenttaTaistelu.setMinimumSize(new java.awt.Dimension(132, 19));
+        HirvioNimiKenttaTaistelu.setPreferredSize(new java.awt.Dimension(132, 19));
 
+        PelaajaEPKenttaTaistelu.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         PelaajaEPKenttaTaistelu.setText("Elämäpisteet");
 
+        HirvioEPKenttaTaistelu.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         HirvioEPKenttaTaistelu.setText("Elämäpisteet");
+
+        ValmiusKenttaTaistelu.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
+        ValmiusKenttaTaistelu.setText("Puolustusvalmius");
 
         PelaajaEPMaaraTaistelu.setText("0");
 
         HirvioEPMaaraTaistelu.setText("0");
+
+        ValmiusMaaraTaistelu.setText("0");
 
         javax.swing.GroupLayout TaisteluPaneeliLuodeLayout = new javax.swing.GroupLayout(TaisteluPaneeliLuode);
         TaisteluPaneeliLuode.setLayout(TaisteluPaneeliLuodeLayout);
@@ -186,36 +228,76 @@ public class Kayttoliittyma extends JFrame {
             TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PelaajaNimiKenttaTaistelu)
-                    .addComponent(PelaajaEPKenttaTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(HirvioEPKenttaTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                    .addComponent(HirvioNimiKenttaTaistelu))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HirvioEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                .addComponent(PelaajaEPKenttaTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                .addComponent(ValmiusKenttaTaistelu)
+                                .addGap(28, 28, 28)))
+                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ValmiusMaaraTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                            .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(196, 196, 196))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(HirvioEPKenttaTaistelu)
+                                .addGap(27, 27, 27)
+                                .addComponent(HirvioEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                .addComponent(PelaajaNimiKenttaTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(46, 46, 46)
+                                .addComponent(HirvioNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18))))
         );
         TaisteluPaneeliLuodeLayout.setVerticalGroup(
             TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(21, 21, 21)
+                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PelaajaNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HirvioNimiKenttaTaistelu))
+                    .addComponent(HirvioNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PelaajaEPKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HirvioEPKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HirvioEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(151, Short.MAX_VALUE))
+                    .addComponent(PelaajaEPKenttaTaistelu)
+                    .addComponent(HirvioEPKenttaTaistelu)
+                    .addComponent(PelaajaEPMaaraTaistelu)
+                    .addComponent(HirvioEPMaaraTaistelu))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ValmiusKenttaTaistelu)
+                    .addComponent(ValmiusMaaraTaistelu))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         LuodePaneeli.add(TaisteluPaneeliLuode, "card4");
+
+        LuodeKuolemaPaneeli.setBackground(new java.awt.Color(153, 0, 0));
+
+        jTextField1.setText("Oi voi, kuolit.");
+
+        javax.swing.GroupLayout LuodeKuolemaPaneeliLayout = new javax.swing.GroupLayout(LuodeKuolemaPaneeli);
+        LuodeKuolemaPaneeli.setLayout(LuodeKuolemaPaneeliLayout);
+        LuodeKuolemaPaneeliLayout.setHorizontalGroup(
+            LuodeKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LuodeKuolemaPaneeliLayout.createSequentialGroup()
+                .addGap(119, 119, 119)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(136, Short.MAX_VALUE))
+        );
+        LuodeKuolemaPaneeliLayout.setVerticalGroup(
+            LuodeKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LuodeKuolemaPaneeliLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(90, Short.MAX_VALUE))
+        );
+
+        LuodePaneeli.add(LuodeKuolemaPaneeli, "card5");
 
         LounasPaneeli.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         LounasPaneeli.setMaximumSize(new java.awt.Dimension(363, 255));
@@ -223,6 +305,7 @@ public class Kayttoliittyma extends JFrame {
         LounasPaneeli.setPreferredSize(new java.awt.Dimension(363, 255));
         LounasPaneeli.setLayout(new java.awt.CardLayout());
 
+        HahmonluontiSyote.setBackground(new java.awt.Color(153, 153, 255));
         HahmonluontiSyote.setMaximumSize(new java.awt.Dimension(363, 255));
         HahmonluontiSyote.setMinimumSize(new java.awt.Dimension(363, 255));
         HahmonluontiSyote.setPreferredSize(new java.awt.Dimension(363, 255));
@@ -295,7 +378,7 @@ public class Kayttoliittyma extends JFrame {
 
         LounasPaneeli.add(HahmonluontiSyote, "card2");
 
-        LiikkumisPaneeli.setBackground(new java.awt.Color(0, 51, 204));
+        LiikkumisPaneeli.setBackground(new java.awt.Color(153, 153, 255));
         LiikkumisPaneeli.setMaximumSize(new java.awt.Dimension(363, 255));
         LiikkumisPaneeli.setMinimumSize(new java.awt.Dimension(363, 255));
         LiikkumisPaneeli.setPreferredSize(new java.awt.Dimension(363, 255));
@@ -437,6 +520,8 @@ public class Kayttoliittyma extends JFrame {
 
         LounasPaneeli.add(TaisteluPaneeliLounas, "card4");
 
+        TyhjaPaneeliLounas.setBackground(new java.awt.Color(153, 153, 255));
+
         javax.swing.GroupLayout TyhjaPaneeliLounasLayout = new javax.swing.GroupLayout(TyhjaPaneeliLounas);
         TyhjaPaneeliLounas.setLayout(TyhjaPaneeliLounasLayout);
         TyhjaPaneeliLounasLayout.setHorizontalGroup(
@@ -450,11 +535,28 @@ public class Kayttoliittyma extends JFrame {
 
         LounasPaneeli.add(TyhjaPaneeliLounas, "card5");
 
+        LounasKuolemaPaneeli.setBackground(new java.awt.Color(153, 0, 0));
+
+        javax.swing.GroupLayout LounasKuolemaPaneeliLayout = new javax.swing.GroupLayout(LounasKuolemaPaneeli);
+        LounasKuolemaPaneeli.setLayout(LounasKuolemaPaneeliLayout);
+        LounasKuolemaPaneeliLayout.setHorizontalGroup(
+            LounasKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 361, Short.MAX_VALUE)
+        );
+        LounasKuolemaPaneeliLayout.setVerticalGroup(
+            LounasKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        LounasPaneeli.add(LounasKuolemaPaneeli, "card6");
+
         KaakkoPaneeli.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         KaakkoPaneeli.setMaximumSize(new java.awt.Dimension(298, 255));
         KaakkoPaneeli.setMinimumSize(new java.awt.Dimension(298, 255));
         KaakkoPaneeli.setPreferredSize(new java.awt.Dimension(298, 255));
         KaakkoPaneeli.setLayout(new java.awt.CardLayout());
+
+        TyhjaPaneeliPaalla.setBackground(new java.awt.Color(153, 153, 255));
 
         javax.swing.GroupLayout TyhjaPaneeliPaallaLayout = new javax.swing.GroupLayout(TyhjaPaneeliPaalla);
         TyhjaPaneeliPaalla.setLayout(TyhjaPaneeliPaallaLayout);
@@ -532,6 +634,29 @@ public class Kayttoliittyma extends JFrame {
 
         KaakkoPaneeli.add(TaisteluPaneeliKaakko, "card4");
 
+        KaakkoKuolemaPaneeli.setBackground(new java.awt.Color(153, 0, 0));
+
+        jTextField2.setText("Parempi onni ensi kerralla!");
+
+        javax.swing.GroupLayout KaakkoKuolemaPaneeliLayout = new javax.swing.GroupLayout(KaakkoKuolemaPaneeli);
+        KaakkoKuolemaPaneeli.setLayout(KaakkoKuolemaPaneeliLayout);
+        KaakkoKuolemaPaneeliLayout.setHorizontalGroup(
+            KaakkoKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(KaakkoKuolemaPaneeliLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        KaakkoKuolemaPaneeliLayout.setVerticalGroup(
+            KaakkoKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(KaakkoKuolemaPaneeliLayout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(117, Short.MAX_VALUE))
+        );
+
+        KaakkoPaneeli.add(KaakkoKuolemaPaneeli, "card5");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -562,9 +687,16 @@ public class Kayttoliittyma extends JFrame {
 
     private void HahmonluontiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmonluontiButtonActionPerformed
         String hahmonNimi = HahmonNimiTextField.getText();
-
+        int hahmonAmmatti;
+        if(AmmatinValintaSoturiButton.isSelected()) {
+            hahmonAmmatti = Hahmo.SOTURI;
+        } else if(AmmatinValintaVelhoButton.isSelected()) {
+            hahmonAmmatti = Hahmo.VELHO;
+        } else {
+            hahmonAmmatti = Hahmo.DRUIDI;
+        }
         //luodaan hahmo ja luolasto
-        peli.aloitaPeli(hahmonNimi);
+        peli.aloitaPeli(hahmonNimi, hahmonAmmatti);
 
         LounasPaneeli.removeAll();
         LounasPaneeli.repaint();
@@ -596,14 +728,14 @@ public class Kayttoliittyma extends JFrame {
             tapahtumaVaihtoehtoYksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoYksi());
             tapahtumaVaihtoehtoKaksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoKaksi());
             TapahtumaText.setText(liikkumisestaAiheutunutTapahtuma.getTapahtumateksti());
-            
+
             LounasPaneeli.removeAll();
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
             LounasPaneeli.add(TyhjaPaneeliLounas);
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
-            
+
             KaakkoPaneeli.removeAll();
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
@@ -611,9 +743,7 @@ public class Kayttoliittyma extends JFrame {
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
         }
-
-        //tähän tulee component.repaint piirtoalustalle
-
+        KoillinenPaneeli.repaint();
     }//GEN-LAST:event_HahmoLiikkuuOikealleButtonActionPerformed
 
     private void HahmoLiikkuuYlosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuYlosButtonActionPerformed
@@ -624,14 +754,14 @@ public class Kayttoliittyma extends JFrame {
             tapahtumaVaihtoehtoYksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoYksi());
             tapahtumaVaihtoehtoKaksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoKaksi());
             TapahtumaText.setText(liikkumisestaAiheutunutTapahtuma.getTapahtumateksti());
-            
+
             LounasPaneeli.removeAll();
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
             LounasPaneeli.add(TyhjaPaneeliLounas);
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
-            
+
             KaakkoPaneeli.removeAll();
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
@@ -639,8 +769,7 @@ public class Kayttoliittyma extends JFrame {
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
         }
-        //tähän tulee component.repaint piirtoalustalle
-
+        KoillinenPaneeli.repaint();
     }//GEN-LAST:event_HahmoLiikkuuYlosButtonActionPerformed
 
     private void HahmoLiikkuuAlasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuAlasButtonActionPerformed
@@ -651,14 +780,14 @@ public class Kayttoliittyma extends JFrame {
             tapahtumaVaihtoehtoYksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoYksi());
             tapahtumaVaihtoehtoKaksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoKaksi());
             TapahtumaText.setText(liikkumisestaAiheutunutTapahtuma.getTapahtumateksti());
-            
+
             LounasPaneeli.removeAll();
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
             LounasPaneeli.add(TyhjaPaneeliLounas);
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
-            
+
             KaakkoPaneeli.removeAll();
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
@@ -666,8 +795,7 @@ public class Kayttoliittyma extends JFrame {
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
         }
-        //tähän tulee component.repaint piirtoalustalle
-
+        KoillinenPaneeli.repaint();
     }//GEN-LAST:event_HahmoLiikkuuAlasButtonActionPerformed
 
     private void HahmoLiikkuuVasemmalleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HahmoLiikkuuVasemmalleButtonActionPerformed
@@ -678,14 +806,14 @@ public class Kayttoliittyma extends JFrame {
             tapahtumaVaihtoehtoYksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoYksi());
             tapahtumaVaihtoehtoKaksiButton.setText(liikkumisestaAiheutunutTapahtuma.getVaihtoehtoKaksi());
             TapahtumaText.setText(liikkumisestaAiheutunutTapahtuma.getTapahtumateksti());
-            
+
             LounasPaneeli.removeAll();
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
             LounasPaneeli.add(TyhjaPaneeliLounas);
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
-            
+
             KaakkoPaneeli.removeAll();
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
@@ -693,7 +821,7 @@ public class Kayttoliittyma extends JFrame {
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
         }
-        //tähän tulee component.repaint piirtoalustalle
+        KoillinenPaneeli.repaint();
 
     }//GEN-LAST:event_HahmoLiikkuuVasemmalleButtonActionPerformed
 
@@ -701,64 +829,77 @@ public class Kayttoliittyma extends JFrame {
         Tapahtuma tt = peli.getNykyinenTapahtuma();
         if (tt.getKoodi() == Tapahtuma.TAISTELU) {
             Taistelu ttt = (Taistelu) tt;
+            ttt.toteutaVaihtoehtoYksi(peli.getPelaajanHahmo(), null);
+
+            PelaajaNimiKenttaTaistelu.setText(peli.getPelaajanHahmo().getNimi());
+            HirvioNimiKenttaTaistelu.setText(ttt.getHirvio().getNimi());
+            PelaajaEPMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+            HirvioEPMaaraTaistelu.setText("" + ttt.getHirvio().getProfiili().getNykyinenElamaPisteet());
+            ValmiusMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getPuolustusValmius());
+
+            if (!peli.getPelaajanHahmo().getReppu().onkoRepussa(Esine.RIIMU)) {
+                TaikaiskuNappiTaistelu.setEnabled(false);
+            } else {
+                TaikaiskuNappiTaistelu.setEnabled(true);
+            }
+
             KaakkoPaneeli.removeAll();
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
             KaakkoPaneeli.add(TaisteluPaneeliKaakko);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
-            
+
             LounasPaneeli.removeAll();
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
             LounasPaneeli.add(TaisteluPaneeliLounas);
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
-            
+
             LuodePaneeli.removeAll();
             LuodePaneeli.repaint();
             LuodePaneeli.revalidate();
             LuodePaneeli.add(TaisteluPaneeliLuode);
             LuodePaneeli.repaint();
             LuodePaneeli.revalidate();
-            
-            PelaajaNimiKenttaTaistelu.setText(peli.getPelaajanHahmo().getNimi());
-            HirvioNimiKenttaTaistelu.setText(ttt.getHirvio().getNimi());
-            PelaajaEPMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
-            HirvioEPMaaraTaistelu.setText("" + ttt.getHirvio().getProfiili().getNykyinenElamaPisteet());
+
         } else {
             tt.toteutaVaihtoehtoYksi(peli.getPelaajanHahmo(), peli.getLuolasto());
-            
+
             LounasPaneeli.removeAll();
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
             LounasPaneeli.add(LiikkumisPaneeli);
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
-            
+
             KaakkoPaneeli.removeAll();
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
             KaakkoPaneeli.add(TyhjaPaneeliPaalla);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
+            
+            KoillinenPaneeli.repaint();
+            KoillinenPaneeli.revalidate();
         }
     }//GEN-LAST:event_tapahtumaVaihtoehtoYksiButtonActionPerformed
 
     private void tapahtumaVaihtoehtoKaksiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tapahtumaVaihtoehtoKaksiButtonActionPerformed
         Tapahtuma tt = peli.getNykyinenTapahtuma();
         if (tt.getKoodi() == Tapahtuma.TAISTELU) {
-            
+
         } else {
             tt.toteutaVaihtoehtoKaksi(peli.getPelaajanHahmo(), peli.getLuolasto());
-            
+
             LounasPaneeli.removeAll();
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
             LounasPaneeli.add(LiikkumisPaneeli);
             LounasPaneeli.repaint();
             LounasPaneeli.revalidate();
-            
+
             KaakkoPaneeli.removeAll();
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
@@ -770,23 +911,300 @@ public class Kayttoliittyma extends JFrame {
     }//GEN-LAST:event_tapahtumaVaihtoehtoKaksiButtonActionPerformed
 
     private void LyoNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LyoNappiTaisteluActionPerformed
-        
+        Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
+        boolean jatkuukoTaisto = tt.pelaajaLyo();
+
+        if (jatkuukoTaisto) {
+            PelaajaEPMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+            HirvioEPMaaraTaistelu.setText("" + tt.getHirvio().getProfiili().getNykyinenElamaPisteet());
+            ValmiusMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getPuolustusValmius());
+            LuodePaneeli.repaint();
+            LuodePaneeli.revalidate();
+
+            //lounaspaneeli nappien käsittely
+            SuperlyontiNappiTaistelu.setEnabled(true);
+            LounasPaneeli.repaint();
+            LounasPaneeli.revalidate();
+        } else {
+            //taistelu on päättynyt, tarkastetaan kuoliko hahmo
+            if (peli.getPelaajanHahmo().getProfiili().onkoKuollut()) {
+                //hahmo kuoli
+                KoillinenPaneeli.removeAll();
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KoillinenPaneeli.add(KoillinenKuolemaPaneeli);
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(KaakkoKuolemaPaneeli);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LounasKuolemaPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LuodePaneeli.removeAll();
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+                LuodePaneeli.add(LuodeKuolemaPaneeli);
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+            } else {
+                //hahmo ei kuollut, hirviö kuoli, poistetaan hirviö luolasta
+                peli.getLuolasto().poistaKohde(tt.getHirvio());
+
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LiikkumisPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+
+                LuodePaneeli.removeAll();
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+                LuodePaneeli.add(ReppuPaneeli);
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+            }
+        }
     }//GEN-LAST:event_LyoNappiTaisteluActionPerformed
 
     private void VaistoNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VaistoNappiTaisteluActionPerformed
-        // TODO add your handling code here:
+        Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
+        boolean jatkuukoTaisto = tt.pelaajaValmistautuuVaistoon();
+
+        if (jatkuukoTaisto) {
+            PelaajaEPMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+            HirvioEPMaaraTaistelu.setText("" + tt.getHirvio().getProfiili().getNykyinenElamaPisteet());
+            ValmiusMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getPuolustusValmius());
+            LuodePaneeli.repaint();
+            LuodePaneeli.revalidate();
+        } else {
+            //taistelu on päättynyt, hahmo kuoli
+            KoillinenPaneeli.removeAll();
+            KoillinenPaneeli.repaint();
+            KoillinenPaneeli.revalidate();
+            KoillinenPaneeli.add(KoillinenKuolemaPaneeli);
+            KoillinenPaneeli.repaint();
+            KoillinenPaneeli.revalidate();
+            KaakkoPaneeli.removeAll();
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            KaakkoPaneeli.add(KaakkoKuolemaPaneeli);
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            LounasPaneeli.removeAll();
+            LounasPaneeli.repaint();
+            LounasPaneeli.revalidate();
+            LounasPaneeli.add(LounasKuolemaPaneeli);
+            LounasPaneeli.repaint();
+            LounasPaneeli.revalidate();
+            LuodePaneeli.removeAll();
+            LuodePaneeli.repaint();
+            LuodePaneeli.revalidate();
+            LuodePaneeli.add(LuodeKuolemaPaneeli);
+            LuodePaneeli.repaint();
+            LuodePaneeli.revalidate();
+        }
     }//GEN-LAST:event_VaistoNappiTaisteluActionPerformed
 
     private void SuperlyontiNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuperlyontiNappiTaisteluActionPerformed
-        // TODO add your handling code here:
+        Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
+        boolean jatkuukoTaisto = tt.pelaajaValmistautuuHyokkaykseen();
+
+        if (jatkuukoTaisto) {
+            PelaajaEPMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+            HirvioEPMaaraTaistelu.setText("" + tt.getHirvio().getProfiili().getNykyinenElamaPisteet());
+            ValmiusMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getPuolustusValmius());
+            LuodePaneeli.repaint();
+            LuodePaneeli.revalidate();
+
+            SuperlyontiNappiTaistelu.setEnabled(false);
+            LounasPaneeli.repaint();
+            LounasPaneeli.revalidate();
+        } else {
+            //taistelu on päättynyt, hahmo kuoli
+            KoillinenPaneeli.removeAll();
+            KoillinenPaneeli.repaint();
+            KoillinenPaneeli.revalidate();
+            KoillinenPaneeli.add(KoillinenKuolemaPaneeli);
+            KoillinenPaneeli.repaint();
+            KoillinenPaneeli.revalidate();
+            KaakkoPaneeli.removeAll();
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            KaakkoPaneeli.add(KaakkoKuolemaPaneeli);
+            KaakkoPaneeli.repaint();
+            KaakkoPaneeli.revalidate();
+            LounasPaneeli.removeAll();
+            LounasPaneeli.repaint();
+            LounasPaneeli.revalidate();
+            LounasPaneeli.add(LounasKuolemaPaneeli);
+            LounasPaneeli.repaint();
+            LounasPaneeli.revalidate();
+            LuodePaneeli.removeAll();
+            LuodePaneeli.repaint();
+            LuodePaneeli.revalidate();
+            LuodePaneeli.add(LuodeKuolemaPaneeli);
+            LuodePaneeli.repaint();
+            LuodePaneeli.revalidate();
+        }
     }//GEN-LAST:event_SuperlyontiNappiTaisteluActionPerformed
 
     private void TaikaiskuNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TaikaiskuNappiTaisteluActionPerformed
-        // TODO add your handling code here:
+        Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
+        boolean jatkuukoTaisto = tt.pelaajaLoihtiiLoitsun();
+
+        if (jatkuukoTaisto) {
+            //taistelu jatkuu
+            PelaajaEPMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+            HirvioEPMaaraTaistelu.setText("" + tt.getHirvio().getProfiili().getNykyinenElamaPisteet());
+            ValmiusMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getPuolustusValmius());
+            LuodePaneeli.repaint();
+            LuodePaneeli.revalidate();
+
+            if (!peli.getPelaajanHahmo().getReppu().onkoRepussa(Esine.RIIMU)) {
+                TaikaiskuNappiTaistelu.setEnabled(false);
+            }
+            LounasPaneeli.repaint();
+            LounasPaneeli.revalidate();
+
+        } else {
+            //taistelu ei jatkunut, joku kuoli
+            if (peli.getPelaajanHahmo().getProfiili().onkoKuollut()) {
+                //hahmo kuoli
+                KoillinenPaneeli.removeAll();
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KoillinenPaneeli.add(KoillinenKuolemaPaneeli);
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(KaakkoKuolemaPaneeli);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LounasKuolemaPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LuodePaneeli.removeAll();
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+                LuodePaneeli.add(LuodeKuolemaPaneeli);
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+            } else {
+                //hahmo ei kuollut, hirviö kuoli, poistetaan hirviö luolasta
+                peli.getLuolasto().poistaKohde(tt.getHirvio());
+
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LiikkumisPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+
+                LuodePaneeli.removeAll();
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+                LuodePaneeli.add(ReppuPaneeli);
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+            }
+        }
+
     }//GEN-LAST:event_TaikaiskuNappiTaisteluActionPerformed
 
     private void PeraannyNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PeraannyNappiTaisteluActionPerformed
-        // TODO add your handling code here:
+        Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
+        boolean jatkuukoTaisto = tt.pelaajaPyrkiiPakoon();
+
+        if (jatkuukoTaisto) {
+            PelaajaEPMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+            HirvioEPMaaraTaistelu.setText("" + tt.getHirvio().getProfiili().getNykyinenElamaPisteet());
+            ValmiusMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getPuolustusValmius());
+            LuodePaneeli.repaint();
+            LuodePaneeli.revalidate();
+        } else {
+            //tarkastetaan kuoliko hahmo
+            if (peli.getPelaajanHahmo().getProfiili().onkoKuollut()) {
+                //pelaaja kuoli
+                KoillinenPaneeli.removeAll();
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KoillinenPaneeli.add(KoillinenKuolemaPaneeli);
+                KoillinenPaneeli.repaint();
+                KoillinenPaneeli.revalidate();
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(KaakkoKuolemaPaneeli);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LounasKuolemaPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LuodePaneeli.removeAll();
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+                LuodePaneeli.add(LuodeKuolemaPaneeli);
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+            } else {
+                //taistelu päättyi, pelaaja ei kuollut
+                LounasPaneeli.removeAll();
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                LounasPaneeli.add(LiikkumisPaneeli);
+                LounasPaneeli.repaint();
+                LounasPaneeli.revalidate();
+                KaakkoPaneeli.removeAll();
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                KaakkoPaneeli.add(TyhjaPaneeliPaalla);
+                KaakkoPaneeli.repaint();
+                KaakkoPaneeli.revalidate();
+                LuodePaneeli.removeAll();
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+                LuodePaneeli.add(ReppuPaneeli);
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
+            }
+
+        }
     }//GEN-LAST:event_PeraannyNappiTaisteluActionPerformed
 
     public static void main(String args[]) {
@@ -833,21 +1251,25 @@ public class Kayttoliittyma extends JFrame {
     private javax.swing.JButton HahmonluontiButton;
     private javax.swing.JPanel HahmonluontiInfo;
     private javax.swing.JPanel HahmonluontiSyote;
-    private javax.swing.JTextField HirvioEPKenttaTaistelu;
-    private javax.swing.JTextField HirvioEPMaaraTaistelu;
-    private javax.swing.JTextField HirvioNimiKenttaTaistelu;
+    private javax.swing.JLabel HirvioEPKenttaTaistelu;
+    private javax.swing.JLabel HirvioEPMaaraTaistelu;
+    private javax.swing.JLabel HirvioNimiKenttaTaistelu;
     private javax.swing.JPanel InfoPaneeli;
+    private javax.swing.JPanel KaakkoKuolemaPaneeli;
     private javax.swing.JPanel KaakkoPaneeli;
     private javax.swing.JPanel KarttaPaneeli;
     private javax.swing.JPanel KoillinenAlkuPaneeli;
+    private javax.swing.JPanel KoillinenKuolemaPaneeli;
     private javax.swing.JPanel KoillinenPaneeli;
     private javax.swing.JPanel LiikkumisPaneeli;
+    private javax.swing.JPanel LounasKuolemaPaneeli;
     private javax.swing.JPanel LounasPaneeli;
+    private javax.swing.JPanel LuodeKuolemaPaneeli;
     private javax.swing.JPanel LuodePaneeli;
     private javax.swing.JButton LyoNappiTaistelu;
-    private javax.swing.JTextField PelaajaEPKenttaTaistelu;
-    private javax.swing.JTextField PelaajaEPMaaraTaistelu;
-    private javax.swing.JTextField PelaajaNimiKenttaTaistelu;
+    private javax.swing.JLabel PelaajaEPKenttaTaistelu;
+    private javax.swing.JLabel PelaajaEPMaaraTaistelu;
+    private javax.swing.JLabel PelaajaNimiKenttaTaistelu;
     private javax.swing.JButton PeraannyNappiTaistelu;
     private javax.swing.JPanel ReppuPaneeli;
     private javax.swing.JButton SuperlyontiNappiTaistelu;
@@ -859,11 +1281,15 @@ public class Kayttoliittyma extends JFrame {
     private javax.swing.JPanel TyhjaPaneeliLounas;
     private javax.swing.JPanel TyhjaPaneeliPaalla;
     private javax.swing.JButton VaistoNappiTaistelu;
+    private javax.swing.JLabel ValmiusKenttaTaistelu;
+    private javax.swing.JLabel ValmiusMaaraTaistelu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton tapahtumaVaihtoehtoKaksiButton;
     private javax.swing.JButton tapahtumaVaihtoehtoYksiButton;
     // End of variables declaration//GEN-END:variables

@@ -21,12 +21,26 @@ public class Taistelu extends Tapahtuma {
     private Hahmo pelaajanHahmo;
     private TaisteluLaskin laskin;
 
+    /**
+     * Luodaan uusi taistelu-olio. Prametrina annetaan taisteluun liittyvä
+     * hirviö.
+     *
+     * Metodissa asetetaan taistelulle koodi ja taistelulaskin, jonka avulla
+     * taisteluu liittyviä toimintoja pystytään laskemaan.
+     *
+     * @param hirvio taisteluun liittyvä hirviö
+     */
     public Taistelu(Kohde hirvio) {
         this.koodi = Tapahtuma.TAISTELU;
         this.hirvio = (Hirvio) hirvio;
         this.laskin = new TaisteluLaskin();
     }
-    
+
+    /**
+     * Palauttaa taisteluun liittyvän hirviön.
+     *
+     * @return taistelun hirviö
+     */
     public Hirvio getHirvio() {
         return this.hirvio;
     }
@@ -59,7 +73,7 @@ public class Taistelu extends Tapahtuma {
         if (hirvio.getProfiili().getKetteryys() > pelaajanHahmo.getProfiili().getKetteryys()) {
             Random arpa = new Random();
             int luku = arpa.nextInt(2);
-            if(luku == 0) {
+            if (luku == 0) {
                 hirvioValmistautuuHyokkaykseen();
             } else {
                 hirvioValmistautuuVaistoon();
@@ -76,7 +90,7 @@ public class Taistelu extends Tapahtuma {
     @Override
     public void toteutaVaihtoehtoKaksi(Hahmo hahmo, Luolasto luola) {
         this.pelaajanHahmo = hahmo;
-        
+
     }
 
     /**
@@ -96,12 +110,13 @@ public class Taistelu extends Tapahtuma {
         int iskunMaara = laskin.lyonti(pelaajanHahmo.getProfiili(), hirvio.getProfiili());
         hirvio.getProfiili().lisaaNykyinenElamaPisteet(iskunMaara * (-1));
 
-        if (hirvio.getProfiili().getNykyinenElamaPisteet() <= 0) {
+        if (hirvio.getProfiili().onkoKuollut()) {
             //hirviö kuoli, taistelu päättyy
             for (Esine hirviollaOllutEsine : hirvio.getEsineet()) {
                 pelaajanHahmo.getReppu().asetaEsineReppuun(hirviollaOllutEsine);
             }
-
+            
+            laskin.taistelunPaatos(pelaajanHahmo.getProfiili(), hirvio.getProfiili());
             return false;
         }
 
@@ -123,21 +138,38 @@ public class Taistelu extends Tapahtuma {
         int iskunMaara = laskin.lyonti(hirvio.getProfiili(), pelaajanHahmo.getProfiili());
         pelaajanHahmo.getProfiili().lisaaNykyinenElamaPisteet(iskunMaara * (-1));
 
-        if (pelaajanHahmo.getProfiili().getNykyinenElamaPisteet() <= 0) {
-            //pelaajan hahmo kuoli
-            return false;
-        }
-
-        return true;
+        return !pelaajanHahmo.getProfiili().onkoKuollut();
     }
 
     /**
-     * TODO
+     * Metodi suorittaa pelaajan loitsun loihtimisen. Loitsun kohteena on
+     * hirviö. Metodi laskee taistelulaskimen avulla, paljonko vahinkoa loitsu
+     * aiheuttaa.
+     * 
+     * Loitsun loihtiminen poistaa pelaajan repusta yhden riimu-esineen.
+     * 
+     * Jos hirviö kuolee, taistelu päättyy ja palautetaan false.
+     * Jos hirviö ei kuole, hirviö saa toimia.
+     * 
+     * Palautetaan true, jos taistelu jatkuu, false, jos taistelu päättyy.
+     *
+     * @return jatkuuko taistelu
      */
-    public void pelaajaLoihtiiLoitsun() {
-        //TODO: käytä riimu pelaajan repusta
-
+    public boolean pelaajaLoihtiiLoitsun() {
+        pelaajanHahmo.getReppu().poistaRepusta(Esine.RIIMU);
         int iskunMaara = laskin.taikaLyonti(pelaajanHahmo.getProfiili(), hirvio.getProfiili());
+        hirvio.getProfiili().lisaaNykyinenElamaPisteet(iskunMaara * (-1));
+
+        if (hirvio.getProfiili().onkoKuollut()) {
+            for (Esine hirviollaOllutEsine : hirvio.getEsineet()) {
+                pelaajanHahmo.getReppu().asetaEsineReppuun(hirviollaOllutEsine);
+            }
+            
+            laskin.taistelunPaatos(pelaajanHahmo.getProfiili(), hirvio.getProfiili());
+            return false;
+        }
+
+        return arvoHirviolleToiminta();
     }
 
     /**
@@ -155,12 +187,7 @@ public class Taistelu extends Tapahtuma {
         int iskunMaara = laskin.taikaLyonti(hirvio.getProfiili(), pelaajanHahmo.getProfiili());
         pelaajanHahmo.getProfiili().lisaaNykyinenElamaPisteet(iskunMaara * (-1));
 
-        if (pelaajanHahmo.getProfiili().getNykyinenElamaPisteet() <= 0) {
-            //pelaajan hahmo kuoli
-            return false;
-        }
-
-        return true;
+        return !pelaajanHahmo.getProfiili().onkoKuollut();
     }
 
     /**
@@ -226,6 +253,27 @@ public class Taistelu extends Tapahtuma {
         hirvio.getProfiili().asetaHyokkaysValmius(voima / 2 + ketteryys / 2);
 
         return true;
+    }
+
+    /**
+     * Metodi toteuttaa pelaajan yrityksen päästä pakoon. Paon onnistuminen
+     * lasketaan taistelulaskimella. Jos pako onnistuu, taistelu päättyy. Jos
+     * pako epäonnistuu, hirviö saa vastatoimen ja taistelu jatkuu.
+     *
+     * Palautetaan true, jos taistelu jatkuu. Palautetaan fale, jos taistelu
+     * päättyy.
+     *
+     * @return jatkuuko taistelu
+     */
+    public boolean pelaajaPyrkiiPakoon() {
+        boolean paaseekoPakoon = laskin.peraantyminen(pelaajanHahmo.getProfiili(), hirvio.getProfiili());
+
+        if (paaseekoPakoon) {
+            laskin.taistelunPaatos(pelaajanHahmo.getProfiili(), hirvio.getProfiili());
+            return false;
+        }
+
+        return arvoHirviolleToiminta();
     }
 
     /**

@@ -4,9 +4,10 @@ import java.awt.Graphics;
 import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.esineet.YleisEsine;
+import juuri.sovelluslogiikka.hahmo.Hahmo;
+import juuri.sovelluslogiikka.peli.HirvionLuoja;
 import juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminen;
 import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
-import juuri.sovelluslogiikka.tapahtumat.Taistelu;
 
 /**
  * Tämä luokka kuvastaa pelin maailmaa, jossa pelaajan hahmo seikkailee.
@@ -113,9 +114,9 @@ public class Luolasto {
         asetaKaytava(10, 8);
 
         //asetetaan hirviöt
-        asetaHirvio(3, 5);
-        asetaHirvio(4, 9);
-        asetaHirvio(10, 5);
+        asetaHirvio(3, 5, HirvionLuoja.NOITA);
+        asetaHirvio(4, 9, HirvionLuoja.SUURIROTTAPRONSSIAVAIN);
+        asetaHirvio(10, 5, HirvionLuoja.NOKKELANOITA);
 
         //asetetaan aarteet
         asetaAarre(3, 3, "epäilyttävä aarre");
@@ -129,8 +130,8 @@ public class Luolasto {
         asetaPortaat(10, 9);
 
         //ovet
-        asetaLukittuOvi(10, 2, "pronssiavain");
-        asetaLukittuOvi(3, 4, "hopea-avain");
+        asetaLukittuOvi(10, 2, Esine.HOPEAAVAIN);
+        asetaLukittuOvi(3, 4, Esine.PRONSSIAVAIN);
         asetaAvoinOvi(5, 4);
         asetaAvoinOvi(5, 6);
     }
@@ -145,22 +146,24 @@ public class Luolasto {
 
     /**
      * Asettaa luolastoon annettujen koodinaattien kohdalle hirviön. Samalla
-     * luodaan myös taitelu-tapahtuma, joka liitetään hirviöön.
+     * luodaan myös taistelu-tapahtuma, joka liitetään hirviöön.
+     *
+     * Hirviö luodaan HirvionLuoja-luokkaa käyttäen metodille parametrina
+     * annetun koodin avulla.
      *
      * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
      *
      * @param x annettu x-koordinaatti
      * @param y annettu y-koordinaatti
+     * @param hirvionLuontiKoodi annettu koodi, jolla hirviö luodaan
      * @return onnistuiko hirviön asetus
      */
-    public boolean asetaHirvio(int x, int y) {
+    public boolean asetaHirvio(int x, int y, int hirvionLuontiKoodi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
 
-        Hirvio hh = new Hirvio(null, "Noita");
-        Taistelu tt = new Taistelu(hh);
-        hh.setTapahtuma(tt);
+        Hirvio hh = HirvionLuoja.luoHirvio(hirvionLuontiKoodi);
         hh.setSijainti(x, y);
         koordinaatisto[x][y] = hh;
 
@@ -271,7 +274,7 @@ public class Luolasto {
 
     /**
      * Asettaa luolaston koordinaateihin (x, y) lukitun oven. Oven pystyy
-     * avaamaan avaimella, jonka nimi annetaan metodille parametrina.
+     * avaamaan avaimella, joka annetaan metodille parametrina.
      *
      * Metodi luo samalla ovenAvaus tapahtuman sekä liittää sen ja oven
      * toisiinsa.
@@ -281,16 +284,15 @@ public class Luolasto {
      *
      * @param x annettu x-koordinaatti
      * @param y annettu y-koordinaatti
-     * @param avaajanNimi lukitun oven avaajan nimi
+     * @param avaaja esine, jolla oven voi avata
      * @return onnistuiko oven asetus
      */
-    public boolean asetaLukittuOvi(int x, int y, String avaajanNimi) {
+    public boolean asetaLukittuOvi(int x, int y, YleisEsine avaaja) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        YleisEsine avain = new YleisEsine(avaajanNimi, Esine.AVAIN);
 
-        Ovi ovi = new Ovi(true, null, avain);
+        Ovi ovi = new Ovi(true, null, avaaja);
         OvenAvaus ovenAvaus = new OvenAvaus(ovi);
         ovi.setTapahtuma(ovenAvaus);
         ovi.setSijainti(x, y);
@@ -371,17 +373,21 @@ public class Luolasto {
 
     /**
      * Piirtää luolaston käyttöliittymän piirtotaululle. Metodi kutsuu
-     * luolatossa olevien kohteiden piirtometodeja.
+     * luolatossa olevien kohteiden piirtometodeja. Kohteita piirretään sen
+     * mukaan, ovatko ne tarpeeksi lähellä pelaajan hahmoa. Jos kohde on liian
+     * kaukana, ei sitä piirretä. Tämän vuoksi pelaajan hahmoa kuljetetaan
+     * piirtometodissa.
      *
      * @param g käyttöliittyymän grafiikkaolio
      * @param mittaKaava mittakaava, jossa piirretään
+     * @param pelaajanHahmo pelaajan hahmo
      */
-    public void piirra(Graphics g, int mittaKaava) {
+    public void piirra(Graphics g, int mittaKaava, Hahmo pelaajanHahmo) {
         for (int i = 0; i < leveys; i++) {
             for (int j = 0; j < korkeus; j++) {
                 int x = i * mittaKaava;
                 int y = j * mittaKaava;
-                koordinaatisto[i][j].piirra(g, mittaKaava, x, y);
+                koordinaatisto[i][j].piirra(g, mittaKaava, x, y, pelaajanHahmo);
             }
         }
     }

@@ -3,6 +3,7 @@ package juuri.sovelluslogiikka.maailma;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import juuri.sovelluslogiikka.hahmo.Hahmo;
 
 /**
  * Portaat ovat luolaston kohde, jonka kautta pelaaja voi edetä syvemmälle 
@@ -18,8 +19,16 @@ public class Portaat extends Kohde {
     }
 
     @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y) {
-        g.setColor(Color.ORANGE);
+    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
+        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
+        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
+        
+        if(etaisyysHahmoonX > 1 || etaisyysHahmoonY > 1) {
+            g.setColor(Color.BLACK);
+        } else {
+            g.setColor(Color.ORANGE);
+        }
+        
         g.fillRect(x, y, mittakaava, mittakaava);
     }
             
