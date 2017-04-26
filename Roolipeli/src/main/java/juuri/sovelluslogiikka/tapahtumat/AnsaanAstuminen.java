@@ -11,10 +11,17 @@ import juuri.sovelluslogiikka.maailma.Luolasto;
  * @author PenaJones
  */
 public class AnsaanAstuminen extends Tapahtuma {
-    
+
     private Ansa ansa;
-    
+
+    /**
+     * Luo uuden ansaan astumis-tapahtuman. Parametrina annetaan ansa-kohde,
+     * johon tapahtuma liittyy.
+     *
+     * @param ansa ansa, johon tapahtuma liittyy
+     */
     public AnsaanAstuminen(Ansa ansa) {
+        this.koodi = Tapahtuma.ANSAANASTUMINEN;
         this.ansa = ansa;
     }
 

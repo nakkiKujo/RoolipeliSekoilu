@@ -6,10 +6,8 @@ import juuri.sovelluslogiikka.hahmo.Soturi;
 import juuri.sovelluslogiikka.maailma.Kohde;
 import juuri.sovelluslogiikka.maailma.Luolasto;
 import juuri.sovelluslogiikka.maailma.Ovi;
-import org.junit.After;
-import org.junit.AfterClass;
+import juuri.sovelluslogiikka.peli.KohteidenLuoja;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -26,9 +24,9 @@ public class OvenAvausTest {
     @Before
     public void setUp() {
         this.luola = new Luolasto();
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
         luola.asetaAvoinOvi(3, 3);
-        luola.asetaLukittuOvi(4, 4, "kupariavain");
+        luola.asetaLukittuOvi(4, 4, KohteidenLuoja.OVIPRONSSIAVAAJA);
 
         this.avoinOvi = (Ovi) luola.haeKoordinaateista(3, 3);
         this.avoin = (OvenAvaus) avoinOvi.getTapahtuma();
@@ -37,7 +35,7 @@ public class OvenAvausTest {
         this.lukittu = (OvenAvaus) lukittuOvi.getTapahtuma();
 
         this.hahmoAvaimella = new Soturi("pekka");
-        hahmoAvaimella.getReppu().asetaEsineReppuun(new YleisEsine("kupariavain", Esine.AVAIN));
+        hahmoAvaimella.getReppu().asetaEsineReppuun(Esine.PRONSSIAVAIN);
 
         this.hahmoEiAvainta = new Soturi("janne");
     }

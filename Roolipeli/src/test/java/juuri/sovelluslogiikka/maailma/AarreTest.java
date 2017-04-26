@@ -18,7 +18,7 @@ public class AarreTest {
     
     @Before
     public void setUp() {
-        this.aarre = new Aarre(null, "suuri aarre");
+        this.aarre = new Aarre("suuri aarre");
     }
     
     @Test

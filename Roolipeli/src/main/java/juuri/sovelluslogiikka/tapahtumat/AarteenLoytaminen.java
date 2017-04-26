@@ -17,6 +17,12 @@ public class AarteenLoytaminen extends Tapahtuma {
 
     private Aarre aarre;
 
+    /**
+     * Luodaan uusi aarteenlöytämis-tapahtuma. Tapahtumalle annetaan parametrina
+     * aarre, johon se liittyy.
+     *
+     * @param aa aarre, johon tapahtuma liittyy
+     */
     public AarteenLoytaminen(Aarre aa) {
         this.koodi = Tapahtuma.AARTEENLOYTAMINEN;
         this.aarre = aa;

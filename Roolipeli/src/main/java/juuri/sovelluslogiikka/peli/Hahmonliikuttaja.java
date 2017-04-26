@@ -10,16 +10,14 @@ import juuri.sovelluslogiikka.maailma.Luolasto;
  */
 public class Hahmonliikuttaja {
 
-    public Hahmonliikuttaja() {
-    }
-
     /**
      * Metodi palauttaa kohteen, johon hahmo liikkuessaan päätyy. Liikkuminen
      * tapahtuu annetun komennon mukaisesti. Jos hahmo yrittää liikkua
      * luolastosta ulos, palauttaa metodi arvon null.
      *
-     * Jos hahmo yrittää liikkua kohteeseen, johon se ei voi mennä, estetään kyseinen liike. 
-     * Metodi kuitenkin palauttaa kohteen, johon hahmo yritti kulkea.
+     * Jos hahmo yrittää liikkua kohteeseen, johon se ei voi mennä, estetään
+     * kyseinen liike. Metodi kuitenkin palauttaa kohteen, johon hahmo yritti
+     * kulkea.
      *
      * @param komento minne suuntaan hahmoa liikutetaan
      * @param luola hahmo liikkuu luolastossa
@@ -28,7 +26,7 @@ public class Hahmonliikuttaja {
      */
     public Kohde liikutaHahmoa(String komento, Luolasto luola, Hahmo hahmo) {
         Sijainti hahmonSijainti = hahmo.getSijainti();
-        
+
         if (komento.equals("alas")) {
             hahmonSijainti.liikuAlas(1);
         } else if (komento.equals("ylös")) {
@@ -40,7 +38,7 @@ public class Hahmonliikuttaja {
         } else {
             return null;
         }
-        
+
         Kohde loydetty = luola.haeSijainnista(hahmonSijainti);
 
         if (loydetty == null) {

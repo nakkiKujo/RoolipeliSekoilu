@@ -4,11 +4,20 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * Tämä luokka on yksi Hahmon perivistä aliluokista. TODO: Eroavuus muista
- * ammateista.
+ * Druidi on yksi Hahmon perivistä aliluokista. Druidilla on pelin alussa
+ * enemmän elämäpisteitä ja ketteryyttä kuin muilla hahmoilla. Druidi saa peli
+ * alussa riimun ja parantavan voiteen.
  */
 public class Druidi extends Hahmo {
 
+    /**
+     * Luo uuden Druidi-hahmon. Parametrina annetaan hahmon nimi. Konstruktori
+     * kutsuu perittävän Hahmo-luokan kontruktoria.
+     *
+     * Lisäksi asetetaan myös druidille koodi.
+     *
+     * @param nimi hahmon nimi
+     */
     public Druidi(String nimi) {
         super(nimi);
         this.ammatti = Hahmo.DRUIDI;

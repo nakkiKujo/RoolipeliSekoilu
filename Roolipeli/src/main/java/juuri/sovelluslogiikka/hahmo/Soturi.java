@@ -4,12 +4,20 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * Tämä luokka on yksi Hahmon perivistä aliluokista. Soturia käyetään ohjelman
- * testaamisessa ja rakentamisessa ennen muiden ammattien yksityiskohtaista
- * luomista.
+ * Soturi on yksi Hahmon perivistä aliluokista. Soturilla on enemmän voimaa
+ * pelin alussa kuin muilla hahmoilla. Soturi saa myös peli alussa muutaman
+ * parantavan voiteen haavojen parantamista varten.
  */
 public class Soturi extends Hahmo {
 
+    /**
+     * Luo uuden Soturi-hahmon. Parametrina annetaan hahmon nimi. Konstruktori
+     * kutsuu perittävän Hahmo-luokan kontruktoria.
+     *
+     * Lisäksi asetetaan myös soturille koodi.
+     *
+     * @param nimi hahmon nimi
+     */
     public Soturi(String nimi) {
         super(nimi);
         this.ammatti = Hahmo.SOTURI;

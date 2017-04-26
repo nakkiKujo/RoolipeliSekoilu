@@ -5,7 +5,6 @@ import juuri.apuvalineet.Sijainti;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.peli.HirvionLuoja;
 import juuri.sovelluslogiikka.peli.KohteidenLuoja;
-import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
 
 /**
  * Tämä luokka kuvastaa pelin maailmaa, jossa pelaajan hahmo seikkailee.
@@ -27,24 +26,25 @@ public class Luolasto {
      */
     public Luolasto() {
         this.koordinaatisto = null;
+        this.nykyinenTaso = 0;
     }
 
     /**
      * Metodi tarkastaa, missä tasossa luolasto on nyt ja luo sitä seuraavan
-     * tason.
+     * tason. Mitä syvemmälle luolassa edetään, sitä vaikeammaksi pelaaminen
+     * muuttuu. Siis seuraava taso on aina edeltävää haastavampi.
      */
     public void luoSeuraavaTaso() {
-        if (nykyinenTaso == 1) {
+        if (nykyinenTaso == 0) {
+            luoTaso1();
+        } else if (nykyinenTaso == 1) {
             luoTaso2();
         } else if (nykyinenTaso == 2) {
             luoTaso3();
         }
     }
 
-    /**
-     * Luo luolaston ensimmäisen tason, joka on samalla tasoista helpoin.
-     */
-    public void luoTaso1() {
+    private void luoTaso1() {
         nykyinenTaso = 1;
         this.leveys = 13;
         this.korkeus = 11;
@@ -140,7 +140,7 @@ public class Luolasto {
         asetaAnsa(6, 5, KohteidenLuoja.ANSANUOLI);
 
         //portaat
-        asetaPortaat(10, 9);
+        asetaPortaat(10, 9, KohteidenLuoja.PORTAAT);
 
         //ovet
         asetaLukittuOvi(10, 2, KohteidenLuoja.OVIHOPEAAVAAJA);
@@ -149,11 +149,11 @@ public class Luolasto {
         asetaAvoinOvi(5, 6);
     }
 
-    public void luoTaso2() {
+    private void luoTaso2() {
         nykyinenTaso = 2;
     }
 
-    public void luoTaso3() {
+    private void luoTaso3() {
         nykyinenTaso = 3;
     }
 
@@ -205,19 +205,22 @@ public class Luolasto {
     }
 
     /**
-     * Asettaa luolastoon annettujen koodinaattien kohdalle portaat.
+     * Asettaa luolastoon annettujen koodinaattien kohdalle portaat. Parametrina
+     * saadaan KohteidenLuojalle annettava luontikoodi, jonka avulla portaat
+     * luodaan.
      *
      * Jos asetus ei onnistu, palautetaan false. Muuten palautetaan true.
      *
      * @param x annettu x-koordinaatti
      * @param y annettu y-koordinaatti
+     * @param kohteenLuontiKoodi KohteidenLuojalle välitettävä koodi
      * @return onnistuiko portaiden asetus
      */
-    public boolean asetaPortaat(int x, int y) {
+    public boolean asetaPortaat(int x, int y, int kohteenLuontiKoodi) {
         if (x < 0 || x >= leveys || y < 0 || y >= korkeus) {
             return false;
         }
-        Portaat pp = new Portaat();
+        Portaat pp = (Portaat) KohteidenLuoja.luoKohde(kohteenLuontiKoodi);
         pp.setSijainti(x, y);
         koordinaatisto[x][y] = pp;
         return true;
@@ -284,7 +287,7 @@ public class Luolasto {
             return false;
         }
 
-        Kaytava kk = new Kaytava(null);
+        Kaytava kk = new Kaytava();
         kk.setSijainti(x, y);
         koordinaatisto[x][y] = kk;
         return true;

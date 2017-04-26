@@ -23,6 +23,9 @@ public class Peli {
     private Hahmonluoja luoja;
     private Tapahtuma nykyinenTapahtuma;
 
+    /**
+     * Luo uuden pelin. Pelille luodaan hahmonluoja sekä hahmonliikuttaja.
+     */
     public Peli() {
         this.liikuttaja = new Hahmonliikuttaja();
         this.luoja = new Hahmonluoja();
@@ -63,15 +66,16 @@ public class Peli {
 
     /**
      * Metodi luo pelaajan hahmon ja pelin maailman eli luolaston. Hahmo luodaan
-     * annetun nimen perusteella.
+     * annetun nimen ja ammatin koodin perusteella.
      *
      * @param hahmonNimi käyttäjän antama nimi hahmolle
+     * @param hahmonAmmatti ammattia vastaava koodi
      */
     public void aloitaPeli(String hahmonNimi, int hahmonAmmatti) {
         this.pelaajanHahmo = luoja.luoHahmo(hahmonNimi, hahmonAmmatti);
 
         this.luolasto = new Luolasto();
-        luolasto.luoTaso1();
+        luolasto.luoSeuraavaTaso();
     }
 
     /**

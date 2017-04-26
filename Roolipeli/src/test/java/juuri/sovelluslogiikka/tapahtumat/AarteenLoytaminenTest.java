@@ -8,6 +8,7 @@ import juuri.sovelluslogiikka.hahmo.Soturi;
 import juuri.sovelluslogiikka.maailma.Aarre;
 import juuri.sovelluslogiikka.maailma.Kohde;
 import juuri.sovelluslogiikka.maailma.Luolasto;
+import juuri.sovelluslogiikka.peli.KohteidenLuoja;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -24,8 +25,8 @@ public class AarteenLoytaminenTest {
     @Before
     public void setUp() {
         this.luola = new Luolasto();
-        luola.luoTaso1();
-        luola.asetaAarre(3, 3, "pekan aarre");
+        luola.luoSeuraavaTaso();
+        luola.asetaAarre(3, 3, KohteidenLuoja.AARREJOSSARIIMUJATAIKASAUVA);
         this.aarre = (Aarre) luola.haeKoordinaateista(3, 3);
         this.miekka = new TaisteluEsine("miekkanen", Esine.MIEKKA);
         this.kampa = new YleisEsine("kiva kampa", Esine.KYPARA);

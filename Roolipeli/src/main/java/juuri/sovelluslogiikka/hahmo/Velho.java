@@ -4,11 +4,20 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * Tämä luokka on yksi Hahmon perivistä aliluokista. TODO: Eroavaisuus muista
- * ammateista.
+ * Velho on yksi Hahmon perivistä aliluokista. Velholla on enemmän taikavoimaa
+ * peli alussa kuin muilla hahmoilla. Lisäksi velho saa peli alussa muutaman
+ * riimun taikojen loihtimiseen.
  */
 public class Velho extends Hahmo {
 
+    /**
+     * Luo uuden Velho-hahmon. Parametrina annetaan hahmon nimi. Konstruktori
+     * kutsuu perittävän Hahmo-luokan kontruktoria.
+     *
+     * Lisäksi asetetaan myös velholle koodi.
+     *
+     * @param nimi hahmon nimi
+     */
     public Velho(String nimi) {
         super(nimi);
         this.ammatti = Hahmo.VELHO;

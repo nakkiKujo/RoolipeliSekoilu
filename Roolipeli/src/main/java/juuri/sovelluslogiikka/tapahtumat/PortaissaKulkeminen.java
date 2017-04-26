@@ -8,8 +8,15 @@ public class PortaissaKulkeminen extends Tapahtuma {
 
     private Portaat portaat;
 
+    /**
+     * Luo uuden portaissakulkemis-tapahtuma. Parametrina annetaan
+     * portaat-kohde, johon tapahtuma liittyy.
+     *
+     * @param portaat portaat, johon luotava tapahtuma liittyy
+     */
     public PortaissaKulkeminen(Portaat portaat) {
         this.portaat = portaat;
+        this.koodi = Tapahtuma.PORTAISSAKULKEMINEN;
     }
 
     @Override

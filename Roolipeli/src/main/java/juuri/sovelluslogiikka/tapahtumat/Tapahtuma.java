@@ -12,8 +12,9 @@ public abstract class Tapahtuma {
 
     public static final int TAISTELU = 1;
     public static final int OVENAVAUS = 2;
-    public static final int PORTAISSAKULEMINEN = 3;
+    public static final int PORTAISSAKULKEMINEN = 3;
     public static final int AARTEENLOYTAMINEN = 4;
+    public static final int ANSAANASTUMINEN = 5;
 
     protected int koodi;
     protected String tapahtumaTeksti;

@@ -20,7 +20,12 @@ public abstract class Esine {
     public static final YleisEsine PRONSSIAVAIN = new YleisEsine("Pronssiavain", Esine.AVAIN);
     public static final YleisEsine HOPEAAVAIN = new YleisEsine("Hopea-avain", Esine.AVAIN);
     public static final YleisEsine KULTAAVAIN = new YleisEsine("Kulta-avain", Esine.AVAIN);
-
+    
+    /**
+     * Esineen konstruktori. Parametrina annetaan esineen nimi ja sen koodi.
+     * @param nimi esineen nimi
+     * @param koodi esineen koodi, staattinen muuttuja luokassa Esine
+     */
     public Esine(String nimi, int koodi) {
         this.nimi = nimi;
         this.koodi = koodi;

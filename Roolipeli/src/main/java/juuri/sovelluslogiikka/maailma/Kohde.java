@@ -31,9 +31,6 @@ public abstract class Kohde {
 
     protected Tapahtuma tapahtuma;
 
-    public Kohde() {
-    }
-
     public int getKoodi() {
         return koodi;
     }
@@ -46,6 +43,13 @@ public abstract class Kohde {
         return this.sijainti;
     }
 
+    /**
+     * Asettaa kohteen sijainniksi (x, y). Jos kohteella ei vielä ole sijaintia,
+     * luodaan ensin sille sijainti.
+     *
+     * @param x asetettava x-koordinaatti
+     * @param y asetettava y-koordinaatti
+     */
     public void setSijainti(int x, int y) {
         if (this.sijainti == null) {
             sijainti = new Sijainti();
@@ -78,7 +82,7 @@ public abstract class Kohde {
      * @param mittakaava mittakaava, jossa piirretään
      * @param x kohteen x-koordinaatti
      * @param y kohteen y-koordinaatti
-     * @param pelaajanHahmo
+     * @param pelaajanHahmo pelaajan hahmo
      */
     public abstract void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo);
 

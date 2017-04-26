@@ -24,7 +24,7 @@ public class HahmonliikuttajaTest {
         this.hahmo = new Soturi("Janne");
         
         this.luola = new Luolasto();
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
     }
 
     @Test
@@ -41,11 +41,11 @@ public class HahmonliikuttajaTest {
 
     @Test
     public void hahmonLiikuttaminenAlas() {
-        luola.asetaAarre(1, 2, "pekan aarre");
+        luola.asetaAarre(1, 2, KohteidenLuoja.AARRE2VOIDETTA);
         String komento = "alas";
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         assertEquals(Kohde.AARRE, loydettyKohde.getKoodi());
-        assertEquals("pekan aarre", loydettyKohde.getNimi());
+        assertEquals("luiden ympäröimä säkki", loydettyKohde.getNimi());
         Sijainti eiLiikkunut = new Sijainti();
         eiLiikkunut.setSijainti(1, 1);
         assertEquals(eiLiikkunut, hahmo.getSijainti());
@@ -62,7 +62,7 @@ public class HahmonliikuttajaTest {
     public void hahmonLiikuttaminenOikealle() {
         String komento = "oikea";
         
-        luola.asetaLukittuOvi(2, 1, "avain");
+        luola.asetaLukittuOvi(2, 1, KohteidenLuoja.OVIPRONSSIAVAAJA);
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         assertEquals(Kohde.OVI, loydettyKohde.getKoodi());
         Sijainti eiLiikkunut = new Sijainti();
@@ -83,7 +83,7 @@ public class HahmonliikuttajaTest {
     public void hahmonLiikuttaminenYlos() {
         String komento = "ylös";
         
-        luola.asetaHirvio(1, 0);
+        luola.asetaHirvio(1, 0, HirvionLuoja.VALKOKASVO);
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         assertEquals(Kohde.HIRVIO, loydettyKohde.getKoodi());
         Sijainti eiLiikkunut = new Sijainti();
@@ -102,7 +102,7 @@ public class HahmonliikuttajaTest {
     public void hahmonLiikuttaminenVasemmalle() {
         String komento = "vasen";
         
-        luola.asetaLukittuOvi(0, 1, "kulta-avain");
+        luola.asetaLukittuOvi(0, 1, KohteidenLuoja.OVIHOPEAAVAAJA);
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komento, luola, hahmo);
         assertEquals(Kohde.OVI, loydettyKohde.getKoodi());
         Sijainti eiLiikkunut = new Sijainti();
@@ -128,7 +128,7 @@ public class HahmonliikuttajaTest {
         Kohde loydettyKohde = liikuttaja.liikutaHahmoa(komentoOikea, luola, hahmo);
         assertEquals(Kohde.KAYTAVA, loydettyKohde.getKoodi());
         
-        luola.asetaAarre(3, 1, "suuri aarre");
+        luola.asetaAarre(3, 1, KohteidenLuoja.AARREJOSSAMIEKKA1);
         loydettyKohde = liikuttaja.liikutaHahmoa(komentoOikea, luola, hahmo);
         assertEquals(Kohde.AARRE, loydettyKohde.getKoodi());
         assertEquals(2, hahmo.getSijainti().getX());
@@ -138,7 +138,7 @@ public class HahmonliikuttajaTest {
         assertEquals(Kohde.KAYTAVA, loydettyKohde.getKoodi());
         assertEquals(2, hahmo.getSijainti().getY());
         
-        luola.asetaLukittuOvi(2, 3, "hopea avain");
+        luola.asetaLukittuOvi(2, 3, KohteidenLuoja.OVIKULTAAVAAJA);
         loydettyKohde = liikuttaja.liikutaHahmoa(komentoAlas, luola, hahmo);
         assertEquals(Kohde.OVI, loydettyKohde.getKoodi());
         assertEquals(2, hahmo.getSijainti().getY());

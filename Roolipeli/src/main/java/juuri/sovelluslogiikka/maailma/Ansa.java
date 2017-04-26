@@ -10,17 +10,24 @@ import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
  * yleensä aiheuttavat pelaajan hahmolle jonkinlaista vahinkoa.
  */
 public class Ansa extends Kohde {
-    
+
     private int vahinko;
-    
-    public Ansa(String ansanNimi, Tapahtuma tapahtuma, int ansanTekemaVahinko) {
+
+    /**
+     * Luo uuden ansan. Parametreina annetaan ansalle nimi ja luku, joka vastaa
+     * ansan tekemää vahinkoa pelaajan hahmoon.
+     *
+     * @param ansanNimi ansalle annettava nimi
+     * @param ansanTekemaVahinko vahingon määrä, jonka pelaaja kokee astuessaan
+     * ansaan
+     */
+    public Ansa(String ansanNimi, int ansanTekemaVahinko) {
         this.koodi = Kohde.ANSA;
         this.nimi = ansanNimi;
-        this.tapahtuma = tapahtuma;
         this.voikoKulkea = true;
         this.vahinko = ansanTekemaVahinko;
     }
-    
+
     public int getAnsanTekemaVahinko() {
         return this.vahinko;
     }
@@ -29,13 +36,13 @@ public class Ansa extends Kohde {
     public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
         int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
         int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
-        
-        if(etaisyysHahmoonX > 1 || etaisyysHahmoonY > 1) {
+
+        if (etaisyysHahmoonX > 1 || etaisyysHahmoonY > 1) {
             g.setColor(Color.BLACK);
         } else {
             g.setColor(Color.GREEN);
         }
-        
+
         g.fillRect(x, y, mittakaava, mittakaava);
     }
 }

@@ -1,6 +1,9 @@
 package juuri.sovelluslogiikka.maailma;
 
 import juuri.apuvalineet.Sijainti;
+import juuri.sovelluslogiikka.esineet.Esine;
+import juuri.sovelluslogiikka.peli.HirvionLuoja;
+import juuri.sovelluslogiikka.peli.KohteidenLuoja;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,8 +23,8 @@ public class LuolastoTest {
 
     @Test
     public void asettaaHirvionOikein() {
-        luola.luoTaso1();
-        luola.asetaHirvio(3, 5);
+        luola.luoSeuraavaTaso();
+        luola.asetaHirvio(3, 5, HirvionLuoja.NOITA);
         Kohde hh = luola.haeKoordinaateista(3, 5);
 
         assertEquals("Noita", hh.getNimi());
@@ -31,38 +34,38 @@ public class LuolastoTest {
 
     @Test
     public void eiAsetaHirviotaVaarillaKoordinaateilla() {
-        luola.luoTaso1();
-        boolean arvo = luola.asetaHirvio(0, 11);
+        luola.luoSeuraavaTaso();
+        boolean arvo = luola.asetaHirvio(0, 11, HirvionLuoja.SUURIROTTA);
         assertFalse(arvo);
 
-        arvo = luola.asetaHirvio(13, 5);
+        arvo = luola.asetaHirvio(13, 5, HirvionLuoja.NOKKELANOITA);
         assertFalse(arvo);
     }
 
     @Test
     public void asettaaAnsanOikein() {
-        luola.luoTaso1();
-        luola.asetaAnsa(12, 10);
+        luola.luoSeuraavaTaso();
+        luola.asetaAnsa(12, 10, KohteidenLuoja.ANSAPIIKKI);
         Kohde aa = luola.haeKoordinaateista(12, 10);
 
-        assertEquals("ansa", aa.getNimi());
+        assertEquals("piikkiansa", aa.getNimi());
         assertEquals(Kohde.ANSA, aa.getKoodi());
     }
 
     @Test
     public void eiAsetaAnsaaVaarillaKoordinaateilla() {
-        luola.luoTaso1();
-        boolean arvo = luola.asetaAnsa(0, -1);
+        luola.luoSeuraavaTaso();
+        boolean arvo = luola.asetaAnsa(0, -1, KohteidenLuoja.ANSANUOLI);
         assertFalse(arvo);
 
-        arvo = luola.asetaAnsa(12, 11);
+        arvo = luola.asetaAnsa(12, 11, KohteidenLuoja.ANSANUOLI);
         assertFalse(arvo);
     }
 
     @Test
     public void asettaaPortaatOikein() {
-        luola.luoTaso1();
-        luola.asetaPortaat(5, 8);
+        luola.luoSeuraavaTaso();
+        luola.asetaPortaat(5, 8, KohteidenLuoja.PORTAAT);
         Kohde pp = luola.haeKoordinaateista(5, 8);
 
         assertEquals("portaat", pp.getNimi());
@@ -71,59 +74,59 @@ public class LuolastoTest {
 
     @Test
     public void eiAsetaPortaitaVaarillaKoordinaateilla() {
-        luola.luoTaso1();
-        boolean arvo = luola.asetaPortaat(7, -3);
+        luola.luoSeuraavaTaso();
+        boolean arvo = luola.asetaPortaat(7, -3, KohteidenLuoja.PORTAAT);
         assertFalse(arvo);
-        arvo = luola.asetaPortaat(-11, 8);
+        arvo = luola.asetaPortaat(-11, 8, KohteidenLuoja.PORTAAT);
         assertFalse(arvo);
     }
 
     @Test
     public void asettaaAarteenOikein() {
-        luola.luoTaso1();
-        luola.asetaAarre(6, 6, "midaksen aarre");
+        luola.luoSeuraavaTaso();
+        luola.asetaAarre(6, 6, KohteidenLuoja.AARREJOSSAHOPEAAVAIN);
 
         Kohde haettuKohde = luola.haeKoordinaateista(6, 6);
         assertEquals(Kohde.AARRE, haettuKohde.getKoodi());
 
-        luola.asetaAarre(6, 6, "perseuksen lipas");
+        luola.asetaAarre(6, 6, KohteidenLuoja.AARREJOSSAMIEKKA1);
         haettuKohde = luola.haeKoordinaateista(6, 6);
-        assertEquals("perseuksen lipas", haettuKohde.getNimi());
+        assertEquals("vanha seikkailijan reppu", haettuKohde.getNimi());
     }
 
     @Test
     public void eiAsetaAarrettaVaarillaKoordinaateilla() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
 
-        boolean arvo = luola.asetaAarre(0, 11, "vÃ¤Ã¤rÃ¤ aarre");
+        boolean arvo = luola.asetaAarre(0, 11, KohteidenLuoja.AARRE2VOIDETTA);
         assertFalse(arvo);
 
-        arvo = luola.asetaAarre(13, 2, "toinen vÃ¤Ã¤rÃ¤ aarre");
+        arvo = luola.asetaAarre(13, 2, KohteidenLuoja.AARREJOSSAHOPEAAVAIN);
         assertFalse(arvo);
     }
 
     @Test
     public void kohteenAsetusLuolanReunalle() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
 
         boolean tulos = luola.asetaKaytava(0, 0);
         assertTrue(tulos);
-        tulos = luola.asetaLukittuOvi(5, 10, "pronssiavain");
+        tulos = luola.asetaLukittuOvi(5, 10, KohteidenLuoja.OVIHOPEAAVAAJA);
         assertTrue(tulos);
-        tulos = luola.asetaSeina(12, 9);
+        tulos = luola.asetaSeina(12, 9, KohteidenLuoja.SEINA);
         assertTrue(tulos);
     }
 
     @Test
     public void oviAsetusToimiiOikein() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
 
-        luola.asetaLukittuOvi(5, 7, "avain");
+        luola.asetaLukittuOvi(5, 7, KohteidenLuoja.OVIPRONSSIAVAAJA);
         Kohde haettuKohde = luola.haeKoordinaateista(5, 7);
         assertEquals(Kohde.OVI, haettuKohde.getKoodi());
 
         Ovi haettuOvi = (Ovi) haettuKohde;
-        assertEquals("avain", haettuOvi.getAvaaja().getNimi());
+        assertEquals(Esine.PRONSSIAVAIN.getNimi(), haettuOvi.getAvaaja().getNimi());
         assertEquals(Tapahtuma.OVENAVAUS, haettuOvi.getTapahtuma().getKoodi());
         assertFalse(haettuOvi.getVoikoKulkea());
 
@@ -131,29 +134,28 @@ public class LuolastoTest {
         assertEquals(Kohde.OVI, luola.haeKoordinaateista(3, 1).getKoodi());
         haettuOvi = (Ovi) luola.haeKoordinaateista(3, 1);
         assertEquals(Tapahtuma.OVENAVAUS, haettuOvi.getTapahtuma().getKoodi());
-        assertTrue(haettuOvi.getVoikoKulkea());
     }
 
     @Test
     public void eiAsetaOveaVaarillaKoordinaateilla() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
 
         boolean arvo = luola.asetaAvoinOvi(4, 11);
         assertFalse(arvo);
-        arvo = luola.asetaLukittuOvi(0, -1, "avain");
+        arvo = luola.asetaLukittuOvi(0, -1, KohteidenLuoja.OVIKULTAAVAAJA);
         assertFalse(arvo);
     }
 
     @Test
     public void kaytavaAsetusToimiiOikein() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
         luola.asetaKaytava(0, 0);
         assertEquals(Kohde.KAYTAVA, luola.haeKoordinaateista(0, 0).getKoodi());
     }
 
     @Test
     public void eiAsetaKaytavaaVaarillaKoordinaateilla() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
 
         boolean arvo = luola.asetaKaytava(0, -1);
         assertFalse(arvo);
@@ -161,38 +163,38 @@ public class LuolastoTest {
 
     @Test
     public void seinaAsetusToimiiOikein() {
-        luola.luoTaso1();
-        luola.asetaSeina(7, 2);
+        luola.luoSeuraavaTaso();
+        luola.asetaSeina(7, 2, KohteidenLuoja.SEINA);
         assertEquals(Kohde.SEINA, luola.haeKoordinaateista(7, 2).getKoodi());
     }
 
     @Test
     public void eiAsetaSeinaaVaarillaKoordinaateilla() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
 
-        boolean arvo = luola.asetaSeina(-1, 10);
+        boolean arvo = luola.asetaSeina(-1, 10, KohteidenLuoja.SEINA);
         assertFalse(arvo);
 
-        arvo = luola.asetaSeina(0, -2);
+        arvo = luola.asetaSeina(0, -2, KohteidenLuoja.SEINA);
         assertFalse(arvo);
     }
 
     @Test
     public void osaaHakeaSijainnista() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
 
         Sijainti ss = new Sijainti();
         ss.setSijainti(4, 3);
-        luola.asetaLukittuOvi(4, 3, "kulta-avain");
+        luola.asetaLukittuOvi(4, 3, KohteidenLuoja.OVIKULTAAVAAJA);
 
         Ovi haettuOvi = (Ovi) luola.haeSijainnista(ss);
         assertEquals(Kohde.OVI, haettuOvi.getKoodi());
-        assertEquals("kulta-avain", haettuOvi.getAvaaja().getNimi());
+        assertEquals(Esine.KULTAAVAIN.getNimi(), haettuOvi.getAvaaja().getNimi());
     }
 
     @Test
     public void sijainninHakuKunUlkopuolella() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
         
         Sijainti ss = new Sijainti();
         ss.setSijainti(4, 13);
@@ -201,7 +203,7 @@ public class LuolastoTest {
 
     @Test
     public void osaaHakeaKoordinaateista() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
         
         luola.asetaAvoinOvi(4, 3);
         assertEquals(Kohde.OVI, luola.haeKoordinaateista(4, 3).getKoodi());
@@ -209,16 +211,16 @@ public class LuolastoTest {
 
     @Test
     public void koordinaateinHakuKunUlkopuolella() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
         
         assertEquals(null, luola.haeKoordinaateista(6, -1));
     }
 
     @Test
     public void poistaaKohteenOikein() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
         
-        luola.asetaLukittuOvi(4, 5, "kiva avain");
+        luola.asetaLukittuOvi(4, 5, KohteidenLuoja.OVIHOPEAAVAAJA);
         assertEquals(Kohde.OVI, luola.haeKoordinaateista(4, 5).getKoodi());
         luola.poistaKohde(luola.haeKoordinaateista(4, 5));
         
@@ -227,7 +229,7 @@ public class LuolastoTest {
     
     @Test
     public void luoTaso1EiJataTyhjaa() {
-        luola.luoTaso1();
+        luola.luoSeuraavaTaso();
         for (int i = 0; i < 13; i++) {
             for (int j = 0; j < 11; j++) {
                 assertFalse(luola.haeKoordinaateista(i, j) == null);

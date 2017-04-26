@@ -1,10 +1,8 @@
 package juuri.sovelluslogiikka.peli;
 
+import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,14 +16,15 @@ public class PeliTest {
     }
 
     @Test
-    public void aloituksessaLuodaanOikeanniminenHahmo() {
-        peli.aloitaPeli("kalle");
+    public void aloituksessaLuodaanOikeanniminenJaAmmatillinenHahmo() {
+        peli.aloitaPeli("kalle", Hahmo.SOTURI);
         assertTrue(peli.getPelaajanHahmo().getNimi().equals("kalle"));
+        assertEquals(Hahmo.SOTURI, peli.getPelaajanHahmo().getAmmatti());
     }
 
     @Test
     public void hahmonLiikkuessaLoytyyNullTapahtuma() {
-        peli.aloitaPeli("pekka");
+        peli.aloitaPeli("pekka", Hahmo.VELHO);
         peli.getPelaajanHahmo().getSijainti().setSijainti(6, 8);
         peli.getLuolasto().asetaKaytava(5, 8);
         Tapahtuma loydettyTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("vasen");
@@ -40,15 +39,15 @@ public class PeliTest {
 
     @Test
     public void hahmonLiikkuessaLoytyyTapahtuma() {
-        peli.aloitaPeli("pekka");
+        peli.aloitaPeli("pekka", Hahmo.DRUIDI);
         peli.getPelaajanHahmo().getSijainti().setSijainti(4, 4);
-        peli.getLuolasto().asetaHirvio(4, 5);
+        peli.getLuolasto().asetaHirvio(4, 5, HirvionLuoja.SUURIROTTA);
 
         Tapahtuma loydettyTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("alas");
         assertEquals(Tapahtuma.TAISTELU, loydettyTapahtuma.getKoodi());
 
         peli.getPelaajanHahmo().getSijainti().setSijainti(5, 5);
-        peli.getLuolasto().asetaLukittuOvi(6, 5, "kulta-avain");
+        peli.getLuolasto().asetaLukittuOvi(6, 5, KohteidenLuoja.OVIKULTAAVAAJA);
 
         loydettyTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("oikea");
         assertEquals(Tapahtuma.OVENAVAUS, loydettyTapahtuma.getKoodi());
@@ -56,7 +55,7 @@ public class PeliTest {
 
     @Test
     public void vaarallaSuunnallaNull() {
-        peli.aloitaPeli("pekka");
+        peli.aloitaPeli("pekka", Hahmo.SOTURI);
         peli.getPelaajanHahmo().getSijainti().setSijainti(4, 4);
         Tapahtuma loydetty = peli.liikutaanJaEtsitaanTapahtumaa("vsen");
 

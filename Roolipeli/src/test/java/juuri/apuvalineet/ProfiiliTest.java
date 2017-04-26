@@ -42,7 +42,7 @@ public class ProfiiliTest {
     public void asettaaAlkuProfiiliOikein() {
         prof.setSoturiAlkuProfiili();
         
-        assertEquals(6, prof.getElamaPisteet());
+        assertEquals(8, prof.getElamaPisteet());
         assertEquals(2, prof.getKetteryys());
         assertEquals(1, prof.getTaikaPuolustus());
         assertEquals(1, prof.getTaikaVoima());
@@ -50,7 +50,7 @@ public class ProfiiliTest {
         
         prof.setVelhoAlkuProfiili();
         
-        assertEquals(5, prof.getElamaPisteet());
+        assertEquals(7, prof.getElamaPisteet());
         assertEquals(2, prof.getKetteryys());
         assertEquals(2, prof.getTaikaPuolustus());
         assertEquals(3, prof.getTaikaVoima());
@@ -58,7 +58,7 @@ public class ProfiiliTest {
         
         prof.setDruidiAlkuProfiili();
         
-        assertEquals(7, prof.getElamaPisteet());
+        assertEquals(9, prof.getElamaPisteet());
         assertEquals(3, prof.getKetteryys());
         assertEquals(1, prof.getTaikaPuolustus());
         assertEquals(1, prof.getTaikaVoima());
@@ -87,11 +87,13 @@ public class ProfiiliTest {
         prof.asetaEsine(miekka);
         prof.asetaEsine(kypara);
         
-        assertEquals(10, prof.getElamaPisteet());
-        assertEquals(2, prof.getKetteryys());
-        assertEquals(2, prof.getTaikaPuolustus());
-        assertEquals(1, prof.getTaikaVoima());
-        assertEquals(7, prof.getVoima());
+        Profiili vertailuProfiili = new Profiili();
+        vertailuProfiili.setDruidiAlkuProfiili();
+        assertEquals(vertailuProfiili.getElamaPisteet() + 3, prof.getElamaPisteet());
+        assertEquals(vertailuProfiili.getKetteryys() - 1, prof.getKetteryys());
+        assertEquals(vertailuProfiili.getTaikaPuolustus() + 1, prof.getTaikaPuolustus());
+        assertEquals(vertailuProfiili.getTaikaVoima(), prof.getTaikaVoima());
+        assertEquals(vertailuProfiili.getVoima() + 6, prof.getVoima());
     }
     
     @Test
@@ -109,10 +111,13 @@ public class ProfiiliTest {
         
         prof.poistaEsine(miekka);
         
-        assertEquals(-5, prof.getElamaPisteet());
-        assertEquals(4, prof.getKetteryys());
-        assertEquals(5, prof.getTaikaPuolustus());
-        assertEquals(1, prof.getTaikaVoima());
-        assertEquals(1, prof.getVoima());
+        Profiili vertailuProfiili = new Profiili();
+        vertailuProfiili.setVelhoAlkuProfiili();
+        
+        assertEquals(vertailuProfiili.getElamaPisteet() - 10, prof.getElamaPisteet());
+        assertEquals(vertailuProfiili.getKetteryys() + 2, prof.getKetteryys());
+        assertEquals(vertailuProfiili.getTaikaPuolustus() + 3, prof.getTaikaPuolustus());
+        assertEquals(vertailuProfiili.getTaikaVoima() - 2, prof.getTaikaVoima());
+        assertEquals(vertailuProfiili.getVoima(), prof.getVoima());
     }
 }

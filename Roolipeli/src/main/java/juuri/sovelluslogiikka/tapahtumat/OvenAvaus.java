@@ -11,7 +11,7 @@ import juuri.sovelluslogiikka.maailma.Ovi;
  * avatakseen. Pelaaja voi myös päättää olla avaamatta ovea.
  *
  * OvenAvaus tietää aina, mihin oveen se liittyy.
- * 
+ *
  * Jos pelaaja onnistuneesti avaa oven, poistuu ovi luolasta.
  */
 public class OvenAvaus extends Tapahtuma {
@@ -20,6 +20,12 @@ public class OvenAvaus extends Tapahtuma {
     private boolean lukittuOvi;
     private boolean avainLoytyy;
 
+    /**
+     * Luodaan uusi ovenavaus-tapahtuma. Parametrina annetaan ovi, johon
+     * tapahtuma liittyy.
+     *
+     * @param ovi ovi, johon luotava tapahtuma liittyy
+     */
     public OvenAvaus(Ovi ovi) {
         this.koodi = Tapahtuma.OVENAVAUS;
         this.ovi = ovi;

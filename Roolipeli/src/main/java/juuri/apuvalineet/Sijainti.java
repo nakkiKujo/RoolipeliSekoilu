@@ -8,7 +8,10 @@ public class Sijainti {
 
     private int x;
     private int y;
-
+    
+    /**
+     * Luodaan uusi sijainti. Alussa sijainnin koordinaatit ovat 0 ja 0.
+     */
     public Sijainti() {
         this.x = 0;
         this.y = 0;
@@ -21,7 +24,12 @@ public class Sijainti {
     public void setY(int y) {
         this.y = y;
     }
-
+    
+    /**
+     * Asettaa sijainniksi (x, y).
+     * @param x x-koordinaatti
+     * @param y y-koordinaatti
+     */
     public void setSijainti(int x, int y) {
         this.x = x;
         this.y = y;

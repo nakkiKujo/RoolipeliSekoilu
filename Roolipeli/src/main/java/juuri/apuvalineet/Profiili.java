@@ -29,6 +29,9 @@ public class Profiili {
     private int puolustusValmius;
     private int hyokkaysValmius;
 
+    /**
+     * Metodi luo uuden profiilin. Uuden profiilin kaikki ominaisuudet ovat 0.
+     */
     public Profiili() {
         this.voima = 0;
         this.taikaVoima = 0;
@@ -40,6 +43,12 @@ public class Profiili {
         this.hyokkaysValmius = 0;
     }
 
+    /**
+     * Metodi kasvattaa profiilin voimaa parametrin verran. Jos parametrina
+     * annettu luku on negatiivinen, voiman arvo laskee.
+     *
+     * @param v haluttu voiman muutos
+     */
     public void lisaaVoima(int v) {
         this.voima += v;
     }
@@ -48,6 +57,12 @@ public class Profiili {
         return voima;
     }
 
+    /**
+     * Metodi kasvattaa profiilin taikavoimaa parametrin verran. Negatiivisella
+     * parametrilla taikavoiman arvo laskee.
+     *
+     * @param tv haluttu taikavoiman muutos
+     */
     public void lisaaTaikaVoima(int tv) {
         this.taikaVoima += tv;
     }
@@ -56,6 +71,12 @@ public class Profiili {
         return taikaVoima;
     }
 
+    /**
+     * Metodi kasvattaa profiilin ketteryyttä parametrin verran. Negatiivisella
+     * parametrilla ketteryyden arvo laskee.
+     *
+     * @param k haluttu ketteryyden muutos
+     */
     public void lisaaKetteryys(int k) {
         this.ketteryys += k;
     }
@@ -64,11 +85,28 @@ public class Profiili {
         return ketteryys;
     }
 
+    /**
+     * Metodi kasvattaa profiilin elämäpisteitä parametrin verran.
+     * Negatiivisella parametrilla elämäpisteiden arvo laskee.
+     *
+     * Metodia käytetään muuttamaan peruselämäpisteiden arvoa. Esimerkiksi
+     * taisteluihin liittyvään elämäpisteiden vähennykseen käytetää metodia
+     * lisaaNykyinenElamaPisteet. Nykyiset elämäpisteet pitävät yllä nykyistä
+     * tilannetta, peruselämäpisteet ns. "perustasoa".
+     *
+     * @param e haluttu elämäpisteiden muutos
+     */
     public void lisaaElamaPisteet(int e) {
         this.elamaPisteet += e;
         lisaaNykyinenElamaPisteet(e);
     }
 
+    /**
+     * Metodi muuttaa profiilin nykyistä elämäpistetilannetta. Negatiivinen
+     * parametrin arvo vähentää elämäpisteitä, positiivinen kasvattaa.
+     *
+     * @param e haluttu nykyisten elämäpisteiden muutos
+     */
     public void lisaaNykyinenElamaPisteet(int e) {
         this.nykyinenElamaPisteet += e;
         if (nykyinenElamaPisteet > elamaPisteet) {
@@ -84,6 +122,12 @@ public class Profiili {
         return this.nykyinenElamaPisteet;
     }
 
+    /**
+     * Metodi kasvattaa profiilin taikapuolustusta parametrin verran.
+     * Negatiivisella parametrilla taikapuolustuksen arvo laskee.
+     *
+     * @param tp haluttu taikapuolustuksen muutos
+     */
     public void lisaaTaikaPuolustus(int tp) {
         this.taikaPuolustus += tp;
     }
@@ -91,7 +135,16 @@ public class Profiili {
     public int getTaikaPuolustus() {
         return taikaPuolustus;
     }
-
+    
+    /**
+     * Asettaa profiilille soturin alkuominaisuudet.
+     * Soturilla on:
+     * voimaa 3,
+     * taikavoimaa 1,
+     * taikapuolustusta 1,
+     * ketteryyttä 2,
+     * elämäpisteitä 8.
+     */
     public void setSoturiAlkuProfiili() {
         this.voima = 3;
         this.taikaVoima = 1;
@@ -100,7 +153,16 @@ public class Profiili {
         this.elamaPisteet = 8;
         this.nykyinenElamaPisteet = 8;
     }
-
+    
+    /**
+     * Asettaa profiilille velhon alkuominaisuudet.
+     * Velholla on:
+     * voimaa 1,
+     * taikavoimaa 3,
+     * taikapuolustusta 2,
+     * ketteryyttä 2,
+     * elämäpisteitä 7.
+     */
     public void setVelhoAlkuProfiili() {
         this.voima = 1;
         this.taikaVoima = 3;
@@ -109,7 +171,16 @@ public class Profiili {
         this.elamaPisteet = 7;
         this.nykyinenElamaPisteet = 7;
     }
-
+    
+    /**
+     * Asettaa profiilille druidin alkuominaisuudet.
+     * Druidilla on:
+     * voimaa 1,
+     * taikavoimaa 1,
+     * taikapuolustusta 1,
+     * ketteryyttä 3,
+     * elämäpisteitä 9.
+     */
     public void setDruidiAlkuProfiili() {
         this.voima = 1;
         this.taikaVoima = 1;
@@ -118,7 +189,11 @@ public class Profiili {
         this.elamaPisteet = 9;
         this.nykyinenElamaPisteet = 9;
     }
-
+    
+    /**
+     * Asettaa profiilin puolustusvalmiuteen luvun x verran.
+     * @param x kuinka suureen valmiuteen profiili asetetaan
+     */
     public void asetaPuolustusValmius(int x) {
         this.puolustusValmius = x;
     }
@@ -126,7 +201,11 @@ public class Profiili {
     public int getPuolustusValmius() {
         return this.puolustusValmius;
     }
-
+    
+    /**
+     * Asettaa profiilin hyökkäysvalmiuteen luvun x verran.
+     * @param x kuinka suureen valmiuteen profiili asetetaan
+     */
     public void asetaHyokkaysValmius(int x) {
         this.hyokkaysValmius = x;
     }

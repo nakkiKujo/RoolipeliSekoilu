@@ -8,10 +8,12 @@ import juuri.sovelluslogiikka.maailma.Aarre;
 import juuri.sovelluslogiikka.maailma.Ansa;
 import juuri.sovelluslogiikka.maailma.Kohde;
 import juuri.sovelluslogiikka.maailma.Ovi;
+import juuri.sovelluslogiikka.maailma.Portaat;
 import juuri.sovelluslogiikka.maailma.Seina;
 import juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminen;
 import juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminen;
 import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;
+import juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminen;
 
 /**
  * Tämä luokka vastaa luolaston kohteiden luomisesta.
@@ -30,9 +32,11 @@ public class KohteidenLuoja {
     public static final int AARREJOSSAMIEKKA1 = 21;
     public static final int AARREJOSSARIIMUJATAIKASAUVA = 22;
     public static final int AARRE2VOIDETTA = 23;
-    
+
     public static final int ANSAPIIKKI = 30;
     public static final int ANSANUOLI = 31;
+
+    public static final int PORTAAT = Kohde.PORTAAT;
 
     /**
      * Metodi kutsuu parametrina annetun koodin määrittämää metodia ja luo
@@ -49,7 +53,7 @@ public class KohteidenLuoja {
         }
 
         //ovet
-        if(koodi == KohteidenLuoja.OVIAVOIN) {
+        if (koodi == KohteidenLuoja.OVIAVOIN) {
             return luoOvi(null, "puinen ovi");
         }
         if (koodi == KohteidenLuoja.OVIPRONSSIAVAAJA) {
@@ -84,67 +88,49 @@ public class KohteidenLuoja {
             lista.add(Esine.RIIMU);
             return luoAarre(lista, "taianomainen laatikko");
         }
-        if(koodi == KohteidenLuoja.AARRE2VOIDETTA) {
+        if (koodi == KohteidenLuoja.AARRE2VOIDETTA) {
             ArrayList<Esine> lista = new ArrayList<>();
             lista.add(Esine.PARANTAVAVOIDE);
             lista.add(Esine.PARANTAVAVOIDE);
             return luoAarre(lista, "luiden ympäröimä säkki");
         }
-        
+
         //ansat
-        if(koodi == KohteidenLuoja.ANSANUOLI) {
+        if (koodi == KohteidenLuoja.ANSANUOLI) {
             return luoAnsa("nuoliansa", 4);
         }
-        if(koodi == KohteidenLuoja.ANSAPIIKKI) {
+        if (koodi == KohteidenLuoja.ANSAPIIKKI) {
             return luoAnsa("piikkiansa", 6);
         }
-        
+
+        //portaat
+        if (koodi == KohteidenLuoja.PORTAAT) {
+            return luoPortaat();
+        }
+
         return null;
     }
 
-    /**
-     * Metodi luo lukitun oven, jonka pystyy avaamaan metodille annetulla
-     * parametrilla avaaja. Parametrina annetaan myös ovelle annettava nimi.
-     *
-     * @param avaaja oven avaaja
-     * @return luotu ovi
-     */
     private static Kohde luoOvi(YleisEsine avaaja, String ovenNimi) {
         Ovi ovi;
-        if(avaaja == null) {
-            ovi = new Ovi(false, null, avaaja, ovenNimi);
+        if (avaaja == null) {
+            ovi = new Ovi(false, avaaja, ovenNimi);
         } else {
-            ovi = new Ovi(true, null, avaaja, ovenNimi);
+            ovi = new Ovi(true, avaaja, ovenNimi);
         }
-        
+
         OvenAvaus ovenAvaus = new OvenAvaus(ovi);
         ovi.setTapahtuma(ovenAvaus);
         return ovi;
     }
-    
-    /**
-     * Metodi luo ja palauttaa seinän. Seinään ei liity tapahtumia.
-     * @return luotu seinä
-     */
+
     private static Kohde luoSeina() {
-        Seina ss = new Seina(null);
+        Seina ss = new Seina();
         return ss;
     }
 
-    /**
-     * Metodi luo uuden aarteen. Parametrina annettava lista esineistä lisätään
-     * aarteeseen. Aarteelle annetaan parametrina myös nimi.
-     *
-     * Metodi luo myös aarteenlöytämis-tapahtuman, joka liitetää aarteeseen.
-     *
-     * Metodi palauttaa luodun aarteen.
-     *
-     * @param laitettavatAarteet
-     * @param aarteenNimi
-     * @return luotu aarre
-     */
     private static Kohde luoAarre(ArrayList<Esine> laitettavatAarteet, String aarteenNimi) {
-        Aarre aa = new Aarre(null, aarteenNimi);
+        Aarre aa = new Aarre(aarteenNimi);
         AarteenLoytaminen loyto = new AarteenLoytaminen(aa);
         aa.setTapahtuma(loyto);
         for (Esine esine : laitettavatAarteet) {
@@ -153,22 +139,19 @@ public class KohteidenLuoja {
 
         return aa;
     }
-    
-    /**
-     * Metodi luo uuden ansan ja liittää sen uuteen ansaanastumis-tapahtumaan.
-     * 
-     * Parametrina annetaan ansan nimi ja sen tekemä vahinko.
-     * 
-     * Metodi palauttaa luodun ansan.
-     * @param ansanNimi ansalle annettav nimi
-     * @param ansanTekemaVahinko ansan tekemä vahinko
-     * @return palautetaan luotu ansa
-     */
+
     private static Kohde luoAnsa(String ansanNimi, int ansanTekemaVahinko) {
-        Ansa ansa = new Ansa(ansanNimi, null, ansanTekemaVahinko);
+        Ansa ansa = new Ansa(ansanNimi, ansanTekemaVahinko);
         AnsaanAstuminen aa = new AnsaanAstuminen(ansa);
         ansa.setTapahtuma(aa);
         return ansa;
     }
-    
+
+    private static Kohde luoPortaat() {
+        Portaat pp = new Portaat();
+        PortaissaKulkeminen kulku = new PortaissaKulkeminen(pp);
+        pp.setTapahtuma(kulku);
+        return pp;
+    }
+
 }

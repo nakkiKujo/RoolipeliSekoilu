@@ -8,14 +8,20 @@ import juuri.sovelluslogiikka.hahmo.Soturi;
 import juuri.sovelluslogiikka.hahmo.Velho;
 
 /**
- * Tämän luokan vastuulla on pelaajan hahmon luominen. Luokka on vielä
- * keskeneräinen. Se täydentyy, kun itse hahmojen ammatit luodaan täydemmin.
+ * Tämän luokan vastuulla on pelaajan hahmon luominen.
  */
 public class Hahmonluoja {
 
-    public Hahmonluoja() {
-    }
-
+    /**
+     * Luo hahmon annettavan nimen ja ammatin koodin perusteella. Asettaa
+     * hahmoille oikeat alkuprofiilit ja aloitusesineet.
+     *
+     * Metodi palauttaa luodun hahmon.
+     *
+     * @param hahmonNimi hahmolle annettava nimi
+     * @param hahmonAmmatti ammatin koodi, staattinen muuttuja luokassa Hahmo
+     * @return palautetaan luotu hahmo
+     */
     public Hahmo luoHahmo(String hahmonNimi, int hahmonAmmatti) {
         if (hahmonAmmatti == Hahmo.SOTURI) {
             Soturi soturi = new Soturi(hahmonNimi);
@@ -39,7 +45,7 @@ public class Hahmonluoja {
             dd.getReppu().asetaEsineReppuun(Esine.RIIMU);
             dd.getReppu().asetaEsineReppuun(Esine.PARANTAVAVOIDE);
             return dd;
-            
+
         } else {
             return null;
         }
