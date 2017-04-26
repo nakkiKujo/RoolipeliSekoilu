@@ -18,4 +18,6 @@ Luolastossa olevia kohteita ovat:
 * *Aarteet*: Keräämällä aarteita parantaa pelaaja hahmonsa kykyjä. Aarteet sisältävät esineitä, joita pelaaja pystyy käyttämään hyödykseen luolastossa selvitäkseen.
 * *Ovet*: Pelaaja kohtaa luolastossa ovia, joista jotkut ovat lukittuja ja jotkut avoimia. Lukittujen ovien avaamiseen tarvitsee pelaaja avaimen.
 
+### Ohjelman rakenne
+
 ![luokkakaavioRooliPeli](/dokumentaatio/luokkakaavioRooliPeli.png)
