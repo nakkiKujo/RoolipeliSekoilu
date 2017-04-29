@@ -8,14 +8,16 @@ public abstract class Esine {
 
     protected int koodi;
     protected String nimi;
+    protected boolean onkoTaisteluEsine;
 
     public static final int AVAIN = 1;
     public static final int MIEKKA = 2;
     public static final int KYPARA = 3;
-    public static final int TAIKASAUVA = 4;
+    public static final int MEDALJONKI = 4;
+    public static final int TORSO = 5;
     
-    public static final YleisEsine RIIMU = new YleisEsine("Riimu", 4);
-    public static final YleisEsine PARANTAVAVOIDE = new YleisEsine("Parantava voide", 5);
+    public static final YleisEsine RIIMU = new YleisEsine("Riimu", 201);
+    public static final YleisEsine PARANTAVAVOIDE = new YleisEsine("Parantava voide", 200);
     
     public static final YleisEsine PRONSSIAVAIN = new YleisEsine("Pronssiavain", Esine.AVAIN);
     public static final YleisEsine HOPEAAVAIN = new YleisEsine("Hopea-avain", Esine.AVAIN);

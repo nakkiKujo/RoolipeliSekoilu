@@ -16,5 +16,6 @@ public class YleisEsine extends Esine {
      */
     public YleisEsine(String nimi, int koodi) {
         super(nimi, koodi);
+        this.onkoTaisteluEsine = false;
     }
 }

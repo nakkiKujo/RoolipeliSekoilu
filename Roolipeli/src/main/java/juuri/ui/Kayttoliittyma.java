@@ -34,6 +34,34 @@ public class Kayttoliittyma extends JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ReppuPaneeli = new javax.swing.JPanel();
+        PelaajaNimiKenttaReppu = new javax.swing.JLabel();
+        PelaajaEPKenttaReppu = new javax.swing.JLabel();
+        PelaajaEPMaaraReppu = new javax.swing.JLabel();
+        PelaajaKetteryysKenttaReppu = new javax.swing.JLabel();
+        PelaajaTVKenttaReppu = new javax.swing.JLabel();
+        PelaajaTPKenttaReppu = new javax.swing.JLabel();
+        PelaajaVoimaKenttaReppu = new javax.swing.JLabel();
+        PelaajaTVMaaraReppu = new javax.swing.JLabel();
+        PelaajaKetteryysMaaraReppu = new javax.swing.JLabel();
+        PelaajaTPMaaraReppu = new javax.swing.JLabel();
+        PelaajaVoimaMaaraReppu = new javax.swing.JLabel();
+        VoiteenKayttoButtonReppu = new javax.swing.JButton();
+        PelaajaRiimuKenttaReppu = new javax.swing.JLabel();
+        PelaajaRiimuMaaraReppu = new javax.swing.JLabel();
+        Esine2ButtonReppu = new javax.swing.JButton();
+        Esine1ButtonReppu = new javax.swing.JButton();
+        Esine3ButtonReppu = new javax.swing.JButton();
+        Esine4ButtonReppu = new javax.swing.JButton();
+        Esine5ButtonReppu = new javax.swing.JButton();
+        Esine6ButtonReppu = new javax.swing.JButton();
+        Esine7ButtonReppu = new javax.swing.JButton();
+        PudotaEsine1Button = new javax.swing.JButton();
+        PudotaEsine2Button = new javax.swing.JButton();
+        PudotaEsine3Button = new javax.swing.JButton();
+        PudotaEsine4Button = new javax.swing.JButton();
+        PudotaEsine5Button = new javax.swing.JButton();
+        PudotaEsine6Button = new javax.swing.JButton();
+        PudotaEsine7Button = new javax.swing.JButton();
         TaisteluPaneeliLuode = new javax.swing.JPanel();
         PelaajaNimiKenttaTaistelu = new javax.swing.JLabel();
         HirvioNimiKenttaTaistelu = new javax.swing.JLabel();
@@ -180,17 +208,256 @@ public class Kayttoliittyma extends JFrame {
 
         LuodePaneeli.add(HahmonluontiInfo, "card2");
 
-        ReppuPaneeli.setBackground(new java.awt.Color(153, 153, 255));
+        ReppuPaneeli.setBackground(new java.awt.Color(255, 255, 255));
+
+        PelaajaNimiKenttaReppu.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
+        PelaajaNimiKenttaReppu.setText("Pelaaja");
+        PelaajaNimiKenttaReppu.setMaximumSize(new java.awt.Dimension(155, 19));
+        PelaajaNimiKenttaReppu.setMinimumSize(new java.awt.Dimension(155, 19));
+        PelaajaNimiKenttaReppu.setPreferredSize(new java.awt.Dimension(155, 19));
+
+        PelaajaEPKenttaReppu.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
+        PelaajaEPKenttaReppu.setText("Elämäpisteet");
+        PelaajaEPKenttaReppu.setMaximumSize(new java.awt.Dimension(121, 17));
+        PelaajaEPKenttaReppu.setMinimumSize(new java.awt.Dimension(121, 17));
+        PelaajaEPKenttaReppu.setPreferredSize(new java.awt.Dimension(121, 17));
+
+        PelaajaEPMaaraReppu.setText("0");
+        PelaajaEPMaaraReppu.setMaximumSize(new java.awt.Dimension(29, 14));
+        PelaajaEPMaaraReppu.setMinimumSize(new java.awt.Dimension(29, 14));
+        PelaajaEPMaaraReppu.setPreferredSize(new java.awt.Dimension(29, 14));
+
+        PelaajaKetteryysKenttaReppu.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
+        PelaajaKetteryysKenttaReppu.setText("Ketteryys");
+        PelaajaKetteryysKenttaReppu.setMaximumSize(new java.awt.Dimension(121, 17));
+        PelaajaKetteryysKenttaReppu.setMinimumSize(new java.awt.Dimension(121, 17));
+        PelaajaKetteryysKenttaReppu.setPreferredSize(new java.awt.Dimension(121, 17));
+
+        PelaajaTVKenttaReppu.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
+        PelaajaTVKenttaReppu.setText("Taikavoima");
+        PelaajaTVKenttaReppu.setMaximumSize(new java.awt.Dimension(121, 17));
+        PelaajaTVKenttaReppu.setMinimumSize(new java.awt.Dimension(121, 17));
+        PelaajaTVKenttaReppu.setPreferredSize(new java.awt.Dimension(121, 17));
+
+        PelaajaTPKenttaReppu.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
+        PelaajaTPKenttaReppu.setText("Taikapuolustus");
+        PelaajaTPKenttaReppu.setMaximumSize(new java.awt.Dimension(121, 17));
+        PelaajaTPKenttaReppu.setMinimumSize(new java.awt.Dimension(121, 17));
+        PelaajaTPKenttaReppu.setPreferredSize(new java.awt.Dimension(121, 17));
+
+        PelaajaVoimaKenttaReppu.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
+        PelaajaVoimaKenttaReppu.setText("Voima");
+        PelaajaVoimaKenttaReppu.setMaximumSize(new java.awt.Dimension(121, 17));
+        PelaajaVoimaKenttaReppu.setMinimumSize(new java.awt.Dimension(121, 17));
+        PelaajaVoimaKenttaReppu.setPreferredSize(new java.awt.Dimension(121, 17));
+
+        PelaajaTVMaaraReppu.setText("0");
+        PelaajaTVMaaraReppu.setMaximumSize(new java.awt.Dimension(29, 14));
+        PelaajaTVMaaraReppu.setMinimumSize(new java.awt.Dimension(29, 14));
+        PelaajaTVMaaraReppu.setPreferredSize(new java.awt.Dimension(29, 14));
+
+        PelaajaKetteryysMaaraReppu.setText("0");
+        PelaajaKetteryysMaaraReppu.setMaximumSize(new java.awt.Dimension(29, 14));
+        PelaajaKetteryysMaaraReppu.setMinimumSize(new java.awt.Dimension(29, 14));
+        PelaajaKetteryysMaaraReppu.setPreferredSize(new java.awt.Dimension(29, 14));
+
+        PelaajaTPMaaraReppu.setText("0");
+        PelaajaTPMaaraReppu.setMaximumSize(new java.awt.Dimension(29, 14));
+        PelaajaTPMaaraReppu.setMinimumSize(new java.awt.Dimension(29, 14));
+        PelaajaTPMaaraReppu.setPreferredSize(new java.awt.Dimension(29, 14));
+
+        PelaajaVoimaMaaraReppu.setText("0");
+        PelaajaVoimaMaaraReppu.setMaximumSize(new java.awt.Dimension(29, 14));
+        PelaajaVoimaMaaraReppu.setMinimumSize(new java.awt.Dimension(29, 14));
+        PelaajaVoimaMaaraReppu.setPreferredSize(new java.awt.Dimension(29, 14));
+
+        VoiteenKayttoButtonReppu.setText("Käytä voide");
+
+        PelaajaRiimuKenttaReppu.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
+        PelaajaRiimuKenttaReppu.setText("Riimuja");
+
+        PelaajaRiimuMaaraReppu.setText("0");
+        PelaajaRiimuMaaraReppu.setMaximumSize(new java.awt.Dimension(29, 14));
+        PelaajaRiimuMaaraReppu.setMinimumSize(new java.awt.Dimension(29, 14));
+        PelaajaRiimuMaaraReppu.setPreferredSize(new java.awt.Dimension(29, 14));
+
+        Esine2ButtonReppu.setText("Esine 2");
+        Esine2ButtonReppu.setMaximumSize(new java.awt.Dimension(108, 23));
+        Esine2ButtonReppu.setMinimumSize(new java.awt.Dimension(108, 23));
+        Esine2ButtonReppu.setPreferredSize(new java.awt.Dimension(108, 23));
+
+        Esine1ButtonReppu.setText("Esine 1");
+        Esine1ButtonReppu.setMaximumSize(new java.awt.Dimension(108, 23));
+        Esine1ButtonReppu.setMinimumSize(new java.awt.Dimension(108, 23));
+        Esine1ButtonReppu.setPreferredSize(new java.awt.Dimension(108, 23));
+
+        Esine3ButtonReppu.setText("Esine 3");
+        Esine3ButtonReppu.setMaximumSize(new java.awt.Dimension(108, 23));
+        Esine3ButtonReppu.setMinimumSize(new java.awt.Dimension(108, 23));
+        Esine3ButtonReppu.setPreferredSize(new java.awt.Dimension(108, 23));
+
+        Esine4ButtonReppu.setText("Esine 4");
+        Esine4ButtonReppu.setMaximumSize(new java.awt.Dimension(108, 23));
+        Esine4ButtonReppu.setMinimumSize(new java.awt.Dimension(108, 23));
+        Esine4ButtonReppu.setPreferredSize(new java.awt.Dimension(108, 23));
+
+        Esine5ButtonReppu.setText("Esine 5");
+        Esine5ButtonReppu.setMaximumSize(new java.awt.Dimension(108, 23));
+        Esine5ButtonReppu.setMinimumSize(new java.awt.Dimension(108, 23));
+        Esine5ButtonReppu.setPreferredSize(new java.awt.Dimension(108, 23));
+
+        Esine6ButtonReppu.setText("Esine 6");
+        Esine6ButtonReppu.setMaximumSize(new java.awt.Dimension(108, 23));
+        Esine6ButtonReppu.setMinimumSize(new java.awt.Dimension(108, 23));
+        Esine6ButtonReppu.setPreferredSize(new java.awt.Dimension(108, 23));
+
+        Esine7ButtonReppu.setText("Esine 7");
+        Esine7ButtonReppu.setMaximumSize(new java.awt.Dimension(108, 23));
+        Esine7ButtonReppu.setMinimumSize(new java.awt.Dimension(108, 23));
+        Esine7ButtonReppu.setPreferredSize(new java.awt.Dimension(108, 23));
+
+        PudotaEsine1Button.setText("Pudota");
+
+        PudotaEsine2Button.setText("Pudota");
+
+        PudotaEsine3Button.setText("Pudota");
+
+        PudotaEsine4Button.setText("Pudota");
+
+        PudotaEsine5Button.setText("Pudota");
+
+        PudotaEsine6Button.setText("Pudota");
+
+        PudotaEsine7Button.setText("Pudota");
+        PudotaEsine7Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PudotaEsine7ButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ReppuPaneeliLayout = new javax.swing.GroupLayout(ReppuPaneeli);
         ReppuPaneeli.setLayout(ReppuPaneeliLayout);
         ReppuPaneeliLayout.setHorizontalGroup(
             ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                        .addComponent(PelaajaNimiKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReppuPaneeliLayout.createSequentialGroup()
+                                .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PelaajaRiimuKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                                        .addComponent(PelaajaVoimaKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(PelaajaRiimuMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(PelaajaVoimaMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Esine5ButtonReppu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Esine6ButtonReppu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Esine7ButtonReppu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReppuPaneeliLayout.createSequentialGroup()
+                                .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                                        .addComponent(PelaajaKetteryysKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PelaajaKetteryysMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                                        .addComponent(PelaajaTVKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PelaajaTVMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                                        .addComponent(PelaajaTPKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PelaajaTPMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Esine3ButtonReppu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Esine4ButtonReppu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                                .addComponent(PelaajaEPKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PelaajaEPMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Esine1ButtonReppu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Esine2ButtonReppu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                                .addComponent(VoiteenKayttoButtonReppu)
+                                .addGap(185, 185, 185)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PudotaEsine2Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PudotaEsine3Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PudotaEsine4Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PudotaEsine5Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PudotaEsine6Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PudotaEsine7Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PudotaEsine1Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         ReppuPaneeliLayout.setVerticalGroup(
             ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 213, Short.MAX_VALUE)
+            .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                        .addComponent(PelaajaNimiKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PelaajaEPKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PelaajaEPMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PelaajaKetteryysKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PelaajaKetteryysMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PelaajaTVKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PelaajaTVMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PelaajaTPKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PelaajaTPMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PelaajaVoimaKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PelaajaVoimaMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Esine5ButtonReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PudotaEsine5Button))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PelaajaRiimuKenttaReppu, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PelaajaRiimuMaaraReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Esine6ButtonReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PudotaEsine6Button))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(VoiteenKayttoButtonReppu)
+                            .addComponent(Esine7ButtonReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PudotaEsine7Button)))
+                    .addGroup(ReppuPaneeliLayout.createSequentialGroup()
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Esine1ButtonReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PudotaEsine1Button))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Esine2ButtonReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PudotaEsine2Button))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Esine3ButtonReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PudotaEsine3Button))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ReppuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Esine4ButtonReppu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PudotaEsine4Button))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         LuodePaneeli.add(ReppuPaneeli, "card3");
@@ -217,10 +484,16 @@ public class Kayttoliittyma extends JFrame {
         ValmiusKenttaTaistelu.setText("Puolustusvalmius");
 
         PelaajaEPMaaraTaistelu.setText("0");
+        PelaajaEPMaaraTaistelu.setMaximumSize(new java.awt.Dimension(29, 14));
+        PelaajaEPMaaraTaistelu.setMinimumSize(new java.awt.Dimension(29, 14));
+        PelaajaEPMaaraTaistelu.setPreferredSize(new java.awt.Dimension(29, 14));
 
         HirvioEPMaaraTaistelu.setText("0");
 
         ValmiusMaaraTaistelu.setText("0");
+        ValmiusMaaraTaistelu.setMaximumSize(new java.awt.Dimension(29, 14));
+        ValmiusMaaraTaistelu.setMinimumSize(new java.awt.Dimension(29, 14));
+        ValmiusMaaraTaistelu.setPreferredSize(new java.awt.Dimension(29, 14));
 
         javax.swing.GroupLayout TaisteluPaneeliLuodeLayout = new javax.swing.GroupLayout(TaisteluPaneeliLuode);
         TaisteluPaneeliLuode.setLayout(TaisteluPaneeliLuodeLayout);
@@ -230,29 +503,26 @@ public class Kayttoliittyma extends JFrame {
                 .addContainerGap()
                 .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                        .addComponent(PelaajaNimiKenttaTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(46, 46, 46)
+                        .addComponent(HirvioNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
                         .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                                .addComponent(PelaajaEPKenttaTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                                .addComponent(ValmiusKenttaTaistelu)
-                                .addGap(28, 28, 28)))
-                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ValmiusMaaraTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                            .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(196, 196, 196))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                            .addComponent(ValmiusKenttaTaistelu)
+                            .addComponent(PelaajaEPKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                .addComponent(ValmiusMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(196, 196, 196))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
                                 .addComponent(HirvioEPKenttaTaistelu)
                                 .addGap(27, 27, 27)
                                 .addComponent(HirvioEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                                .addComponent(PelaajaNimiKenttaTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(46, 46, 46)
-                                .addComponent(HirvioNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18))))
+                                .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())))))
         );
         TaisteluPaneeliLuodeLayout.setVerticalGroup(
             TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,12 +535,12 @@ public class Kayttoliittyma extends JFrame {
                 .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PelaajaEPKenttaTaistelu)
                     .addComponent(HirvioEPKenttaTaistelu)
-                    .addComponent(PelaajaEPMaaraTaistelu)
+                    .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HirvioEPMaaraTaistelu))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ValmiusKenttaTaistelu)
-                    .addComponent(ValmiusMaaraTaistelu))
+                    .addComponent(ValmiusMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
 
@@ -700,6 +970,20 @@ public class Kayttoliittyma extends JFrame {
         //luodaan hahmo ja luolasto
         peli.aloitaPeli(hahmonNimi, hahmonAmmatti);
 
+        PelaajaNimiKenttaTaistelu.setText(peli.getPelaajanHahmo().getNimi());
+        PelaajaNimiKenttaReppu.setText(peli.getPelaajanHahmo().getNimi());
+
+        PelaajaEPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+        PelaajaKetteryysMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getKetteryys());
+        PelaajaTVMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaVoima());
+        PelaajaTPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaPuolustus());
+        PelaajaVoimaMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getVoima());
+        PelaajaRiimuMaaraReppu.setText("" + peli.getPelaajanHahmo().getReppu().getRiimuja());
+
+        if (peli.getPelaajanHahmo().getReppu().getVoiteita() == 0) {
+            VoiteenKayttoButtonReppu.setEnabled(false);
+        }
+
         LounasPaneeli.removeAll();
         LounasPaneeli.repaint();
         LounasPaneeli.revalidate();
@@ -833,7 +1117,6 @@ public class Kayttoliittyma extends JFrame {
             Taistelu ttt = (Taistelu) tt;
             ttt.toteutaVaihtoehtoYksi(peli.getPelaajanHahmo(), null);
 
-            PelaajaNimiKenttaTaistelu.setText(peli.getPelaajanHahmo().getNimi());
             HirvioNimiKenttaTaistelu.setText(ttt.getHirvio().getNimi());
             PelaajaEPMaaraTaistelu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
             HirvioEPMaaraTaistelu.setText("" + ttt.getHirvio().getProfiili().getNykyinenElamaPisteet());
@@ -912,6 +1195,22 @@ public class Kayttoliittyma extends JFrame {
 
                 KoillinenPaneeli.repaint();
                 KoillinenPaneeli.revalidate();
+
+                PelaajaEPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+                PelaajaKetteryysMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getKetteryys());
+                PelaajaTVMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaVoima());
+                PelaajaTPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaPuolustus());
+                PelaajaVoimaMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getVoima());
+                PelaajaRiimuMaaraReppu.setText("" + peli.getPelaajanHahmo().getReppu().getRiimuja());
+
+                if (peli.getPelaajanHahmo().getReppu().getVoiteita() == 0) {
+                    VoiteenKayttoButtonReppu.setEnabled(false);
+                } else {
+                    VoiteenKayttoButtonReppu.setEnabled(true);
+                }
+
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
             }
         }
     }//GEN-LAST:event_tapahtumaVaihtoehtoYksiButtonActionPerformed
@@ -1020,6 +1319,22 @@ public class Kayttoliittyma extends JFrame {
 
                 KoillinenPaneeli.repaint();
                 KoillinenPaneeli.revalidate();
+
+                PelaajaEPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+                PelaajaKetteryysMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getKetteryys());
+                PelaajaTVMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaVoima());
+                PelaajaTPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaPuolustus());
+                PelaajaVoimaMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getVoima());
+                PelaajaRiimuMaaraReppu.setText("" + peli.getPelaajanHahmo().getReppu().getRiimuja());
+
+                if (peli.getPelaajanHahmo().getReppu().getVoiteita() == 0) {
+                    VoiteenKayttoButtonReppu.setEnabled(false);
+                } else {
+                    VoiteenKayttoButtonReppu.setEnabled(true);
+                }
+
+                LuodePaneeli.repaint();
+                LuodePaneeli.revalidate();
             }
         }
 
@@ -1088,6 +1403,19 @@ public class Kayttoliittyma extends JFrame {
                 LounasPaneeli.add(LiikkumisPaneeli);
                 LounasPaneeli.repaint();
                 LounasPaneeli.revalidate();
+
+                PelaajaEPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+                PelaajaKetteryysMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getKetteryys());
+                PelaajaTVMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaVoima());
+                PelaajaTPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaPuolustus());
+                PelaajaVoimaMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getVoima());
+                PelaajaRiimuMaaraReppu.setText("" + peli.getPelaajanHahmo().getReppu().getRiimuja());
+
+                if (peli.getPelaajanHahmo().getReppu().getVoiteita() == 0) {
+                    VoiteenKayttoButtonReppu.setEnabled(false);
+                } else {
+                    VoiteenKayttoButtonReppu.setEnabled(true);
+                }
 
                 LuodePaneeli.removeAll();
                 LuodePaneeli.repaint();
@@ -1248,6 +1576,19 @@ public class Kayttoliittyma extends JFrame {
                 LounasPaneeli.repaint();
                 LounasPaneeli.revalidate();
 
+                PelaajaEPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+                PelaajaKetteryysMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getKetteryys());
+                PelaajaTVMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaVoima());
+                PelaajaTPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaPuolustus());
+                PelaajaVoimaMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getVoima());
+                PelaajaRiimuMaaraReppu.setText("" + peli.getPelaajanHahmo().getReppu().getRiimuja());
+
+                if (peli.getPelaajanHahmo().getReppu().getVoiteita() == 0) {
+                    VoiteenKayttoButtonReppu.setEnabled(false);
+                } else {
+                    VoiteenKayttoButtonReppu.setEnabled(true);
+                }
+
                 LuodePaneeli.removeAll();
                 LuodePaneeli.repaint();
                 LuodePaneeli.revalidate();
@@ -1311,6 +1652,20 @@ public class Kayttoliittyma extends JFrame {
                 KaakkoPaneeli.add(TyhjaPaneeliPaalla);
                 KaakkoPaneeli.repaint();
                 KaakkoPaneeli.revalidate();
+
+                PelaajaEPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getNykyinenElamaPisteet());
+                PelaajaKetteryysMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getKetteryys());
+                PelaajaTVMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaVoima());
+                PelaajaTPMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getTaikaPuolustus());
+                PelaajaVoimaMaaraReppu.setText("" + peli.getPelaajanHahmo().getProfiili().getVoima());
+                PelaajaRiimuMaaraReppu.setText("" + peli.getPelaajanHahmo().getReppu().getRiimuja());
+
+                if (peli.getPelaajanHahmo().getReppu().getVoiteita() == 0) {
+                    VoiteenKayttoButtonReppu.setEnabled(false);
+                } else {
+                    VoiteenKayttoButtonReppu.setEnabled(true);
+                }
+
                 LuodePaneeli.removeAll();
                 LuodePaneeli.repaint();
                 LuodePaneeli.revalidate();
@@ -1321,6 +1676,10 @@ public class Kayttoliittyma extends JFrame {
 
         }
     }//GEN-LAST:event_PeraannyNappiTaisteluActionPerformed
+
+    private void PudotaEsine7ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PudotaEsine7ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PudotaEsine7ButtonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1358,6 +1717,13 @@ public class Kayttoliittyma extends JFrame {
     private javax.swing.ButtonGroup AmmatinValintaGroup;
     private javax.swing.JRadioButton AmmatinValintaSoturiButton;
     private javax.swing.JRadioButton AmmatinValintaVelhoButton;
+    private javax.swing.JButton Esine1ButtonReppu;
+    private javax.swing.JButton Esine2ButtonReppu;
+    private javax.swing.JButton Esine3ButtonReppu;
+    private javax.swing.JButton Esine4ButtonReppu;
+    private javax.swing.JButton Esine5ButtonReppu;
+    private javax.swing.JButton Esine6ButtonReppu;
+    private javax.swing.JButton Esine7ButtonReppu;
     private javax.swing.JButton HahmoLiikkuuAlasButton;
     private javax.swing.JButton HahmoLiikkuuOikealleButton;
     private javax.swing.JButton HahmoLiikkuuVasemmalleButton;
@@ -1382,10 +1748,30 @@ public class Kayttoliittyma extends JFrame {
     private javax.swing.JPanel LuodeKuolemaPaneeli;
     private javax.swing.JPanel LuodePaneeli;
     private javax.swing.JButton LyoNappiTaistelu;
+    private javax.swing.JLabel PelaajaEPKenttaReppu;
     private javax.swing.JLabel PelaajaEPKenttaTaistelu;
+    private javax.swing.JLabel PelaajaEPMaaraReppu;
     private javax.swing.JLabel PelaajaEPMaaraTaistelu;
+    private javax.swing.JLabel PelaajaKetteryysKenttaReppu;
+    private javax.swing.JLabel PelaajaKetteryysMaaraReppu;
+    private javax.swing.JLabel PelaajaNimiKenttaReppu;
     private javax.swing.JLabel PelaajaNimiKenttaTaistelu;
+    private javax.swing.JLabel PelaajaRiimuKenttaReppu;
+    private javax.swing.JLabel PelaajaRiimuMaaraReppu;
+    private javax.swing.JLabel PelaajaTPKenttaReppu;
+    private javax.swing.JLabel PelaajaTPMaaraReppu;
+    private javax.swing.JLabel PelaajaTVKenttaReppu;
+    private javax.swing.JLabel PelaajaTVMaaraReppu;
+    private javax.swing.JLabel PelaajaVoimaKenttaReppu;
+    private javax.swing.JLabel PelaajaVoimaMaaraReppu;
     private javax.swing.JButton PeraannyNappiTaistelu;
+    private javax.swing.JButton PudotaEsine1Button;
+    private javax.swing.JButton PudotaEsine2Button;
+    private javax.swing.JButton PudotaEsine3Button;
+    private javax.swing.JButton PudotaEsine4Button;
+    private javax.swing.JButton PudotaEsine5Button;
+    private javax.swing.JButton PudotaEsine6Button;
+    private javax.swing.JButton PudotaEsine7Button;
     private javax.swing.JPanel ReppuPaneeli;
     private javax.swing.JButton SuperlyontiNappiTaistelu;
     private javax.swing.JButton TaikaiskuNappiTaistelu;
@@ -1398,6 +1784,7 @@ public class Kayttoliittyma extends JFrame {
     private javax.swing.JButton VaistoNappiTaistelu;
     private javax.swing.JLabel ValmiusKenttaTaistelu;
     private javax.swing.JLabel ValmiusMaaraTaistelu;
+    private javax.swing.JButton VoiteenKayttoButtonReppu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

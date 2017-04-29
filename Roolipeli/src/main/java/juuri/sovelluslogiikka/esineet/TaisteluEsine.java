@@ -23,6 +23,7 @@ public class TaisteluEsine extends Esine {
     public TaisteluEsine(String nimi, int koodi) {
         super(nimi, koodi);
         this.esineenProfiili = new Profiili();
+        this.onkoTaisteluEsine = true;
     }
 
     public Profiili getProfiili() {

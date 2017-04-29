@@ -30,6 +30,10 @@ public class PortaissaKulkeminen extends Tapahtuma {
     @Override
     public void toteutaVaihtoehtoYksi(Hahmo hahmo, Luolasto luola) {
         luola.luoSeuraavaTaso();
+        if (luola.getNykyinenTaso() == 2) {
+            hahmo.getSijainti().setSijainti(7, 4);
+        }
+
     }
 
     @Override

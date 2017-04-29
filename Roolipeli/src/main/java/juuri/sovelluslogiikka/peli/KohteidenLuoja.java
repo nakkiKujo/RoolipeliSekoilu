@@ -1,6 +1,7 @@
 package juuri.sovelluslogiikka.peli;
 
 import java.util.ArrayList;
+import java.util.Random;
 import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.esineet.TaisteluEsine;
 import juuri.sovelluslogiikka.esineet.YleisEsine;
@@ -28,13 +29,20 @@ public class KohteidenLuoja {
     public static final int OVIKULTAAVAAJA = 12;
     public static final int OVIAVOIN = 13;
 
-    public static final int AARREJOSSAHOPEAAVAIN = 20;
-    public static final int AARREJOSSAMIEKKA1 = 21;
-    public static final int AARREJOSSARIIMUJATAIKASAUVA = 22;
-    public static final int AARRE2VOIDETTA = 23;
+    public static final int AARREJOSSAHOPEAAVAIN = 200;
+    public static final int AARREJOSSAPRONSSIAVAIN = 201;
+    public static final int AARREJOSSAMIEKKA1 = 211;
+    public static final int AARREJOSSAMIEKKA2 = 212;
+    public static final int AARREJOSSARIIMUJAJAMEDALJONKI = 221;
+    public static final int AARREJOSSARIIMUJATAIKASAUVA = 222;
+    public static final int AARRE2VOIDETTA = 231;
+    public static final int AARRE1VOIDE1RIIMU = 232;
+    public static final int AARREKYPARA1 = 24;
+    public static final int AARREKAAPUTAIHAARNISKA = 25;
 
     public static final int ANSAPIIKKI = 30;
     public static final int ANSANUOLI = 31;
+    public static final int ANSAKUILU = 32;
 
     public static final int PORTAAT = Kohde.PORTAAT;
 
@@ -67,6 +75,11 @@ public class KohteidenLuoja {
         }
 
         //aarteet
+        if (koodi == KohteidenLuoja.AARREJOSSAPRONSSIAVAIN) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            lista.add(Esine.PRONSSIAVAIN);
+            return luoAarre(lista, "pieni metallinen lipas");
+        }
         if (koodi == KohteidenLuoja.AARREJOSSAHOPEAAVAIN) {
             ArrayList<Esine> lista = new ArrayList<>();
             lista.add(Esine.HOPEAAVAIN);
@@ -80,13 +93,31 @@ public class KohteidenLuoja {
             lista.add(miekka);
             return luoAarre(lista, "vanha seikkailijan reppu");
         }
+        if (koodi == KohteidenLuoja.AARREJOSSAMIEKKA2) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            TaisteluEsine miekka = new TaisteluEsine("Roima miekka", Esine.MIEKKA);
+            miekka.getProfiili().lisaaVoima(3);
+            miekka.getProfiili().lisaaKetteryys(-1);
+            miekka.getProfiili().lisaaElamaPisteet(1);
+            lista.add(miekka);
+            return luoAarre(lista, "vanha seikkailijan reppu");
+        }
         if (koodi == KohteidenLuoja.AARREJOSSARIIMUJATAIKASAUVA) {
             ArrayList<Esine> lista = new ArrayList<>();
-            TaisteluEsine sauva = new TaisteluEsine("Vanha taikasauva", Esine.TAIKASAUVA);
+            TaisteluEsine sauva = new TaisteluEsine("Vanha taikasauva", Esine.MIEKKA);
             sauva.getProfiili().lisaaTaikaVoima(2);
             lista.add(sauva);
             lista.add(Esine.RIIMU);
             return luoAarre(lista, "taianomainen laatikko");
+        }
+        if (koodi == KohteidenLuoja.AARREJOSSARIIMUJAJAMEDALJONKI) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            TaisteluEsine medaljonki = new TaisteluEsine("Uhmakas medaljonki", Esine.MEDALJONKI);
+            medaljonki.getProfiili().lisaaElamaPisteet(1);
+            medaljonki.getProfiili().lisaaVoima(2);
+            lista.add(medaljonki);
+            lista.add(Esine.RIIMU);
+            return luoAarre(lista, "jykevä puinen laatikko");
         }
         if (koodi == KohteidenLuoja.AARRE2VOIDETTA) {
             ArrayList<Esine> lista = new ArrayList<>();
@@ -94,13 +125,55 @@ public class KohteidenLuoja {
             lista.add(Esine.PARANTAVAVOIDE);
             return luoAarre(lista, "luiden ympäröimä säkki");
         }
+        if (koodi == KohteidenLuoja.AARRE1VOIDE1RIIMU) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            lista.add(Esine.PARANTAVAVOIDE);
+            lista.add(Esine.RIIMU);
+            return luoAarre(lista, "luiden ympäröimä säkki");
+        }
+        if (koodi == KohteidenLuoja.AARREKYPARA1) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            TaisteluEsine kypara = new TaisteluEsine("Metallinen kypärä", Esine.KYPARA);
+            kypara.getProfiili().lisaaElamaPisteet(1);
+            kypara.getProfiili().lisaaVoima(2);
+            kypara.getProfiili().lisaaKetteryys(1);
+            kypara.getProfiili().lisaaTaikaPuolustus(-2);
+            kypara.getProfiili().lisaaTaikaVoima(-1);
+            lista.add(kypara);
+            return luoAarre(lista, "luuranko, jolla on päässä kypärä");
+        }
+        if (koodi == KohteidenLuoja.AARREKAAPUTAIHAARNISKA) {
+            Random arpa = new Random();
+            ArrayList<Esine> lista = new ArrayList<>();
+
+            int luku = arpa.nextInt(2);
+            if (luku == 0) {
+                TaisteluEsine kaapu = new TaisteluEsine("Velhon kaapu", Esine.TORSO);
+                kaapu.getProfiili().lisaaElamaPisteet(1);
+                kaapu.getProfiili().lisaaTaikaPuolustus(2);
+                kaapu.getProfiili().lisaaTaikaVoima(2);
+                kaapu.getProfiili().lisaaKetteryys(-2);
+                lista.add(kaapu);
+            } else {
+                TaisteluEsine haarniska = new TaisteluEsine("Soturin haarniska", Esine.TORSO);
+                haarniska.getProfiili().lisaaElamaPisteet(2);
+                haarniska.getProfiili().lisaaTaikaPuolustus(-1);
+                haarniska.getProfiili().lisaaVoima(1);
+                lista.add(haarniska);
+            }
+
+            return luoAarre(lista, "luuranko, jolla on päässä kypärä");
+        }
 
         //ansat
         if (koodi == KohteidenLuoja.ANSANUOLI) {
             return luoAnsa("nuoliansa", 4);
         }
         if (koodi == KohteidenLuoja.ANSAPIIKKI) {
-            return luoAnsa("piikkiansa", 6);
+            return luoAnsa("piikkiansa", 5);
+        }
+        if (koodi == KohteidenLuoja.ANSAKUILU) {
+            return luoAnsa("kuiluansa", 10);
         }
 
         //portaat
