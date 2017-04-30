@@ -38,6 +38,7 @@ public class KohteidenLuoja {
     public static final int AARRE2VOIDETTA = 231;
     public static final int AARRE1VOIDE1RIIMU = 232;
     public static final int AARREKYPARA1 = 24;
+    public static final int AARREKYPARA2 = 241;
     public static final int AARREKAAPUTAIHAARNISKA = 25;
 
     public static final int ANSAPIIKKI = 30;
@@ -133,12 +134,27 @@ public class KohteidenLuoja {
         }
         if (koodi == KohteidenLuoja.AARREKYPARA1) {
             ArrayList<Esine> lista = new ArrayList<>();
-            TaisteluEsine kypara = new TaisteluEsine("Metallinen kypärä", Esine.KYPARA);
+            TaisteluEsine kypara = new TaisteluEsine("Maallikon kypärä", Esine.KYPARA);
             kypara.getProfiili().lisaaElamaPisteet(1);
-            kypara.getProfiili().lisaaVoima(2);
+            kypara.getProfiili().lisaaVoima(1);
             kypara.getProfiili().lisaaKetteryys(1);
             kypara.getProfiili().lisaaTaikaPuolustus(-2);
             kypara.getProfiili().lisaaTaikaVoima(-1);
+            TaisteluEsine velhoHattu = new TaisteluEsine("Nuhjuinen hattu", Esine.KYPARA);
+            velhoHattu.getProfiili().lisaaElamaPisteet(1);
+            velhoHattu.getProfiili().lisaaKetteryys(-1);
+            velhoHattu.getProfiili().lisaaTaikaVoima(1);
+            velhoHattu.getProfiili().lisaaTaikaPuolustus(1);
+            lista.add(kypara);
+            lista.add(velhoHattu);
+            return luoAarre(lista, "luuranko, jolla on päässä päähineitä");
+        }
+        if(koodi == KohteidenLuoja.AARREKYPARA2) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            TaisteluEsine kypara = new TaisteluEsine("Ritarin kypärä", Esine.KYPARA);
+            kypara.getProfiili().lisaaElamaPisteet(2);
+            kypara.getProfiili().lisaaVoima(2);
+            kypara.getProfiili().lisaaKetteryys(1);
             lista.add(kypara);
             return luoAarre(lista, "luuranko, jolla on päässä kypärä");
         }

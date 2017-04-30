@@ -28,6 +28,7 @@ public class Hirvio extends Kohde {
     public Hirvio(String nimi) {
         this.koodi = Kohde.HIRVIO;
         this.nimi = nimi;
+        this.vari = new Color(153, 0, 153);
         this.hirvionEsineet = new ArrayList<>();
         this.hirvioProfiili = new Profiili();
         //hirviön läpi ei voi kulkea
@@ -44,23 +45,10 @@ public class Hirvio extends Kohde {
 
     /**
      * Lisää esineen hirviön kannettavaksi.
+     *
      * @param ee hirviölle lisättävä esine
      */
     public void lisaaEsine(Esine ee) {
         hirvionEsineet.add(ee);
-    }
-
-    @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
-        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
-        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
-
-        if (etaisyysHahmoonX > 2 || etaisyysHahmoonY > 2) {
-            g.setColor(Color.BLACK);
-        } else {
-            g.setColor(new Color(153, 0, 153));
-        }
-
-        g.fillRect(x, y, mittakaava, mittakaava);
     }
 }

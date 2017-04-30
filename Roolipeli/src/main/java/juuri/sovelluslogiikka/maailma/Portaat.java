@@ -17,21 +17,7 @@ public class Portaat extends Kohde {
     public Portaat() {
         this.koodi = Kohde.PORTAAT;
         this.nimi = "portaat";
+        this.vari = Color.ORANGE;
         this.voikoKulkea = false;
     }
-
-    @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
-        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
-        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
-
-        if (etaisyysHahmoonX > 2 || etaisyysHahmoonY > 2) {
-            g.setColor(Color.BLACK);
-        } else {
-            g.setColor(Color.ORANGE);
-        }
-
-        g.fillRect(x, y, mittakaava, mittakaava);
-    }
-
 }

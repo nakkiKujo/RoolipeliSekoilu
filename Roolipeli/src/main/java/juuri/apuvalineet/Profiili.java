@@ -146,12 +146,12 @@ public class Profiili {
      * elämäpisteitä 8.
      */
     public void setSoturiAlkuProfiili() {
-        this.voima = 3;
+        this.voima = 4;
         this.taikaVoima = 1;
         this.taikaPuolustus = 1;
-        this.ketteryys = 2;
-        this.elamaPisteet = 8;
-        this.nykyinenElamaPisteet = 8;
+        this.ketteryys = 3;
+        this.elamaPisteet = 11;
+        this.nykyinenElamaPisteet = 11;
     }
     
     /**
@@ -165,11 +165,11 @@ public class Profiili {
      */
     public void setVelhoAlkuProfiili() {
         this.voima = 1;
-        this.taikaVoima = 3;
-        this.taikaPuolustus = 2;
+        this.taikaVoima = 4;
+        this.taikaPuolustus = 4;
         this.ketteryys = 2;
-        this.elamaPisteet = 7;
-        this.nykyinenElamaPisteet = 7;
+        this.elamaPisteet = 10;
+        this.nykyinenElamaPisteet = 10;
     }
     
     /**
@@ -183,11 +183,11 @@ public class Profiili {
      */
     public void setDruidiAlkuProfiili() {
         this.voima = 1;
-        this.taikaVoima = 1;
-        this.taikaPuolustus = 1;
-        this.ketteryys = 3;
-        this.elamaPisteet = 9;
-        this.nykyinenElamaPisteet = 9;
+        this.taikaVoima = 2;
+        this.taikaPuolustus = 2;
+        this.ketteryys = 4;
+        this.elamaPisteet = 13;
+        this.nykyinenElamaPisteet = 13;
     }
     
     /**

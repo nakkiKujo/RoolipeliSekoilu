@@ -29,6 +29,7 @@ public class Ovi extends Kohde {
     public Ovi(boolean onkoLukittu, YleisEsine avaaja, String ovenNimi) {
         this.koodi = Kohde.OVI;
         this.nimi = ovenNimi;
+        this.vari = new Color(51, 51, 0);
         this.lukittu = onkoLukittu;
 
         //Ovien läpi ei voi kulkea
@@ -50,19 +51,4 @@ public class Ovi extends Kohde {
     public YleisEsine getAvaaja() {
         return this.avaaja;
     }
-
-    @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
-        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
-        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
-
-        if (etaisyysHahmoonX > 2 || etaisyysHahmoonY > 2) {
-            g.setColor(Color.BLACK);
-        } else {
-            g.setColor(new Color(51, 51, 0));
-        }
-
-        g.fillRect(x, y, mittakaava, mittakaava);
-    }
-
 }

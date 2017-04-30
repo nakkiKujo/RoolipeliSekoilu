@@ -9,29 +9,16 @@ import juuri.sovelluslogiikka.hahmo.Hahmo;
  * Pelaaja ei normaalisti voi kulkea seinän sisälle.
  */
 public class Seina extends Kohde {
-    
+
     /**
      * Luo uuden seinän.
      */
     public Seina() {
         this.koodi = Kohde.SEINA;
         this.nimi = "seinä";
+        this.vari = new Color(153, 102, 0);
         this.tapahtuma = null;
 
         this.voikoKulkea = false;
-    }
-
-    @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
-        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
-        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
-
-        if (etaisyysHahmoonX > 2 || etaisyysHahmoonY > 2) {
-            g.setColor(Color.BLACK);
-        } else {
-            g.setColor(new Color(153, 102, 0));
-        }
-
-        g.fillRect(x, y, mittakaava, mittakaava);
     }
 }

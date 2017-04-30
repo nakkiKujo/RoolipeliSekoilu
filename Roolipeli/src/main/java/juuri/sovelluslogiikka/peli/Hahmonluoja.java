@@ -1,7 +1,6 @@
 package juuri.sovelluslogiikka.peli;
 
 import juuri.sovelluslogiikka.esineet.Esine;
-import juuri.ui.Keskustelija;
 import juuri.sovelluslogiikka.hahmo.Druidi;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.hahmo.Soturi;

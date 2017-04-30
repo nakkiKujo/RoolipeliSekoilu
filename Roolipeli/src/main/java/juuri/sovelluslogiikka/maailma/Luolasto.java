@@ -139,6 +139,7 @@ public class Luolasto {
         asetaAarre(8, 7, KohteidenLuoja.AARREJOSSARIIMUJATAIKASAUVA);
         asetaAarre(6, 9, KohteidenLuoja.AARREJOSSAHOPEAAVAIN);
         asetaAarre(8, 5, KohteidenLuoja.AARRE2VOIDETTA);
+        asetaAarre(8, 3, KohteidenLuoja.AARREKYPARA1);
 
         //asetetaan ansa
         asetaAnsa(6, 5, KohteidenLuoja.ANSANUOLI);
@@ -237,7 +238,7 @@ public class Luolasto {
         asetaAarre(5, 1, KohteidenLuoja.AARREKAAPUTAIHAARNISKA);
         asetaAarre(1, 1, KohteidenLuoja.AARRE2VOIDETTA);
         asetaAarre(4, 6, KohteidenLuoja.AARRE1VOIDE1RIIMU);
-        asetaAarre(2, 9, KohteidenLuoja.AARREKYPARA1);
+        asetaAarre(2, 9, KohteidenLuoja.AARREKYPARA2);
         asetaAarre(14, 1, KohteidenLuoja.AARREJOSSAPRONSSIAVAIN);
         asetaAarre(14, 8, KohteidenLuoja.AARREJOSSAMIEKKA2);
         asetaAarre(10, 9, KohteidenLuoja.AARREJOSSARIIMUJAJAMEDALJONKI);

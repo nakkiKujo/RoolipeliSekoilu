@@ -23,6 +23,7 @@ public class Aarre extends Kohde {
     public Aarre(String nimi) {
         this.nimi = nimi;
         this.koodi = Kohde.AARRE;
+        this.vari = new Color(255, 255, 0);
         this.voikoKulkea = false;
         this.aarteet = new ArrayList<>();
     }
@@ -51,19 +52,5 @@ public class Aarre extends Kohde {
 
         aarteet.clear();
         return apu;
-    }
-
-    @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
-        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
-        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
-
-        if (etaisyysHahmoonX > 2 || etaisyysHahmoonY > 2) {
-            g.setColor(Color.BLACK);
-        } else {
-            g.setColor(new Color(255, 255, 0));
-        }
-
-        g.fillRect(x, y, mittakaava, mittakaava);
     }
 }

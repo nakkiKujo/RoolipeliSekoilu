@@ -24,25 +24,12 @@ public class Ansa extends Kohde {
     public Ansa(String ansanNimi, int ansanTekemaVahinko) {
         this.koodi = Kohde.ANSA;
         this.nimi = ansanNimi;
+        this.vari = new Color(204, 204, 204);
         this.voikoKulkea = true;
         this.vahinko = ansanTekemaVahinko;
     }
 
     public int getAnsanTekemaVahinko() {
         return this.vahinko;
-    }
-
-    @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
-        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
-        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
-
-        if (etaisyysHahmoonX > 2 || etaisyysHahmoonY > 2) {
-            g.setColor(Color.BLACK);
-        } else {
-            g.setColor(Color.GREEN);
-        }
-
-        g.fillRect(x, y, mittakaava, mittakaava);
     }
 }

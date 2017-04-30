@@ -84,6 +84,10 @@ public class TaisteluLaskin {
         }
 
         int lyotavaVahinko = arpoja.nextInt(lyojanTaikaVoima + 1) + 2;
+        
+        if(lyotavaVahinko <= 0) {
+            return 1;
+        }
         return lyotavaVahinko;
     }
 

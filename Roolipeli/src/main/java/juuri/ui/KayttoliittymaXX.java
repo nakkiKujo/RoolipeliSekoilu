@@ -1,4 +1,3 @@
-
 package juuri.ui;
 
 import juuri.sovelluslogiikka.peli.Peli;
@@ -130,12 +129,12 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout KoillinenAlkuPaneeliLayout = new javax.swing.GroupLayout(KoillinenAlkuPaneeli);
         KoillinenAlkuPaneeli.setLayout(KoillinenAlkuPaneeliLayout);
         KoillinenAlkuPaneeliLayout.setHorizontalGroup(
-            KoillinenAlkuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+                KoillinenAlkuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 298, Short.MAX_VALUE)
         );
         KoillinenAlkuPaneeliLayout.setVerticalGroup(
-            KoillinenAlkuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 215, Short.MAX_VALUE)
+                KoillinenAlkuPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 215, Short.MAX_VALUE)
         );
 
         KoillinenPaneeli.add(KoillinenAlkuPaneeli, "card2");
@@ -148,12 +147,12 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout KarttaPaneeliLayout = new javax.swing.GroupLayout(KarttaPaneeli);
         KarttaPaneeli.setLayout(KarttaPaneeliLayout);
         KarttaPaneeliLayout.setHorizontalGroup(
-            KarttaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+                KarttaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 298, Short.MAX_VALUE)
         );
         KarttaPaneeliLayout.setVerticalGroup(
-            KarttaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 215, Short.MAX_VALUE)
+                KarttaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 215, Short.MAX_VALUE)
         );
 
         KoillinenKuolemaPaneeli.setBackground(new java.awt.Color(153, 0, 0));
@@ -164,18 +163,18 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout KoillinenKuolemaPaneeliLayout = new javax.swing.GroupLayout(KoillinenKuolemaPaneeli);
         KoillinenKuolemaPaneeli.setLayout(KoillinenKuolemaPaneeliLayout);
         KoillinenKuolemaPaneeliLayout.setHorizontalGroup(
-            KoillinenKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KoillinenKuolemaPaneeliLayout.createSequentialGroup()
-                .addContainerGap(87, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(67, 67, 67))
+                KoillinenKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KoillinenKuolemaPaneeliLayout.createSequentialGroup()
+                        .addContainerGap(87, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(67, 67, 67))
         );
         KoillinenKuolemaPaneeliLayout.setVerticalGroup(
-            KoillinenKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(KoillinenKuolemaPaneeliLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jLabel5)
-                .addContainerGap(87, Short.MAX_VALUE))
+                KoillinenKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(KoillinenKuolemaPaneeliLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel5)
+                        .addContainerGap(87, Short.MAX_VALUE))
         );
 
         KoillinenPaneeli.add(KoillinenKuolemaPaneeli, "card4");
@@ -210,25 +209,25 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout HahmonluontiInfoLayout = new javax.swing.GroupLayout(HahmonluontiInfo);
         HahmonluontiInfo.setLayout(HahmonluontiInfoLayout);
         HahmonluontiInfoLayout.setHorizontalGroup(
-            HahmonluontiInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HahmonluontiInfoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(HahmonluontiInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addContainerGap(26, Short.MAX_VALUE))
+                HahmonluontiInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(HahmonluontiInfoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(HahmonluontiInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel8))
+                        .addContainerGap(26, Short.MAX_VALUE))
         );
         HahmonluontiInfoLayout.setVerticalGroup(
-            HahmonluontiInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HahmonluontiInfoLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8)
-                .addContainerGap(40, Short.MAX_VALUE))
+                HahmonluontiInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(HahmonluontiInfoLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addContainerGap(40, Short.MAX_VALUE))
         );
 
         LuodePaneeli.add(HahmonluontiInfo, "card2");
@@ -484,50 +483,50 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout TaisteluPaneeliLuodeLayout = new javax.swing.GroupLayout(TaisteluPaneeliLuode);
         TaisteluPaneeliLuode.setLayout(TaisteluPaneeliLuodeLayout);
         TaisteluPaneeliLuodeLayout.setHorizontalGroup(
-            TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                        .addComponent(PelaajaNimiKenttaTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(46, 46, 46)
-                        .addComponent(HirvioNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ValmiusKenttaTaistelu)
-                            .addComponent(PelaajaEPKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                                .addComponent(ValmiusMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(196, 196, 196))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                                .addComponent(HirvioEPKenttaTaistelu)
-                                .addGap(27, 27, 27)
-                                .addComponent(HirvioEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                                .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                        .addComponent(PelaajaNimiKenttaTaistelu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(46, 46, 46)
+                                        .addComponent(HirvioNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18))
+                                .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(ValmiusKenttaTaistelu)
+                                                .addComponent(PelaajaEPKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                                        .addComponent(ValmiusMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(196, 196, 196))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                                        .addComponent(HirvioEPKenttaTaistelu)
+                                                        .addGap(27, 27, 27)
+                                                        .addComponent(HirvioEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                                                        .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addContainerGap())))))
         );
         TaisteluPaneeliLuodeLayout.setVerticalGroup(
-            TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PelaajaNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HirvioNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PelaajaEPKenttaTaistelu)
-                    .addComponent(HirvioEPKenttaTaistelu)
-                    .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HirvioEPMaaraTaistelu))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ValmiusKenttaTaistelu)
-                    .addComponent(ValmiusMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(117, Short.MAX_VALUE))
+                TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TaisteluPaneeliLuodeLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(PelaajaNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(HirvioNimiKenttaTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(PelaajaEPKenttaTaistelu)
+                                .addComponent(HirvioEPKenttaTaistelu)
+                                .addComponent(PelaajaEPMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(HirvioEPMaaraTaistelu))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(TaisteluPaneeliLuodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ValmiusKenttaTaistelu)
+                                .addComponent(ValmiusMaaraTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(117, Short.MAX_VALUE))
         );
 
         LuodePaneeli.add(TaisteluPaneeliLuode, "card4");
@@ -540,18 +539,18 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout LuodeKuolemaPaneeliLayout = new javax.swing.GroupLayout(LuodeKuolemaPaneeli);
         LuodeKuolemaPaneeli.setLayout(LuodeKuolemaPaneeliLayout);
         LuodeKuolemaPaneeliLayout.setHorizontalGroup(
-            LuodeKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LuodeKuolemaPaneeliLayout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(108, 108, 108))
+                LuodeKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LuodeKuolemaPaneeliLayout.createSequentialGroup()
+                        .addContainerGap(109, Short.MAX_VALUE)
+                        .addComponent(jLabel6)
+                        .addGap(108, 108, 108))
         );
         LuodeKuolemaPaneeliLayout.setVerticalGroup(
-            LuodeKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LuodeKuolemaPaneeliLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel6)
-                .addContainerGap(88, Short.MAX_VALUE))
+                LuodeKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LuodeKuolemaPaneeliLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel6)
+                        .addContainerGap(88, Short.MAX_VALUE))
         );
 
         LuodePaneeli.add(LuodeKuolemaPaneeli, "card5");
@@ -597,47 +596,47 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout HahmonluontiSyoteLayout = new javax.swing.GroupLayout(HahmonluontiSyote);
         HahmonluontiSyote.setLayout(HahmonluontiSyoteLayout);
         HahmonluontiSyoteLayout.setHorizontalGroup(
-            HahmonluontiSyoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
-                .addGroup(HahmonluontiSyoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(HahmonNimiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(HahmonluontiButton, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
-                        .addContainerGap()
+                HahmonluontiSyoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
                         .addGroup(HahmonluontiSyoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
-                                .addComponent(AmmatinValintaSoturiButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(AmmatinValintaVelhoButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(AmmatinValintaDruidiButton))
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                                .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(HahmonNimiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
+                                        .addGap(92, 92, 92)
+                                        .addComponent(HahmonluontiButton, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(HahmonluontiSyoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
+                                                        .addComponent(AmmatinValintaSoturiButton)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(AmmatinValintaVelhoButton)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(AmmatinValintaDruidiButton))
+                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(31, Short.MAX_VALUE))
         );
         HahmonluontiSyoteLayout.setVerticalGroup(
-            HahmonluontiSyoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HahmonNimiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(HahmonluontiSyoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AmmatinValintaSoturiButton)
-                    .addComponent(AmmatinValintaVelhoButton)
-                    .addComponent(AmmatinValintaDruidiButton))
-                .addGap(13, 13, 13)
-                .addComponent(HahmonluontiButton)
-                .addContainerGap(90, Short.MAX_VALUE))
+                HahmonluontiSyoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(HahmonluontiSyoteLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(HahmonNimiTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(HahmonluontiSyoteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(AmmatinValintaSoturiButton)
+                                .addComponent(AmmatinValintaVelhoButton)
+                                .addComponent(AmmatinValintaDruidiButton))
+                        .addGap(13, 13, 13)
+                        .addComponent(HahmonluontiButton)
+                        .addContainerGap(90, Short.MAX_VALUE))
         );
 
         LounasPaneeli.add(HahmonluontiSyote, "card2");
@@ -687,33 +686,33 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout LiikkumisPaneeliLayout = new javax.swing.GroupLayout(LiikkumisPaneeli);
         LiikkumisPaneeli.setLayout(LiikkumisPaneeliLayout);
         LiikkumisPaneeliLayout.setHorizontalGroup(
-            LiikkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LiikkumisPaneeliLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(HahmoLiikkuuVasemmalleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(HahmoLiikkuuOikealleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
-            .addGroup(LiikkumisPaneeliLayout.createSequentialGroup()
-                .addGroup(LiikkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LiikkumisPaneeliLayout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(HahmoLiikkuuAlasButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(HahmoLiikkuuYlosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                LiikkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LiikkumisPaneeliLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(HahmoLiikkuuVasemmalleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                        .addComponent(HahmoLiikkuuOikealleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44))
+                .addGroup(LiikkumisPaneeliLayout.createSequentialGroup()
+                        .addGroup(LiikkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(LiikkumisPaneeliLayout.createSequentialGroup()
+                                        .addGap(136, 136, 136)
+                                        .addComponent(HahmoLiikkuuAlasButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(HahmoLiikkuuYlosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LiikkumisPaneeliLayout.setVerticalGroup(
-            LiikkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LiikkumisPaneeliLayout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
-                .addComponent(HahmoLiikkuuYlosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LiikkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HahmoLiikkuuVasemmalleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HahmoLiikkuuOikealleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HahmoLiikkuuAlasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
+                LiikkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LiikkumisPaneeliLayout.createSequentialGroup()
+                        .addContainerGap(65, Short.MAX_VALUE)
+                        .addComponent(HahmoLiikkuuYlosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(LiikkumisPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(HahmoLiikkuuVasemmalleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(HahmoLiikkuuOikealleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(HahmoLiikkuuAlasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))
         );
 
         LounasPaneeli.add(LiikkumisPaneeli, "card3");
@@ -758,30 +757,30 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout TaisteluPaneeliLounasLayout = new javax.swing.GroupLayout(TaisteluPaneeliLounas);
         TaisteluPaneeliLounas.setLayout(TaisteluPaneeliLounasLayout);
         TaisteluPaneeliLounasLayout.setHorizontalGroup(
-            TaisteluPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TaisteluPaneeliLounasLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(TaisteluPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(SuperlyontiNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TaikaiskuNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PeraannyNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VaistoNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LyoNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(73, Short.MAX_VALUE))
+                TaisteluPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TaisteluPaneeliLounasLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(TaisteluPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(SuperlyontiNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TaikaiskuNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(PeraannyNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(VaistoNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LyoNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(73, Short.MAX_VALUE))
         );
         TaisteluPaneeliLounasLayout.setVerticalGroup(
-            TaisteluPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TaisteluPaneeliLounasLayout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(LyoNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(VaistoNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SuperlyontiNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TaikaiskuNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PeraannyNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                TaisteluPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TaisteluPaneeliLounasLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(LyoNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(VaistoNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SuperlyontiNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TaikaiskuNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PeraannyNappiTaistelu, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         LounasPaneeli.add(TaisteluPaneeliLounas, "card4");
@@ -791,12 +790,12 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout TyhjaPaneeliLounasLayout = new javax.swing.GroupLayout(TyhjaPaneeliLounas);
         TyhjaPaneeliLounas.setLayout(TyhjaPaneeliLounasLayout);
         TyhjaPaneeliLounasLayout.setHorizontalGroup(
-            TyhjaPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+                TyhjaPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 361, Short.MAX_VALUE)
         );
         TyhjaPaneeliLounasLayout.setVerticalGroup(
-            TyhjaPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
+                TyhjaPaneeliLounasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 253, Short.MAX_VALUE)
         );
 
         LounasPaneeli.add(TyhjaPaneeliLounas, "card5");
@@ -809,18 +808,18 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout LounasKuolemaPaneeliLayout = new javax.swing.GroupLayout(LounasKuolemaPaneeli);
         LounasKuolemaPaneeli.setLayout(LounasKuolemaPaneeliLayout);
         LounasKuolemaPaneeliLayout.setHorizontalGroup(
-            LounasKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LounasKuolemaPaneeliLayout.createSequentialGroup()
-                .addContainerGap(110, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(107, 107, 107))
+                LounasKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LounasKuolemaPaneeliLayout.createSequentialGroup()
+                        .addContainerGap(110, Short.MAX_VALUE)
+                        .addComponent(jLabel7)
+                        .addGap(107, 107, 107))
         );
         LounasKuolemaPaneeliLayout.setVerticalGroup(
-            LounasKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LounasKuolemaPaneeliLayout.createSequentialGroup()
-                .addContainerGap(103, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(102, 102, 102))
+                LounasKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LounasKuolemaPaneeliLayout.createSequentialGroup()
+                        .addContainerGap(103, Short.MAX_VALUE)
+                        .addComponent(jLabel7)
+                        .addGap(102, 102, 102))
         );
 
         LounasPaneeli.add(LounasKuolemaPaneeli, "card6");
@@ -842,12 +841,12 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout TyhjaPaneeliPaallaLayout = new javax.swing.GroupLayout(TyhjaPaneeliPaalla);
         TyhjaPaneeliPaalla.setLayout(TyhjaPaneeliPaallaLayout);
         TyhjaPaneeliPaallaLayout.setHorizontalGroup(
-            TyhjaPaneeliPaallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 296, Short.MAX_VALUE)
+                TyhjaPaneeliPaallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 296, Short.MAX_VALUE)
         );
         TyhjaPaneeliPaallaLayout.setVerticalGroup(
-            TyhjaPaneeliPaallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
+                TyhjaPaneeliPaallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 253, Short.MAX_VALUE)
         );
 
         KaakkoPaneeli.add(TyhjaPaneeliPaalla, "card1");
@@ -878,27 +877,27 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout InfoPaneeliLayout = new javax.swing.GroupLayout(InfoPaneeli);
         InfoPaneeli.setLayout(InfoPaneeliLayout);
         InfoPaneeliLayout.setHorizontalGroup(
-            InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InfoPaneeliLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(InfoPaneeliLayout.createSequentialGroup()
-                        .addComponent(tapahtumaVaihtoehtoYksiButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tapahtumaVaihtoehtoKaksiButton))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(InfoPaneeliLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(InfoPaneeliLayout.createSequentialGroup()
+                                        .addComponent(tapahtumaVaihtoehtoYksiButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tapahtumaVaihtoehtoKaksiButton))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(26, Short.MAX_VALUE))
         );
         InfoPaneeliLayout.setVerticalGroup(
-            InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InfoPaneeliLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tapahtumaVaihtoehtoYksiButton)
-                    .addComponent(tapahtumaVaihtoehtoKaksiButton))
-                .addContainerGap(95, Short.MAX_VALUE))
+                InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(InfoPaneeliLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(InfoPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tapahtumaVaihtoehtoYksiButton)
+                                .addComponent(tapahtumaVaihtoehtoKaksiButton))
+                        .addContainerGap(95, Short.MAX_VALUE))
         );
 
         KaakkoPaneeli.add(InfoPaneeli, "card2");
@@ -908,12 +907,12 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout TaisteluPaneeliKaakkoLayout = new javax.swing.GroupLayout(TaisteluPaneeliKaakko);
         TaisteluPaneeliKaakko.setLayout(TaisteluPaneeliKaakkoLayout);
         TaisteluPaneeliKaakkoLayout.setHorizontalGroup(
-            TaisteluPaneeliKaakkoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 296, Short.MAX_VALUE)
+                TaisteluPaneeliKaakkoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 296, Short.MAX_VALUE)
         );
         TaisteluPaneeliKaakkoLayout.setVerticalGroup(
-            TaisteluPaneeliKaakkoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
+                TaisteluPaneeliKaakkoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 253, Short.MAX_VALUE)
         );
 
         KaakkoPaneeli.add(TaisteluPaneeliKaakko, "card4");
@@ -930,18 +929,18 @@ public class KayttoliittymaXX extends JFrame {
         javax.swing.GroupLayout KaakkoKuolemaPaneeliLayout = new javax.swing.GroupLayout(KaakkoKuolemaPaneeli);
         KaakkoKuolemaPaneeli.setLayout(KaakkoKuolemaPaneeliLayout);
         KaakkoKuolemaPaneeliLayout.setHorizontalGroup(
-            KaakkoKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(KaakkoKuolemaPaneeliLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(UusiPeliButton)
-                .addContainerGap(90, Short.MAX_VALUE))
+                KaakkoKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(KaakkoKuolemaPaneeliLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(UusiPeliButton)
+                        .addContainerGap(90, Short.MAX_VALUE))
         );
         KaakkoKuolemaPaneeliLayout.setVerticalGroup(
-            KaakkoKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(KaakkoKuolemaPaneeliLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(UusiPeliButton)
-                .addContainerGap(121, Short.MAX_VALUE))
+                KaakkoKuolemaPaneeliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(KaakkoKuolemaPaneeliLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(UusiPeliButton)
+                        .addContainerGap(121, Short.MAX_VALUE))
         );
 
         KaakkoPaneeli.add(KaakkoKuolemaPaneeli, "card5");
@@ -955,7 +954,7 @@ public class KayttoliittymaXX extends JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void HahmonluontiButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void HahmonluontiButtonActionPerformed(java.awt.event.ActionEvent evt) {
         String hahmonNimi = HahmonNimiTextField.getText();
         int hahmonAmmatti;
         if (AmmatinValintaSoturiButton.isSelected()) {
@@ -995,9 +994,9 @@ public class KayttoliittymaXX extends JFrame {
         KoillinenPaneeli.add(KarttaPaneeli);
         KoillinenPaneeli.repaint();
         KoillinenPaneeli.revalidate();
-    }                                                  
+    }
 
-    private void HahmoLiikkuuOikealleButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                           
+    private void HahmoLiikkuuOikealleButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("oikea");
         if (!(liikkumisestaAiheutunutTapahtuma == null)) {
             liikkumisestaAiheutunutTapahtuma.valmisteleTapahtuma(peli.getPelaajanHahmo());
@@ -1019,11 +1018,13 @@ public class KayttoliittymaXX extends JFrame {
             KaakkoPaneeli.add(InfoPaneeli);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
+
+            KoillinenPaneeli.repaint();
         }
         KoillinenPaneeli.repaint();
-    }                                                          
+    }
 
-    private void HahmoLiikkuuYlosButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+    private void HahmoLiikkuuYlosButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("ylös");
         if (!(liikkumisestaAiheutunutTapahtuma == null)) {
             liikkumisestaAiheutunutTapahtuma.valmisteleTapahtuma(peli.getPelaajanHahmo());
@@ -1045,11 +1046,13 @@ public class KayttoliittymaXX extends JFrame {
             KaakkoPaneeli.add(InfoPaneeli);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
+            
+            KoillinenPaneeli.repaint();
         }
         KoillinenPaneeli.repaint();
-    }                                                      
+    }
 
-    private void HahmoLiikkuuAlasButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+    private void HahmoLiikkuuAlasButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("alas");
         if (!(liikkumisestaAiheutunutTapahtuma == null)) {
             liikkumisestaAiheutunutTapahtuma.valmisteleTapahtuma(peli.getPelaajanHahmo());
@@ -1071,11 +1074,13 @@ public class KayttoliittymaXX extends JFrame {
             KaakkoPaneeli.add(InfoPaneeli);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
+            
+            KoillinenPaneeli.repaint();
         }
         KoillinenPaneeli.repaint();
-    }                                                      
+    }
 
-    private void HahmoLiikkuuVasemmalleButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                             
+    private void HahmoLiikkuuVasemmalleButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Tapahtuma liikkumisestaAiheutunutTapahtuma = peli.liikutaanJaEtsitaanTapahtumaa("vasen");
         if (!(liikkumisestaAiheutunutTapahtuma == null)) {
             liikkumisestaAiheutunutTapahtuma.valmisteleTapahtuma(peli.getPelaajanHahmo());
@@ -1097,12 +1102,14 @@ public class KayttoliittymaXX extends JFrame {
             KaakkoPaneeli.add(InfoPaneeli);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
+            
+            KoillinenPaneeli.repaint();
         }
         KoillinenPaneeli.repaint();
 
-    }                                                            
+    }
 
-    private void tapahtumaVaihtoehtoYksiButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                              
+    private void tapahtumaVaihtoehtoYksiButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Tapahtuma tt = peli.getNykyinenTapahtuma();
         if (tt.getKoodi() == Tapahtuma.TAISTELU) {
             Taistelu ttt = (Taistelu) tt;
@@ -1193,9 +1200,9 @@ public class KayttoliittymaXX extends JFrame {
                 LuodePaneeli.revalidate();
             }
         }
-    }                                                             
+    }
 
-    private void tapahtumaVaihtoehtoKaksiButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                               
+    private void tapahtumaVaihtoehtoKaksiButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Tapahtuma tt = peli.getNykyinenTapahtuma();
 
         if (tt.getKoodi() == Tapahtuma.TAISTELU) {
@@ -1307,9 +1314,9 @@ public class KayttoliittymaXX extends JFrame {
             }
         }
 
-    }                                                              
+    }
 
-    private void LyoNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+    private void LyoNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {
         Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
         boolean jatkuukoTaisto = tt.pelaajaLyo();
 
@@ -1383,9 +1390,9 @@ public class KayttoliittymaXX extends JFrame {
                 LuodePaneeli.revalidate();
             }
         }
-    }                                                
+    }
 
-    private void VaistoNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    private void VaistoNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {
         Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
         boolean jatkuukoTaisto = tt.pelaajaValmistautuuVaistoon();
 
@@ -1422,9 +1429,9 @@ public class KayttoliittymaXX extends JFrame {
             LuodePaneeli.repaint();
             LuodePaneeli.revalidate();
         }
-    }                                                   
+    }
 
-    private void SuperlyontiNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+    private void SuperlyontiNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {
         Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
         boolean jatkuukoTaisto = tt.pelaajaValmistautuuHyokkaykseen();
 
@@ -1465,9 +1472,9 @@ public class KayttoliittymaXX extends JFrame {
             LuodePaneeli.repaint();
             LuodePaneeli.revalidate();
         }
-    }                                                        
+    }
 
-    private void TaikaiskuNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+    private void TaikaiskuNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {
         Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
         boolean jatkuukoTaisto = tt.pelaajaLoihtiiLoitsun();
 
@@ -1545,9 +1552,9 @@ public class KayttoliittymaXX extends JFrame {
             }
         }
 
-    }                                                      
+    }
 
-    private void PeraannyNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+    private void PeraannyNappiTaisteluActionPerformed(java.awt.event.ActionEvent evt) {
         Taistelu tt = (Taistelu) peli.getNykyinenTapahtuma();
         boolean jatkuukoTaisto = tt.pelaajaPyrkiiPakoon();
 
@@ -1611,9 +1618,9 @@ public class KayttoliittymaXX extends JFrame {
             }
 
         }
-    }                                                     
+    }
 
-    private void Esine1ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void Esine1ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {
         TaisteluEsine esine = (TaisteluEsine) peli.getPelaajanHahmo().getReppu().getEsine1();
 
         for (Esine es : peli.getPelaajanHahmo().getReppu().getEsineet()) {
@@ -1628,9 +1635,9 @@ public class KayttoliittymaXX extends JFrame {
         esine.setOnkoKaytossa(true);
 
         reppuPaneelinPaivitys();
-    }                                                 
+    }
 
-    private void Esine2ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void Esine2ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {
         TaisteluEsine esine = (TaisteluEsine) peli.getPelaajanHahmo().getReppu().getEsine2();
 
         for (Esine es : peli.getPelaajanHahmo().getReppu().getEsineet()) {
@@ -1645,9 +1652,9 @@ public class KayttoliittymaXX extends JFrame {
         esine.setOnkoKaytossa(true);
 
         reppuPaneelinPaivitys();
-    }                                                 
+    }
 
-    private void Esine3ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void Esine3ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {
         TaisteluEsine esine = (TaisteluEsine) peli.getPelaajanHahmo().getReppu().getEsine3();
 
         for (Esine es : peli.getPelaajanHahmo().getReppu().getEsineet()) {
@@ -1662,9 +1669,9 @@ public class KayttoliittymaXX extends JFrame {
         esine.setOnkoKaytossa(true);
 
         reppuPaneelinPaivitys();
-    }                                                 
+    }
 
-    private void Esine4ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void Esine4ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {
         TaisteluEsine esine = (TaisteluEsine) peli.getPelaajanHahmo().getReppu().getEsine4();
 
         for (Esine es : peli.getPelaajanHahmo().getReppu().getEsineet()) {
@@ -1679,9 +1686,9 @@ public class KayttoliittymaXX extends JFrame {
         esine.setOnkoKaytossa(true);
 
         reppuPaneelinPaivitys();
-    }                                                 
+    }
 
-    private void Esine5ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void Esine5ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {
         TaisteluEsine esine = (TaisteluEsine) peli.getPelaajanHahmo().getReppu().getEsine5();
 
         for (Esine es : peli.getPelaajanHahmo().getReppu().getEsineet()) {
@@ -1696,9 +1703,9 @@ public class KayttoliittymaXX extends JFrame {
         esine.setOnkoKaytossa(true);
 
         reppuPaneelinPaivitys();
-    }                                                 
+    }
 
-    private void Esine6ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void Esine6ButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {
         TaisteluEsine esine = (TaisteluEsine) peli.getPelaajanHahmo().getReppu().getEsine6();
 
         for (Esine es : peli.getPelaajanHahmo().getReppu().getEsineet()) {
@@ -1713,59 +1720,59 @@ public class KayttoliittymaXX extends JFrame {
         esine.setOnkoKaytossa(true);
 
         reppuPaneelinPaivitys();
-    }                                                 
+    }
 
-    private void PudotaEsine1ButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void PudotaEsine1ButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Esine esine = peli.getPelaajanHahmo().getReppu().getEsine1();
         peli.getPelaajanHahmo().getReppu().poistaRepusta(esine);
 
         reppuPaneelinPaivitys();
 
-    }                                                  
+    }
 
-    private void PudotaEsine2ButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void PudotaEsine2ButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Esine esine = peli.getPelaajanHahmo().getReppu().getEsine2();
         peli.getPelaajanHahmo().getReppu().poistaRepusta(esine);
 
         reppuPaneelinPaivitys();
-    }                                                  
+    }
 
-    private void PudotaEsine3ButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void PudotaEsine3ButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Esine esine = peli.getPelaajanHahmo().getReppu().getEsine3();
         peli.getPelaajanHahmo().getReppu().poistaRepusta(esine);
 
         reppuPaneelinPaivitys();
-    }                                                  
+    }
 
-    private void PudotaEsine4ButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void PudotaEsine4ButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Esine esine = peli.getPelaajanHahmo().getReppu().getEsine4();
         peli.getPelaajanHahmo().getReppu().poistaRepusta(esine);
 
         reppuPaneelinPaivitys();
-    }                                                  
+    }
 
-    private void PudotaEsine5ButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void PudotaEsine5ButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Esine esine = peli.getPelaajanHahmo().getReppu().getEsine5();
         peli.getPelaajanHahmo().getReppu().poistaRepusta(esine);
 
         reppuPaneelinPaivitys();
-    }                                                  
+    }
 
-    private void PudotaEsine6ButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    private void PudotaEsine6ButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Esine esine = peli.getPelaajanHahmo().getReppu().getEsine6();
         peli.getPelaajanHahmo().getReppu().poistaRepusta(esine);
 
         reppuPaneelinPaivitys();
-    }                                                  
+    }
 
-    private void VoiteenKayttoButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+    private void VoiteenKayttoButtonReppuActionPerformed(java.awt.event.ActionEvent evt) {
         peli.getPelaajanHahmo().getProfiili().kaytaParantavaEsine(Esine.PARANTAVAVOIDE);
         reppuPaneelinPaivitys();
-    }                                                        
+    }
 
-    private void UusiPeliButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void UusiPeliButtonActionPerformed(java.awt.event.ActionEvent evt) {
         this.peli = new Peli();
-        
+
         HahmonNimiTextField.setText(null);
         AmmatinValintaGroup.clearSelection();
 
@@ -1797,7 +1804,7 @@ public class KayttoliittymaXX extends JFrame {
         LuodePaneeli.repaint();
         LuodePaneeli.revalidate();
 
-    }                                              
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
