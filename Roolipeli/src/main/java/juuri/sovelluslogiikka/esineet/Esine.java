@@ -9,6 +9,7 @@ public abstract class Esine {
     protected int koodi;
     protected String nimi;
     protected boolean onkoTaisteluEsine;
+    protected boolean onkoKaytossa;
 
     public static final int AVAIN = 1;
     public static final int MIEKKA = 2;
@@ -31,6 +32,7 @@ public abstract class Esine {
     public Esine(String nimi, int koodi) {
         this.nimi = nimi;
         this.koodi = koodi;
+        this.onkoKaytossa = false;
     }
 
     public String getNimi() {
@@ -39,6 +41,18 @@ public abstract class Esine {
 
     public int getKoodi() {
         return this.koodi;
+    }
+    
+    public boolean onkoTaisteluEsine() {
+        return this.onkoTaisteluEsine;
+    }
+    
+    public boolean getOnkoKaytossa() {
+        return this.onkoKaytossa;
+    }
+    
+    public void setOnkoKaytossa(boolean aa) {
+        this.onkoKaytossa = aa;
     }
 
     @Override

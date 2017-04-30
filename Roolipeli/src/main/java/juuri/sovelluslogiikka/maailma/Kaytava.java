@@ -3,7 +3,6 @@ package juuri.sovelluslogiikka.maailma;
 import java.awt.Color;
 import java.awt.Graphics;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
-import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
 
 /**
  * Käytävä on Kohteen aliluokka. Se on luolaston peruselementti, ja suurimman
@@ -26,13 +25,43 @@ public class Kaytava extends Kohde {
     }
 
     @Override
-    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo) {
-        int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
-        int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
+    public void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo, Luolasto luola) {
+        int etaisyysHahmoonX = pelaajanHahmo.getSijainti().getX() - this.sijainti.getX();
+        int etaisyysHahmoonY = pelaajanHahmo.getSijainti().getY() - this.sijainti.getY();
 
-        if (etaisyysHahmoonX > 1 || etaisyysHahmoonY > 1) {
+        if(Math.abs(etaisyysHahmoonX) > 2 || Math.abs(etaisyysHahmoonY) > 2) {
+            g.setColor(Color.BLACK);
+            return;
+        }
+        
+        if(this.sijainti.getX() == pelaajanHahmo.getSijainti().getX()) {
+            
+        }
+        
+        
+        
+        
+        if (etaisyysHahmoonX > 2 || etaisyysHahmoonY > 2) {
             g.setColor(Color.BLACK);
         } else {
+            if(this.sijainti.getX() == pelaajanHahmo.getSijainti().getX()) {
+                if(etaisyysHahmoonY < 2) {
+                    g.setColor(new Color(153, 153, 153));
+                } else {
+                    
+                }
+            } else if(this.sijainti.getY() == pelaajanHahmo.getSijainti().getY()) {
+                if(etaisyysHahmoonX < 2) {
+                    g.setColor(new Color(153, 153, 153));
+                } else {
+                    
+                }
+            } else if(true) {
+                
+            }
+            
+            
+            
             g.setColor(new Color(153, 153, 153));
         }
 

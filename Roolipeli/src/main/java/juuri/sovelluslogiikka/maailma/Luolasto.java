@@ -544,7 +544,9 @@ public class Luolasto {
      * luolatossa olevien kohteiden piirtometodeja. Kohteita piirretään sen
      * mukaan, ovatko ne tarpeeksi lähellä pelaajan hahmoa. Jos kohde on liian
      * kaukana, ei sitä piirretä. Tämän vuoksi pelaajan hahmoa kuljetetaan
-     * piirtometodissa.
+     * piirtometodissa. Lisäksi kutsuttavassa metodissa tarkistetaan, onko
+     * kyseinen kohde seinän tai oven takana. Tällöin kyseistä kohdetta ei
+     * piirretä.
      *
      * @param g käyttöliittyymän grafiikkaolio
      * @param mittaKaava mittakaava, jossa piirretään
@@ -555,7 +557,7 @@ public class Luolasto {
             for (int j = 0; j < korkeus; j++) {
                 int x = i * mittaKaava;
                 int y = j * mittaKaava;
-                koordinaatisto[i][j].piirra(g, mittaKaava, x, y, pelaajanHahmo);
+                koordinaatisto[i][j].piirra(g, mittaKaava, x, y, pelaajanHahmo, this);
             }
         }
     }

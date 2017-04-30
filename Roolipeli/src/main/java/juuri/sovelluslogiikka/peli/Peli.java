@@ -1,7 +1,6 @@
 package juuri.sovelluslogiikka.peli;
 
 import java.awt.Graphics;
-import juuri.ui.Keskustelija;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.maailma.Kohde;
 import juuri.sovelluslogiikka.maailma.Luolasto;

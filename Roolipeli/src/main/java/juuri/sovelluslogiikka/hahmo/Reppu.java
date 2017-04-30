@@ -6,7 +6,7 @@ import juuri.sovelluslogiikka.esineet.Esine;
 /**
  * Reppu pitää kirjaa pelaajan keräämistä esineistä. Reppuun mahtuu rajaton
  * määrä riimuja ja parantavia voiteita. Muita esineitä reppuun mahtuu enintään
- * 7.
+ * 6.
  */
 public class Reppu {
 
@@ -24,6 +24,10 @@ public class Reppu {
         this.voiteita = 0;
     }
     
+    public ArrayList<Esine> getEsineet() {
+        return this.esineet;
+    }
+    
     public int getRiimuja() {
         return this.riimuja;
     }
@@ -31,6 +35,49 @@ public class Reppu {
     public int getVoiteita() {
         return this.voiteita;
     }
+    
+    public Esine getEsine1() {
+        if(esineet.isEmpty()) {
+            return null;
+        }
+        return esineet.get(0);
+    }
+    
+    public Esine getEsine2() {
+        if(esineet.size() <= 1) {
+            return null;
+        }
+        return esineet.get(1);
+    }
+    
+    public Esine getEsine3() {
+        if(esineet.size() <= 2) {
+            return null;
+        }
+        return esineet.get(2);
+    }
+    
+    public Esine getEsine4() {
+        if(esineet.size() <= 3) {
+            return null;
+        }
+        return esineet.get(3);
+    }
+    
+    public Esine getEsine5() {
+        if(esineet.size() <= 4) {
+            return null;
+        }
+        return esineet.get(4);
+    }
+    
+    public Esine getEsine6() {
+        if(esineet.size() <= 5) {
+            return null;
+        }
+        return esineet.get(5);
+    }
+    
 
     /**
      * Metodi asettaa esineen reppuun. Jos reppu on täynnä, ei esinettä laiteta
@@ -46,7 +93,7 @@ public class Reppu {
         } else if (esineenKoodi == Esine.PARANTAVAVOIDE.getKoodi()) {
             voiteita++;
         } else {
-            if (esineet.size() == 7) {
+            if (esineet.size() == 6) {
                 return;
             }
             esineet.add(ee);

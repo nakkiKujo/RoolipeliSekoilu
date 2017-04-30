@@ -37,7 +37,7 @@ public class Ansa extends Kohde {
         int etaisyysHahmoonX = Math.abs(pelaajanHahmo.getSijainti().getX() - this.sijainti.getX());
         int etaisyysHahmoonY = Math.abs(pelaajanHahmo.getSijainti().getY() - this.sijainti.getY());
 
-        if (etaisyysHahmoonX > 1 || etaisyysHahmoonY > 1) {
+        if (etaisyysHahmoonX > 2 || etaisyysHahmoonY > 2) {
             g.setColor(Color.BLACK);
         } else {
             g.setColor(Color.GREEN);

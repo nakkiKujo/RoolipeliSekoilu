@@ -78,13 +78,18 @@ public abstract class Kohde {
      * Metodi piirtää kohteen käyttöliittymän piirtotaululle. Jokaisella
      * kohteella on oma piirra-metodinsa, koska ne piitryvät eri tavoin.
      *
+     * Metodi tarkistaa, onko piirrettävä Kohde liian kaukana pelaajan hahmosta
+     * tai oven tai seinän takana. Jos näin on, kohde piirretään mustana eli se
+     * ei näy.
+     *
      * @param g piirtotaulun grafiikka-olio
      * @param mittakaava mittakaava, jossa piirretään
      * @param x kohteen x-koordinaatti
      * @param y kohteen y-koordinaatti
      * @param pelaajanHahmo pelaajan hahmo
+     * @param luola pelin luolasto
      */
-    public abstract void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo);
+    public abstract void piirra(Graphics g, int mittakaava, int x, int y, Hahmo pelaajanHahmo, Luolasto luola);
 
     @Override
     public boolean equals(Object o) {
