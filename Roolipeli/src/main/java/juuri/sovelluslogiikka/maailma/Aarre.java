@@ -38,19 +38,19 @@ public class Aarre extends Kohde {
     }
 
     /**
-     * Metodi palauttaa aarteessa olevat esineet ja samalla poistaa esineet
-     * aarteesta.
+     * Metodi palauttaa aarteessa olevat esineet.
      *
      * @return lista aarteen esineistä
      */
-    public ArrayList<Esine> keraaAarteet() {
-        ArrayList<Esine> apu = new ArrayList<>();
-
-        for (Esine aarteenEsine : aarteet) {
-            apu.add(aarteenEsine);
-        }
-
-        aarteet.clear();
-        return apu;
+    public ArrayList<Esine> getAarteet() {
+        return this.aarteet;
+    }
+    
+    /**
+     * Poistaa annetun esineen aarteesta.
+     * @param ee 
+     */
+    public void poistaEsine(Esine ee) {
+        aarteet.remove(ee);
     }
 }

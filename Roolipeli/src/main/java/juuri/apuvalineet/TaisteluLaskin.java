@@ -36,10 +36,22 @@ public class TaisteluLaskin {
      */
     public int lyonti(Profiili lyoja, Profiili lyotava) {
         int lyojanKetteryys = lyoja.getKetteryys();
+        if (lyojanKetteryys < 0) {
+            lyojanKetteryys = 0;
+        }
         int lyotavanKetteryys = lyotava.getKetteryys();
+        if (lyotavanKetteryys < 0) {
+            lyotavanKetteryys = 0;
+        }
 
         int lyojanVoima = lyoja.getVoima();
+        if (lyojanVoima < 0) {
+            lyojanVoima = 0;
+        }
         int lyotavanVoima = lyotava.getVoima();
+        if (lyotavanVoima < 0) {
+            lyotavanVoima = 0;
+        }
 
         int hyokkays = arpoja.nextInt(lyojanVoima + lyojanKetteryys + 1 + lyoja.getHyokkaysValmius()) + 1 + (lyojanKetteryys / 2) + (lyojanVoima / 2);
         int puolustus = arpoja.nextInt(lyotavanVoima + lyotavanKetteryys + 1 + lyotava.getPuolustusValmius()) + 1 + (lyotavanKetteryys / 2) + (lyotavanVoima / 2);
@@ -74,18 +86,25 @@ public class TaisteluLaskin {
      */
     public int taikaLyonti(Profiili lyoja, Profiili lyotava) {
         int lyojanTaikaVoima = lyoja.getTaikaVoima();
+        if (lyojanTaikaVoima < 0) {
+            lyojanTaikaVoima = 0;
+        }
         int lyotavanTaikaPuolustus = lyotava.getTaikaPuolustus();
+        if (lyotavanTaikaPuolustus < 0) {
+            lyotavanTaikaPuolustus = 0;
+        }
 
         int hyokkays = arpoja.nextInt(lyojanTaikaVoima + 1) + 1 + (lyojanTaikaVoima / 2);
+
         int puolustus = arpoja.nextInt(lyotavanTaikaPuolustus + 1) + 1 + (lyotavanTaikaPuolustus / 2);
 
         if (puolustus >= hyokkays) {
             return 0;
         }
 
-        int lyotavaVahinko = arpoja.nextInt(lyojanTaikaVoima + 1) + 2;
-        
-        if(lyotavaVahinko <= 0) {
+        int lyotavaVahinko = arpoja.nextInt(lyojanTaikaVoima + 1) + 1;
+
+        if (lyotavaVahinko <= 0) {
             return 1;
         }
         return lyotavaVahinko;
@@ -107,13 +126,9 @@ public class TaisteluLaskin {
         int hyokkaajanKetteryys = hyokkaaja.getKetteryys();
 
         int pakoYritys = arpoja.nextInt(5) + 1 + (pakenijanKetteryys / 2);
-        int alaKarkaa = arpoja.nextInt(7) + 1 + (hyokkaajanKetteryys / 2);
+        int alaKarkaa = arpoja.nextInt(5) + 1 + (hyokkaajanKetteryys / 2);
 
-        if (pakoYritys <= alaKarkaa) {
-            return false;
-        }
-
-        return true;
+        return pakoYritys > alaKarkaa;
     }
 
     /**

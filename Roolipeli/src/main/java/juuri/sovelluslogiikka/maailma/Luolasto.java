@@ -311,6 +311,158 @@ public class Luolasto {
 
     private void luoTaso3() {
         nykyinenTaso = 3;
+        this.leveys = 16;
+        this.korkeus = 11;
+
+        this.koordinaatisto = new Kohde[leveys][korkeus];
+
+        //luolaston ulkoreuna on seinää
+        for (int i = 0; i < leveys; i++) {
+            asetaSeina(i, 0, KohteidenLuoja.SEINA);
+            asetaSeina(i, korkeus - 1, KohteidenLuoja.SEINA);
+        }
+        for (int i = 1; i < korkeus - 1; i++) {
+            asetaSeina(0, i, KohteidenLuoja.SEINA);
+            asetaSeina(leveys - 1, i, KohteidenLuoja.SEINA);
+        }
+        
+        //asetetaan seinät luolan sisälle
+        asetaSeina(2, 2, KohteidenLuoja.SEINA);
+        asetaSeina(3, 2, KohteidenLuoja.SEINA);
+        asetaSeina(4, 2, KohteidenLuoja.SEINA);
+        asetaSeina(5, 2, KohteidenLuoja.SEINA);
+        asetaSeina(5, 3, KohteidenLuoja.SEINA);
+        asetaSeina(6, 3, KohteidenLuoja.SEINA);
+        asetaSeina(2, 3, KohteidenLuoja.SEINA);
+        asetaSeina(2, 4, KohteidenLuoja.SEINA);
+        asetaSeina(1, 4, KohteidenLuoja.SEINA);
+        asetaSeina(8, 3, KohteidenLuoja.SEINA);
+        asetaSeina(9, 3, KohteidenLuoja.SEINA);
+        asetaSeina(9, 2, KohteidenLuoja.SEINA);
+        asetaSeina(10, 2, KohteidenLuoja.SEINA);
+        asetaSeina(11, 2, KohteidenLuoja.SEINA);
+        asetaSeina(12, 2, KohteidenLuoja.SEINA);
+        asetaSeina(13, 2, KohteidenLuoja.SEINA);
+        asetaSeina(13, 3, KohteidenLuoja.SEINA);
+        asetaSeina(13, 4, KohteidenLuoja.SEINA);
+        asetaSeina(14, 4, KohteidenLuoja.SEINA);
+        asetaSeina(6, 5, KohteidenLuoja.SEINA);
+        asetaSeina(5, 5, KohteidenLuoja.SEINA);
+        asetaSeina(4, 5, KohteidenLuoja.SEINA);
+        asetaSeina(4, 6, KohteidenLuoja.SEINA);
+        asetaSeina(4, 7, KohteidenLuoja.SEINA);
+        asetaSeina(4, 8, KohteidenLuoja.SEINA);
+        asetaSeina(3, 8, KohteidenLuoja.SEINA);
+        asetaSeina(2, 8, KohteidenLuoja.SEINA);
+        asetaSeina(1, 8, KohteidenLuoja.SEINA);
+        asetaSeina(8, 5, KohteidenLuoja.SEINA);
+        asetaSeina(9, 5, KohteidenLuoja.SEINA);
+        asetaSeina(10, 5, KohteidenLuoja.SEINA);
+        asetaSeina(11, 5, KohteidenLuoja.SEINA);
+        asetaSeina(11, 6, KohteidenLuoja.SEINA);
+        asetaSeina(11, 7, KohteidenLuoja.SEINA);
+        asetaSeina(11, 8, KohteidenLuoja.SEINA);
+        asetaSeina(12, 8, KohteidenLuoja.SEINA);
+        asetaSeina(13, 8, KohteidenLuoja.SEINA);
+        asetaSeina(13, 9, KohteidenLuoja.SEINA);
+        asetaSeina(13, 6, KohteidenLuoja.SEINA);
+        asetaSeina(14, 6, KohteidenLuoja.SEINA);
+        asetaSeina(8, 7, KohteidenLuoja.SEINA);
+        asetaSeina(8, 8, KohteidenLuoja.SEINA);
+        asetaSeina(8, 9, KohteidenLuoja.SEINA);
+        asetaSeina(6, 7, KohteidenLuoja.SEINA);
+        asetaSeina(6, 8, KohteidenLuoja.SEINA);
+        asetaSeina(6, 9, KohteidenLuoja.SEINA);
+        
+        //asetetaan käytävät
+        asetaKaytava(1, 2);
+        asetaKaytava(2, 1);
+        asetaKaytava(4, 1);
+        asetaKaytava(5, 1);
+        asetaKaytava(6, 1);
+        asetaKaytava(6, 2);
+        asetaKaytava(7, 2);
+        asetaKaytava(7, 1);
+        asetaKaytava(8, 2);
+        asetaKaytava(8, 1);
+        asetaKaytava(9, 1);
+        asetaKaytava(10, 1);
+        asetaKaytava(11, 1);
+        asetaKaytava(12, 1);
+        asetaKaytava(13, 1);
+        asetaKaytava(14, 2);
+        asetaKaytava(4, 4);
+        asetaKaytava(5, 4);
+        asetaKaytava(6, 4);
+        asetaKaytava(7, 4);
+        asetaKaytava(8, 4);
+        asetaKaytava(9, 4);
+        asetaKaytava(3, 4);
+        asetaKaytava(3, 3);
+        asetaKaytava(3, 5);
+        asetaKaytava(1, 5);
+        asetaKaytava(2, 6);
+        asetaKaytava(10, 3);
+        asetaKaytava(11, 3);
+        asetaKaytava(11, 4);
+        asetaKaytava(12, 4);
+        asetaKaytava(12, 5);
+        asetaKaytava(12, 6);
+        asetaKaytava(13, 7);
+        asetaKaytava(14, 8);
+        asetaKaytava(6, 6);
+        asetaKaytava(7, 6);
+        asetaKaytava(8, 6);
+        asetaKaytava(9, 6);
+        asetaKaytava(9, 7);
+        asetaKaytava(9, 8);
+        asetaKaytava(9, 9);
+        asetaKaytava(10, 9);
+        asetaKaytava(5, 7);
+        asetaKaytava(5, 9);
+        asetaKaytava(2, 9);
+        
+        //asetetaan ovet
+        asetaLukittuOvi(7, 3, KohteidenLuoja.OVIPRONSSIAVAAJA);
+        asetaLukittuOvi(13, 5, KohteidenLuoja.OVIPRONSSIAVAAJA);
+        asetaLukittuOvi(7, 5, KohteidenLuoja.OVIHOPEAAVAAJA);
+        asetaLukittuOvi(7, 7, KohteidenLuoja.OVIKULTAAVAAJA);
+        
+        //asetetaan ansat
+        asetaAnsa(3, 6, KohteidenLuoja.ANSALIEKKI);
+        asetaAnsa(1, 6, KohteidenLuoja.ANSALIEKKI);
+        asetaAnsa(5, 6, KohteidenLuoja.ANSALIEKKI);
+        asetaAnsa(5, 8, KohteidenLuoja.ANSALIEKKI);
+        asetaAnsa(4, 9, KohteidenLuoja.ANSALIEKKI);
+        asetaAnsa(3, 9, KohteidenLuoja.ANSALIEKKI);
+        asetaAnsa(7, 8, KohteidenLuoja.ANSATHEEND);
+        
+        //asetetaan hirviöt
+        asetaHirvio(3, 1, HirvionLuoja.NOKKELANOITA);
+        asetaHirvio(1, 1, HirvionLuoja.SYNKKA);
+        asetaHirvio(10, 4, HirvionLuoja.LUURANKO);
+        asetaHirvio(14, 1, HirvionLuoja.EPAKUOLLUTVELHO);
+        asetaHirvio(12, 7, HirvionLuoja.EPAKUOLLUTVELHO);
+        asetaHirvio(14, 7, HirvionLuoja.EPAKUOLLUTVELHO);
+        asetaHirvio(2, 5, HirvionLuoja.EPAKUOLLUTJATTILAINEN);
+        asetaHirvio(2, 7, HirvionLuoja.EPAKUOLLUTJATTILAINEN);
+        asetaHirvio(14, 9, HirvionLuoja.EPAKUOLLUTJATTIPRONSSIAVAIN);
+        asetaHirvio(1, 9, HirvionLuoja.PIRU);
+        asetaHirvio(11, 9, HirvionLuoja.LANGENNUTENKELI);
+        
+        //asetetaan aarteet
+        asetaAarre(14, 3, KohteidenLuoja.AARREJOSSAPRONSSIAVAIN);
+        asetaAarre(4, 3, KohteidenLuoja.AARRE1VOIDE1RIIMU);
+        asetaAarre(1, 7, KohteidenLuoja.AARREJOSSAHOPEAAVAIN);
+        asetaAarre(10, 6, KohteidenLuoja.AARRE1VOIDE1RIIMU);
+        asetaAarre(10, 7, KohteidenLuoja.AARRE1VOIDE1RIIMU);
+        asetaAarre(10, 8, KohteidenLuoja.AARRE1VOIDE1RIIMU);
+        asetaAarre(1, 3, KohteidenLuoja.AARREKYPARA3);
+        asetaAarre(12, 3, KohteidenLuoja.AARREMIEKKA3);
+        asetaAarre(14, 5, KohteidenLuoja.AARREJUMALTENHAARNISKA);
+        asetaAarre(12, 9, KohteidenLuoja.AARRE5VOIDETTA);
+        asetaAarre(3, 7, KohteidenLuoja.AARREJUMALTENMEDALJONKI);
+        asetaAarre(7, 9, KohteidenLuoja.AARRE2VOIDETTA);
     }
 
     /**

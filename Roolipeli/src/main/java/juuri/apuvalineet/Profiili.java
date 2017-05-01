@@ -5,16 +5,16 @@ import juuri.sovelluslogiikka.esineet.TaisteluEsine;
 import juuri.sovelluslogiikka.esineet.YleisEsine;
 
 /**
- * Profiili kuvastaa hahmon, hirviÃ¶n tai esineen ominaisuuksia. Profiiliin
- * kuuluu seuraavat ominaisuudet: voima, taikavoima, elÃ¤mÃ¤pisteet, ketteryys
+ * Profiili kuvastaa hahmon, hirviön tai esineen ominaisuuksia. Profiiliin
+ * kuuluu seuraavat ominaisuudet: voima, taikavoima, elämäpisteet, ketteryys
  * ja taikapuolustus.
  *
  * Puolustusvalmius liittyy taisteluihin: pelaaja voi hyökkäämisen sijaan
  * valmistella hahmoa vastaan tulevaan hyökkäykseen. Tämä parantaa pelaajan
  * mahdollisuutta torjua puolustus. Samoin toimii hyökkäysvalmius.
  *
- * Pelaajan ja hirviÃ¶n profiili muuttuu sen mukaan, mitÃ¤ esineitÃ¤ hahmo tai
- * hirviÃ¶ kÃ¤yttÃ¤Ã¤.
+ * Pelaajan ja hirviön profiili muuttuu sen mukaan, mitä esineitä hahmo tai
+ * hirviö käyttää.
  */
 public class Profiili {
 
@@ -150,8 +150,8 @@ public class Profiili {
         this.taikaVoima = 1;
         this.taikaPuolustus = 1;
         this.ketteryys = 3;
-        this.elamaPisteet = 11;
-        this.nykyinenElamaPisteet = 11;
+        this.elamaPisteet = 15;
+        this.nykyinenElamaPisteet = 15;
     }
     
     /**
@@ -168,8 +168,8 @@ public class Profiili {
         this.taikaVoima = 4;
         this.taikaPuolustus = 4;
         this.ketteryys = 2;
-        this.elamaPisteet = 10;
-        this.nykyinenElamaPisteet = 10;
+        this.elamaPisteet = 13;
+        this.nykyinenElamaPisteet = 13;
     }
     
     /**
@@ -186,8 +186,8 @@ public class Profiili {
         this.taikaVoima = 2;
         this.taikaPuolustus = 2;
         this.ketteryys = 4;
-        this.elamaPisteet = 13;
-        this.nykyinenElamaPisteet = 13;
+        this.elamaPisteet = 17;
+        this.nykyinenElamaPisteet = 17;
     }
     
     /**
@@ -225,11 +225,11 @@ public class Profiili {
     }
 
     /**
-     * Metodi lisÃ¤Ã¤ esineen antamat kyvyt profiilille. Jos siis hahmo rupeaa
-     * kÃ¤yttÃ¤mÃ¤Ã¤ miekkaa, lisÃ¤tÃ¤Ã¤n miekan ominaisuudet eli miekan
+     * Metodi lisää esineen antamat kyvyt profiilille. Jos siis hahmo rupeaa
+     * käyttämään miekkaa, lisättävän miekan ominaisuudet eli miekan
      * profiili hahmon profiiliin.
      *
-     * @param esine lisÃ¤ttÃ¤vÃ¤ esine
+     * @param esine lisättävä esine
      */
     public void asetaEsine(TaisteluEsine esine) {
         Profiili esineenProfiili = esine.getProfiili();
@@ -242,8 +242,8 @@ public class Profiili {
     }
 
     /**
-     * Metodi poistaa esineen profiilin kÃ¤ytÃ¶stÃ¤. Profiilin ominaisuuksista
-     * siis vÃ¤hennetÃ¤Ã¤n esineen profiilin ominaisuudet.
+     * Metodi poistaa esineen profiilin käytöstä. Profiilin ominaisuuksista
+     * siis vähennetään esineen profiilin ominaisuudet.
      *
      * @param esine poistettava esine
      */

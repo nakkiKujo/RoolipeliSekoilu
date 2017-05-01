@@ -33,17 +33,24 @@ public class KohteidenLuoja {
     public static final int AARREJOSSAPRONSSIAVAIN = 201;
     public static final int AARREJOSSAMIEKKA1 = 211;
     public static final int AARREJOSSAMIEKKA2 = 212;
+    public static final int AARREMIEKKA3 = 213;
     public static final int AARREJOSSARIIMUJAJAMEDALJONKI = 221;
     public static final int AARREJOSSARIIMUJATAIKASAUVA = 222;
     public static final int AARRE2VOIDETTA = 231;
+    public static final int AARRE5VOIDETTA = 233;
     public static final int AARRE1VOIDE1RIIMU = 232;
     public static final int AARREKYPARA1 = 24;
     public static final int AARREKYPARA2 = 241;
+    public static final int AARREKYPARA3 = 242;
     public static final int AARREKAAPUTAIHAARNISKA = 25;
+    public static final int AARREJUMALTENHAARNISKA = 261;
+    public static final int AARREJUMALTENMEDALJONKI = 262;
 
-    public static final int ANSAPIIKKI = 30;
-    public static final int ANSANUOLI = 31;
-    public static final int ANSAKUILU = 32;
+    public static final int ANSAPIIKKI = 40;
+    public static final int ANSANUOLI = 41;
+    public static final int ANSAKUILU = 42;
+    public static final int ANSALIEKKI = 43;
+    public static final int ANSATHEEND = 44;
 
     public static final int PORTAAT = Kohde.PORTAAT;
 
@@ -103,6 +110,16 @@ public class KohteidenLuoja {
             lista.add(miekka);
             return luoAarre(lista, "vanha seikkailijan reppu");
         }
+        if (koodi == KohteidenLuoja.AARREMIEKKA3) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            TaisteluEsine miekka = new TaisteluEsine("Tulinen miekka", Esine.MIEKKA);
+            miekka.getProfiili().lisaaVoima(3);
+            miekka.getProfiili().lisaaKetteryys(1);
+            miekka.getProfiili().lisaaElamaPisteet(2);
+            miekka.getProfiili().lisaaTaikaPuolustus(2);
+            lista.add(miekka);
+            return luoAarre(lista, "vanha seikkailijan reppu");
+        }
         if (koodi == KohteidenLuoja.AARREJOSSARIIMUJATAIKASAUVA) {
             ArrayList<Esine> lista = new ArrayList<>();
             TaisteluEsine sauva = new TaisteluEsine("Vanha taikasauva", Esine.MIEKKA);
@@ -122,6 +139,15 @@ public class KohteidenLuoja {
         }
         if (koodi == KohteidenLuoja.AARRE2VOIDETTA) {
             ArrayList<Esine> lista = new ArrayList<>();
+            lista.add(Esine.PARANTAVAVOIDE);
+            lista.add(Esine.PARANTAVAVOIDE);
+            return luoAarre(lista, "luiden ympäröimä säkki");
+        }
+        if(koodi == KohteidenLuoja.AARRE5VOIDETTA) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            lista.add(Esine.PARANTAVAVOIDE);
+            lista.add(Esine.PARANTAVAVOIDE);
+            lista.add(Esine.PARANTAVAVOIDE);
             lista.add(Esine.PARANTAVAVOIDE);
             lista.add(Esine.PARANTAVAVOIDE);
             return luoAarre(lista, "luiden ympäröimä säkki");
@@ -149,12 +175,21 @@ public class KohteidenLuoja {
             lista.add(velhoHattu);
             return luoAarre(lista, "luuranko, jolla on päässä päähineitä");
         }
-        if(koodi == KohteidenLuoja.AARREKYPARA2) {
+        if (koodi == KohteidenLuoja.AARREKYPARA2) {
             ArrayList<Esine> lista = new ArrayList<>();
             TaisteluEsine kypara = new TaisteluEsine("Ritarin kypärä", Esine.KYPARA);
             kypara.getProfiili().lisaaElamaPisteet(2);
             kypara.getProfiili().lisaaVoima(2);
             kypara.getProfiili().lisaaKetteryys(1);
+            lista.add(kypara);
+            return luoAarre(lista, "luuranko, jolla on päässä kypärä");
+        }
+        if (koodi == KohteidenLuoja.AARREKYPARA3) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            TaisteluEsine kypara = new TaisteluEsine("Sankarin kypärä", Esine.KYPARA);
+            kypara.getProfiili().lisaaElamaPisteet(3);
+            kypara.getProfiili().lisaaVoima(3);
+            kypara.getProfiili().lisaaKetteryys(2);
             lista.add(kypara);
             return luoAarre(lista, "luuranko, jolla on päässä kypärä");
         }
@@ -178,7 +213,26 @@ public class KohteidenLuoja {
                 lista.add(haarniska);
             }
 
-            return luoAarre(lista, "luuranko, jolla on päässä kypärä");
+            return luoAarre(lista, "mystinen arkku");
+        }
+        if (koodi == KohteidenLuoja.AARREJUMALTENHAARNISKA) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            TaisteluEsine haarniska = new TaisteluEsine("Jumalten haarniska", Esine.TORSO);
+            haarniska.getProfiili().lisaaElamaPisteet(4);
+            haarniska.getProfiili().lisaaTaikaPuolustus(3);
+            haarniska.getProfiili().lisaaVoima(1);
+            lista.add(haarniska);
+            
+            return luoAarre(lista, "mystinen arkku");
+        }
+        if(koodi == KohteidenLuoja.AARREJUMALTENMEDALJONKI) {
+            ArrayList<Esine> lista = new ArrayList<>();
+            TaisteluEsine medaljonki = new TaisteluEsine("Jumalten medaljonki", Esine.MEDALJONKI);
+            medaljonki.getProfiili().lisaaElamaPisteet(2);
+            medaljonki.getProfiili().lisaaVoima(2);
+            medaljonki.getProfiili().lisaaTaikaVoima(2);
+            lista.add(medaljonki);
+            return luoAarre(lista, "mystinen laatikko");
         }
 
         //ansat
@@ -190,6 +244,12 @@ public class KohteidenLuoja {
         }
         if (koodi == KohteidenLuoja.ANSAKUILU) {
             return luoAnsa("kuiluansa", 10);
+        }
+        if (koodi == KohteidenLuoja.ANSALIEKKI) {
+            return luoAnsa("helvetilliseen liekkiansa", 10);
+        }
+        if(koodi == KohteidenLuoja.ANSATHEEND) {
+            return luoAnsa("pelin viimeiseen ansa", 1000);
         }
 
         //portaat

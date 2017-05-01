@@ -1106,7 +1106,6 @@ public class KayttoliittymaXX extends JFrame {
             KoillinenPaneeli.repaint();
         }
         KoillinenPaneeli.repaint();
-
     }
 
     private void tapahtumaVaihtoehtoYksiButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -1865,6 +1864,7 @@ public class KayttoliittymaXX extends JFrame {
         } else if (esine1.onkoTaisteluEsine()) {
             Esine1ButtonReppu.setEnabled(true);
             Esine1ButtonReppu.setText(esine1.getNimi());
+            Esine1ButtonReppu.setToolTipText(esine1.getNimi());
 
             if (esine1.getOnkoKaytossa()) {
                 Esine1ButtonReppu.setBackground(java.awt.Color.GREEN);
@@ -1875,6 +1875,7 @@ public class KayttoliittymaXX extends JFrame {
         } else {
             Esine1ButtonReppu.setEnabled(false);
             Esine1ButtonReppu.setText(esine1.getNimi());
+            Esine1ButtonReppu.setToolTipText(esine1.getNimi());
             PudotaEsine1Button.setEnabled(true);
         }
 
@@ -1885,6 +1886,7 @@ public class KayttoliittymaXX extends JFrame {
         } else if (esine2.onkoTaisteluEsine()) {
             Esine2ButtonReppu.setEnabled(true);
             Esine2ButtonReppu.setText(esine2.getNimi());
+            Esine2ButtonReppu.setToolTipText(esine2.getNimi());
 
             if (esine2.getOnkoKaytossa()) {
                 Esine2ButtonReppu.setBackground(java.awt.Color.GREEN);
@@ -1896,6 +1898,7 @@ public class KayttoliittymaXX extends JFrame {
         } else {
             Esine2ButtonReppu.setEnabled(false);
             Esine2ButtonReppu.setText(esine2.getNimi());
+            Esine2ButtonReppu.setToolTipText(esine2.getNimi());
             PudotaEsine2Button.setEnabled(true);
         }
 
@@ -1906,6 +1909,7 @@ public class KayttoliittymaXX extends JFrame {
         } else if (esine3.onkoTaisteluEsine()) {
             Esine3ButtonReppu.setEnabled(true);
             Esine3ButtonReppu.setText(esine3.getNimi());
+            Esine3ButtonReppu.setToolTipText(esine3.getNimi());
 
             if (esine3.getOnkoKaytossa()) {
                 Esine3ButtonReppu.setBackground(java.awt.Color.GREEN);
@@ -1917,6 +1921,7 @@ public class KayttoliittymaXX extends JFrame {
         } else {
             Esine3ButtonReppu.setEnabled(false);
             Esine3ButtonReppu.setText(esine3.getNimi());
+            Esine3ButtonReppu.setToolTipText(esine3.getNimi());
             PudotaEsine3Button.setEnabled(true);
         }
 
@@ -1927,6 +1932,7 @@ public class KayttoliittymaXX extends JFrame {
         } else if (esine4.onkoTaisteluEsine()) {
             Esine4ButtonReppu.setEnabled(true);
             Esine4ButtonReppu.setText(esine4.getNimi());
+            Esine4ButtonReppu.setToolTipText(esine4.getNimi());
 
             if (esine4.getOnkoKaytossa()) {
                 Esine4ButtonReppu.setBackground(java.awt.Color.GREEN);
@@ -1938,6 +1944,7 @@ public class KayttoliittymaXX extends JFrame {
         } else {
             Esine4ButtonReppu.setEnabled(false);
             Esine4ButtonReppu.setText(esine4.getNimi());
+            Esine4ButtonReppu.setToolTipText(esine4.getNimi());
             PudotaEsine4Button.setEnabled(true);
         }
 
@@ -1948,6 +1955,7 @@ public class KayttoliittymaXX extends JFrame {
         } else if (esine5.onkoTaisteluEsine()) {
             Esine5ButtonReppu.setEnabled(true);
             Esine5ButtonReppu.setText(esine5.getNimi());
+            Esine5ButtonReppu.setToolTipText(esine5.getNimi());
 
             if (esine5.getOnkoKaytossa()) {
                 Esine5ButtonReppu.setBackground(java.awt.Color.GREEN);
@@ -1959,6 +1967,7 @@ public class KayttoliittymaXX extends JFrame {
         } else {
             Esine5ButtonReppu.setEnabled(false);
             Esine5ButtonReppu.setText(esine5.getNimi());
+            Esine5ButtonReppu.setToolTipText(esine5.getNimi());
             PudotaEsine5Button.setEnabled(true);
         }
 
@@ -1969,6 +1978,7 @@ public class KayttoliittymaXX extends JFrame {
         } else if (esine6.onkoTaisteluEsine()) {
             Esine6ButtonReppu.setEnabled(true);
             Esine6ButtonReppu.setText(esine6.getNimi());
+            Esine6ButtonReppu.setToolTipText(esine6.getNimi());
 
             if (esine6.getOnkoKaytossa()) {
                 Esine6ButtonReppu.setBackground(java.awt.Color.GREEN);
@@ -1980,6 +1990,7 @@ public class KayttoliittymaXX extends JFrame {
         } else {
             Esine6ButtonReppu.setEnabled(false);
             Esine6ButtonReppu.setText(esine6.getNimi());
+            Esine6ButtonReppu.setToolTipText(esine6.getNimi());
             PudotaEsine6Button.setEnabled(true);
         }
 

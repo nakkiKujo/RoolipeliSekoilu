@@ -26,7 +26,7 @@ public class AarreTest {
         Esine lisattavaEsine = new YleisEsine("haarukka", Esine.MIEKKA);
         aarre.lisaaAarre(lisattavaEsine);
         
-        ArrayList<Esine> esineLista = aarre.keraaAarteet();
+        ArrayList<Esine> esineLista = aarre.getAarteet();
         boolean arvo = esineLista.contains(lisattavaEsine);
         assertTrue(arvo);
     }
@@ -41,12 +41,10 @@ public class AarreTest {
         aarre.lisaaAarre(toinen);
         aarre.lisaaAarre(kolmas);
         
-        ArrayList<Esine> esineLista = aarre.keraaAarteet();
+        ArrayList<Esine> esineLista = aarre.getAarteet();
         assertTrue(esineLista.contains(lisattava));
         assertTrue(esineLista.contains(toinen));
         assertTrue(esineLista.contains(kolmas));
-        
-        assertTrue(aarre.keraaAarteet().isEmpty());
     }
     
     

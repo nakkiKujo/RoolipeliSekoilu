@@ -1020,6 +1020,8 @@ public class Kayttoliittyma extends JFrame {
             KaakkoPaneeli.add(InfoPaneeli);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
+
+            KoillinenPaneeli.repaint();
         }
         KoillinenPaneeli.repaint();
     }//GEN-LAST:event_HahmoLiikkuuOikealleButtonActionPerformed
@@ -1046,6 +1048,8 @@ public class Kayttoliittyma extends JFrame {
             KaakkoPaneeli.add(InfoPaneeli);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
+
+            KoillinenPaneeli.repaint();
         }
         KoillinenPaneeli.repaint();
     }//GEN-LAST:event_HahmoLiikkuuYlosButtonActionPerformed
@@ -1072,6 +1076,8 @@ public class Kayttoliittyma extends JFrame {
             KaakkoPaneeli.add(InfoPaneeli);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
+
+            KoillinenPaneeli.repaint();
         }
         KoillinenPaneeli.repaint();
     }//GEN-LAST:event_HahmoLiikkuuAlasButtonActionPerformed
@@ -1098,9 +1104,10 @@ public class Kayttoliittyma extends JFrame {
             KaakkoPaneeli.add(InfoPaneeli);
             KaakkoPaneeli.repaint();
             KaakkoPaneeli.revalidate();
+
+            KoillinenPaneeli.repaint();
         }
         KoillinenPaneeli.repaint();
-
     }//GEN-LAST:event_HahmoLiikkuuVasemmalleButtonActionPerformed
 
     private void tapahtumaVaihtoehtoYksiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tapahtumaVaihtoehtoYksiButtonActionPerformed
@@ -1766,7 +1773,7 @@ public class Kayttoliittyma extends JFrame {
 
     private void UusiPeliButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UusiPeliButtonActionPerformed
         this.peli = new Peli();
-        
+
         HahmonNimiTextField.setText(null);
         AmmatinValintaGroup.clearSelection();
 

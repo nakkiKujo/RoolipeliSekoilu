@@ -1,5 +1,6 @@
 package juuri.sovelluslogiikka.tapahtumat;
 
+import java.util.ArrayList;
 import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.hahmo.Hahmo;
 import juuri.sovelluslogiikka.hahmo.Reppu;
@@ -40,12 +41,22 @@ public class AarteenLoytaminen extends Tapahtuma {
     @Override
     public void toteutaVaihtoehtoYksi(Hahmo hahmo, Luolasto luola) {
         Reppu hahmonReppu = hahmo.getReppu();
-
-        for (Esine aarteestaSaatuEsine : aarre.keraaAarteet()) {
-            hahmonReppu.asetaEsineReppuun(aarteestaSaatuEsine);
+        ArrayList<Esine> poistettavatAarteet = new ArrayList<>();
+        
+        for (Esine aarteestaSaatuEsine : aarre.getAarteet()) {
+            boolean mahtuiko = hahmonReppu.asetaEsineReppuun(aarteestaSaatuEsine);
+            if (mahtuiko) {
+                poistettavatAarteet.add(aarteestaSaatuEsine);
+            }
+        }
+        
+        for (Esine poistettava : poistettavatAarteet) {
+            aarre.poistaEsine(poistettava);
         }
 
-        luola.poistaKohde(aarre);
+        if (aarre.getAarteet().isEmpty()) {
+            luola.poistaKohde(aarre);
+        }
     }
 
     @Override

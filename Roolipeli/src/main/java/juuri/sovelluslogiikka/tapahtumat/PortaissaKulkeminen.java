@@ -33,6 +33,9 @@ public class PortaissaKulkeminen extends Tapahtuma {
         if (luola.getNykyinenTaso() == 2) {
             hahmo.getSijainti().setSijainti(7, 4);
         }
+        if(luola.getNykyinenTaso() == 3) {
+            hahmo.getSijainti().setSijainti(7, 1);
+        }
 
     }
 

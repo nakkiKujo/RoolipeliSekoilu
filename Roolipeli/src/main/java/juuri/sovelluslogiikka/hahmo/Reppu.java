@@ -23,80 +23,86 @@ public class Reppu {
         this.riimuja = 0;
         this.voiteita = 0;
     }
-    
+
     public ArrayList<Esine> getEsineet() {
         return this.esineet;
     }
-    
+
     public int getRiimuja() {
         return this.riimuja;
     }
-    
+
     public int getVoiteita() {
         return this.voiteita;
     }
-    
+
     public Esine getEsine1() {
-        if(esineet.isEmpty()) {
+        if (esineet.isEmpty()) {
             return null;
         }
         return esineet.get(0);
     }
-    
+
     public Esine getEsine2() {
-        if(esineet.size() <= 1) {
+        if (esineet.size() <= 1) {
             return null;
         }
         return esineet.get(1);
     }
-    
+
     public Esine getEsine3() {
-        if(esineet.size() <= 2) {
+        if (esineet.size() <= 2) {
             return null;
         }
         return esineet.get(2);
     }
-    
+
     public Esine getEsine4() {
-        if(esineet.size() <= 3) {
+        if (esineet.size() <= 3) {
             return null;
         }
         return esineet.get(3);
     }
-    
+
     public Esine getEsine5() {
-        if(esineet.size() <= 4) {
+        if (esineet.size() <= 4) {
             return null;
         }
         return esineet.get(4);
     }
-    
+
     public Esine getEsine6() {
-        if(esineet.size() <= 5) {
+        if (esineet.size() <= 5) {
             return null;
         }
         return esineet.get(5);
     }
-    
 
     /**
      * Metodi asettaa esineen reppuun. Jos reppu on täynnä, ei esinettä laiteta
      * reppuun.
      *
+     * Jos esine saadaan reppuun, palautetaan true. Jos esine ei mahdu reppuun,
+     * palautetaan false.
+     *
      * @param ee Reppuun asetettava esine.
+     * @return mahtuiko esine reppuun
      */
-    public void asetaEsineReppuun(Esine ee) {
+    public boolean asetaEsineReppuun(Esine ee) {
         int esineenKoodi = ee.getKoodi();
 
         if (esineenKoodi == Esine.RIIMU.getKoodi()) {
             riimuja++;
+            return true;
         } else if (esineenKoodi == Esine.PARANTAVAVOIDE.getKoodi()) {
             voiteita++;
+            return true;
         } else {
             if (esineet.size() == 6) {
-                return;
+                return false;
             }
             esineet.add(ee);
+            return true;
         }
     }
 
