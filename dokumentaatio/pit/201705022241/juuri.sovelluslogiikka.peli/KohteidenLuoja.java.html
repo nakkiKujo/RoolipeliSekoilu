@@ -1,0 +1,5897 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>KohteidenLuoja.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package juuri.sovelluslogiikka.peli;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Random;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.esineet.Esine;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.esineet.TaisteluEsine;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.esineet.YleisEsine;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.maailma.Aarre;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.maailma.Ansa;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.maailma.Kohde;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.maailma.Ovi;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.maailma.Portaat;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.maailma.Seina;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminen;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminen;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.tapahtumat.OvenAvaus;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_17'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminen;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_19'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * T&#195;&#164;m&#195;&#164; luokka vastaa luolaston kohteiden luomisesta.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_21'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_22'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author PenaJones</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_24'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>public class KohteidenLuoja {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_25'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_26'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int SEINA = Kohde.SEINA;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_27'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int OVIPRONSSIAVAAJA = 10;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int OVIHOPEAAVAAJA = 11;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_29'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int OVIKULTAAVAAJA = 12;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_30'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int OVIAVOIN = 13;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_31'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_32'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREJOSSAHOPEAAVAIN = 200;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_33'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREJOSSAPRONSSIAVAIN = 201;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_34'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREJOSSAMIEKKA1 = 211;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_35'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREJOSSAMIEKKA2 = 212;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_36'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREMIEKKA3 = 213;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_37'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREJOSSARIIMUJAJAMEDALJONKI = 221;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_38'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREJOSSARIIMUJATAIKASAUVA = 222;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_39'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARRE2VOIDETTA = 231;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_40'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARRE5VOIDETTA = 233;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_41'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARRE1VOIDE1RIIMU = 232;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_42'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREKYPARA1 = 24;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_43'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREKYPARA2 = 241;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_44'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREKYPARA3 = 242;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_45'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREKAAPUTAIHAARNISKA = 25;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_46'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREJUMALTENHAARNISKA = 261;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_47'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int AARREJUMALTENMEDALJONKI = 262;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_48'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_49'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int ANSAPIIKKI = 40;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_50'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int ANSANUOLI = 41;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_51'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int ANSAKUILU = 42;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_52'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int ANSALIEKKI = 43;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_53'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int ANSATHEEND = 44;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_54'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_55'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final int PORTAAT = Kohde.PORTAAT;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_56'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_57'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_58'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Metodi kutsuu parametrina annetun koodin m&#195;&#164;&#195;&#164;ritt&#195;&#164;m&#195;&#164;&#195;&#164; metodia ja luo</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_59'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * kohteen. Luotu kohde palautetaan.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_60'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_61'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Annettava koodi on KohteidenLuojan staattinen attribuutti.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_62'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_63'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param koodi luotavan kohteen luontikoodi</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_64'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return luotu kohde</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_65'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_66'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static Kohde luoKohde(int koodi) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_67'/>
+67
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_67'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.SEINA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_68'/>
+68
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_68'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoSeina();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_69'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_70'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_71'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //ovet</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_72'/>
+72
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_72'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.OVIAVOIN) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_73'/>
+73
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_73'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoOvi(null, &#34;puinen ovi&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_74'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_75'/>
+75
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_75'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.OVIPRONSSIAVAAJA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_76'/>
+76
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_76'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoOvi(Esine.PRONSSIAVAIN, &#34;puinen ovi&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_77'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_78'/>
+78
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_78'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.OVIHOPEAAVAAJA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_79'/>
+79
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_79'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoOvi(Esine.HOPEAAVAIN, &#34;tuhti metallinen ovi&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_80'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_81'/>
+81
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_81'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.OVIKULTAAVAAJA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_82'/>
+82
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_82'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoOvi(Esine.KULTAAVAIN, &#34;koristeellinen ovi&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_83'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_84'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_85'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //aarteet</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_86'/>
+86
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_86'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREJOSSAPRONSSIAVAIN) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_87'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_88'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.PRONSSIAVAIN);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_89'/>
+89
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_89'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;pieni metallinen lipas&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_90'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_91'/>
+91
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_91'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREJOSSAHOPEAAVAIN) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_92'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_93'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.HOPEAAVAIN);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_94'/>
+94
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_94'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;suuri aarrearkku&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_95'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_96'/>
+96
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_96'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREJOSSAMIEKKA1) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_97'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_98'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine miekka = new TaisteluEsine(&#34;Kelpo miekka&#34;, Esine.MIEKKA);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_99'/>
+99
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_99'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            miekka.getProfiili().lisaaVoima(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_100'/>
+100
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_100'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            miekka.getProfiili().lisaaKetteryys(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_101'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(miekka);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_102'/>
+102
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_102'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;vanha seikkailijan reppu&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_103'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_104'/>
+104
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_104'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREJOSSAMIEKKA2) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_105'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_106'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine miekka = new TaisteluEsine(&#34;Roima miekka&#34;, Esine.MIEKKA);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_107'/>
+107
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_107'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            miekka.getProfiili().lisaaVoima(3);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_108'/>
+108
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_108'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            miekka.getProfiili().lisaaKetteryys(-1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_109'/>
+109
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_109'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            miekka.getProfiili().lisaaElamaPisteet(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_110'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(miekka);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_111'/>
+111
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_111'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;vanha seikkailijan reppu&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_112'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_113'/>
+113
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_113'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREMIEKKA3) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_114'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_115'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine miekka = new TaisteluEsine(&#34;Tulinen miekka&#34;, Esine.MIEKKA);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_116'/>
+116
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_116'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            miekka.getProfiili().lisaaVoima(3);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_117'/>
+117
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_117'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            miekka.getProfiili().lisaaKetteryys(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_118'/>
+118
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_118'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            miekka.getProfiili().lisaaElamaPisteet(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_119'/>
+119
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_119'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            miekka.getProfiili().lisaaTaikaPuolustus(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_120'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(miekka);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_121'/>
+121
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_121'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;vanha seikkailijan reppu&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_122'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_123'/>
+123
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_123'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREJOSSARIIMUJATAIKASAUVA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_124'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_125'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine sauva = new TaisteluEsine(&#34;Vanha taikasauva&#34;, Esine.MIEKKA);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_126'/>
+126
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_126'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            sauva.getProfiili().lisaaTaikaVoima(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_127'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(sauva);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_128'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.RIIMU);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_129'/>
+129
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_129'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;taianomainen laatikko&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_130'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_131'/>
+131
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_131'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREJOSSARIIMUJAJAMEDALJONKI) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_132'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_133'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine medaljonki = new TaisteluEsine(&#34;Uhmakas medaljonki&#34;, Esine.MEDALJONKI);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_134'/>
+134
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_134'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            medaljonki.getProfiili().lisaaElamaPisteet(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_135'/>
+135
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_135'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            medaljonki.getProfiili().lisaaVoima(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_136'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(medaljonki);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_137'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.RIIMU);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_138'/>
+138
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_138'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;jykev&#195;&#164; puinen laatikko&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_139'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_140'/>
+140
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_140'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARRE2VOIDETTA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_141'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_142'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.PARANTAVAVOIDE);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_143'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.PARANTAVAVOIDE);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_144'/>
+144
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_144'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;luiden ymp&#195;&#164;r&#195;&#182;im&#195;&#164; s&#195;&#164;kki&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_145'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_146'/>
+146
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_146'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARRE5VOIDETTA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_147'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_148'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.PARANTAVAVOIDE);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_149'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.PARANTAVAVOIDE);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_150'/>
+150
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_150'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.PARANTAVAVOIDE);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_151'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.PARANTAVAVOIDE);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_152'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.PARANTAVAVOIDE);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_153'/>
+153
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_153'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;luiden ymp&#195;&#164;r&#195;&#182;im&#195;&#164; s&#195;&#164;kki&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_154'/>
+154
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_154'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_155'/>
+155
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_155'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARRE1VOIDE1RIIMU) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_156'/>
+156
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_156'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_157'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.PARANTAVAVOIDE);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_158'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(Esine.RIIMU);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_159'/>
+159
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_159'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;luiden ymp&#195;&#164;r&#195;&#182;im&#195;&#164; s&#195;&#164;kki&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_160'/>
+160
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_160'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_161'/>
+161
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_161'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREKYPARA1) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_162'/>
+162
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_162'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_163'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine kypara = new TaisteluEsine(&#34;Maallikon kyp&#195;&#164;r&#195;&#164;&#34;, Esine.KYPARA);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_164'/>
+164
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_164'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaElamaPisteet(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_165'/>
+165
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_165'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaVoima(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_166'/>
+166
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_166'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaKetteryys(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_167'/>
+167
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_167'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaTaikaPuolustus(-2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_168'/>
+168
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_168'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaTaikaVoima(-1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_169'/>
+169
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_169'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine velhoHattu = new TaisteluEsine(&#34;Nuhjuinen hattu&#34;, Esine.KYPARA);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_170'/>
+170
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_170'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            velhoHattu.getProfiili().lisaaElamaPisteet(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_171'/>
+171
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_171'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            velhoHattu.getProfiili().lisaaKetteryys(-1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_172'/>
+172
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_172'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            velhoHattu.getProfiili().lisaaTaikaVoima(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_173'/>
+173
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_173'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            velhoHattu.getProfiili().lisaaTaikaPuolustus(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_174'/>
+174
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_174'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(kypara);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_175'/>
+175
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_175'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(velhoHattu);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_176'/>
+176
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_176'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;luuranko, jolla on p&#195;&#164;&#195;&#164;ss&#195;&#164; p&#195;&#164;&#195;&#164;hineit&#195;&#164;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_177'/>
+177
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_177'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_178'/>
+178
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_178'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREKYPARA2) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_179'/>
+179
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_179'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_180'/>
+180
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_180'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine kypara = new TaisteluEsine(&#34;Ritarin kyp&#195;&#164;r&#195;&#164;&#34;, Esine.KYPARA);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_181'/>
+181
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_181'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaElamaPisteet(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_182'/>
+182
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_182'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaVoima(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_183'/>
+183
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_183'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaKetteryys(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_184'/>
+184
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_184'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(kypara);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_185'/>
+185
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_185'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;luuranko, jolla on p&#195;&#164;&#195;&#164;ss&#195;&#164; kyp&#195;&#164;r&#195;&#164;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_186'/>
+186
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_186'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_187'/>
+187
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_187'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREKYPARA3) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_188'/>
+188
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_188'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_189'/>
+189
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_189'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine kypara = new TaisteluEsine(&#34;Sankarin kyp&#195;&#164;r&#195;&#164;&#34;, Esine.KYPARA);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_190'/>
+190
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_190'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaElamaPisteet(3);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_191'/>
+191
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_191'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaVoima(3);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_192'/>
+192
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_192'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            kypara.getProfiili().lisaaKetteryys(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_193'/>
+193
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_193'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(kypara);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_194'/>
+194
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_194'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;luuranko, jolla on p&#195;&#164;&#195;&#164;ss&#195;&#164; kyp&#195;&#164;r&#195;&#164;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_195'/>
+195
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_195'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_196'/>
+196
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_196'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREKAAPUTAIHAARNISKA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_197'/>
+197
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_197'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            Random arpa = new Random();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_198'/>
+198
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_198'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_199'/>
+199
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_199'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_200'/>
+200
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_200'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            int luku = arpa.nextInt(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_201'/>
+201
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_201'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (luku == 0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_202'/>
+202
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_202'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                TaisteluEsine kaapu = new TaisteluEsine(&#34;Velhon kaapu&#34;, Esine.TORSO);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_203'/>
+203
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_203'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                kaapu.getProfiili().lisaaElamaPisteet(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_204'/>
+204
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_204'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                kaapu.getProfiili().lisaaTaikaPuolustus(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_205'/>
+205
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_205'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                kaapu.getProfiili().lisaaTaikaVoima(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_206'/>
+206
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_206'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                kaapu.getProfiili().lisaaKetteryys(-2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_207'/>
+207
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_207'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                lista.add(kaapu);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_208'/>
+208
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_208'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_209'/>
+209
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_209'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                TaisteluEsine haarniska = new TaisteluEsine(&#34;Soturin haarniska&#34;, Esine.TORSO);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_210'/>
+210
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_210'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                haarniska.getProfiili().lisaaElamaPisteet(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_211'/>
+211
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_211'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                haarniska.getProfiili().lisaaTaikaPuolustus(-1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_212'/>
+212
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_212'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                haarniska.getProfiili().lisaaVoima(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_213'/>
+213
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_213'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                lista.add(haarniska);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_214'/>
+214
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_214'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_215'/>
+215
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_215'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_216'/>
+216
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_216'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;mystinen arkku&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_217'/>
+217
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_217'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_218'/>
+218
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_218'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREJUMALTENHAARNISKA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_219'/>
+219
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_219'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_220'/>
+220
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_220'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine haarniska = new TaisteluEsine(&#34;Jumalten haarniska&#34;, Esine.TORSO);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_221'/>
+221
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_221'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            haarniska.getProfiili().lisaaElamaPisteet(4);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_222'/>
+222
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_222'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            haarniska.getProfiili().lisaaTaikaPuolustus(3);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_223'/>
+223
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_223'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            haarniska.getProfiili().lisaaVoima(1);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_224'/>
+224
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_224'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(haarniska);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_225'/>
+225
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_225'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_226'/>
+226
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_226'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;mystinen arkku&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_227'/>
+227
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_227'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_228'/>
+228
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_228'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.AARREJUMALTENMEDALJONKI) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_229'/>
+229
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_229'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ArrayList&#60;Esine&#62; lista = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_230'/>
+230
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_230'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TaisteluEsine medaljonki = new TaisteluEsine(&#34;Jumalten medaljonki&#34;, Esine.MEDALJONKI);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_231'/>
+231
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_231'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            medaljonki.getProfiili().lisaaElamaPisteet(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_232'/>
+232
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_232'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            medaljonki.getProfiili().lisaaVoima(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_233'/>
+233
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_233'>1</a>
+<span>
+
+1. luoKohde : removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            medaljonki.getProfiili().lisaaTaikaVoima(2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_234'/>
+234
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_234'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            lista.add(medaljonki);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_235'/>
+235
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_235'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAarre(lista, &#34;mystinen laatikko&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_236'/>
+236
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_236'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_237'/>
+237
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_237'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_238'/>
+238
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_238'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //ansat</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_239'/>
+239
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_239'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.ANSANUOLI) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_240'/>
+240
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_240'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAnsa(&#34;nuoliansa&#34;, 4);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_241'/>
+241
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_241'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_242'/>
+242
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_242'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.ANSAPIIKKI) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_243'/>
+243
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_243'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAnsa(&#34;piikkiansa&#34;, 5);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_244'/>
+244
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_244'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_245'/>
+245
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_245'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.ANSAKUILU) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_246'/>
+246
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_246'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAnsa(&#34;kuiluansa&#34;, 10);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_247'/>
+247
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_247'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_248'/>
+248
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_248'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.ANSALIEKKI) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_249'/>
+249
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_249'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAnsa(&#34;helvetilliseen liekkiansa&#34;, 10);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_250'/>
+250
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_250'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_251'/>
+251
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_251'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.ANSATHEEND) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_252'/>
+252
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_252'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoAnsa(&#34;pelin viimeiseen ansa&#34;, 1000);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_253'/>
+253
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_253'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_254'/>
+254
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_254'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_255'/>
+255
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_255'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //portaat</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_256'/>
+256
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_256'>1</a>
+<span>
+
+1. luoKohde : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (koodi == KohteidenLuoja.PORTAAT) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_257'/>
+257
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_257'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return luoPortaat();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_258'/>
+258
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_258'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_259'/>
+259
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_259'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_260'/>
+260
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_260'>1</a>
+<span>
+
+1. luoKohde : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return null;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_261'/>
+261
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_261'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_262'/>
+262
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_262'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_263'/>
+263
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_263'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static Kohde luoOvi(YleisEsine avaaja, String ovenNimi) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_264'/>
+264
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_264'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        Ovi ovi;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_265'/>
+265
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_265'>1</a>
+<span>
+
+1. luoOvi : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (avaaja == null) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_266'/>
+266
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_266'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ovi = new Ovi(false, avaaja, ovenNimi);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_267'/>
+267
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_267'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_268'/>
+268
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_268'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ovi = new Ovi(true, avaaja, ovenNimi);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_269'/>
+269
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_269'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_270'/>
+270
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_270'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_271'/>
+271
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_271'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        OvenAvaus ovenAvaus = new OvenAvaus(ovi);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_272'/>
+272
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_272'>1</a>
+<span>
+
+1. luoOvi : removed call to juuri/sovelluslogiikka/maailma/Ovi::setTapahtuma &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ovi.setTapahtuma(ovenAvaus);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_273'/>
+273
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_273'>1</a>
+<span>
+
+1. luoOvi : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoOvi to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return ovi;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_274'/>
+274
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_274'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_275'/>
+275
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_275'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_276'/>
+276
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_276'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static Kohde luoSeina() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_277'/>
+277
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_277'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Seina ss = new Seina();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_278'/>
+278
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_278'>1</a>
+<span>
+
+1. luoSeina : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoSeina to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return ss;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_279'/>
+279
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_279'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_280'/>
+280
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_280'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_281'/>
+281
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_281'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static Kohde luoAarre(ArrayList&#60;Esine&#62; laitettavatAarteet, String aarteenNimi) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_282'/>
+282
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_282'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Aarre aa = new Aarre(aarteenNimi);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_283'/>
+283
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_283'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        AarteenLoytaminen loyto = new AarteenLoytaminen(aa);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_284'/>
+284
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_284'>1</a>
+<span>
+
+1. luoAarre : removed call to juuri/sovelluslogiikka/maailma/Aarre::setTapahtuma &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        aa.setTapahtuma(loyto);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_285'/>
+285
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_285'>1</a>
+<span>
+
+1. luoAarre : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (Esine esine : laitettavatAarteet) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_286'/>
+286
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_286'>1</a>
+<span>
+
+1. luoAarre : removed call to juuri/sovelluslogiikka/maailma/Aarre::lisaaAarre &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            aa.lisaaAarre(esine);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_287'/>
+287
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_287'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_288'/>
+288
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_288'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_289'/>
+289
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_289'>1</a>
+<span>
+
+1. luoAarre : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoAarre to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return aa;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_290'/>
+290
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_290'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_291'/>
+291
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_291'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_292'/>
+292
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_292'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static Kohde luoAnsa(String ansanNimi, int ansanTekemaVahinko) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_293'/>
+293
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_293'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Ansa ansa = new Ansa(ansanNimi, ansanTekemaVahinko);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_294'/>
+294
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_294'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        AnsaanAstuminen aa = new AnsaanAstuminen(ansa);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_295'/>
+295
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_295'>1</a>
+<span>
+
+1. luoAnsa : removed call to juuri/sovelluslogiikka/maailma/Ansa::setTapahtuma &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ansa.setTapahtuma(aa);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_296'/>
+296
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_296'>1</a>
+<span>
+
+1. luoAnsa : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoAnsa to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return ansa;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_297'/>
+297
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_297'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_298'/>
+298
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_298'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_299'/>
+299
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_299'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static Kohde luoPortaat() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_300'/>
+300
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_300'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Portaat pp = new Portaat();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_301'/>
+301
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_301'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        PortaissaKulkeminen kulku = new PortaissaKulkeminen(pp);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_302'/>
+302
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_302'>1</a>
+<span>
+
+1. luoPortaat : removed call to juuri/sovelluslogiikka/maailma/Portaat::setTapahtuma &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        pp.setTapahtuma(kulku);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_303'/>
+303
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_303'>1</a>
+<span>
+
+1. luoPortaat : mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoPortaat to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return pp;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_304'/>
+304
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_304'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_305'/>
+305
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_305'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1e38ab_306'/>
+306
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_306'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_67'>67</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_67'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_68'>68</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_68'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_72'>72</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_72'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_73'>73</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_73'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_75'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_76'>76</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_76'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_78'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_79'>79</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_79'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_81'>81</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_81'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_82'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.osaaHakeaSijainnista(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_86'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_89'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_91'>91</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_91'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_94'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_96'>96</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_96'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_99'>99</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_99'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_100'>100</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_100'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_102'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_104'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_107'>107</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_107'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_108'>108</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_108'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_109'>109</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_109'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_111'>111</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_111'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_113'>113</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_113'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_117'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_118'>118</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_118'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_119'>119</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_119'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_121'>121</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_121'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_123'>123</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_123'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_126'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_129'>129</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_129'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_131'>131</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_131'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_134'>134</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_134'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_135'>135</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_135'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_138'>138</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_138'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_140'>140</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_140'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_144'>144</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_144'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_146'>146</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_146'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_153'>153</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_153'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_155'>155</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_155'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_159'>159</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_159'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.luoTaso2EiJataTyhjaa(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_161'>161</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_161'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_164'>164</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_164'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_165'>165</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_165'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_166'>166</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_166'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_167'>167</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_167'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_168'>168</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_168'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_170'>170</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_170'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_171'>171</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_171'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_172'>172</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_172'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_173'>173</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_173'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_176'>176</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_176'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_178'>178</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_178'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_181'>181</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_181'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_182'>182</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_182'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_183'>183</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_183'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_185'>185</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_185'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_187'>187</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_187'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_190'>190</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_190'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_191'>191</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_191'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_192'>192</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_192'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_194'>194</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_194'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_196'>196</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_196'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_201'>201</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_201'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_203'>203</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_203'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>none</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_204'>204</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_204'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>none</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_205'>205</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_205'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>none</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_206'>206</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_206'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>none</span></span> removed call to juuri/apuvalineet/Profiili::lisaaKetteryys &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_210'>210</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_210'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>none</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_211'>211</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_211'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>none</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_212'>212</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_212'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>none</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_216'>216</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_216'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.luoTaso2EiJataTyhjaa(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_218'>218</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_218'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_221'>221</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_221'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_222'>222</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_222'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaPuolustus &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_223'>223</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_223'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_226'>226</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_226'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_228'>228</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_228'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_231'>231</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_231'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaElamaPisteet &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_232'>232</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_232'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_233'>233</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_233'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/apuvalineet/Profiili::lisaaTaikaVoima &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_235'>235</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_235'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_239'>239</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_239'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_240'>240</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_240'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_242'>242</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_242'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_243'>243</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_243'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.asettaaAnsanOikein(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_245'>245</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_245'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_246'>246</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_246'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.luoTaso2EiJataTyhjaa(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_248'>248</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_248'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_249'>249</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_249'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest.valmisteluOikein(juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_251'>251</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_251'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_252'>252</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_252'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_256'>256</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_256'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoKohdeNullKunKoodiVaara(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_257'>257</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_257'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoPortaatOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_260'>260</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_260'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoKohde<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoKohdeNullKunKoodiVaara(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoKohde to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_265'>265</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_265'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoOvi<br/><b>Killed by : </b>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.valmisteleeAvoimenOikein(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_272'>272</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_272'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoOvi<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.oviAsetusToimiiOikein(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> removed call to juuri/sovelluslogiikka/maailma/Ovi::setTapahtuma &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_273'>273</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_273'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoOvi<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoOvi to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_278'>278</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_278'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoSeina<br/><b>Killed by : </b>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoSeina to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_284'>284</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_284'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoAarre<br/><b>Killed by : </b>juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminenTest.toteuttaaAarteenOttamisenOikein(juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminenTest)</span></span> removed call to juuri/sovelluslogiikka/maailma/Aarre::setTapahtuma &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_285'>285</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_285'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoAarre<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_286'>286</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_286'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoAarre<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/sovelluslogiikka/maailma/Aarre::lisaaAarre &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_289'>289</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_289'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoAarre<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoAarre to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_295'>295</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_295'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoAnsa<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/sovelluslogiikka/maailma/Ansa::setTapahtuma &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_296'>296</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_296'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoAnsa<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoAnsa to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_302'>302</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_302'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoPortaat<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoPortaatOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> removed call to juuri/sovelluslogiikka/maailma/Portaat::setTapahtuma &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1e38ab_303'>303</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1e38ab_303'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>luoPortaat<br/><b>Killed by : </b>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoPortaatOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/peli/KohteidenLuoja::luoPortaat to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>juuri.sovelluslogiikka.peli.PeliTest.aloituksessaLuodaanOikeanniminenJaAmmatillinenHahmo(juuri.sovelluslogiikka.peli.PeliTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.valmisteleeAvoimenOikein(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.asettaaPortaatOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenYlos(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.toteuttaaLukitunOikeinAvaimellinen(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.luoTaso3EiJataTyhjaa(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoPortaatOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.PeliTest.hahmonLiikkuessaLoytyyNullTapahtuma(juuri.sovelluslogiikka.peli.PeliTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest.valmisteluOikein(juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.nykyinenTasoOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.osaaHakeaSijainnista(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenOikealle(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenMoneenSuuntaan(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAnsanOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.asettaaHirvionOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.koordinaateinHakuKunUlkopuolella(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.valmisteleeLukitunOikeinAvaimeton(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.seinaAsetusToimiiOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaKaytavaaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest.toteuttaaOikeinTasolle3(juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaSeinaaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.kaytavaAsetusToimiiOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.toteuttaaAvoimenOikein(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaHirviotaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.oviAsetusToimiiOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest) (16 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.luoTaso2EiJataTyhjaa(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.PeliTest.hahmonLiikkuessaLoytyyTapahtuma(juuri.sovelluslogiikka.peli.PeliTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAnsaaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.sijainninHakuKunUlkopuolella(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest.toteuttaaOikeinTasolle2(juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.valmisteleeLukitunOikeinAvaimellinen(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.osaaHakeaKoordinaateista(juuri.sovelluslogiikka.maailma.LuolastoTest) (15 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaPortaitaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.toteuttaaLukitunOikeinAvaimeton(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminenTest.toteuttaaAarteenOttamisenOikein(juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest.toteuttaaOikein(juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest.toteuttaaOikein2(juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenVaarallaKomennollaOnNull(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest.valmisteleeOikein(juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.PeliTest.vaarallaSuunnallaNull(juuri.sovelluslogiikka.peli.PeliTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.asettaaAnsanOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaOveaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (16 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.kohteenAsetusLuolanReunalle(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenAlas(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoKohdeNullKunKoodiVaara(juuri.sovelluslogiikka.peli.KohteidenLuojaTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.poistaaKohteenOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenVasemmalle(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.luoTaso1EiJataTyhjaa(juuri.sovelluslogiikka.maailma.LuolastoTest) (16 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.asettaaAarteenOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (16 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.8
+
+</body>
+</html>

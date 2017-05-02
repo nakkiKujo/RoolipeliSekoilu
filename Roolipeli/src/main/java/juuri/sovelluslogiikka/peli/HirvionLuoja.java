@@ -3,7 +3,6 @@ package juuri.sovelluslogiikka.peli;
 import java.util.Random;
 import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.esineet.TaisteluEsine;
-import juuri.sovelluslogiikka.esineet.YleisEsine;
 import juuri.sovelluslogiikka.maailma.Hirvio;
 import juuri.sovelluslogiikka.tapahtumat.Taistelu;
 
@@ -115,6 +114,7 @@ public class HirvionLuoja {
         noita.getProfiili().lisaaElamaPisteet(5);
 
         noita.lisaaEsine(Esine.RIIMU);
+        noita.lisaaEsine(Esine.RIIMU);
         noita.lisaaEsine(Esine.PARANTAVAVOIDE);
 
         return noita;
@@ -131,6 +131,8 @@ public class HirvionLuoja {
         nokkela.getProfiili().lisaaKetteryys(1);
         nokkela.getProfiili().lisaaElamaPisteet(8);
 
+        nokkela.lisaaEsine(Esine.RIIMU);
+        nokkela.lisaaEsine(Esine.RIIMU);
         nokkela.lisaaEsine(Esine.RIIMU);
         nokkela.lisaaEsine(Esine.PARANTAVAVOIDE);
         return nokkela;
@@ -213,6 +215,7 @@ public class HirvionLuoja {
 
             ranko.lisaaEsine(kypara);
         }
+        ranko.lisaaEsine(Esine.RIIMU);
 
         return ranko;
     }

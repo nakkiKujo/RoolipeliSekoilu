@@ -17,10 +17,13 @@ public class TaisteluLaskin {
 
     /**
      * Luodaan uusi taistelulaskin. Laskin käyttää laskusuorituksissaan paljon
-     * satunnaisuutta, joten asetetaan oliomuuttujaksi Random-olio.
+     * satunnaisuutta, joten asetetaan oliomuuttujaksi parametrina annettu
+     * Random-olio.
+     *
+     * @param arpoja annettu random-olio
      */
-    public TaisteluLaskin() {
-        this.arpoja = new Random();
+    public TaisteluLaskin(Random arpoja) {
+        this.arpoja = arpoja;
     }
 
     /**

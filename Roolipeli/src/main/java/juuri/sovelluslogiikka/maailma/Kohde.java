@@ -30,6 +30,7 @@ public abstract class Kohde {
     protected boolean voikoKulkea;
     protected Sijainti sijainti;
     protected Color vari;
+    protected boolean piirtyi;
 
     protected Tapahtuma tapahtuma;
 
@@ -99,12 +100,14 @@ public abstract class Kohde {
 
         if (Math.abs(etaisyysHahmoonX) > 2 || Math.abs(etaisyysHahmoonY) > 2) {
             g.setColor(Color.BLACK);
+            this.piirtyi = false;
             g.fillRect(x, y, mittakaava, mittakaava);
             return;
         }
 
         if (Math.abs(etaisyysHahmoonX) <= 1 && Math.abs(etaisyysHahmoonY) <= 1) {
             g.setColor(this.vari);
+            this.piirtyi = true;
             g.fillRect(x, y, mittakaava, mittakaava);
             return;
         }
@@ -195,9 +198,11 @@ public abstract class Kohde {
     private void hoidaValissa(Graphics g, int mittakaava, int x, int y, int koodi) {
         if (koodi == Kohde.OVI || koodi == Kohde.SEINA) {
             g.setColor(Color.BLACK);
+            this.piirtyi = false;
             g.fillRect(x, y, mittakaava, mittakaava);
         } else {
             g.setColor(this.vari);
+            this.piirtyi = true;
             g.fillRect(x, y, mittakaava, mittakaava);
         }
     }

@@ -53,4 +53,22 @@ public class EsineTest {
         assertFalse(haarukka.equals(haarukka3));
     }
     
+    @Test
+    public void tunnistaaTaisteluJaYleisEsineet() {
+        YleisEsine avain = new YleisEsine("oih", Esine.AVAIN);
+        assertFalse(avain.getOnkoTaisteluEsine());
+        TaisteluEsine miekka = new TaisteluEsine("miegga", Esine.MIEKKA);
+        assertTrue(miekka.getOnkoTaisteluEsine());
+    }
+    
+    @Test
+    public void tunnistaaOnkoKaytossa() {
+        TaisteluEsine miekka = new TaisteluEsine("oi mika miekka", Esine.MIEKKA);
+        assertFalse(miekka.getOnkoKaytossa());
+        miekka.setOnkoKaytossa(true);
+        assertTrue(miekka.getOnkoKaytossa());
+        miekka.setOnkoKaytossa(false);
+        assertFalse(miekka.getOnkoKaytossa());
+    }
+    
 }

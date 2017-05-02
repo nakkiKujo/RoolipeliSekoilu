@@ -3,10 +3,7 @@ package juuri.apuvalineet;
 
 import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.esineet.TaisteluEsine;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -74,6 +71,7 @@ public class ProfiiliTest {
         miekanProfiili.lisaaKetteryys(-2);
         miekanProfiili.lisaaVoima(6);
         miekanProfiili.lisaaTaikaPuolustus(3);
+        miekanProfiili.lisaaTaikaVoima(22);
         
         TaisteluEsine kypara = new TaisteluEsine("iso kypärä", Esine.KYPARA);
         Profiili kyparanProfiili = kypara.getProfiili();
@@ -92,32 +90,88 @@ public class ProfiiliTest {
         assertEquals(vertailuProfiili.getElamaPisteet() + 3, prof.getElamaPisteet());
         assertEquals(vertailuProfiili.getKetteryys() - 1, prof.getKetteryys());
         assertEquals(vertailuProfiili.getTaikaPuolustus() + 1, prof.getTaikaPuolustus());
-        assertEquals(vertailuProfiili.getTaikaVoima(), prof.getTaikaVoima());
+        assertEquals(vertailuProfiili.getTaikaVoima() + 22, prof.getTaikaVoima());
         assertEquals(vertailuProfiili.getVoima() + 6, prof.getVoima());
     }
     
     @Test
     public void poistaaEsineenOikein() {
-        prof.setVelhoAlkuProfiili();
+        prof.lisaaElamaPisteet(2);
+        prof.lisaaKetteryys(-1);
+        prof.lisaaTaikaVoima(77);
         
         TaisteluEsine miekka = new TaisteluEsine("suuri miekka", Esine.MIEKKA);
         Profiili miekanProfiili = miekka.getProfiili();
         
         miekanProfiili.lisaaElamaPisteet(10);
         miekanProfiili.lisaaKetteryys(-2);
-        miekanProfiili.lisaaVoima(0);
+        miekanProfiili.lisaaVoima(7);
         miekanProfiili.lisaaTaikaPuolustus(-3);
         miekanProfiili.lisaaTaikaVoima(2);
         
+        prof.asetaEsine(miekka);
+        assertTrue(prof.getElamaPisteet() == 12);
+        assertTrue(prof.getKetteryys() == -3);
+        assertTrue(prof.getTaikaPuolustus() == -3);
+        assertTrue(prof.getTaikaVoima() == 79);
+        assertTrue(prof.getVoima() == 7);
+        
         prof.poistaEsine(miekka);
+        assertTrue(prof.getElamaPisteet() == 2);
+        assertTrue(prof.getKetteryys() == -1);
+        assertTrue(prof.getTaikaPuolustus() == 0);
+        assertTrue(prof.getTaikaVoima() == 77);
+        assertTrue(prof.getVoima() == 0);
         
-        Profiili vertailuProfiili = new Profiili();
-        vertailuProfiili.setVelhoAlkuProfiili();
+    }
+    
+    @Test
+    public void nykyinenElamaPisteetOikein() {
+        prof.lisaaElamaPisteet(12);
+        assertTrue(prof.getNykyinenElamaPisteet() == 12);
+        prof.lisaaElamaPisteet(-5);
+        assertTrue(prof.getNykyinenElamaPisteet() == 7);
+        prof.lisaaNykyinenElamaPisteet(-4);
+        assertTrue(prof.getElamaPisteet() == 7);
+        assertTrue(prof.getNykyinenElamaPisteet() == 3);
+        prof.lisaaNykyinenElamaPisteet(10);
+        assertTrue(prof.getNykyinenElamaPisteet() == 7);
+    }
+    
+    @Test
+    public void asettaaValmiudetOikein() {
+        prof.asetaHyokkaysValmius(10);
+        prof.asetaPuolustusValmius(5);
+        assertTrue(prof.getPuolustusValmius() == 5);
+        assertTrue(prof.getHyokkaysValmius() == 10);
+        prof.asetaHyokkaysValmius(0);
+        assertTrue(prof.getHyokkaysValmius() == 0);
+    }
+    
+    @Test
+    public void onkoKuollutToimii() {
+        prof.lisaaElamaPisteet(3);
+        assertFalse(prof.onkoKuollut());
+        prof.lisaaNykyinenElamaPisteet(-3);
+        assertTrue(prof.onkoKuollut());
+        prof.lisaaElamaPisteet(1);
+        assertFalse(prof.onkoKuollut());
+    }
+    
+    @Test
+    public void kayttaaVoiteenOikein() {
+        prof.lisaaElamaPisteet(15);
+        prof.lisaaNykyinenElamaPisteet(-7);
+        prof.kaytaParantavaEsine(Esine.RIIMU);
+        assertTrue(prof.getNykyinenElamaPisteet() == 8);
         
-        assertEquals(vertailuProfiili.getElamaPisteet() - 10, prof.getElamaPisteet());
-        assertEquals(vertailuProfiili.getKetteryys() + 2, prof.getKetteryys());
-        assertEquals(vertailuProfiili.getTaikaPuolustus() + 3, prof.getTaikaPuolustus());
-        assertEquals(vertailuProfiili.getTaikaVoima() - 2, prof.getTaikaVoima());
-        assertEquals(vertailuProfiili.getVoima(), prof.getVoima());
+        prof.kaytaParantavaEsine(Esine.PARANTAVAVOIDE);
+        assertTrue(prof.getNykyinenElamaPisteet() == 11);
+        
+        prof.kaytaParantavaEsine(Esine.PARANTAVAVOIDE);
+        assertTrue(prof.getNykyinenElamaPisteet() == 14);
+        
+        prof.kaytaParantavaEsine(Esine.PARANTAVAVOIDE);
+        assertTrue(prof.getNykyinenElamaPisteet() == 15);
     }
 }

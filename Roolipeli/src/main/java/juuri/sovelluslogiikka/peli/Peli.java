@@ -57,7 +57,6 @@ public class Peli {
      * @param g käyttöliittymän piirtoalustan grafiikka
      */
     public void piirra(Graphics g) {
-        //TODO: laskea mittaKaava jokaisessa erillisessä tapauksessa
         int mittaKaava = 18;
         luolasto.piirra(g, mittaKaava, pelaajanHahmo);
         pelaajanHahmo.piirra(g, mittaKaava);

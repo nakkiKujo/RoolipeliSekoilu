@@ -5,10 +5,7 @@ import juuri.sovelluslogiikka.esineet.Esine;
 import juuri.sovelluslogiikka.peli.HirvionLuoja;
 import juuri.sovelluslogiikka.peli.KohteidenLuoja;
 import juuri.sovelluslogiikka.tapahtumat.Tapahtuma;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -195,7 +192,7 @@ public class LuolastoTest {
     @Test
     public void sijainninHakuKunUlkopuolella() {
         luola.luoSeuraavaTaso();
-        
+
         Sijainti ss = new Sijainti();
         ss.setSijainti(4, 13);
         assertEquals(null, luola.haeSijainnista(ss));
@@ -204,7 +201,7 @@ public class LuolastoTest {
     @Test
     public void osaaHakeaKoordinaateista() {
         luola.luoSeuraavaTaso();
-        
+
         luola.asetaAvoinOvi(4, 3);
         assertEquals(Kohde.OVI, luola.haeKoordinaateista(4, 3).getKoodi());
     }
@@ -212,25 +209,61 @@ public class LuolastoTest {
     @Test
     public void koordinaateinHakuKunUlkopuolella() {
         luola.luoSeuraavaTaso();
-        
+
         assertEquals(null, luola.haeKoordinaateista(6, -1));
     }
 
     @Test
     public void poistaaKohteenOikein() {
         luola.luoSeuraavaTaso();
-        
+
         luola.asetaLukittuOvi(4, 5, KohteidenLuoja.OVIHOPEAAVAAJA);
         assertEquals(Kohde.OVI, luola.haeKoordinaateista(4, 5).getKoodi());
         luola.poistaKohde(luola.haeKoordinaateista(4, 5));
-        
+
         assertEquals(Kohde.KAYTAVA, luola.haeKoordinaateista(4, 5).getKoodi());
     }
     
     @Test
+    public void nykyinenTasoOikein() {
+        assertEquals(0, luola.getNykyinenTaso());
+        luola.luoSeuraavaTaso();
+        assertEquals(1, luola.getNykyinenTaso());
+        luola.luoSeuraavaTaso();
+        assertEquals(2, luola.getNykyinenTaso());
+        luola.luoSeuraavaTaso();
+        assertEquals(3, luola.getNykyinenTaso());
+        luola.luoSeuraavaTaso();
+        assertEquals(3, luola.getNykyinenTaso());
+    }
+
+    @Test
     public void luoTaso1EiJataTyhjaa() {
         luola.luoSeuraavaTaso();
         for (int i = 0; i < 13; i++) {
+            for (int j = 0; j < 11; j++) {
+                assertFalse(luola.haeKoordinaateista(i, j) == null);
+            }
+        }
+    }
+
+    @Test
+    public void luoTaso2EiJataTyhjaa() {
+        luola.luoSeuraavaTaso();
+        luola.luoSeuraavaTaso();
+        for (int i = 0; i < 16; i++) {
+            for (int j = 0; j < 11; j++) {
+                assertFalse(luola.haeKoordinaateista(i, j) == null);
+            }
+        }
+    }
+
+    @Test
+    public void luoTaso3EiJataTyhjaa() {
+        luola.luoSeuraavaTaso();
+        luola.luoSeuraavaTaso();
+        luola.luoSeuraavaTaso();
+        for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 11; j++) {
                 assertFalse(luola.haeKoordinaateista(i, j) == null);
             }

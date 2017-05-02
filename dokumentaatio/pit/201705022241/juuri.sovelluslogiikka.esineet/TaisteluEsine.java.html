@@ -1,0 +1,563 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>TaisteluEsine.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package juuri.sovelluslogiikka.esineet;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import juuri.apuvalineet.Profiili;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Taisteluesineet ovat esineit&#195;&#164;, joita pelaajan hahmo voi kantaa yll&#195;&#164;&#195;&#164;n. Ne</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * parantavat tai heikent&#195;&#164;v&#195;&#164;t hahmon taistelukykyj&#195;&#164;. Esineen profiili m&#195;&#164;&#195;&#164;ritt&#195;&#164;&#195;&#164;,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * kuinka paljon esine parantaa tai heikent&#195;&#164;&#195;&#164; hahmon kykyj&#195;&#164;.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class TaisteluEsine extends Esine {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private Profiili esineenProfiili;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Luo uuden taisteluesineen. Parametreina annetaan esineen nimi ja koodi,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * jotka annettaan peritt&#195;&#164;v&#195;&#164;n luokan Esine konstruktorille.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_17'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Lis&#195;&#164;ksi taisteluesineelle luodaan oma Profiili.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_19'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param nimi esineen nimi</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_21'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param koodi esineen koodi, staattinen muuttuja luokassa Esine</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_22'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public TaisteluEsine(String nimi, int koodi) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_24'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        super(nimi, koodi);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_25'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.esineenProfiili = new Profiili();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_26'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.onkoTaisteluEsine = true;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_27'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_29'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Profiili getProfiili() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_30'/>
+30
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_30'>1</a>
+<span>
+
+1. getProfiili : mutated return of Object value for juuri/sovelluslogiikka/esineet/TaisteluEsine::getProfiili to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return esineenProfiili;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_31'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1478597_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1478597_32'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1478597_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1478597_30'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getProfiili<br/><b>Killed by : </b>juuri.apuvalineet.ProfiiliTest.poistaaEsineenOikein(juuri.apuvalineet.ProfiiliTest)</span></span> mutated return of Object value for juuri/sovelluslogiikka/esineet/TaisteluEsine::getProfiili to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>juuri.apuvalineet.ProfiiliTest.poistaaEsineenOikein(juuri.apuvalineet.ProfiiliTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HirvionLuojaTest.luoValkokasvo(juuri.sovelluslogiikka.peli.HirvionLuojaTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.PeliTest.aloituksessaLuodaanOikeanniminenJaAmmatillinenHahmo(juuri.sovelluslogiikka.peli.PeliTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.valmisteleeAvoimenOikein(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.asettaaPortaatOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenYlos(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.toteuttaaLukitunOikeinAvaimellinen(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.luoTaso3EiJataTyhjaa(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.PeliTest.hahmonLiikkuessaLoytyyNullTapahtuma(juuri.sovelluslogiikka.peli.PeliTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.nykyinenTasoOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.osaaHakeaSijainnista(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenOikealle(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenMoneenSuuntaan(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.asettaaHirvionOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.koordinaateinHakuKunUlkopuolella(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.valmisteleeLukitunOikeinAvaimeton(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.seinaAsetusToimiiOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HirvionLuojaTest.luoLangennut(juuri.sovelluslogiikka.peli.HirvionLuojaTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAarrettaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.apuvalineet.ProfiiliTest.asettaaEsineenOikein(juuri.apuvalineet.ProfiiliTest) (16 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaKaytavaaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest.toteuttaaOikeinTasolle3(juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaSeinaaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.kaytavaAsetusToimiiOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.toteuttaaAvoimenOikein(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaHirviotaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.oviAsetusToimiiOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.luoTaso2EiJataTyhjaa(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.KohteidenLuojaTest.luoAarteetOikein(juuri.sovelluslogiikka.peli.KohteidenLuojaTest) (16 ms)</li><li>juuri.sovelluslogiikka.peli.PeliTest.hahmonLiikkuessaLoytyyTapahtuma(juuri.sovelluslogiikka.peli.PeliTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaAnsaaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.sijainninHakuKunUlkopuolella(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest.toteuttaaOikeinTasolle2(juuri.sovelluslogiikka.tapahtumat.PortaissaKulkeminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.valmisteleeLukitunOikeinAvaimellinen(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.osaaHakeaKoordinaateista(juuri.sovelluslogiikka.maailma.LuolastoTest) (15 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaPortaitaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.OvenAvausTest.toteuttaaLukitunOikeinAvaimeton(juuri.sovelluslogiikka.tapahtumat.OvenAvausTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminenTest.toteuttaaAarteenOttamisenOikein(juuri.sovelluslogiikka.tapahtumat.AarteenLoytaminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest.toteuttaaOikein(juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest.toteuttaaOikein2(juuri.sovelluslogiikka.tapahtumat.AnsaanAstuminenTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenVaarallaKomennollaOnNull(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.PeliTest.vaarallaSuunnallaNull(juuri.sovelluslogiikka.peli.PeliTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.asettaaAnsanOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.eiAsetaOveaVaarillaKoordinaateilla(juuri.sovelluslogiikka.maailma.LuolastoTest) (16 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.kohteenAsetusLuolanReunalle(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenAlas(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.poistaaKohteenOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (0 ms)</li><li>juuri.sovelluslogiikka.peli.HahmonliikuttajaTest.hahmonLiikuttaminenVasemmalle(juuri.sovelluslogiikka.peli.HahmonliikuttajaTest) (0 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.luoTaso1EiJataTyhjaa(juuri.sovelluslogiikka.maailma.LuolastoTest) (16 ms)</li><li>juuri.sovelluslogiikka.maailma.LuolastoTest.asettaaAarteenOikein(juuri.sovelluslogiikka.maailma.LuolastoTest) (16 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.8
+
+</body>
+</html>

@@ -8,7 +8,7 @@ import juuri.apuvalineet.Sijainti;
 /**
  * Tämä abstrakti luokka kuvastaa pelaajan pelissä seikkailevaa hahmoa. Luokalla
  * on aliluokkina ammatit, jotka määräävät, millainen hahmo on. Esimerkiksi
- * soturi on hahmona erilainen verrattuna velhoon, ja tämä ero näkyy hahmon 
+ * soturi on hahmona erilainen verrattuna velhoon, ja tämä ero mäkyy hahmon 
  * profiilissa.
  */
 public abstract class Hahmo {

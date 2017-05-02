@@ -33,7 +33,7 @@ public class Taistelu extends Tapahtuma {
     public Taistelu(Kohde hirvio) {
         this.koodi = Tapahtuma.TAISTELU;
         this.hirvio = (Hirvio) hirvio;
-        this.laskin = new TaisteluLaskin();
+        this.laskin = new TaisteluLaskin(new Random());
     }
 
     /**
