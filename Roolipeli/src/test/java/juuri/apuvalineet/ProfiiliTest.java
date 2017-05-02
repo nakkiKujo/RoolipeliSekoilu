@@ -42,26 +42,26 @@ public class ProfiiliTest {
     public void asettaaAlkuProfiiliOikein() {
         prof.setSoturiAlkuProfiili();
         
-        assertEquals(8, prof.getElamaPisteet());
-        assertEquals(2, prof.getKetteryys());
+        assertEquals(15, prof.getElamaPisteet());
+        assertEquals(3, prof.getKetteryys());
         assertEquals(1, prof.getTaikaPuolustus());
         assertEquals(1, prof.getTaikaVoima());
-        assertEquals(3, prof.getVoima());
+        assertEquals(4, prof.getVoima());
         
         prof.setVelhoAlkuProfiili();
         
-        assertEquals(7, prof.getElamaPisteet());
+        assertEquals(13, prof.getElamaPisteet());
         assertEquals(2, prof.getKetteryys());
-        assertEquals(2, prof.getTaikaPuolustus());
-        assertEquals(3, prof.getTaikaVoima());
+        assertEquals(4, prof.getTaikaPuolustus());
+        assertEquals(4, prof.getTaikaVoima());
         assertEquals(1, prof.getVoima());
         
         prof.setDruidiAlkuProfiili();
         
-        assertEquals(9, prof.getElamaPisteet());
-        assertEquals(3, prof.getKetteryys());
-        assertEquals(1, prof.getTaikaPuolustus());
-        assertEquals(1, prof.getTaikaVoima());
+        assertEquals(17, prof.getElamaPisteet());
+        assertEquals(4, prof.getKetteryys());
+        assertEquals(2, prof.getTaikaPuolustus());
+        assertEquals(2, prof.getTaikaVoima());
         assertEquals(1, prof.getVoima());
     }
     

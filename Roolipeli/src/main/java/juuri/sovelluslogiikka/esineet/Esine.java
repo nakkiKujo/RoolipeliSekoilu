@@ -43,7 +43,7 @@ public abstract class Esine {
         return this.koodi;
     }
     
-    public boolean onkoTaisteluEsine() {
+    public boolean getOnkoTaisteluEsine() {
         return this.onkoTaisteluEsine;
     }
     

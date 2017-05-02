@@ -139,11 +139,11 @@ public class Profiili {
     /**
      * Asettaa profiilille soturin alkuominaisuudet.
      * Soturilla on:
-     * voimaa 3,
+     * voimaa 4,
      * taikavoimaa 1,
      * taikapuolustusta 1,
-     * ketteryyttä 2,
-     * elämäpisteitä 8.
+     * ketteryyttä 3,
+     * elämäpisteitä 15.
      */
     public void setSoturiAlkuProfiili() {
         this.voima = 4;
@@ -158,10 +158,10 @@ public class Profiili {
      * Asettaa profiilille velhon alkuominaisuudet.
      * Velholla on:
      * voimaa 1,
-     * taikavoimaa 3,
-     * taikapuolustusta 2,
+     * taikavoimaa 4,
+     * taikapuolustusta 4,
      * ketteryyttä 2,
-     * elämäpisteitä 7.
+     * elämäpisteitä 13.
      */
     public void setVelhoAlkuProfiili() {
         this.voima = 1;
@@ -176,10 +176,10 @@ public class Profiili {
      * Asettaa profiilille druidin alkuominaisuudet.
      * Druidilla on:
      * voimaa 1,
-     * taikavoimaa 1,
-     * taikapuolustusta 1,
-     * ketteryyttä 3,
-     * elämäpisteitä 9.
+     * taikavoimaa 2,
+     * taikapuolustusta 2,
+     * ketteryyttä 4,
+     * elämäpisteitä 17.
      */
     public void setDruidiAlkuProfiili() {
         this.voima = 1;

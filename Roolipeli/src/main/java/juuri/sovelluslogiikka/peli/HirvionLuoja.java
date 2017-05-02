@@ -96,8 +96,8 @@ public class HirvionLuoja {
         if (hirvionLuontiKoodi == HirvionLuoja.PIRU) {
             return luoPiru();
         }
-        
-        if(hirvionLuontiKoodi == HirvionLuoja.LANGENNUTENKELI) {
+
+        if (hirvionLuontiKoodi == HirvionLuoja.LANGENNUTENKELI) {
             return luoLangennut();
         }
         return null;
@@ -395,7 +395,7 @@ public class HirvionLuoja {
         langennut.getProfiili().lisaaTaikaPuolustus(5);
         langennut.getProfiili().lisaaKetteryys(7);
         langennut.getProfiili().lisaaElamaPisteet(15);
-        
+
         TaisteluEsine kypara = new TaisteluEsine("Jumalten kypärä", Esine.KYPARA);
         kypara.getProfiili().lisaaElamaPisteet(4);
         kypara.getProfiili().lisaaKetteryys(3);

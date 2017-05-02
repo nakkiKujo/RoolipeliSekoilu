@@ -36,6 +36,12 @@ public class Reppu {
         return this.voiteita;
     }
 
+    /**
+     * Hakee repusta esineen numero 1. Jos repussa ei ole esineitä, palauttaa
+     * null.
+     *
+     * @return palautetaan esine numero 1 tai null, jos ei esineitä repussa
+     */
     public Esine getEsine1() {
         if (esineet.isEmpty()) {
             return null;
@@ -43,6 +49,13 @@ public class Reppu {
         return esineet.get(0);
     }
 
+    /**
+     * Hakee repusta esineen numero 2. Jos repussa on vain yksi esine, palauttaa
+     * null.
+     *
+     * @return palautetaan esine numero 2 tai null, jos repussa on alle 2
+     * esinettä
+     */
     public Esine getEsine2() {
         if (esineet.size() <= 1) {
             return null;
@@ -50,6 +63,13 @@ public class Reppu {
         return esineet.get(1);
     }
 
+    /**
+     * Hakee repusta esineen numero 3. Jos repussa on alle kolme esinettä,
+     * palauttaa null.
+     *
+     * @return palautetaan esine numero 3 tai null, jos esineitä on repussa alle
+     * kolme
+     */
     public Esine getEsine3() {
         if (esineet.size() <= 2) {
             return null;
@@ -57,6 +77,13 @@ public class Reppu {
         return esineet.get(2);
     }
 
+    /**
+     * Hakee repusta esineen numero 4. Jos repussa on alle neljä esinettä,
+     * palauttaa null.
+     *
+     * @return palautetaan esine numero 4 tai null, jos repussa on esineitä alle
+     * neljä
+     */
     public Esine getEsine4() {
         if (esineet.size() <= 3) {
             return null;
@@ -64,6 +91,13 @@ public class Reppu {
         return esineet.get(3);
     }
 
+    /**
+     * Hakee repusta esineen numero 5. Jos repussa on alle viisi esinettä,
+     * palauttaa null.
+     *
+     * @return palautetaan esine numero 5 tai null, jos repussa on alle viisi
+     * esinettä
+     */
     public Esine getEsine5() {
         if (esineet.size() <= 4) {
             return null;
@@ -71,6 +105,13 @@ public class Reppu {
         return esineet.get(4);
     }
 
+    /**
+     * Hakee repusta esineen numero 6. Jos repussa on alle kuusi esinettä,
+     * palauttaa null.
+     *
+     * @return palautetaan esine numero 6 tai null, jos esineitä on repussa alle
+     * kuusi
+     */
     public Esine getEsine6() {
         if (esineet.size() <= 5) {
             return null;

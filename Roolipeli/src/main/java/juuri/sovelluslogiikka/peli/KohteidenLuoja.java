@@ -143,7 +143,7 @@ public class KohteidenLuoja {
             lista.add(Esine.PARANTAVAVOIDE);
             return luoAarre(lista, "luiden ympäröimä säkki");
         }
-        if(koodi == KohteidenLuoja.AARRE5VOIDETTA) {
+        if (koodi == KohteidenLuoja.AARRE5VOIDETTA) {
             ArrayList<Esine> lista = new ArrayList<>();
             lista.add(Esine.PARANTAVAVOIDE);
             lista.add(Esine.PARANTAVAVOIDE);
@@ -222,10 +222,10 @@ public class KohteidenLuoja {
             haarniska.getProfiili().lisaaTaikaPuolustus(3);
             haarniska.getProfiili().lisaaVoima(1);
             lista.add(haarniska);
-            
+
             return luoAarre(lista, "mystinen arkku");
         }
-        if(koodi == KohteidenLuoja.AARREJUMALTENMEDALJONKI) {
+        if (koodi == KohteidenLuoja.AARREJUMALTENMEDALJONKI) {
             ArrayList<Esine> lista = new ArrayList<>();
             TaisteluEsine medaljonki = new TaisteluEsine("Jumalten medaljonki", Esine.MEDALJONKI);
             medaljonki.getProfiili().lisaaElamaPisteet(2);
@@ -248,7 +248,7 @@ public class KohteidenLuoja {
         if (koodi == KohteidenLuoja.ANSALIEKKI) {
             return luoAnsa("helvetilliseen liekkiansa", 10);
         }
-        if(koodi == KohteidenLuoja.ANSATHEEND) {
+        if (koodi == KohteidenLuoja.ANSATHEEND) {
             return luoAnsa("pelin viimeiseen ansa", 1000);
         }
 
