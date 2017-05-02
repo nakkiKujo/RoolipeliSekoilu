@@ -10,6 +10,6 @@ Ohjelma on peli, jossa pelaaja pääsee seikkailemaan luolassa kohdaten hirviöi
 
 [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 
-[Pit-raportti](https://htmlpreview.github.io/?https://github.com/nakkiKujo/RoolipeliSekoilu/blob/master/dokumentaatio/pit/201704270904/index.html)
+[Pit-raportti](https://htmlpreview.github.io/?https://github.com/nakkiKujo/RoolipeliSekoilu/blob/master/dokumentaatio/pit/201705022241/index.html)
 
-[Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/nakkiKujo/RoolipeliSekoilu/blob/master/dokumentaatio/checkstyle/checkstyle%20dl%206/checkstyle.html)
+[Checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/nakkiKujo/RoolipeliSekoilu/blob/master/dokumentaatio/checkstyle/checkstyle%20final/checkstyle.html)
