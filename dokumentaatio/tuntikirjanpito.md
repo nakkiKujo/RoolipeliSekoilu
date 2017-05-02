@@ -28,3 +28,4 @@ Päivä | Tunnit | Kuvaus
 29.4.2017 | 2h | Koodattiin reppuominaisuutta käyttöliittymään
 30.4.2017 | 4h | Reppu käyttöliittymässä valmiiksi, näkyvien kohteiden muutos
 1.5.2017 | 2,5h | Taso3 luotu, käyttöliittymä valmis
+2.5.2017 | 6h | Ohjelman dokumentaation ja testien viimeistely
